@@ -1,0 +1,53 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % %
+% thesis.TEX						              													%
+% by Darwin Jone H. Jupiter			              										%
+% Department of Computer Engineering              							%
+% College of Engineering and Architecture         							%
+% USTP - CDO                                      												%
+%C.M. Recto Ave.,  Lapasan, Cagayan de Oro City					  		%
+% Philippines						              													%
+% E-mail: dawrinjone.jupiter@ustp.edu.ph          							%
+% 									              															%
+% Modified: March 2026                			  											%
+% % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\documentclass[12pt]{maththesis}
+\input{commands.tex}
+\input{basicinfo.tex}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\begin{document}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% front matter
+\pagenumbering{roman}
+\setcounter{page}{1}
+\setcounter{secnumdepth}{3}
+\input{titlepage}\newpage
+\input{approval}\newpage
+\input{abstract}\newpage
+\input{dedication}\newpage
+\input{acknowledgment}\newpage
+\addcontentsline{toc}{chapter}{TABLE OF CONTENTS}
+\tableofcontents\newpage
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\listoftables \newpage
+\input{listofnotations}\newpage
+\addcontentsline{toc}{chapter}{LIST OF FIGURES} 
+\listoffigures\newpage
+\listofmyequations \newpage
+\input{listofequations}\newpage
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+%main matter
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+%back matter
+\include{appendix}
+\include{bibliography}
+\include{cv}
+\include{caa}
+\end{document}
