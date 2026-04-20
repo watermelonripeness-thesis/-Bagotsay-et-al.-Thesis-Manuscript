@@ -1,9 +1,13 @@
 {\bfseries No.\hfill Table\hspace {3in} Page No.\vspace \bigskipamount \par }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {1}{\ignorespaces Comparison Table of Related Studies on Watermelon Ripeness Detection}}{49}{table.2.1}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1}{\ignorespaces A sample long table.}}{48}{table.3.1}%
-\contentsline {table}{\numberline {2}{\ignorespaces Sample Data Table}}{50}{table.caption.21}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {2}{\ignorespaces Detailed Comparison Table for Integrated Circuits}}{58}{table.caption.23}%
+\contentsline {table}{\numberline {3}{\ignorespaces Detailed Comparison Table for Thumper}}{60}{table.caption.24}%
+\contentsline {table}{\numberline {4}{\ignorespaces Detailed Comparison Table for Microphone Module}}{62}{table.caption.25}%
+\contentsline {table}{\numberline {5}{\ignorespaces Detailed Comparison Table for Camera Modules}}{64}{table.caption.26}%
+\contentsline {table}{\numberline {6}{\ignorespaces Detailed Comparison Table for LCD Display}}{65}{table.caption.27}%
+\contentsline {table}{\numberline {7}{\ignorespaces Detailed Comparison Table for Power Supply}}{66}{table.caption.28}%
+\contentsline {table}{\numberline {8}{\ignorespaces Testing Metrics for System Integration}}{102}{table.caption.63}%
 \contentsfinish 
