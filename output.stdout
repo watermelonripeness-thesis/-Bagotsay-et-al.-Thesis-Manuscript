@@ -25,7 +25,8 @@ entering extended mode
 Latexmk: Getting log file '/compile/output.log'
 Latexmk: Examining '/compile/output.fls'
 Latexmk: Examining '/compile/output.log'
-Latexmk: Found input bbl file '/compile/output.bbl'
+Latexmk: References changed.
+Latexmk: References changed.
 Latexmk: Log file says output to '/compile/output.pdf'
 Latexmk: Found bibliography file(s):
   ./telemetry.bib
@@ -33,10 +34,9 @@ Latexmk: Bst file not found in search path:
   apa.bst
 Latexmk: applying rule 'bibtex /compile/output'...
 Rule 'bibtex /compile/output':  Reasons for rerun
-Changed files or newly in use/created:
-  /compile/chapter2.aux
-  /compile/chapter3.aux
-  /compile/output.aux
+Category 'other':
+  Rerun of 'bibtex /compile/output' forced or previously required:
+    Reason or flag: 'Initial set up of rule'
 
 ------------
 Run number 1 of rule 'bibtex /compile/output'
@@ -62,11 +62,21 @@ Latexmk: Change directory back to '/compile/Thesis Format (LaTEX)'
 Latexmk: applying rule 'pdflatex'...
 Rule 'pdflatex':  Reasons for rerun
 Changed files or newly in use/created:
+  /compile/appendix.aux
+  /compile/bibliography.aux
+  /compile/caa.aux
+  /compile/chapter1.aux
   /compile/chapter2.aux
   /compile/chapter3.aux
+  /compile/chapter4.aux
+  /compile/chapter5.aux
+  /compile/cv.aux
   /compile/output.aux
+  /compile/output.bbl
+  /compile/output.exp
   /compile/output.lof
   /compile/output.lot
+  /compile/output.out
   /compile/output.toc
 
 ------------
@@ -87,8 +97,58 @@ Latexmk: Found bibliography file(s):
   ./telemetry.bib
 Latexmk: Bst file not found in search path:
   apa.bst
+Latexmk: applying rule 'bibtex /compile/output'...
+Rule 'bibtex /compile/output':  Reasons for rerun
+Changed files or newly in use/created:
+  /compile/output.aux
+
+------------
+Run number 2 of rule 'bibtex /compile/output'
+------------
+Latexmk: Change directory to '/compile/'.
+To assist finding of files in document directory, I set
+  BIBINPUTS='/compile/Thesis Format (LaTEX):/compile:'
+  BSTINPUTS='/compile/Thesis Format (LaTEX):'.
+------------
+Running 'bibtex  "output.aux"'
+------------
+This is BibTeX, Version 0.99d (TeX Live 2025)
+The top-level auxiliary file: output.aux
+I couldn't open style file apa.bst
+---line 3 of file bibliography.aux
+ : \bibstyle{apa
+ :              }
+I'm skipping whatever remains of this command
+I found no \citation commands---while reading file output.aux
+I found no style file---while reading file output.aux
+(There were 3 error messages)
+Latexmk: Change directory back to '/compile/Thesis Format (LaTEX)'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  /compile/output.aux
+  /compile/output.toc
+
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -synctex=1 -interaction=batchmode -recorder --jobname="output" -output-directory="/compile"  "thesis.TEX"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
+ \write18 enabled.
+entering extended mode
+Latexmk: Getting log file '/compile/output.log'
+Latexmk: Examining '/compile/output.fls'
+Latexmk: Examining '/compile/output.log'
+Latexmk: Found input bbl file '/compile/output.bbl'
+Latexmk: Log file says output to '/compile/output.pdf'
+Latexmk: Found bibliography file(s):
+  ./telemetry.bib
+Latexmk: Bst file not found in search path:
+  apa.bst
 Latexmk: Summary of warnings from last run of *latex:
-  Latex found 11 multiply defined reference(s)
+  Latex found 1 multiply defined reference(s)
 Latexmk: Errors, in force_mode: so I tried finishing targets
 ------------
 Running 'internal overleaf_post_process "thesis.TEX" "/compile/output.pdf"'
@@ -103,10 +163,12 @@ Collected error summary (may duplicate other messages):
   pdflatex: Command for 'pdflatex' gave return code 1
       Refer to '/compile/output.log' and/or above output for details
 Latexmk: Undoing directory change
-'pdflatex': time = 1.64
-'bibtex /compile/output': time = 0.05
-'pdflatex': time = 2.17
-Processing time = 4.38, of which invoked processes = 3.86, other = 0.52.
-Elapsed clock time = 4.57.
-Number of rules run = 3
+'pdflatex': time = 1.07
+'bibtex /compile/output': time = 0.07
+'pdflatex': time = 1.16
+'bibtex /compile/output': time = 0.11
+'pdflatex': time = 1.20
+Processing time = 4.47, of which invoked processes = 3.61, other = 0.86.
+Elapsed clock time = 5.61.
+Number of rules run = 5
 

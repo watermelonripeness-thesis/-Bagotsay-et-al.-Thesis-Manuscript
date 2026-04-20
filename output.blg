@@ -4,18 +4,22 @@ The top-level auxiliary file: output.aux
 A level-1 auxiliary file: chapter1.aux
 A level-1 auxiliary file: chapter2.aux
 A level-1 auxiliary file: chapter3.aux
+A level-1 auxiliary file: chapter4.aux
+A level-1 auxiliary file: chapter5.aux
+A level-1 auxiliary file: appendix.aux
 A level-1 auxiliary file: bibliography.aux
 I couldn't open style file apa.bst
 ---line 3 of file bibliography.aux
  : \bibstyle{apa
  :              }
 I'm skipping whatever remains of this command
+A level-1 auxiliary file: cv.aux
 A level-1 auxiliary file: caa.aux
 I found no \citation commands---while reading file output.aux
 I found no style file---while reading file output.aux
 You've used 0 entries,
             0 wiz_defined-function locations,
-            90 strings with 557 characters,
+            94 strings with 599 characters,
 and the built_in function-call counts, 0 in all, are:
 = -- 0
 > -- 0
