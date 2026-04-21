@@ -29,48 +29,6 @@ Latexmk: Found input bbl file '/compile/output.bbl'
 Latexmk: Log file says output to '/compile/output.pdf'
 Latexmk: Found bibliography file(s):
   ./references.bib
-Latexmk: applying rule 'bibtex /compile/output'...
-Rule 'bibtex /compile/output':  Reasons for rerun
-Changed files or newly in use/created:
-  /compile/chapter3.aux
-
-------------
-Run number 1 of rule 'bibtex /compile/output'
-------------
-Latexmk: Change directory to '/compile/'.
-To assist finding of files in document directory, I set
-  BIBINPUTS='/compile/Thesis Format (LaTEX):/compile:'
-  BSTINPUTS='/compile/Thesis Format (LaTEX):'.
-------------
-Running 'bibtex  "output.aux"'
-------------
-This is BibTeX, Version 0.99d (TeX Live 2025)
-The top-level auxiliary file: output.aux
-The style file: apacite.bst
-Database file #1: references.bib
-apacite.bst [2013/07/21 v6.03 APA bibliography style]
-Latexmk: Change directory back to '/compile/Thesis Format (LaTEX)'
-Latexmk: applying rule 'pdflatex'...
-Rule 'pdflatex':  Reasons for rerun
-Changed files or newly in use/created:
-  /compile/chapter3.aux
-
-------------
-Run number 2 of rule 'pdflatex'
-------------
-------------
-Running 'pdflatex  -synctex=1 -interaction=batchmode -recorder --jobname="output" -output-directory="/compile"  "thesis.TEX"'
-------------
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
- \write18 enabled.
-entering extended mode
-Latexmk: Getting log file '/compile/output.log'
-Latexmk: Examining '/compile/output.fls'
-Latexmk: Examining '/compile/output.log'
-Latexmk: Found input bbl file '/compile/output.bbl'
-Latexmk: Log file says output to '/compile/output.pdf'
-Latexmk: Found bibliography file(s):
-  ./references.bib
 Latexmk: Summary of warnings from last run of *latex:
   Latex found 1 multiply defined reference(s)
   =====Latex reported missing or unavailable character(s).
@@ -88,10 +46,8 @@ Collected error summary (may duplicate other messages):
   pdflatex: Command for 'pdflatex' gave return code 1
       Refer to '/compile/output.log' and/or above output for details
 Latexmk: Undoing directory change
-'pdflatex': time = 2.83
-'bibtex /compile/output': time = 0.07
-'pdflatex': time = 2.82
-Processing time = 6.45, of which invoked processes = 5.72, other = 0.73.
-Elapsed clock time = 6.62.
-Number of rules run = 3
+'pdflatex': time = 3.00
+Processing time = 3.41, of which invoked processes = 3, other = 0.41.
+Elapsed clock time = 3.52.
+Number of rules run = 1
 
