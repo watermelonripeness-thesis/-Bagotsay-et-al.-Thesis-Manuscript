@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  13 APR 2026 12:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  21 APR 2026 03:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -102,14 +102,34 @@ LaTeX Info: Redefining \] on input line 2950.
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-)) (./commands.tex (/usr/local/texlive/2025/texmf-dist/tex/latex/colortbl/colortbl.sty
+)) (./commands.tex (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks23
+)
+\caption@tempdima=\dimen158
+\captionmargin=\dimen159
+\caption@leftmargin=\dimen160
+\caption@rightmargin=\dimen161
+\caption@width=\dimen162
+\caption@indent=\dimen163
+\caption@parindent=\dimen164
+\caption@hangindent=\dimen165
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count296
+\c@continuedfloat=\count297
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
 Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
-\col@sep=\dimen158
+\col@sep=\dimen166
 \ar@mcellbox=\box55
-\extrarowheight=\dimen159
-\NC@list=\toks23
+\extrarowheight=\dimen167
+\NC@list=\toks24
 \extratabsurround=\skip54
 \backup@length=\skip55
 \ar@cellbox=\box56
@@ -122,14 +142,14 @@ Package color Info: Driver file: pdftex.def on input line 149.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-\everycr=\toks24
+\everycr=\toks25
 \minrowclearance=\skip56
-\rownum=\count296
+\rownum=\count298
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/apacite/apacite.sty
 Package: apacite 2013/07/21 v6.03 APA citation
-\c@BibCnt=\count297
+\c@BibCnt=\count299
 \bibleftmargin=\skip57
 \bibindent=\skip58
 \bibparsep=\skip59
@@ -142,7 +162,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 LaTeX Info: Redefining \citeauthor on input line 712.
 LaTeX Info: Redefining \citeyear on input line 735.
-\c@NAT@ctr=\count298
+\c@NAT@ctr=\count300
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
@@ -158,10 +178,7 @@ LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks25
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
@@ -170,22 +187,69 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
 )
-\Gin@req@height=\dimen160
-\Gin@req@width=\dimen161
+\Gin@req@height=\dimen168
+\Gin@req@width=\dimen169
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks26
+\XKV@tempa@toks=\toks27
+)
+\XKV@depth=\count301
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
+(/usr/local/texlive/2025/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box57
+)
+\tc@llx=\dimen170
+\tc@lly=\dimen171
+\tc@urx=\dimen172
+\tc@ury=\dimen173
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2025/02/26 v2.3 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen174
+\adjbox@Height=\dimen175
+\adjbox@Depth=\dimen176
+\adjbox@Totalheight=\dimen177
+\adjbox@pwidth=\dimen178
+\adjbox@pheight=\dimen179
+\adjbox@pdepth=\dimen180
+\adjbox@ptotalheight=\dimen181
+(/usr/local/texlive/2025/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count302
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box58
+\sift@deathcycles=\count303
+\@vwid@loff=\dimen182
+\@vwid@roff=\dimen183
+)
+==> First Aid for varwidth.sty applied!
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/newtxtext.sty
 Package: newtxtext 2024/04/01 v1.744(Michael Sharpe) latex and unicode latex support for TeXGyreTermesX
 `newtxtext' v1.744, 2024/04/01 Text macros taking advantage of TeXGyre Termes and its extensions (msharpe) (/usr/local/texlive/2025/texmf-dist/tex/latex/xpatch/xpatch.sty (/usr/local/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2025-05-26 L3 programming layer (loader) 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count299
+\l__color_backend_stack_int=\count304
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 (/usr/local/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2024-08-16 L3 Experimental document command parser
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count300
+\etb@tempcnta=\count305
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -205,17 +269,9 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
-(/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks26
-\XKV@tempa@toks=\toks27
-)
-\XKV@depth=\count301
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/local/texlive/2025/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count302
-\xs_countb=\count303
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/xstring/xstring.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/xstring/xstring.tex
+\xs_counta=\count306
+\xs_countb=\count307
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/carlisle/scalefnt.sty)
@@ -224,37 +280,37 @@ LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 24.
 LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 24.
 LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 24.
 (/usr/local/texlive/2025/texmf-dist/tex/generic/kastrup/binhex.tex)
-\ntx@tmpcnta=\count304
-\ntx@cnt=\count305
+\ntx@tmpcnta=\count308
+\ntx@cnt=\count309
 (/usr/local/texlive/2025/texmf-dist/tex/latex/fontaxes/fontaxes.sty
 Package: fontaxes 2025-05-24 v2.0.1 Font selection axes (deprecated)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/figureversions/figureversions.sty
 Package: figureversions 2025-04-29 v1.0.1 Figure versions
 ))
-\tx@sixem=\dimen162
-\tx@y=\dimen163
-\tx@x=\dimen164
-\tx@tmpdima=\dimen165
-\tx@tmpdimb=\dimen166
-\tx@tmpdimc=\dimen167
-\tx@tmpdimd=\dimen168
-\tx@tmpdime=\dimen169
-\tx@tmpdimf=\dimen170
-\tx@dimA=\dimen171
-\tx@dimAA=\dimen172
-\tx@dimB=\dimen173
-\tx@dimBB=\dimen174
-\tx@dimC=\dimen175
+\tx@sixem=\dimen184
+\tx@y=\dimen185
+\tx@x=\dimen186
+\tx@tmpdima=\dimen187
+\tx@tmpdimb=\dimen188
+\tx@tmpdimc=\dimen189
+\tx@tmpdimd=\dimen190
+\tx@tmpdime=\dimen191
+\tx@tmpdimf=\dimen192
+\tx@dimA=\dimen193
+\tx@dimAA=\dimen194
+\tx@dimB=\dimen195
+\tx@dimBB=\dimen196
+\tx@dimC=\dimen197
 LaTeX Info: Redefining \oldstylenums on input line 902.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/newtxmath.sty
 Package: newtxmath 2024/09/22 v1.754
 `newtxmath' v1.754, 2024/09/22 Math macros based originally on txfonts (msharpe) (/usr/local/texlive/2025/texmf-dist/tex/latex/oberdiek/centernot.sty
 Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 )
-\tx@cntz=\count306
+\tx@cntz=\count310
 (/usr/local/texlive/2025/texmf-dist/tex/generic/kastrup/binhex.tex)
-\tx@Isdigit=\count307
-\tx@IsAlNum=\count308
+\tx@Isdigit=\count311
+\tx@IsAlNum=\count312
 \tx@tA=\toks28
 \tx@tB=\toks29
 \tx@su=\read2
@@ -354,72 +410,137 @@ LaTeX Font Info:    Redeclaring math accent \ddot on input line 992.
 LaTeX Font Info:    Redeclaring math accent \vec on input line 2057.
 LaTeX Info: Redefining \Bbbk on input line 2847.
 LaTeX Info: Redefining \not on input line 2995.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+(/usr/local/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip64
+\multirow@cntb=\count313
+\multirow@dima=\skip65
+\bigstrutjot=\dimen198
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyphenat/hyphenat.sty
+Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
+\langwohyphens=\language90
+LaTeX Info: Redefining \_ on input line 43.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
-\labelindent=\skip64
-\enit@outerparindent=\dimen176
+\labelindent=\skip66
+\enit@outerparindent=\dimen199
 \enit@toks=\toks31
-\enit@inbox=\box57
-\enit@count@id=\count309
-\enitdp@description=\count310
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-(/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen177
-\captionmargin=\dimen178
-\caption@leftmargin=\dimen179
-\caption@rightmargin=\dimen180
-\caption@width=\dimen181
-\caption@indent=\dimen182
-\caption@parindent=\dimen183
-\caption@hangindent=\dimen184
-Package caption Info: Standard document class detected.
+\enit@inbox=\box59
+\enit@count@id=\count314
+\enitdp@description=\count315
 )
-\c@caption@flags=\count311
-\c@continuedfloat=\count312
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titletoc.sty
+
+! LaTeX Error: Option clash for package apacite.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \usepackage
+                {caption}    % For caption customization
+The package apacite has already been loaded with options:
+  []
+There has now been an attempt to load it with options
+  [natbibapa]
+Adding the global options:
+  ,natbibapa
+to your \documentclass declaration may fix this.
+Try typing  <return>  to proceed.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2025/01/04 v2.17 TOC entries
-\ttl@leftsep=\dimen185
+\ttl@leftsep=\dimen256
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count316
+\algocf@hangindent=\skip67
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip68
+\skiplinenumber=\skip69
+\skiprule=\skip70
+\skiphlne=\skip71
+\skiptext=\skip72
+\skiplength=\skip73
+\algomargin=\skip74
+\skipalgocfslide=\skip75
+\algowidth=\dimen257
+\inoutsize=\dimen258
+\inoutindent=\dimen259
+\interspacetitleruled=\dimen260
+\interspacealgoruled=\dimen261
+\interspacetitleboxruled=\dimen262
+\algocf@ruledwidth=\skip76
+\algocf@inoutbox=\box60
+\algocf@inputbox=\box61
+\AlCapSkip=\skip77
+\AlCapHSkip=\skip78
+\algoskipindent=\skip79
+\algocf@nlbox=\box62
+\algocf@hangingbox=\box63
+\algocf@untilbox=\box64
+\algocf@skipuntil=\skip80
+\algocf@capbox=\box65
+\algocf@lcaptionbox=\skip81
+\algoheightruledefault=\skip82
+\algoheightrule=\skip83
+\algotitleheightruledefault=\skip84
+\algotitleheightrule=\skip85
+\c@algocfline=\count317
+\c@algocfproc=\count318
+\c@algocf=\count319
+\algocf@algoframe=\box66
+\algocf@algobox=\box67
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip65
-\cftbeforetoctitleskip=\skip66
-\cftaftertoctitleskip=\skip67
-\cftbeforepartskip=\skip68
-\cftpartnumwidth=\skip69
-\cftpartindent=\skip70
-\cftbeforechapskip=\skip71
-\cftchapindent=\skip72
-\cftchapnumwidth=\skip73
-\cftbeforesecskip=\skip74
-\cftsecindent=\skip75
-\cftsecnumwidth=\skip76
-\cftbeforesubsecskip=\skip77
-\cftsubsecindent=\skip78
-\cftsubsecnumwidth=\skip79
-\cftbeforesubsubsecskip=\skip80
-\cftsubsubsecindent=\skip81
-\cftsubsubsecnumwidth=\skip82
-\cftbeforeparaskip=\skip83
-\cftparaindent=\skip84
-\cftparanumwidth=\skip85
-\cftbeforesubparaskip=\skip86
-\cftsubparaindent=\skip87
-\cftsubparanumwidth=\skip88
-\cftbeforeloftitleskip=\skip89
-\cftafterloftitleskip=\skip90
-\cftbeforefigskip=\skip91
-\cftfigindent=\skip92
-\cftfignumwidth=\skip93
-\c@lofdepth=\count313
-\c@lotdepth=\count314
-\cftbeforelottitleskip=\skip94
-\cftafterlottitleskip=\skip95
-\cftbeforetabskip=\skip96
-\cfttabindent=\skip97
-\cfttabnumwidth=\skip98
+\cftparskip=\skip86
+\cftbeforetoctitleskip=\skip87
+\cftaftertoctitleskip=\skip88
+\cftbeforepartskip=\skip89
+\cftpartnumwidth=\skip90
+\cftpartindent=\skip91
+\cftbeforechapskip=\skip92
+\cftchapindent=\skip93
+\cftchapnumwidth=\skip94
+\cftbeforesecskip=\skip95
+\cftsecindent=\skip96
+\cftsecnumwidth=\skip97
+\cftbeforesubsecskip=\skip98
+\cftsubsecindent=\skip99
+\cftsubsecnumwidth=\skip100
+\cftbeforesubsubsecskip=\skip101
+\cftsubsubsecindent=\skip102
+\cftsubsubsecnumwidth=\skip103
+\cftbeforeparaskip=\skip104
+\cftparaindent=\skip105
+\cftparanumwidth=\skip106
+\cftbeforesubparaskip=\skip107
+\cftsubparaindent=\skip108
+\cftsubparanumwidth=\skip109
+\cftbeforeloftitleskip=\skip110
+\cftafterloftitleskip=\skip111
+\cftbeforefigskip=\skip112
+\cftfigindent=\skip113
+\cftfignumwidth=\skip114
+\c@lofdepth=\count320
+\c@lotdepth=\count321
+\cftbeforelottitleskip=\skip115
+\cftafterlottitleskip=\skip116
+\cftbeforetabskip=\skip117
+\cfttabindent=\skip118
+\cfttabnumwidth=\skip119
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2025-05-20 v7.01m Hypertext links for LaTeX
 (/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
@@ -449,13 +570,13 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count315
+\c@section@level=\count322
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\@linkdim=\dimen186
-\Hy@linkcounter=\count316
-\Hy@pagecounter=\count317
+\@linkdim=\dimen263
+\Hy@linkcounter=\count323
+\Hy@pagecounter=\count324
 (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2025-05-20 v7.01m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -463,7 +584,7 @@ Now handling font encoding PD1 ...
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count318
+\Hy@SavedSpaceFactor=\count325
 (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2025-05-20 v7.01m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -476,21 +597,21 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count319
+\c@Hy@tempcnt=\count326
 (/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen187
+\XeTeXLinkMargin=\dimen264
 (/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count320
-\Field@Width=\dimen188
-\Fld@charsize=\dimen189
+\Fld@menulength=\count327
+\Field@Width=\dimen265
+\Fld@charsize=\dimen266
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -502,15 +623,15 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count321
-\c@Item=\count322
-\c@Hfootnote=\count323
+\Hy@abspage=\count328
+\c@Item=\count329
+\c@Hfootnote=\count330
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2025-05-20 v7.01m Hyperref driver for pdfTeX
-\Fld@listcount=\count324
-\c@bookmark@seq@number=\count325
+\Fld@listcount=\count331
+\c@bookmark@seq@number=\count332
 (/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
@@ -521,70 +642,159 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip99
+\Hy@SectionHShift=\skip120
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen190
-\lightrulewidth=\dimen191
-\cmidrulewidth=\dimen192
-\belowrulesep=\dimen193
-\belowbottomsep=\dimen194
-\aboverulesep=\dimen195
-\abovetopsep=\dimen196
-\cmidrulesep=\dimen197
-\cmidrulekern=\dimen198
-\defaultaddspace=\dimen199
-\@cmidla=\count326
-\@cmidlb=\count327
-\@aboverulesep=\dimen256
-\@belowrulesep=\dimen257
-\@thisruleclass=\count328
-\@lastruleclass=\count329
-\@thisrulewidth=\dimen258
+\heavyrulewidth=\dimen267
+\lightrulewidth=\dimen268
+\cmidrulewidth=\dimen269
+\belowrulesep=\dimen270
+\belowbottomsep=\dimen271
+\aboverulesep=\dimen272
+\abovetopsep=\dimen273
+\cmidrulesep=\dimen274
+\cmidrulekern=\dimen275
+\defaultaddspace=\dimen276
+\@cmidla=\count333
+\@cmidlb=\count334
+\@aboverulesep=\dimen277
+\@belowrulesep=\dimen278
+\@thisruleclass=\count335
+\@lastruleclass=\count336
+\@thisrulewidth=\dimen279
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
-\LTleft=\skip100
-\LTright=\skip101
-\LTpre=\skip102
-\LTpost=\skip103
-\LTchunksize=\count330
-\LTcapwidth=\dimen259
-\LT@head=\box58
-\LT@firsthead=\box59
-\LT@foot=\box60
-\LT@lastfoot=\box61
-\LT@gbox=\box62
-\LT@cols=\count331
-\LT@rows=\count332
-\c@LT@tables=\count333
-\c@LT@chunks=\count334
+\LTleft=\skip121
+\LTright=\skip122
+\LTpre=\skip123
+\LTpost=\skip124
+\LTchunksize=\count337
+\LTcapwidth=\dimen280
+\LT@head=\box68
+\LT@firsthead=\box69
+\LT@foot=\box70
+\LT@lastfoot=\box71
+\LT@gbox=\box72
+\LT@cols=\count338
+\LT@rows=\count339
+\c@LT@tables=\count340
+\c@LT@chunks=\count341
 \LT@p@ftn=\toks32
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count342
+\float@exts=\toks33
+\float@box=\box73
+\@float@everytoks=\toks34
+\@floatcapt=\box74
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen281
+\TX@old@table=\dimen282
+\TX@old@col=\dimen283
+\TX@target=\dimen284
+\TX@delta=\dimen285
+\TX@cols=\count343
+\TX@ftn=\toks35
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/datetime/datetime.sty
+Package: datetime 2015/03/20 v2.60 Date Time Package
+(/usr/local/texlive/2025/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+Package: fmtcount 2025/02/09 v3.10 Displaying the values of LaTeX counters (NT,VB,NE)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+Package: fcprefix 2012/09/28
+(/usr/local/texlive/2025/texmf-dist/tex/latex/fmtcount/fcnumparser.sty
+Package: fcnumparser 2017/06/15
+\fc@digit@counter=\count344
+))
+\c@padzeroesN=\count345
+\fc@tmpcatcode=\count346
+\@DT@modctr=\count347
+\@ordinalctr=\count348
+\@orgargctr=\count349
+\@strctr=\count350
+\@tmpstrctr=\count351
+\@DT@loopN=\count352
+\@DT@X=\count353
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/datetime/datetime-defaults.sty
+Package: datetime-defaults 2013/09/10
 )
-\tocindent=\skip104
-\c@myequations=\count335
-\cftbeforemyequationsskip=\skip105
-\cftmyequationsindent=\skip106
-\cftmyequationsnumwidth=\skip107
-\c@expdepth=\count336
-\cftbeforeexptitleskip=\skip108
-\cftafterexptitleskip=\skip109
+\@day=\count354
+\@month=\count355
+\@year=\count356
+\c@HOUR=\count357
+\c@HOURXII=\count358
+\c@MINUTE=\count359
+\c@TOHOUR=\count360
+\c@TOMINUTE=\count361
+\c@SECOND=\count362
+\currenthour=\count363
+\currentminute=\count364
+\currentsecond=\count365
+Package datetime Info: No datetime.cfg file found, using default settings on input line 308.
+\@dtctr=\count366
+\dayofyear=\count367
+\dayofweek=\count368
+LaTeX Info: Redefining \today on input line 736.
+\dt@a=\toks36
+\dt@b=\toks37
+)
+\tocindent=\skip125
+\c@myequations=\count369
+\cftbeforemyequationsskip=\skip126
+\cftmyequationsindent=\skip127
+\cftmyequationsnumwidth=\skip128
+\c@expdepth=\count370
+\cftbeforeexptitleskip=\skip129
+\cftafterexptitleskip=\skip130
 (/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count337
-\Gm@cntv=\count338
-\c@Gm@tempcnt=\count339
-\Gm@bindingoffset=\dimen260
-\Gm@wd@mp=\dimen261
-\Gm@odd@mp=\dimen262
-\Gm@even@mp=\dimen263
-\Gm@layoutwidth=\dimen264
-\Gm@layoutheight=\dimen265
-\Gm@layouthoffset=\dimen266
-\Gm@layoutvoffset=\dimen267
-\Gm@dimlist=\toks33
+\Gm@cnth=\count371
+\Gm@cntv=\count372
+\c@Gm@tempcnt=\count373
+\Gm@bindingoffset=\dimen286
+\Gm@wd@mp=\dimen287
+\Gm@odd@mp=\dimen288
+\Gm@even@mp=\dimen289
+\Gm@layoutwidth=\dimen290
+\Gm@layoutheight=\dimen291
+\Gm@layouthoffset=\dimen292
+\Gm@layoutvoffset=\dimen293
+\Gm@dimlist=\toks38
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/stackengine/stackengine.sty
+Package: stackengine 2021/07/22 v4.11\ Stacking text and objects in convenient ways
+(/usr/local/texlive/2025/texmf-dist/tex/generic/listofitems/listofitems.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/listofitems/listofitems.tex
+\loi_cnt_foreach_nest=\count374
+\loi_nestcnt=\count375
+)
+Package: listofitems 2024/03/09 v1.65 Grab items in lists using user-specified sep char (CT)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count376
+\calc@Bcount=\count377
+\calc@Adimen=\dimen294
+\calc@Bdimen=\dimen295
+\calc@Askip=\skip131
+\calc@Bskip=\skip132
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count378
+\calc@Cskip=\skip133
+)
+\c@@stackindex=\count379
+\@boxshift=\skip134
+\stack@tmplength=\skip135
+\temp@stkl=\skip136
+\@stackedboxwidth=\skip137
+\@addedbox=\box75
+\@anchorbox=\box76
+\@insetbox=\box77
+\se@backgroundbox=\box78
+\stackedbox=\box79
+\@centerbox=\box80
+\c@ROWcellindex@=\count380
 )) (./basicinfo.tex)
 LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 18.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
@@ -592,44 +802,11 @@ File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 18.
-(/compile/output.aux (/compile/chapter1.aux) (/compile/chapter2.aux
+(/compile/output.aux (/compile/chapter1.aux) (/compile/chapter2.aux) (/compile/chapter3.aux
 
-LaTeX Warning: Label `fig:theoritical_framework' multiply defined.
+LaTeX Warning: Label `tab:uc-01' multiply defined.
 
-) (/compile/chapter3.aux
-Runaway argument?
-{fig:system_arc
-! Paragraph ended before \@newl@bel was complete.
-<to be read again> 
-                   \par 
-l.17 \newlabel{fig:system_arc\par
-                                  \vfil \penalty -\@M \@@write \m@ne {}\vbox...
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.17 ... \@@write \m@ne {}\vbox {}\penalty -\@Mi h
-                                                  itecture}{{4}{42}{System A...
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Extra }, or forgotten \endgroup.
-l.17 ... \m@ne {}\vbox {}\penalty -\@Mi hitecture}
-                                                  {{4}{42}{System Architectu...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-) (/compile/chapter4.aux) (/compile/chapter5.aux) (/compile/appendix.aux) (/compile/bibliography.aux) (/compile/cv.aux) (/compile/caa.aux))
+) (/compile/bibliography.aux))
 \openout1 = `output.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 18.
@@ -672,49 +849,49 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Info: Command `\dddot' is already robust on input line 18.
 LaTeX Info: Command `\ddddot' is already robust on input line 18.
-(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-Overfull \hbox (4.2127pt too wide) in paragraph at lines 17--13
-[]\OT1/ntxtlf/m/n/12 hitecture442System Ar-chi-tec-ture-fig-ure.caption.10                                                                        
- []
-
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count340
-\scratchdimen=\dimen268
-\scratchbox=\box63
-\nofMPsegments=\count341
-\nofMParguments=\count342
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count343
-\MPscratchDim=\dimen269
-\MPnumerator=\count344
-\makeMPintoPDFobject=\count345
-\everyMPtoPDFconversion=\toks35
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
-\c@maskedRefs=\count346
-(/usr/local/texlive/2025/texmf-dist/tex/latex/apacite/english.apc
-File: english.apc 2013/07/21 v6.03 apacite language file
-LaTeX Info: Redefining \BPBI on input line 129.
-LaTeX Info: Redefining \BHBI on input line 130.
-)
-\c@mv@tabular=\count347
-\c@mv@boldtabular=\count348
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
+(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count381
+\scratchdimen=\dimen296
+\scratchbox=\box81
+\nofMPsegments=\count382
+\nofMParguments=\count383
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count384
+\MPscratchDim=\dimen297
+\MPnumerator=\count385
+\makeMPintoPDFobject=\count386
+\everyMPtoPDFconversion=\toks40
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+\c@maskedRefs=\count387
+(/usr/local/texlive/2025/texmf-dist/tex/latex/apacite/english.apc
+File: english.apc 2013/07/21 v6.03 apacite language file
+LaTeX Info: Redefining \BPBI on input line 129.
+LaTeX Info: Redefining \BHBI on input line 130.
+)
+\c@mv@tabular=\count388
+\c@mv@boldtabular=\count389
 Package hyperref Info: Link coloring OFF on input line 18.
 (/compile/output.out) (/compile/output.out)
 \@outlinefile=\write3
 \openout3 = `output.out'.
 
+(/usr/local/texlive/2025/texmf-dist/tex/latex/fmtcount/fc-english.def
+File: fc-english.def 2016/01/12
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -750,178 +927,98 @@ Package hyperref Info: Link coloring OFF on input line 18.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (./titlepage.tex
-
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/sl' will be
-(Font)              scaled to size 12.0pt on input line 1.
-[1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}
-
-
-]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 1.
+! Missing } inserted.
+<inserted text> 
+                }
+l.33 \end{center}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 )
 
-[2
+[1
 
-] (./approval.tex
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 5.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 10.
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}] (/compile/output.toc
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 2.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 10.95pt on input line 10.
+(Font)              scaled to size 12.0pt on input line 2.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.0pt on input line 10.
+(Font)              scaled to size 8.8pt on input line 2.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.1pt on input line 10.
+(Font)              scaled to size 6.6pt on input line 2.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 10.95pt on input line 10.
+(Font)              scaled to size 12.0pt on input line 2.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.0pt on input line 10.
+(Font)              scaled to size 8.8pt on input line 2.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.1pt on input line 10.
+(Font)              scaled to size 6.6pt on input line 2.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 10.95pt on input line 10.
+(Font)              scaled to size 12.0pt on input line 2.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.0pt on input line 10.
+(Font)              scaled to size 8.8pt on input line 2.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.1pt on input line 10.
+(Font)              scaled to size 6.6pt on input line 2.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 10.95pt on input line 10.
+(Font)              scaled to size 12.0pt on input line 2.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.0pt on input line 10.
+(Font)              scaled to size 8.8pt on input line 2.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.1pt on input line 10.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+(Font)              scaled to size 6.6pt on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 10.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 2.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 10.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 2.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 10.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 2.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 10.95pt on input line 10.
+(Font)              scaled to size 12.0pt on input line 2.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.0pt on input line 10.
+(Font)              scaled to size 8.8pt on input line 2.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.1pt on input line 10.
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 10.
+(Font)              scaled to size 6.6pt on input line 2.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 2.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 10.95pt on input line 10.
+(Font)              scaled to size 12.0pt on input line 2.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.0pt on input line 10.
+(Font)              scaled to size 8.8pt on input line 2.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.1pt on input line 10.
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 10.
+(Font)              scaled to size 6.6pt on input line 2.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 2.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 10.95pt on input line 10.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.0pt on input line 10.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.1pt on input line 10.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 10.95pt on input line 10.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.0pt on input line 10.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.1pt on input line 10.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 12.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 12.
-)
-
-[3
-
-] (./abstract.tex
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 12.
-)
-
-[4] (./dedication.tex
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 17.28pt on input line 8.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/it' will be
-(Font)              scaled to size 17.28pt on input line 10.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/it' will be
-(Font)              scaled to size 24.88pt on input line 10.
-)
-
-[5] (./acknowledgment.tex
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/it' will be
-(Font)              scaled to size 12.0pt on input line 11.
-)
-
-[6] (/compile/output.toc
-LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 2.
-LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 2.
-LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 2.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 12.0pt on input line 2.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.8pt on input line 2.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 2.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 12.0pt on input line 2.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.8pt on input line 2.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.6pt on input line 2.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 2.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 2.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 2.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 12.0pt on input line 2.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.8pt on input line 2.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 2.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 12.0pt on input line 2.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.8pt on input line 2.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 2.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
 (Font)              scaled to size 12.0pt on input line 2.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
 (Font)              scaled to size 8.8pt on input line 2.
@@ -934,91 +1031,93 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 6.6pt on input line 2.
 
-Overfull \hbox (8.09839pt too wide) in paragraph at lines 27--27
- [][] [][]\OT1/minntx/m/n/12 Watermelon Sort-ing Pro-cess by Fre-quency 
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+ [][] [][]\OT1/minntx/m/n/12 Watermelon Sort-ing Pro-cess by 
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 23--23
+ [][] [][]\OT1/minntx/m/n/12 Evaluation Of Wa-ter-melon Ripeness 
  []
 
 
 
-[7
+[2
 
 ]
-Overfull \hbox (3.19041pt too wide) in paragraph at lines 29--29
- \OT1/minntx/m/n/12 Pineap-ple Ripeness by Un-su-per-vised Ma- 
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
+ [][] [][]\OT1/minntx/m/n/12 Supervised Bi-nary Clas-si-fi-ca-tion 
  []
 
 
-Overfull \hbox (3.75435pt too wide) in paragraph at lines 29--29
- \OT1/minntx/m/n/12 chine Learn-ing and Wavelet Ker-nel Meth- 
+Underfull \hbox (badness 8019) in paragraph at lines 28--28
+ \OT1/minntx/m/n/12 Meth-ods for Straw-berry Ripeness 
  []
 
 
-Overfull \hbox (10.07841pt too wide) in paragraph at lines 31--31
- [][] [][]\OT1/minntx/m/n/12 Watermelon Ripeness De-tec-tor Us-ing Near 
+Underfull \hbox (badness 3000) in paragraph at lines 31--31
+ \OT1/minntx/m/n/12 for Wa-ter-melon Seed Clas-si-fi-ca-tion 
  []
 
 
-Overfull \hbox (2.50641pt too wide) in paragraph at lines 35--35
- [][] [][]\OT1/minntx/m/n/12 Application of Hy-per-spec-tral Imag-ing for 
+Underfull \hbox (badness 2401) in paragraph at lines 31--31
+ \OT1/minntx/m/n/12 Us-ing Deep Learn-ing and Scor-ing 
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 32--32
+ [][] [][]\OT1/minntx/m/n/12 Intelligent De-tec-tion of Muskmelon 
+ []
+
+
+Underfull \hbox (badness 5681) in paragraph at lines 40--40
+ [][] [][]\OT1/minntx/m/n/12 Justification of Se-lected Hard-ware 
  []
 
 
 
-[8])
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/sl' will be
+(Font)              scaled to size 12.0pt on input line 47.
+[3])
 \tf@toc=\write4
 \openout4 = `output.toc'.
 
 
 
-[9] (/compile/output.lot)
+[4] (/compile/output.lot)
 \tf@lot=\write5
 \openout5 = `output.lot'.
 
 
 
-[10
+[5
 
-] (./listofnotations.tex)
-Overfull \hbox (6.36893pt too wide) in paragraph at lines 7--33
-[]
+] (/compile/output.lof
+Underfull \hbox (badness 6047) in paragraph at lines 8--8
+ [][] [][]\OT1/minntx/m/n/12 Setup ex-per-i-ment for acous-tic data ac-qui-si-tion 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--33
+Underfull \hbox (badness 2221) in paragraph at lines 9--9
+ [][] [][]\OT1/minntx/m/n/12 The re-la-tion-ship be-tween acous-tic prop-er-ties and 
+ []
 
+
+Underfull \hbox (badness 1009) in paragraph at lines 12--12
+ [][] [][]\OT1/minntx/m/n/12 Training dataset: a) scat-ter plot, and b) statis-tic 
  []
 
 
 
-[11] (/compile/output.lof)
+[6
+
+])
 \tf@lof=\write6
 \openout6 = `output.lof'.
 
 
 
-[12
-
-] (/compile/output.exp)
-\tf@exp=\write7
-\openout7 = `output.exp'.
-
-
-
-[13
-
-] (./listofequations.tex)
-Overfull \hbox (114.88795pt too wide) in paragraph at lines 7--37
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--37
-
- []
-
-
-
-[14]
+[7]
 \openout2 = `chapter1.aux'.
 
 (./chapter1.tex
@@ -1031,108 +1130,66 @@ Chapter 1.
 ]
 
 [2]
-! Misplaced alignment tab character &.
-l.22 ...0), acoustic impulse response (Pamungkas &
-                                                   Bintoro, 2021), and frequ...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-
 
 [3]
-! Misplaced alignment tab character &.
-l.26 ...quate ripeness assessment tools (Adepoju &
-                                                   Ologan, 2020).
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-
 
 [4]
-
-[5]
-
-[6]
-
-[7])
-
-[8]
-\openout2 = `chapter2.aux'.
-
-(./chapter2.tex
-Chapter 2.
-
-
-[9
-
-
-
-
-]
-<Thesis Format (LaTEX)/figures/theo. fram.png, id=459, 215.8464pt x 271.0125pt>
-File: Thesis Format (LaTEX)/figures/theo. fram.png Graphic file (type png)
-<use Thesis Format (LaTEX)/figures/theo. fram.png>
-Package pdftex.def Info: Thesis Format (LaTEX)/figures/theo. fram.png  used on input line 16.
-(pdftex.def)             Requested size: 198.74251pt x 249.53714pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-
+Underfull \hbox (badness 1253) in paragraph at lines 28--29
+\OT1/minntx/m/n/12 de-vices ([]Pa-mungkas & Bin-toro[], []2021[]), and wavelet-based acous-tic sig-nal
  []
 
 
 
-[10 </compile/Thesis Format (LaTEX)/figures/theo. fram.png>]
+[5]
+Underfull \hbox (badness 1755) in paragraph at lines 35--36
+[]\OT1/minntx/m/n/12 Accurate and ob-jec-tive wa-ter-melon ripeness as-sess-ment re-mains a
+ []
+
+
+
+[6]
+Underfull \hbox (badness 1946) in paragraph at lines 39--40
+[]\OT1/minntx/m/n/12 Efforts to ad-dress this chal-lenge have led re-searchers to ex-plore
+ []
+
+
+
+[7]
+
+[8]
+
+[9]
+
+[10]
 
 [11]
 
 [12]
 
-[13]
-! Misplaced alignment tab character &.
-l.38 ...p management. (Singh, R., Gadade, A. M., &
-                                                   Hussain, I., 2025).
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-<Thesis Format (LaTEX)/figures/conceptual-framework.png, id=478, 1606.0pt x 673.51625pt>
-File: Thesis Format (LaTEX)/figures/conceptual-framework.png Graphic file (type png)
-<use Thesis Format (LaTEX)/figures/conceptual-framework.png>
-Package pdftex.def Info: Thesis Format (LaTEX)/figures/conceptual-framework.png  used on input line 46.
-(pdftex.def)             Requested size: 357.73409pt x 150.0239pt.
-
+[13])
 
 [14]
+\openout2 = `chapter2.aux'.
 
-[15 </compile/Thesis Format (LaTEX)/figures/conceptual-framework.png>]
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
-
- []
-
-! Misplaced alignment tab character &.
-l.72 ...tapping and visual inspection (Pamungkas &
-                                                   Bintoro, 2021). The prima...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+(./chapter2.tex
+Chapter 2.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
+(Font)              scaled to size 12.0pt on input line 15.
+<Thesis Format (LaTEX)/figures/theo. fram.png, id=614, 215.8464pt x 271.0125pt>
+File: Thesis Format (LaTEX)/figures/theo. fram.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/theo. fram.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/theo. fram.png  used on input line 18.
+(pdftex.def)             Requested size: 258.36282pt x 324.39456pt.
 
 
+[15
+
+
+
+
+]
+
+[16 </compile/Thesis Format (LaTEX)/figures/theo. fram.png>]
 
 [17]
 
@@ -1141,339 +1198,3598 @@ might try typing `S' now just to see what is salvageable.
 [19]
 
 [20]
+<Thesis Format (LaTEX)/figures/conceptual-framework.png, id=674, 2006.49625pt x 1402.23875pt>
+File: Thesis Format (LaTEX)/figures/conceptual-framework.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/conceptual-framework.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/conceptual-framework.png  used on input line 62.
+(pdftex.def)             Requested size: 397.48502pt x 277.76823pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 
 [21]
 
-[22]
+[22 </compile/Thesis Format (LaTEX)/figures/conceptual-framework.png>]
 
 [23]
+Underfull \hbox (badness 2189) in paragraph at lines 80--80
+[]\OT1/ntxtlf/b/n/12 Watermelon Sort-ing Pro-cess by Fre-quency Iden-ti-fi-ca-tion and
+ []
+
+
 
 [24]
+<Thesis Format (LaTEX)/figures/sorting-machine.png, id=699, 513.92pt x 330.23375pt>
+File: Thesis Format (LaTEX)/figures/sorting-machine.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/sorting-machine.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/sorting-machine.png  used on input line 89.
+(pdftex.def)             Requested size: 397.48502pt x 255.41956pt.
 
-[25]
 
-[26]
+[25 </compile/Thesis Format (LaTEX)/figures/sorting-machine.png>]
+<Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png, id=707, 906.38625pt x 368.37625pt>
+File: Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png  used on input line 99.
+(pdftex.def)             Requested size: 357.73409pt x 145.39178pt.
 
-[27]
+
+[26 </compile/Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png>]
+<Thesis Format (LaTEX)/figures/setup-experiment.png, id=718, 513.92pt x 198.7425pt>
+File: Thesis Format (LaTEX)/figures/setup-experiment.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/setup-experiment.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/setup-experiment.png  used on input line 113.
+(pdftex.def)             Requested size: 397.48502pt x 153.71754pt.
+
+
+[27 </compile/Thesis Format (LaTEX)/figures/setup-experiment.png>]
+<Thesis Format (LaTEX)/figures/acoustic-properties.png, id=726, 513.92pt x 328.22626pt>
+File: Thesis Format (LaTEX)/figures/acoustic-properties.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/acoustic-properties.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/acoustic-properties.png  used on input line 123.
+(pdftex.def)             Requested size: 397.48502pt x 253.86687pt.
+
+Underfull \hbox (badness 1953) in paragraph at lines 129--129
+[]\OT1/ntxtlf/b/n/12 Non-Destructive Acous-tic Screen-ing of Pineap-ple Ripeness by
+ []
+
+
 
 [28]
-! Misplaced alignment tab character &.
-l.133 ...ongkalasin et al. (2023) and Pamungkas /&
-                                                   Bintoro (2021) fundamenta...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+
+[29 </compile/Thesis Format (LaTEX)/figures/acoustic-properties.png>]
+<Thesis Format (LaTEX)/figures/setup-exp2.png, id=739, 513.92pt x 180.675pt>
+File: Thesis Format (LaTEX)/figures/setup-exp2.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/setup-exp2.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/setup-exp2.png  used on input line 137.
+(pdftex.def)             Requested size: 397.48502pt x 139.74323pt.
+
+Underfull \hbox (badness 3769) in paragraph at lines 141--142
+[]\OT1/minntx/m/n/12 To over-come this lim-i-ta-tion, the study ap-plies Mor-let Wavelet
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 141--142
+\OT1/minntx/m/n/12 Ker-nel de-com-po-si-tion, which pro-vides si-mul-ta-ne-ous time and fre-quency
+ []
 
 
 
-[29])
+[30 </compile/Thesis Format (LaTEX)/figures/setup-exp2.png>]
 
-[30]
-\openout2 = `chapter3.aux'.
+[31]
 
-(./chapter3.tex
-
-! LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 \usepackage
-               {float}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+[32]
+<Thesis Format (LaTEX)/figures/experimental-flowchart.png, id=759, 814.04124pt x 326.21875pt>
+File: Thesis Format (LaTEX)/figures/experimental-flowchart.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/experimental-flowchart.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/experimental-flowchart.png  used on input line 154.
+(pdftex.def)             Requested size: 397.48502pt x 159.2861pt.
 
 
+[33 </compile/Thesis Format (LaTEX)/figures/experimental-flowchart.png>]
 
-[31
-
-
-
-]
-Chapter 3.
-
-
-[32
-
-]
-
-[33]
-<Thesis Format (LaTEX)/figures/modified-waterfall-model.png, id=562, 513.92pt x 284.06125pt>
-File: Thesis Format (LaTEX)/figures/modified-waterfall-model.png Graphic file (type png)
-<use Thesis Format (LaTEX)/figures/modified-waterfall-model.png>
-Package pdftex.def Info: Thesis Format (LaTEX)/figures/modified-waterfall-model.png  used on input line 51.
-(pdftex.def)             Requested size: 258.36282pt x 142.80612pt.
+[34]
+<Thesis Format (LaTEX)/figures/training-dataset.png, id=776, 1514.65875pt x 567.11874pt>
+File: Thesis Format (LaTEX)/figures/training-dataset.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/training-dataset.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/training-dataset.png  used on input line 175.
+(pdftex.def)             Requested size: 397.48502pt x 148.8233pt.
 
 
-[34 </compile/Thesis Format (LaTEX)/figures/modified-waterfall-model.png>]
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 77.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
-)
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 77.
+[35]
 
+[36 </compile/Thesis Format (LaTEX)/figures/training-dataset.png>]
+<Thesis Format (LaTEX)/figures/dl1.png, id=791, 1667.22874pt x 994.71625pt>
+File: Thesis Format (LaTEX)/figures/dl1.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/dl1.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/dl1.png  used on input line 189.
+(pdftex.def)             Requested size: 397.48502pt x 237.14307pt.
 
-[35{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
-
-[36]
 
 [37]
 
-[38]
+[38 </compile/Thesis Format (LaTEX)/figures/dl1.png>]
+Underfull \hbox (badness 3679) in paragraph at lines 200--201
+\OT1/minntx/m/n/12 clas-si-fi-ca-tion were strate-gi-cally com-bined to over-come the ab-sence of
+ []
+
+<Thesis Format (LaTEX)/figures/workflow.png, id=806, 2026.57124pt x 2055.68pt>
+File: Thesis Format (LaTEX)/figures/workflow.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/workflow.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/workflow.png  used on input line 206.
+(pdftex.def)             Requested size: 397.48502pt x 403.19284pt.
+
 
 [39]
-Overfull \hbox (8.52907pt too wide) in paragraph at lines 184--189
-[]\OT1/ntxtlf/b/n/12 Computer Vi-sion. \OT1/minntx/m/n/12 The im-age pro-cess-ing com-po-nent will lever-age a lightweight
+
+[40 </compile/Thesis Format (LaTEX)/figures/workflow.png>]
+Underfull \hbox (badness 3333) in paragraph at lines 214--214
+[]\OT1/ntxtlf/b/n/12 Application of Hy-per-spec-tral Imag-ing for Wa-ter-melon Seed
+ []
+
+<Thesis Format (LaTEX)/figures/pipeline_2.png, id=819, 1045.9075pt x 575.14874pt>
+File: Thesis Format (LaTEX)/figures/pipeline_2.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/pipeline_2.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/pipeline_2.png  used on input line 222.
+(pdftex.def)             Requested size: 397.48502pt x 218.57634pt.
+
+
+[41]
+<Thesis Format (LaTEX)/figures/scoring-mechanism.png, id=829, 602.25pt x 330.23375pt>
+File: Thesis Format (LaTEX)/figures/scoring-mechanism.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/scoring-mechanism.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/scoring-mechanism.png  used on input line 234.
+(pdftex.def)             Requested size: 397.48502pt x 217.96501pt.
+
+
+[42 </compile/Thesis Format (LaTEX)/figures/pipeline_2.png>]
+Underfull \hbox (badness 3323) in paragraph at lines 241--241
+[]\OT1/ntxtlf/b/n/12 Intelligent De-tec-tion of Muskmelon Ripeness in Green-house
  []
 
 
 
-[40]
-
-[41]
-<figures/system_architecture.png, id=599, 513.92pt x 211.79124pt>
-File: figures/system_architecture.png Graphic file (type png)
-<use figures/system_architecture.png>
-Package pdftex.def Info: figures/system_architecture.png  used on input line 214.
-(pdftex.def)             Requested size: 397.48502pt x 163.81012pt.
-
-! LaTeX Error: File `figures/circuit_diagram' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.225 ...idth=\linewidth]{figures/circuit_diagram}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+[43 </compile/Thesis Format (LaTEX)/figures/scoring-mechanism.png>]
+<Thesis Format (LaTEX)/figures/YOLO-RFEW.png, id=843, 2055.68pt x 637.38126pt>
+File: Thesis Format (LaTEX)/figures/YOLO-RFEW.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/YOLO-RFEW.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/YOLO-RFEW.png  used on input line 249.
+(pdftex.def)             Requested size: 397.48502pt x 123.24333pt.
 
 
+[44 </compile/Thesis Format (LaTEX)/figures/YOLO-RFEW.png>]
 
-[42
+[45]
 
- <./figures/system_architecture.png>]
-<figures/3d-model.png, id=604, 513.92pt x 357.335pt>
-File: figures/3d-model.png Graphic file (type png)
-<use figures/3d-model.png>
-Package pdftex.def Info: figures/3d-model.png  used on input line 248.
-(pdftex.def)             Requested size: 258.36282pt x 179.64305pt.
-
-
-[43
-
- <./figures/3d-model.png>]
-<figures/top_view.png, id=609, 513.92pt x 285.065pt>
-File: figures/top_view.png Graphic file (type png)
-<use figures/top_view.png>
-Package pdftex.def Info: figures/top_view.png  used on input line 270.
-(pdftex.def)             Requested size: 298.11375pt x 165.3639pt.
-<figures/rear_view.png, id=610, 513.92pt x 397.485pt>
-File: figures/rear_view.png Graphic file (type png)
-<use figures/rear_view.png>
-Package pdftex.def Info: figures/rear_view.png  used on input line 277.
-(pdftex.def)             Requested size: 298.11375pt x 230.57785pt.
-<figures/front_view.png, id=611, 513.92pt x 375.4025pt>
-File: figures/front_view.png Graphic file (type png)
-<use figures/front_view.png>
-Package pdftex.def Info: figures/front_view.png  used on input line 284.
-(pdftex.def)             Requested size: 298.11375pt x 217.76796pt.
-<figures/side_view.png, id=612, 513.92pt x 351.3125pt>
-File: figures/side_view.png Graphic file (type png)
-<use figures/side_view.png>
-Package pdftex.def Info: figures/side_view.png  used on input line 291.
-(pdftex.def)             Requested size: 298.11375pt x 203.79355pt.
+[46]
+<Thesis Format (LaTEX)/figures/ann.png, id=863, 853.1875pt x 448.67625pt>
+File: Thesis Format (LaTEX)/figures/ann.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/ann.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/ann.png  used on input line 267.
+(pdftex.def)             Requested size: 397.48502pt x 209.03622pt.
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 271.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
+)
+LaTeX Info: Symbol \texttwosuperior not provided by
+            font family ntxtlf in TS1 encoding.
+            Default family used instead on input line 271.
+LaTeX Info: Symbol \texttwosuperior not provided by
+            font family ntxtlf in TS1 encoding.
+            Default family used instead on input line 271.
+LaTeX Info: Symbol \texttwosuperior not provided by
+            font family ntxtlf in TS1 encoding.
+            Default family used instead on input line 271.
 
 
-[44
+[47 </compile/Thesis Format (LaTEX)/figures/ann.png>]
 
- <./figures/top_view.png>]
-<figures/m&d1.png, id=617, 513.92pt x 248.93pt>
-File: figures/m&d1.png Graphic file (type png)
-<use figures/m&d1.png>
-Package pdftex.def Info: figures/m&d1.png  used on input line 302.
-(pdftex.def)             Requested size: 298.11375pt x 144.40228pt.
-<figures/m&d2.png, id=618, 513.92pt x 320.19624pt>
-File: figures/m&d2.png Graphic file (type png)
-<use figures/m&d2.png>
-Package pdftex.def Info: figures/m&d2.png  used on input line 309.
-(pdftex.def)             Requested size: 298.11375pt x 185.74326pt.
+[48{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
-
-[45 <./figures/rear_view.png> <./figures/front_view.png>]
-
-[46 <./figures/side_view.png> <./figures/m&d1.png>]
-
-[47 <./figures/m&d2.png>]
-
-! LaTeX Error: File `figures/context_level_diagram' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.324 ...linewidth]{figures/context_level_diagram}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[48
-
-] [49]
-<figures/sinegraph.jpg, id=641, 713.66624pt x 471.7625pt>
-File: figures/sinegraph.jpg Graphic file (type jpg)
-<use figures/sinegraph.jpg>
-Package pdftex.def Info: figures/sinegraph.jpg  used on input line 453.
-(pdftex.def)             Requested size: 278.2383pt x 183.92184pt.
-
+[49]
 
 [50]
-<figures/cosinegraph.jpg, id=646, 713.66624pt x 471.7625pt>
-File: figures/cosinegraph.jpg Graphic file (type jpg)
-<use figures/cosinegraph.jpg>
-Package pdftex.def Info: figures/cosinegraph.jpg  used on input line 460.
-(pdftex.def)             Requested size: 260.7528pt x 172.36563pt.
-)
 
-[51 <./figures/sinegraph.jpg> <./figures/cosinegraph.jpg>]
-\openout2 = `chapter4.aux'.
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+[]|\OT1/ntxtlf/b/n/12 Processing
+ []
 
-(./chapter4.tex
-Chapter 4.
-)
+
+Overfull \hbox (5.56403pt too wide) in paragraph at lines 290--290
+[]|\OT1/ntxtlf/b/n/12 Architecture/
+ []
+
+
+Overfull \hbox (6.66241pt too wide) in paragraph at lines 290--290
+[]|\OT1/ntxtlf/b/n/12 Portability| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+[]|\OT1/ntxtlf/b/n/12 Primary
+ []
+
+
+Overfull \hbox (18.75781pt too wide) in alignment at lines 286--292
+ [] [] [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+[]|\OT1/ntxtlf/b/n/12 Processing
+ []
+
+
+Overfull \hbox (5.56403pt too wide) in paragraph at lines 295--295
+[]|\OT1/ntxtlf/b/n/12 Architecture/
+ []
+
+
+Overfull \hbox (6.66241pt too wide) in paragraph at lines 295--295
+[]|\OT1/ntxtlf/b/n/12 Portability| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+[]|\OT1/ntxtlf/b/n/12 Primary
+ []
+
+
+Overfull \hbox (18.75781pt too wide) in alignment at lines 292--297
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (18.75781pt too wide) in alignment at lines 297--300
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (18.75781pt too wide) in alignment at lines 300--302
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (5.5185pt too wide) in paragraph at lines 306--306
+[]|[]\OT1/minntx/m/n/12 Wongkalasin
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
+[]|\OT1/minntx/m/n/12 Near-Infrared
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
+\OT1/minntx/m/n/12 Spec-troscopy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
+\OT1/minntx/m/n/12 (NIRS);
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
+\OT1/minntx/m/n/12 re-flectance
+ []
+
+
+Underfull \hbox (badness 3128) in paragraph at lines 306--306
+\OT1/minntx/m/n/12 data from fruit
+ []
+
+
+Overfull \hbox (4.84404pt too wide) in paragraph at lines 306--306
+[]|\OT1/minntx/m/n/12 Feed-Forward
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
+[]|\OT1/minntx/m/n/12 Small sam-ple
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
+\OT1/minntx/m/n/12 size, sin-gle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
+\OT1/minntx/m/n/12 va-ri-ety, and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--306
+\OT1/minntx/m/n/12 con-trolled lab
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+[]|\OT1/minntx/m/n/12 Discriminative
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+\OT1/minntx/m/n/12 fre-quen-cies:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+\OT1/minntx/m/n/12 129 Hz, 172
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+\OT1/minntx/m/n/12 Hz; cor-rect
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+\OT1/minntx/m/n/12 clas-si-fi-ca-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+\OT1/minntx/m/n/12 con-firmed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+\OT1/minntx/m/n/12 by phys-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+[]|[]\OT1/minntx/m/n/12 Pamungkas
+ []
+
+
+Underfull \hbox (badness 3557) in paragraph at lines 308--308
+\OT1/minntx/m/n/12 & Bin-toro[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+[]|\OT1/minntx/m/n/12 Custom
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+\OT1/minntx/m/n/12 me-chan-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+\OT1/minntx/m/n/12 tap-ping de-vice,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+[]|\OT1/minntx/m/n/12 Dominant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+\OT1/minntx/m/n/12 fre-quency and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+\OT1/minntx/m/n/12 mag-ni-tude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+\OT1/minntx/m/n/12 ex-trac-tion from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+[]|\OT1/minntx/m/n/12 Rule-based
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+\OT1/minntx/m/n/12 thresh-old
+ []
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 308--308
+\OT1/minntx/m/n/12 lim-ited fea-tures;
+ []
+
+
+Underfull \hbox (badness 6252) in paragraph at lines 308--308
+\OT1/minntx/m/n/12 large-scale field
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+[]|\OT1/minntx/m/n/12 Frequency and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+\OT1/minntx/m/n/12 mag-ni-tude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+\OT1/minntx/m/n/12 de-crease with
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 308--309
+\OT1/minntx/m/n/12 ma-tu-rity; strong
+ []
+
+
+Underfull \hbox (badness 4819) in paragraph at lines 308--309
+\OT1/minntx/m/n/12 cor-re-la-tion with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+[]|\OT1/minntx/m/n/12 Vibrator +
+ []
+
+
+Overfull \hbox (4.88173pt too wide) in paragraph at lines 310--310
+\OT1/minntx/m/n/12 Taguchi-optimized
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+[]|\OT1/minntx/m/n/12 Morlet Wavelet
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+\OT1/minntx/m/n/12 Ker-nel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+\OT1/minntx/m/n/12 de-com-po-si-tion,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+\OT1/minntx/m/n/12 cross-wavelet
+ []
+
+
+Underfull \hbox (badness 5119) in paragraph at lines 310--310
+\OT1/minntx/m/n/12 power spec-trum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+\OT1/minntx/m/n/12 co-her-ence,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+[]|\OT1/minntx/m/n/12 AdaBoost
+ []
+
+
+Overfull \hbox (4.96405pt too wide) in paragraph at lines 310--310
+\OT1/minntx/m/n/12 (un-su-per-vised
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+[]|$\LMS/ntxsy/m/n/12 ^^X$\OT1/minntx/m/n/12 70% data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+\OT1/minntx/m/n/12 dis-carded due
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+\OT1/minntx/m/n/12 to cou-pler
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+\OT1/minntx/m/n/12 noise; sin-gle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+[]|\OT1/minntx/m/n/12 Accuracy:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+\OT1/minntx/m/n/12 98.56%;
+ []
+
+
+Underfull \hbox (badness 1325) in paragraph at lines 310--311
+\OT1/minntx/m/n/12 F1-score: 0.93;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+\OT1/minntx/m/n/12 spec-tral ridge
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+\OT1/minntx/m/n/12 at $\LMS/ntxsy/m/n/12 ^^X$\OT1/minntx/m/n/12 300 Hz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+\OT1/minntx/m/n/12 dis-crim-i-nates
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+[]|[]\OT1/minntx/m/n/12 Okafor[]
+ []
+
+
+Underfull \hbox (badness 1472) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 mi-cro-phone, PC
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 with MAT-LAB
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+[]|\OT1/minntx/m/n/12 FFT mag-ni-tude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 anal-y-sis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 (100--4000
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+[]|\OT1/minntx/m/n/12 Fixed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 mag-ni-tude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 thresh-old
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+[]|\OT1/minntx/m/n/12 Very small
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 sam-ple
+ []
+
+
+Underfull \hbox (badness 7759) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 (n=10); bi-nary
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 clas-si-fi-ca-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 only;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--312
+\OT1/minntx/m/n/12 non-portable
+ []
+
+
+Overfull \hbox (1.97774pt too wide) in paragraph at lines 312--313
+\OT1/minntx/m/n/12 0.00019--0.00030;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+\OT1/minntx/m/n/12 be-low 0.00025
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+\OT1/minntx/m/n/12 0.00025 =
+ []
+
+
+Underfull \hbox (badness 3019) in paragraph at lines 312--313
+\OT1/minntx/m/n/12 ripe; con-firmed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+\OT1/minntx/m/n/12 by phys-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+[]|\OT1/minntx/m/n/12 Compact NIR
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+[]|\OT1/minntx/m/n/12 Near-Infrared
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+\OT1/minntx/m/n/12 Spec-troscopy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+\OT1/minntx/m/n/12 (NIRS),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+\OT1/minntx/m/n/12 re-flectance
+ []
+
+
+Underfull \hbox (badness 3128) in paragraph at lines 316--316
+\OT1/minntx/m/n/12 data from fruit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+[]|\OT1/minntx/m/n/12 Support
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+\OT1/minntx/m/n/12 Vec-tor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+\OT1/minntx/m/n/12 Ma-chine
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+[]|\OT1/minntx/m/n/12 Binary
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+\OT1/minntx/m/n/12 clas-si-fi-ca-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+\OT1/minntx/m/n/12 only; small
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 316--316
+\OT1/minntx/m/n/12 dataset; lim-ited
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
+\OT1/minntx/m/n/12 to one sen-sor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+[]|\OT1/minntx/m/n/12 Accuracy:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+\OT1/minntx/m/n/12 92.5%; n=200
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+[]|\OT1/minntx/m/n/12 Bench-top
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 impedance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 an-a-lyzer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 (Keysight
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 E4990A),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+[]|\OT1/minntx/m/n/12 Bioimpedance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 spec-troscopy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 (20 Hz--300
+ []
+
+
+Underfull \hbox (badness 2941) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 kHz), back-ward
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 se-lec-tion, grid
+ []
+
+
+Underfull \hbox (badness 5504) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 search; 10-fold
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 CV, boot-strap
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 val-i-da-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+[]|\OT1/minntx/m/n/12 LR, DT,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 MLP (6
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 clas-si-fiers
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 (straw-berry);
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 bi-nary only;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+\OT1/minntx/m/n/12 re-quires di-rect
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+[]|\OT1/minntx/m/n/12 MLP: F1=0.72,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+\OT1/minntx/m/n/12 F0.5=0.82,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+\OT1/minntx/m/n/12 F2=0.73 (best
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+\OT1/minntx/m/n/12 gen-er-al-iza-tion);
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 318--319
+\OT1/minntx/m/n/12 KNN: 9.5% F1
+ []
+
+
+Underfull \hbox (badness 6364) in paragraph at lines 318--319
+\OT1/minntx/m/n/12 drop train$\LMS/ntxsy/m/n/12 !$\OT1/minntx/m/n/12 test
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+\OT1/minntx/m/n/12 (most sta-ble);
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+\OT1/minntx/m/n/12 SVM: high-est
+ []
+
+
+Overfull \hbox (0.8385pt too wide) in paragraph at lines 320--320
+[]|[]\OT1/minntx/m/n/12 Worasawate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+[]|\OT1/minntx/m/n/12 ColorMax
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 RGB sen-sor,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 parallel-plate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 ca-pac-i-tor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 sen-sor, LCR
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 me-ter, dig-i-tal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+[]|\OT1/minntx/m/n/12 k-means
+ []
+
+
+Underfull \hbox (badness 3229) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 clus-ter-ing (la-bel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 gen-er-a-tion),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 SMOTE-Tomek
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 over-sam-pling,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 four-fold
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+[]|\OT1/minntx/m/n/12 Gaussian
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 (GNB),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 SVM,
+ []
+
+
+Overfull \hbox (4.84404pt too wide) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 Feed-Forward
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 ANN
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+[]|\OT1/minntx/m/n/12 Requires
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 de-struc-tive lab
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 ref-er-ence val-ues
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 for la-bel-ing;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\OT1/minntx/m/n/12 sin-gle cul-ti-var;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+[]|\OT1/minntx/m/n/12 FANN bi-nary
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+\OT1/minntx/m/n/12 (orig-i-nal):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+\OT1/minntx/m/n/12 85.0%;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+\OT1/minntx/m/n/12 FANN bi-nary
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+\OT1/minntx/m/n/12 (bal-anced):
+ []
+
+
+Underfull \hbox (badness 1348) in paragraph at lines 320--321
+\LMS/ntxsy/m/n/12 ^^X$\OT1/minntx/m/n/12 93.3%; FANN
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+\OT1/minntx/m/n/12 SMOTE-Tomek
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+\OT1/minntx/m/n/12 im-proves all
+ []
+
+
+Underfull \hbox (badness 5787) in paragraph at lines 324--324
+[]|[]\OT1/minntx/m/n/12 Qi et al.[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+[]|\OT1/minntx/m/n/12 NIR
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 hy-per-spec-tral
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 cam-era
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 (1053--1681
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+[]|\OT1/minntx/m/n/12 Successive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 Pro-jec-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 band se-lec-tion;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 Savitzky-Golay
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 smooth-ing;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 Vari-ate (SNV)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+[]|\OT1/minntx/m/n/12 SVM,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 XG-Boost;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 1D CNN
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 en-sem-ble
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 (LeNet,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 GoogLeNet,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 weighted
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 scor-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+[]|\OT1/minntx/m/n/12 Cannot
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 dis-tin-guish
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 co-occurring
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 same-color
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--324
+\OT1/minntx/m/n/12 suf-fi-cient color
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+[]|\OT1/minntx/m/n/12 Weighted
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+\OT1/minntx/m/n/12 en-sem-ble
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+\OT1/minntx/m/n/12 ac-cu-racy:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+\OT1/minntx/m/n/12 87.97%; SPA
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+\OT1/minntx/m/n/12 re-duces 256
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+\OT1/minntx/m/n/12 bands to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+\OT1/minntx/m/n/12 dis-crim-i-na-tive
+ []
+
+
+Underfull \hbox (badness 7722) in paragraph at lines 326--326
+[]|[]\OT1/minntx/m/n/12 Defang et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+[]|\OT1/minntx/m/n/12 RGB cam-era
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 (green-house
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+[]|\OT1/minntx/m/n/12 RFAConv
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 back-bone,
+ []
+
+
+Underfull \hbox (badness 8056) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 C2f-FE mod-ule
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 (Faster-Net +
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 EMA at-ten-tion),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 WIoU loss
+ []
+
+
+Overfull \hbox (7.22005pt too wide) in paragraph at lines 326--326
+[]|\OT1/minntx/m/n/12 YOLO-RFEW
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 (en-hanced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+[]|\OT1/minntx/m/n/12 Visual cues
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 only; no
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 in-ter-nal ripeness
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 as-sess-ment;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 de-signed for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--326
+\OT1/minntx/m/n/12 green-house
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+[]|\OT1/minntx/m/n/12 Precision:
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 326--327
+\OT1/minntx/m/n/12 93.16%; Re-call:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+\OT1/minntx/m/n/12 83.22%; F1:
+ []
+
+
+Underfull \hbox (badness 5893) in paragraph at lines 326--327
+\OT1/minntx/m/n/12 87.91%; mAP:
+ []
+
+
+Underfull \hbox (badness 2617) in paragraph at lines 326--327
+\OT1/minntx/m/n/12 90.82%; Model
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+[]|\OT1/minntx/m/n/12 Specim IQ
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 portable
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 hy-per-spec-tral
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 cam-era
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 (400--1000
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 SONY A7R3
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+[]|\OT1/minntx/m/n/12 SPA band
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 se-lec-tion,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 U$[]$Net im-age
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 seg-men-ta-tion,
+ []
+
+
+Underfull \hbox (badness 5787) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 RGB and HSI
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 pre-pro-cess-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+[]|\OT1/minntx/m/n/12 11 CNN
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 ar-chi-tec-tures
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 scratch:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 ResNet18,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 ResNet101,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 SqueezeNet,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 Shuf-fleNet,
+ []
+
+
+Overfull \hbox (8.21603pt too wide) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 MobileNet-v2,
+ []
+
+
+Overfull \hbox (15.54803pt too wide) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 MobileNet-v3-l,
+ []
+
+
+Overfull \hbox (21.60803pt too wide) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 RegNet-y-800mf,
+ []
+
+
+Overfull \hbox (6.27203pt too wide) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 RegNet-y-8gf,
+ []
+
+
+Overfull \hbox (19.79604pt too wide) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 EfficientNet-v2-s| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+[]|\OT1/minntx/m/n/12 Greenhouse
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 only; lim-ited
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 ex-pen-sive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
+\OT1/minntx/m/n/12 HSI hard-ware
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+[]|\OT1/minntx/m/n/12 N (HSI):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/minntx/m/n/12 R$[]$=0.958
+ []
+
+
+Overfull \hbox (1.11374pt too wide) in paragraph at lines 328--329
+\OT1/minntx/m/n/12 (MobileNet-v3-l);
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/minntx/m/n/12 K (HSI):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/minntx/m/n/12 R$[]$=0.947
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/minntx/m/n/12 (MobileNet-v2);
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/minntx/m/n/12 Re-duc-ing sugar
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/minntx/m/n/12 (ResNet18);
+ []
+
+
+Underfull \hbox (badness 5105) in paragraph at lines 328--329
+\OT1/minntx/m/n/12 Su-crose (RGB):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/minntx/m/n/12 R$[]$=0.958
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+\OT1/minntx/m/n/12 (RegNet-y-8gf);
+ []
+
+
+Overfull \hbox (18.75781pt too wide) in alignment at lines 302--329
+ [] [] [] [] [] [] [] 
+ []
 
 [52
 
+] [53] [54] [55] [56]
 
+[57])
+\openout2 = `chapter3.aux'.
 
+(./chapter3.tex
+Chapter 3.
+<Thesis Format (LaTEX)/figures/modified-waterfall-model.png, id=967, 513.92pt x 284.06125pt>
+File: Thesis Format (LaTEX)/figures/modified-waterfall-model.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/modified-waterfall-model.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/modified-waterfall-model.png  used on input line 34.
+(pdftex.def)             Requested size: 397.48502pt x 219.7074pt.
 
-]
-\openout2 = `chapter5.aux'.
-
-(./chapter5.tex
-Chapter 5.
-
-
-[53
-
-
-
-
-]
-
-[54])
-
-[55]
-\openout2 = `appendix.aux'.
-
-(./appendix.tex)
-
-[56
-
-
-
-
-]
-\openout2 = `bibliography.aux'.
-
-(./bibliography.tex (/compile/output.bbl))
-\openout2 = `cv.aux'.
-
-(./cv.tex
-LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line 13.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
-File: ot1ntxtt.fd 2012/04/20 v3.1
-)
-LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 13.
-)
-
-[57
-
-
-
-
-
-
-]
-\openout2 = `caa.aux'.
-
-(./caa.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
-
-)
 
 [58
 
 
 
-] (/compile/output.aux (/compile/chapter1.aux) (/compile/chapter2.aux) (/compile/chapter3.aux
-Runaway argument?
-{fig:system_arc
-! Paragraph ended before \@newl@bel was complete.
-<to be read again> 
-                   \par 
-l.17 \newlabel{fig:system_arc\par
-                                  \vfil \penalty -\@M \@@write \m@ne {}\vbox...
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
 
-! Extra }, or forgotten \endgroup.
-l.17 ... \m@ne {}\vbox {}\penalty -\@Mi hitecture}
-                                                  {{4}{42}{System Architectu...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
 
-) (/compile/chapter4.aux) (/compile/chapter5.aux) (/compile/appendix.aux) (/compile/bibliography.aux) (/compile/cv.aux) (/compile/caa.aux))
+]
+
+[59 </compile/Thesis Format (LaTEX)/figures/modified-waterfall-model.png>]
+
+[60]
+
+[61]
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 62.
+
+
+[62{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
+Underfull \hbox (badness 1189) in paragraph at lines 64--65
+[]\OT1/minntx/m/n/12 Different mi-cro-con-troller and mi-cro-pro-ces-sor plat-forms present
+ []
+
+
+
+[63]
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/ntxtlf/b/n/12 Raspberry Pi
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 240MHz (dual-core)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 1.0GHz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 (quad-core)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 Cor-tex A53
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 1.5GHz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 (quad-core)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 Cor-tex A72
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 40-pin GPIO,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 Micro-USB
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 OTG, Mini
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 40-pin GPIO,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 Eth-er-net, CSI,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 Power
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 Very Low (Ac-tive:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 100--240mA; Sleep:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 Moderate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 (Ac-tive:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 High (Ac-tive:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 Requires ex-ter-nal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 Audio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 Pro-cess-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 Hardware-accelerated
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 Software-driven
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 (Linux
+ []
+
+
+Overfull \hbox (1.54575pt too wide) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 li-braries/FFmpeg)| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 Software-driven
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 (Linux
+ []
+
+
+Overfull \hbox (1.54575pt too wide) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 li-braries/FFmpeg)| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 DVP/LCD
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 in-ter-face (sup-ports
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 Machine
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 Learn-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 Moderate
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 (TFLite, lim-ited
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\OT1/minntx/m/n/12 High (TFLite,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+\OT1/minntx/m/n/12 OpenCV,
+ []
+
+
+Overfull \hbox (3.32896pt too wide) in paragraph at lines 101--101
+ [][] 
+ []
+
+
+
+[64]
+
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/ntxtlf/b/n/12 Push-Pull
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/ntxtlf/b/n/12 Servo-based
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/ntxtlf/b/n/12 Motor-driven
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Linear (Di-rect
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Rotational to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\OT1/minntx/m/n/12 Lin-ear (via
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Open Frame
+ []
+
+
+Underfull \hbox (badness 8019) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Compact mo-tor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\OT1/minntx/m/n/12 with arm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Motor with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\OT1/minntx/m/n/12 me-chan-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Adjustable
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\OT1/minntx/m/n/12 de-pend-ing on
+ []
+
+
+Underfull \hbox (badness 1325) in paragraph at lines 148--148
+\OT1/minntx/m/n/12 on mo-tor speed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Moderate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 High (de-signed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\OT1/minntx/m/n/12 for re-peated
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\OT1/minntx/m/n/12 op-er-a-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Magnetic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Acoustic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Significant
+ []
+
+
+Underfull \hbox (badness 6268) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Less con-sis-tent,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\OT1/minntx/m/n/12 may pro-duce
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Mounting
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Moderate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Most com-plex
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\OT1/minntx/m/n/12 (re-quires
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\OT1/minntx/m/n/12 me-chan-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Control
+ []
+
+
+Underfull \hbox (badness 1320) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Simple ON/OFF
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 PWM (pre-cise
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Power
+ []
+
+
+Underfull \hbox (badness 2020) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 High (con-sis-tent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Moderate--High
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+[]|\OT1/minntx/m/n/12 Moderately
+ []
+
+
+
+[66]
+
+[67]
+
+[68
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/ntxtlf/b/n/12 MAX9814
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+\OT1/ntxtlf/b/n/12 Elec-tret
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+\OT1/ntxtlf/b/n/12 Mi-cro-phone
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/ntxtlf/b/n/12 SPH0645LM4H
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+\OT1/ntxtlf/b/n/12 MEMS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Analog Volt-age
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Automatic
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 193--193
+\OT1/minntx/m/n/12 Gain Con-trol
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Yes (Built-in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 No (Must be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+\OT1/minntx/m/n/12 han-dled in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 No (Must be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+\OT1/minntx/m/n/12 han-dled in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Key
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 MEMS Sen-sor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+\OT1/minntx/m/n/12 (Higher
+ []
+
+
+Overfull \hbox (7.46956pt too wide) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Signal-to-Noise
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|$\LMS/ntxsy/m/n/12 ^^X$\OT1/minntx/m/n/12 61 dBA
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Dynamic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Moderate ($\LMS/ntxsy/m/n/12 ^^X$\OT1/minntx/m/n/12 89
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Operating
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|$\LMS/ntxsy/m/n/12 ^^X$\OT1/minntx/m/n/12 0.6 mA
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Limited by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+\OT1/minntx/m/n/12 Mi-cro-con-troller
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Frequency
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 20Hz--20kHz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Software
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Moderate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+\OT1/minntx/m/n/12 (Re-quires I2S
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+[]|\OT1/minntx/m/n/12 Moderate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
+\OT1/minntx/m/n/12 (Re-quires I2S
+ []
+
+
+
+[69]
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 UXGA
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 QSXGA
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Image
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 None (RAW
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Built-in JPEG
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Built-in JPEG
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 DVP (par-al-lel)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Processing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 High (no
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 com-pres-sion,
+ []
+
+
+Underfull \hbox (badness 4429) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Lower (on-board
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 com-pres-sion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Moderate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 (Hard-ware
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 ISP han-dles
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Memory
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Power
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|$\LMS/ntxsy/m/n/12 ^^X$\OT1/minntx/m/n/12 120--140mW
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|$\LMS/ntxsy/m/n/12 ^^X$\OT1/minntx/m/n/12 140--160mW
+ []
+
+
+Underfull \hbox (badness 3601) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Standard MCUs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Most
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 ESP32-CAM
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 High-end
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 ESP32-S3 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Ease of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Difficult
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 (Re-quires
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 com-plex
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Moderate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 (Stan-dard-ized
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Moderate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Low (VGA,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Excellent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 (Aut-o-fo-cus &
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 ef-fi-cient
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Autofocus
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 sup-port, high
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 res-o-lu-tion,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 ex-cel-lent
+ []
+
+
+Overfull \hbox (1.09756pt too wide) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Disadvantages| 
+ []
+
+
+Underfull \hbox (badness 6592) in paragraph at lines 243--243
+\OT1/minntx/m/n/12 high pro-cess-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Slightly higher
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 243--243
+[]|\OT1/minntx/m/n/12 Suitability to
+ []
+
+
+
+[71]
+Overfull \vbox (11.45554pt too high) has occurred while \output is active []
+
+
+
+[72]
+Underfull \hbox (badness 1199) in paragraph at lines 288--288
+[]|\OT1/minntx/m/n/12 Varies (e.g., 128$\LMS/ntxsy/m/n/12 ^^B$\OT1/minntx/m/n/12 64,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[]|\OT1/minntx/m/n/12 Monochrome or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[]|\OT1/minntx/m/n/12 Required (LED
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[]|\OT1/minntx/m/n/12 Microcontroller
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[]|\OT1/minntx/m/n/12 ESP32, Ar-duino,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[]|\OT1/minntx/m/n/12 ESP32, Ar-duino,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[]|\OT1/minntx/m/n/12 LiquidCrystal,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[]|\OT1/minntx/m/n/12 Adafruit SSD1306,
+ []
+
+
+
+[73]
+Underfull \hbox (badness 4391) in paragraph at lines 327--327
+[]|\OT1/ntxtlf/b/n/12 Li-ion 18650 (3.6V,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
+[]|\OT1/minntx/m/n/12 Standardized size;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
+\OT1/minntx/m/n/12 eas-ily sourced and
+ []
+
+
+Underfull \hbox (badness 7064) in paragraph at lines 327--327
+[]|\OT1/minntx/m/n/12 Replacement re-quires
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
+\OT1/minntx/m/n/12 match-ing cus-tom
+ []
+
+
+Underfull \hbox (badness 6691) in paragraph at lines 327--327
+\OT1/minntx/m/n/12 fixed di-men-sions of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
+[]|\OT1/minntx/m/n/12 Flat soft-pouch;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
+[]|\OT1/minntx/m/n/12 Higher cost for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
+[]|\OT1/minntx/m/n/12 Typically re-quires
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
+\OT1/minntx/m/n/12 an ex-ter-nal Bat-tery
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
+\OT1/minntx/m/n/12 Man-age-ment Sys-tem
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 327--327
+\OT1/minntx/m/n/12 (BMS) or pro-tec-tion
+ []
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 327--327
+\OT1/minntx/m/n/12 built-in pro-tec-tion by
+ []
+
+
+
+[74]
+
+[75]
+Overfull \hbox (2.4521pt too wide) in paragraph at lines 339--339
+[]|\OT1/ntxtlf/b/n/12 Disadvantages| 
+ []
+
+
+Overfull \hbox (3.91283pt too wide) in alignment at lines 335--341
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (2.4521pt too wide) in paragraph at lines 344--344
+[]|\OT1/ntxtlf/b/n/12 Disadvantages| 
+ []
+
+
+Overfull \hbox (3.91283pt too wide) in alignment at lines 341--346
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (3.91283pt too wide) in alignment at lines 346--349
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (3.91283pt too wide) in alignment at lines 349--351
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (19.0785pt too wide) in paragraph at lines 355--355
+[]|\OT1/minntx/m/n/12 Microcontroller 
+ []
+
+
+Overfull \hbox (18.40651pt too wide) in paragraph at lines 355--355
+\OT1/minntx/m/n/12 Microprocessor|  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--356
+[]|\OT1/minntx/m/n/12 Raspberry Pi
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--356
+[]|\OT1/minntx/m/n/12 Medium
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--356
+[]|\OT1/minntx/m/n/12 High power,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--356
+[]|\OT1/minntx/m/n/12 Moderately
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
+[]|\OT1/minntx/m/n/12 Dual-core, 240MHz,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
+\OT1/minntx/m/n/12 wire-less, 4MB--16MB
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
+[]|\OT1/minntx/m/n/12 Good for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
+\OT1/minntx/m/n/12 sen-sors,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
+\OT1/minntx/m/n/12 mod-er-ate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
+[]|\OT1/minntx/m/n/12 Limited
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
+\OT1/minntx/m/n/12 for im-age
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
+[]|\OT1/minntx/m/n/12 Partially
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--358
+[]|\OT1/minntx/m/n/12 Built-in cam-era, Wi-Fi,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--358
+[]|\OT1/minntx/m/n/12 Compact,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--358
+[]|\OT1/minntx/m/n/12 Limited
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--358
+\OT1/minntx/m/n/12 RAM and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--358
+[]|\OT1/minntx/m/n/12 Limited
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--358
+\OT1/minntx/m/n/12 mul-ti-modal
+ []
+
+
+Overfull \hbox (3.3602pt too wide) in paragraph at lines 359--359
+[]|\OT1/ntxtlf/b/n/12 ESP32-S3-CAM| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
+[]|\OT1/minntx/m/n/12 AI in-struc-tions, cam-era
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
+\OT1/minntx/m/n/12 sup-port, Mi-croSD
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
+\OT1/minntx/m/n/12 Com-pat-i-ble, 8MB--32MB
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
+[]|\OT1/minntx/m/n/12 Balanced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
+\OT1/minntx/m/n/12 per-for-mance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
+[]|\OT1/minntx/m/n/12 Highly
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--360
+[]|\OT1/minntx/m/n/12 High
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--360
+\OT1/minntx/m/n/12 per-for-mance,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--360
+\OT1/minntx/m/n/12 full ML
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--360
+[]|\OT1/minntx/m/n/12 High power,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+[]|\OT1/minntx/m/n/12 Highly
+ []
+
+
+Overfull \hbox (1.7505pt too wide) in paragraph at lines 363--363
+[]|\OT1/minntx/m/n/12 Microphone|  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+[]|\OT1/minntx/m/n/12 MAX9814
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+\OT1/minntx/m/n/12 Elec-tret
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+\OT1/minntx/m/n/12 Mi-cro-phone
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+[]|\OT1/minntx/m/n/12 Stabilizes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+\OT1/minntx/m/n/12 sig-nal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+[]|\OT1/minntx/m/n/12 May dis-tort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+\OT1/minntx/m/n/12 am-pli-tude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+[]|\OT1/minntx/m/n/12 Moderately
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--365
+[]|\OT1/ntxtlf/b/n/12 INMP441
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--365
+\OT1/ntxtlf/b/n/12 MEMS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--365
+[]|\OT1/minntx/m/n/12 Low noise,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--365
+[]|\OT1/minntx/m/n/12 Requires
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--365
+\OT1/minntx/m/n/12 dig-i-tal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--365
+[]|\OT1/minntx/m/n/12 Highly
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+[]|\OT1/minntx/m/n/12 SPH0645LM4H
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+\OT1/minntx/m/n/12 MEMS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+[]|\OT1/minntx/m/n/12 Stable
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+\OT1/minntx/m/n/12 fre-quency
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
+[]|\OT1/minntx/m/n/12 Highly
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--370
+[]|\OT1/minntx/m/n/12 High
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--370
+\OT1/minntx/m/n/12 pro-cess-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--370
+[]|\OT1/minntx/m/n/12 Slightly
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+[]|\OT1/minntx/m/n/12 Lower
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
+\OT1/minntx/m/n/12 pro-cess-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--372
+[]|\OT1/ntxtlf/b/n/12 OV5640
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--372
+[]|\OT1/minntx/m/n/12 Better color
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+[]|\OT1/minntx/m/n/12 Highly
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
+[]|\OT1/minntx/m/n/12 Low power,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
+[]|\OT1/minntx/m/n/12 Limited
+ []
+
+
+Underfull \hbox (badness 4378) in paragraph at lines 377--377
+[]|\OT1/minntx/m/n/12 Clear out-put,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
+[]|\OT1/minntx/m/n/12 Highly
+ []
+
+
+Underfull \hbox (badness 2142) in paragraph at lines 381--381
+[]|\OT1/ntxtlf/b/n/12 Li-ion Bat-tery
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+\OT1/ntxtlf/b/n/12 18650 3.6V
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+[]|\OT1/minntx/m/n/12 Requires
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+\OT1/minntx/m/n/12 pro-tec-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+[]|\OT1/minntx/m/n/12 High en-ergy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+[]|\OT1/minntx/m/n/12 Sensitive to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--386
+[]|\OT1/ntxtlf/b/n/12 Push-Pull
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--386
+[]|\OT1/minntx/m/n/12 Fast,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--386
+[]|\OT1/minntx/m/n/12 High power
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
+[]|\OT1/minntx/m/n/12 Servo-based
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
+[]|\OT1/minntx/m/n/12 Adjustable
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
+[]|\OT1/minntx/m/n/12 Slower
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
+[]|\OT1/minntx/m/n/12 Moderately
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+[]|\OT1/minntx/m/n/12 Motor-driven
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+[]|\OT1/minntx/m/n/12 Continuous
+ []
+
+
+Overfull \hbox (3.91283pt too wide) in alignment at lines 351--390
+ [] [] [] [] [] [] 
+ []
+
+[76
+
+] [77]
+
+[78]
+
+[79
+
+]
+
+[80]
+
+[81]
+Underfull \hbox (badness 3158) in paragraph at lines 412--413
+[]\OT1/minntx/m/n/12 The se-lected com-po-nents col-lec-tively ad-dress the func-tional and
+ []
+
+
+
+[82]
+Overfull \hbox (8.40079pt too wide) in alignment at lines 421--427
+ [] [] [] 
+ []
+
+
+Overfull \hbox (8.40079pt too wide) in alignment at lines 427--432
+ [] [] [] 
+ []
+
+
+Overfull \hbox (8.40079pt too wide) in alignment at lines 432--434
+ [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--436
+[]|\OT1/minntx/m/n/12 ESP32-S3
+ []
+
+
+Underfull \hbox (badness 4505) in paragraph at lines 436--436
+\OT1/minntx/m/n/12 WROOM CAM
+ []
+
+<Thesis Format (LaTEX)/figures/esp32s3.jpg, id=1104, 178.41656pt x 376.40625pt>
+File: Thesis Format (LaTEX)/figures/esp32s3.jpg Graphic file (type jpg)
+<use Thesis Format (LaTEX)/figures/esp32s3.jpg>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/esp32s3.jpg  used on input line 438.
+(pdftex.def)             Requested size: 33.71709pt x 71.1331pt.
+
+Underfull \hbox (badness 1389) in paragraph at lines 440--441
+\OT1/minntx/m/n/12 and on-device ma-chine learn-ing
+ []
+
+
+Underfull \hbox (badness 4168) in paragraph at lines 440--441
+\OT1/minntx/m/n/12 in-fer-ence for both im-age and
+ []
+
+<Thesis Format (LaTEX)/figures/ov5640.jpg, id=1105, 701.62125pt x 1436.36626pt>
+File: Thesis Format (LaTEX)/figures/ov5640.jpg Graphic file (type jpg)
+<use Thesis Format (LaTEX)/figures/ov5640.jpg>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/ov5640.jpg  used on input line 445.
+(pdftex.def)             Requested size: 34.74052pt x 71.12117pt.
+
+Underfull \hbox (badness 3058) in paragraph at lines 447--448
+[]|\OT1/minntx/m/n/12 Captures high-resolution im-ages
+ []
+
+
+Underfull \hbox (badness 4954) in paragraph at lines 447--448
+\OT1/minntx/m/n/12 of the wa-ter-melon for vi-sual
+ []
+
+<Thesis Format (LaTEX)/figures/mic_inmp441.jpg, id=1106, 526.96875pt x 526.96875pt>
+File: Thesis Format (LaTEX)/figures/mic_inmp441.jpg Graphic file (type jpg)
+<use Thesis Format (LaTEX)/figures/mic_inmp441.jpg>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/mic_inmp441.jpg  used on input line 452.
+(pdftex.def)             Requested size: 71.12967pt x 71.12967pt.
+<Thesis Format (LaTEX)/figures/16x2.png, id=1107, 1541.76pt x 1111.90407pt>
+File: Thesis Format (LaTEX)/figures/16x2.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/16x2.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/16x2.png  used on input line 459.
+(pdftex.def)             Requested size: 85.3499pt x 61.55362pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+[]|\OT1/minntx/m/n/12 Displays the fi-nal ripeness
+ []
+
+
+Underfull \hbox (badness 2735) in paragraph at lines 461--462
+\OT1/minntx/m/n/12 clas-si-fi-ca-tion and sys-tem sta-tus
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--464
+[]|\OT1/minntx/m/n/12 18650 3.6V
+ []
+
+<Thesis Format (LaTEX)/figures/18650.png, id=1108, 4059.165pt x 2024.56375pt>
+File: Thesis Format (LaTEX)/figures/18650.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/18650.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/18650.png  used on input line 466.
+(pdftex.def)             Requested size: 85.35027pt x 42.56961pt.
+
+Underfull \hbox (badness 2012) in paragraph at lines 468--469
+[]|\OT1/minntx/m/n/12 Provides portable power sup-ply
+ []
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 468--469
+\OT1/minntx/m/n/12 for the en-tire sys-tem, en-abling
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--471
+[]|\OT1/minntx/m/n/12 6V Push-Pull
+ []
+
+<Thesis Format (LaTEX)/figures/solenoid.jpg, id=1109, 795.97375pt x 508.90125pt>
+File: Thesis Format (LaTEX)/figures/solenoid.jpg Graphic file (type jpg)
+<use Thesis Format (LaTEX)/figures/solenoid.jpg>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/solenoid.jpg  used on input line 473.
+(pdftex.def)             Requested size: 85.34688pt x 54.56604pt.
+
+Underfull \hbox (badness 3965) in paragraph at lines 475--476
+\OT1/minntx/m/n/12 ``thump'' to pro-duce con-sis-tent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
+\OT1/minntx/m/n/12 acous-tic sig-nals from the
+ []
+
+<Thesis Format (LaTEX)/figures/buckconv.jpg, id=1110, 261.22594pt x 212.29312pt>
+File: Thesis Format (LaTEX)/figures/buckconv.jpg Graphic file (type jpg)
+<use Thesis Format (LaTEX)/figures/buckconv.jpg>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/buckconv.jpg  used on input line 480.
+(pdftex.def)             Requested size: 85.35979pt x 69.37021pt.
+<Thesis Format (LaTEX)/figures/relay.png, id=1111, 376.40625pt x 376.40625pt>
+File: Thesis Format (LaTEX)/figures/relay.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/relay.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/relay.png  used on input line 487.
+(pdftex.def)             Requested size: 71.1331pt x 71.1331pt.
+
+Underfull \hbox (badness 7362) in paragraph at lines 489--490
+[]|\OT1/minntx/m/n/12 Acts as a switch to safely
+ []
+
+
+Overfull \hbox (8.40079pt too wide) in alignment at lines 434--491
+ [] [] [] 
+ []
+
+[83 </compile/Thesis Format (LaTEX)/figures/esp32s3.jpg> </compile/Thesis Format (LaTEX)/figures/ov5640.jpg>] [84 </compile/Thesis Format (LaTEX)/figures/mic_inmp441.jpg> </compile/Thesis Format (LaTEX)/figures/16x2.png> </compile/Thesis Format (LaTEX)/figures/18650.png> </compile/Thesis Format (LaTEX)/figures/solenoid.jpg> </compile/Thesis Format (LaTEX)/figures/buckconv.jpg>]
+Underfull \hbox (badness 2027) in paragraph at lines 527--527
+[]|\OT1/minntx/m/n/12 ESP32-S3 WROOM CAM
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+[]|\OT1/minntx/m/n/12 INMP441 MEMS
+ []
+
+
+
+[85 </compile/Thesis Format (LaTEX)/figures/relay.png>]
+
+[86]
+
+[87]
+
+[88]
+Underfull \hbox (badness 1755) in paragraph at lines 611--611
+[]|\OT1/minntx/m/n/12 The sys-tem shall record the acous-tic re-sponse
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 611--611
+[]|\OT1/minntx/m/n/12 The sys-tem shall dis-play the fi-nal ripeness
+ []
+
+
+Underfull \hbox (badness 4454) in paragraph at lines 611--611
+\OT1/minntx/m/n/12 de-vice with-out re-quir-ing an ex-ter-nal in-ter-net
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 670--670
+[]|\OT1/minntx/m/n/12 The sys-tem shall suc-cess-fully pro-vide a fi-nal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 670--670
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 670--670
+
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 670--670
+[]|\OT1/minntx/m/n/12 The sys-tem shall main-tain re-li-able clas-si-fi-ca-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 670--670
+
+ []
+
+
+Underfull \hbox (badness 3138) in paragraph at lines 670--670
+\OT1/minntx/m/n/12 The sys-tem shall de-liver the min-i-mum force
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 670--670
+[]|\OT1/minntx/m/n/12 The sys-tem shall tol-er-ate vari-a-tions in out-door
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 670--670
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 670--670
+\OT1/minntx/m/n/12 The sys-tem shall main-tain con-sis-tent color
+ []
+
+
+
+[89]
+
+[90]
+
+[91]
+
+[92
+
+]
+<Thesis Format (LaTEX)/figures/hardware_architecture.png, id=1160, 2006.49625pt x 982.67125pt>
+File: Thesis Format (LaTEX)/figures/hardware_architecture.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/hardware_architecture.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/hardware_architecture.png  used on input line 693.
+(pdftex.def)             Requested size: 397.48502pt x 194.65648pt.
+
+
+[93 </compile/Thesis Format (LaTEX)/figures/hardware_architecture.png>]
+<Thesis Format (LaTEX)/figures/circuit-diagram.png, id=1167, 1843.88875pt x 2006.49625pt>
+File: Thesis Format (LaTEX)/figures/circuit-diagram.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/circuit-diagram.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/circuit-diagram.png  used on input line 711.
+(pdftex.def)             Requested size: 397.48502pt x 432.5211pt.
+
+
+[94]
+
+[95 </compile/Thesis Format (LaTEX)/figures/circuit-diagram.png>]
+<Thesis Format (LaTEX)/figures/pictorial_diagram.png, id=1180, 1901.1025pt x 2006.49625pt>
+File: Thesis Format (LaTEX)/figures/pictorial_diagram.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/pictorial_diagram.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/pictorial_diagram.png  used on input line 729.
+(pdftex.def)             Requested size: 397.48502pt x 419.50903pt.
+
+
+[96]
+
+[97 </compile/Thesis Format (LaTEX)/figures/pictorial_diagram.png>]
+
+[98]
+<figures/3d-model.png, id=1197, 513.92pt x 357.335pt>
+File: figures/3d-model.png Graphic file (type png)
+<use figures/3d-model.png>
+Package pdftex.def Info: figures/3d-model.png  used on input line 756.
+(pdftex.def)             Requested size: 397.48502pt x 276.38106pt.
+
+
+[99
+
+ <./figures/3d-model.png>]
+<figures/top_view.png, id=1206, 1390.19376pt x 770.88pt>
+File: figures/top_view.png Graphic file (type png)
+<use figures/top_view.png>
+Package pdftex.def Info: figures/top_view.png  used on input line 778.
+(pdftex.def)             Requested size: 298.11375pt x 165.30075pt.
+<figures/rear_view.png, id=1207, 1183.42125pt x 915.42pt>
+File: figures/rear_view.png Graphic file (type png)
+<use figures/rear_view.png>
+Package pdftex.def Info: figures/rear_view.png  used on input line 785.
+(pdftex.def)             Requested size: 298.11375pt x 230.60045pt.
+<figures/front_view.png, id=1208, 1189.44376pt x 899.36pt>
+File: figures/front_view.png Graphic file (type png)
+<use figures/front_view.png>
+Package pdftex.def Info: figures/front_view.png  used on input line 793.
+(pdftex.def)             Requested size: 298.11375pt x 225.40208pt.
+<Thesis Format (LaTEX)/figures/side_view.jpg, id=1209, 1027.84pt x 702.625pt>
+File: Thesis Format (LaTEX)/figures/side_view.jpg Graphic file (type jpg)
+<use Thesis Format (LaTEX)/figures/side_view.jpg>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/side_view.jpg  used on input line 801.
+(pdftex.def)             Requested size: 298.11375pt x 203.7882pt.
+
+
+[100
+
+ <./figures/top_view.png>]
+
+LaTeX Warning: Text page 101 contains only floats.
+
+
+Overfull \vbox (10.1086pt too high) has occurred while \output is active []
+
+
+
+[101 <./figures/rear_view.png> <./figures/front_view.png>]
+
+[102 </compile/Thesis Format (LaTEX)/figures/side_view.jpg>]
+<Thesis Format (LaTEX)/figures/context_level_diagram.png, id=1226, 2006.49625pt x 348.30125pt>
+File: Thesis Format (LaTEX)/figures/context_level_diagram.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/context_level_diagram.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/context_level_diagram.png  used on input line 824.
+(pdftex.def)             Requested size: 397.48502pt x 68.99467pt.
+
+
+[103 </compile/Thesis Format (LaTEX)/figures/context_level_diagram.png>]
+<Thesis Format (LaTEX)/figures/data_flow_diagram.png, id=1235, 1323.94624pt x 2006.49625pt>
+File: Thesis Format (LaTEX)/figures/data_flow_diagram.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/data_flow_diagram.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/data_flow_diagram.png  used on input line 850.
+(pdftex.def)             Requested size: 397.48502pt x 602.38216pt.
+
+
+[104]
+Overfull \vbox (76.16205pt too high) has occurred while \output is active []
+
+
+
+[105 </compile/Thesis Format (LaTEX)/figures/data_flow_diagram.png>]
+
+[106]
+
+[107]
+<Thesis Format (LaTEX)/figures/activity_diagram.png, id=1256, 448.67625pt x 2006.49625pt>
+File: Thesis Format (LaTEX)/figures/activity_diagram.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/activity_diagram.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/activity_diagram.png  used on input line 873.
+(pdftex.def)             Requested size: 109.20436pt x 488.36583pt.
+
+
+[108]
+
+[109 </compile/Thesis Format (LaTEX)/figures/activity_diagram.png>]
+<Thesis Format (LaTEX)/figures/use_case_diagram.png, id=1268, 1393.205pt x 2006.49625pt>
+File: Thesis Format (LaTEX)/figures/use_case_diagram.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/use_case_diagram.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/use_case_diagram.png  used on input line 885.
+(pdftex.def)             Requested size: 278.2383pt x 400.71043pt.
+
+Underfull \hbox (badness 1303) in paragraph at lines 938--938
+[]\OT1/minntx/m/n/12 The sys-tem pro-ceeds to pre-pro-cess the
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 938--938
+ [][] 
+ []
+
+
+Underfull \hbox (badness 4569) in paragraph at lines 985--985
+[]\OT1/minntx/m/n/12 The sys-tem pro-ceeds to clas-sify the
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 985--985
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 1033--1033
+\OT1/minntx/m/n/12 im-age into the trained com-puter vi-sion
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 1033--1033
+ [][] 
+ []
+
+
+Underfull \hbox (badness 4569) in paragraph at lines 1080--1080
+[]\OT1/minntx/m/n/12 The lo-cal database stores the im-age
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 1080--1080
+ [][] 
+ []
+
+
+Underfull \hbox (badness 2913) in paragraph at lines 1127--1127
+[]|\OT1/minntx/m/n/12 The im-age clas-si-fi-ca-tion re-sult has been
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 1127--1127
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1175--1175
+[]\OT1/minntx/m/n/12 The mi-cro-con-troller ac-ti-vates the
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 1175--1175
+[]\OT1/minntx/m/n/12 The sys-tem pro-ceeds to pre-pro-cess the
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 1175--1175
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1223
+[]\OT1/minntx/m/n/12 The sys-tem ap-plies pre-pro-cess-ing
+ []
+
+
+Underfull \hbox (badness 4569) in paragraph at lines 1223--1223
+[]\OT1/minntx/m/n/12 The sys-tem pro-ceeds to clas-sify the
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 1223--1223
+ [][] 
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 1271--1271
+ [][] 
+ []
+
+
+Underfull \hbox (badness 5374) in paragraph at lines 1318--1318
+[]\OT1/minntx/m/n/12 The lo-cal database stores the au-dio
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 1318--1318
+ [][] 
+ []
+
+
+Underfull \hbox (badness 5985) in paragraph at lines 1367--1367
+[]\OT1/minntx/m/n/12 The sys-tem cross val-i-dates the two
+ []
+
+
+Underfull \hbox (badness 4060) in paragraph at lines 1367--1367
+[]|\OT1/minntx/m/n/12 The sys-tem loops back to re-trieve the
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 1367--1367
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1415--1415
+[]|\OT1/minntx/m/n/12 The sys-tem stores the fi-nal ripeness
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 1415--1415
+\OT1/minntx/m/n/12 clas-si-fi-ca-tion re-sult in the lo-cal database
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 1415--1415
+ [][] 
+ []
+
+
+Underfull \hbox (badness 5939) in paragraph at lines 1463--1463
+[]|\OT1/minntx/m/n/12 The sys-tem dis-plays the fi-nal ripeness
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1463--1463
+[]\OT1/minntx/m/n/12 The sys-tem dis-plays the ripeness
+ []
+
+
+Overfull \hbox (13.342pt too wide) in paragraph at lines 1463--1463
+ [][] 
+ []
+
+
+
+[110 </compile/Thesis Format (LaTEX)/figures/use_case_diagram.png>]
+
+[111]
+
+[112]
+
+[113]
+
+[114]
+
+[115]
+
+[116]
+
+[117]
+
+[118]
+
+[119]
+
+[120]
+
+[121]
+
+[122]
+<Thesis Format (LaTEX)/figures/system_process.png, id=1372, 1697.34125pt x 3863.43375pt>
+File: Thesis Format (LaTEX)/figures/system_process.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/system_process.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/system_process.png  used on input line 1477.
+(pdftex.def)             Requested size: 214.54987pt x 488.35155pt.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 8.0pt on input line 1488.
+LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line 1513.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
+File: ot1ntxtt.fd 2012/04/20 v3.1
+)
+LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
+(Font)              scaled to size 12.0pt on input line 1513.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 1552.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 1552.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
+(Font)              scaled to size 8.8pt on input line 1552.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
+(Font)              scaled to size 6.6pt on input line 1552.
+
+
+[123
+
+ </compile/Thesis Format (LaTEX)/figures/system_process.png>]
+
+[124]
+
+[125]
+<Thesis Format (LaTEX)/figures/sysint.png, id=1447, 731.8542pt x 298.2342pt>
+File: Thesis Format (LaTEX)/figures/sysint.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/sysint.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/sysint.png  used on input line 1560.
+(pdftex.def)             Requested size: 397.48502pt x 161.97696pt.
+
+
+[126 </compile/Thesis Format (LaTEX)/figures/sysint.png>]
+<Thesis Format (LaTEX)/figures/system_architecture.png, id=1456, 1085.2545pt x 681.5061pt>
+File: Thesis Format (LaTEX)/figures/system_architecture.png Graphic file (type png)
+<use Thesis Format (LaTEX)/figures/system_architecture.png>
+Package pdftex.def Info: Thesis Format (LaTEX)/figures/system_architecture.png  used on input line 1576.
+(pdftex.def)             Requested size: 397.48502pt x 249.60558pt.
+
+
+[127 </compile/Thesis Format (LaTEX)/figures/system_architecture.png>]
+
+[128]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 1615.
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 10.0pt on input line 1615.
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 7.3pt on input line 1615.
+LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
+(Font)              scaled to size 5.5pt on input line 1615.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 10.0pt on input line 1615.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 7.3pt on input line 1615.
+LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
+(Font)              scaled to size 5.5pt on input line 1615.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 10.0pt on input line 1615.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 7.3pt on input line 1615.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 5.5pt on input line 1615.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 10.0pt on input line 1615.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 7.3pt on input line 1615.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 5.5pt on input line 1615.
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 1615.
+
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 1615.
+
+
+LaTeX Font Warning: Font shape `U/wasy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 1615.
+
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 10.0pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 7.3pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 5.5pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 10.0pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 7.3pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 5.5pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 10.0pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 7.3pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 5.5pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 10.0pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 7.3pt on input line 1615.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 5.5pt on input line 1615.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.0pt on input line 1657.
+
+Overfull \hbox (25.342pt too wide) in paragraph at lines 1657--1657
+ [][] 
+ []
+
+
+
+[129]
+
+[130]
+
+[131]
+
+[132]
+
+[133]
+
+[134]
+
+[135]
+Underfull \hbox (badness 1112) in paragraph at lines 1689--1690
+[]\OT1/minntx/m/n/12 Among the var-i-ous deep learn-ing ar-chi-tec-tures avail-able for im-age
+ []
+
+
+
+[136]
+
+[137]
+
+[138]
+
+[139]
+
+[140])
+
+[141]
+\openout2 = `bibliography.aux'.
+
+(./bibliography.tex (/compile/output.bbl
+Underfull \hbox (badness 1490) in paragraph at lines 171--186
+\OT1/minntx/m/n/12 for clas-si-fy-ing the sweet-ness of wa-ter-melon us-ing acous-tic sig-nal and
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 171--186
+\OT1/minntx/m/n/12 im-age pro-cess-ing.  \OT1/ntxtlf/m/it/12 Com-put-ers and Elec-tron-ics in Agri-cul-ture\OT1/minntx/m/n/12 , \OT1/ntxtlf/m/it/12 181\OT1/minntx/m/n/12 ,
+ []
+
+
+
+[142
+
+
+
+
+]
+
+! LaTeX Error: Unicode character ̈ (U+0308)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.402 ...�rk doğa ve fen dergisi}{14}{}{192-201}
+                                                  .
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ̆ (U+0306)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.402 ...�rk doğa ve fen dergisi}{14}{}{192-201}
+                                                  .
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ̈ (U+0308)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.402 ...�rk doğa ve fen dergisi}{14}{}{192-201}
+                                                  .
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ̆ (U+0306)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.402 ...�rk doğa ve fen dergisi}{14}{}{192-201}
+                                                  .
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+
+[143]
+
+[144]))
+
+[145] (/compile/output.aux (/compile/chapter1.aux) (/compile/chapter2.aux) (/compile/chapter3.aux) (/compile/bibliography.aux))
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.5pt have occurred.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `output.out' has not changed.
-(rerunfilecheck)             Checksum: 306E36C947FAB54D0BA5A3A6A09B74DB;12218.
-
-Overfull \hbox (4.2127pt too wide) in paragraph at lines 17--53
-[]\OT1/minntx/m/n/12 hitecture442System Ar-chi-tec-ture-fig-ure.caption.10                                                                        
- []
-
+(rerunfilecheck)             Checksum: F034443FFDABAA19F8BCEDCCD47484FB;13449.
  ) 
 Here is how much of TeX's memory you used:
- 18498 strings out of 467886
- 287889 string characters out of 5434056
- 701425 words of memory out of 5000000
- 46475 multiletter control sequences out of 15000+600000
- 673733 words of font info for 149 fonts, out of 8000000 for 9000
+ 22071 strings out of 467886
+ 355943 string characters out of 5434056
+ 799704 words of memory out of 5000000
+ 49755 multiletter control sequences out of 15000+600000
+ 672015 words of font info for 147 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,10n,120p,1286b,751s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on /compile/output.pdf (72 pages, 975843 bytes).
+ 80i,19n,85p,2148b,908s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on /compile/output.pdf (152 pages, 11848303 bytes).
 PDF statistics:
- 751 PDF objects out of 1000 (max. 8388607)
- 642 compressed objects within 7 object streams
- 148 named destinations out of 1000 (max. 500000)
- 554 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1717 PDF objects out of 1728 (max. 8388607)
+ 1474 compressed objects within 15 object streams
+ 396 named destinations out of 1000 (max. 500000)
+ 652 words of extra memory for PDF output out of 10000 (max. 10000000)
 

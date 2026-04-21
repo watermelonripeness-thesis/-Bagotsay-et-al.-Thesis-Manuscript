@@ -1,22 +1,36 @@
 {\bfseries No.\hfill Figure\hspace {3in} Page No.\vspace \bigskipamount \par }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Theoretical Framework}}{10}{figure.caption.7}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Conceptual Framework}}{15}{figure.caption.8}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Theoretical Framework}}{16}{figure.caption.5}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Conceptual Framework}}{22}{figure.caption.6}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Principle operation of the sorting machine \citep {wongkalasin_2021_watermelon}}}{25}{figure.caption.7}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Feedforward neural network model \citep {wongkalasin_2021_watermelon}}}{26}{figure.caption.8}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Setup experiment for acoustic data acquisition \citep {pamungkas_2021_evaluation}}}{27}{figure.caption.9}%
+\contentsline {figure}{\numberline {6}{\ignorespaces The relationship between acoustic properties and physicochemical parameters of watermelon \citep {pamungkas_2021_evaluation}}}{29}{figure.caption.10}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Setup experiment for acoustic data acquisition. Raw waveform (left) and ripe waveform (right) \citep {chen_2021_nondestructive}}}{30}{figure.caption.11}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Experimental flow chart \citep {okafor_2020_design}}}{33}{figure.caption.12}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Training dataset: a) scatter plot, and b) statistic information \citep {arboleda_2020_watermelon}}}{36}{figure.caption.13}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Overview of the Staged Sensor-to-Classification Pipeline for Binary Ripeness Detection \citep {pietroibba_2021_supervised}}}{38}{figure.caption.14}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Workflow for Predicting Mango Ripeness \citep {worasawate_2022_automatic}}}{40}{figure.caption.15}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Overall Pipeline Flowchart \citep {qi_2024_application}}}{42}{figure.caption.16}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Scoring Mechanism Model \citep {qi_2024_application}}}{43}{figure.caption.17}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Structure of the YOLO-RFEW Model \citep {defang_2024_intelligent}}}{44}{figure.caption.18}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Diagrams of the best ANN result for each hyperspectral imaging mode \citep {shah_2025_a}}}{47}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3}{\ignorespaces The Modified Waterfall Model}}{34}{figure.caption.9}%
-\contentsline {figure}{\numberline {4}{\ignorespaces System Architecture}}{42}{figure.caption.10}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Circuit Diagram}}{42}{figure.caption.11}%
-\contentsline {figure}{\numberline {6}{\ignorespaces 3D Model of the proposed watermelon analysis device.}}{43}{figure.caption.12}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Top View}}{44}{figure.caption.13}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Rear View}}{45}{figure.caption.14}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Front View}}{45}{figure.caption.15}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Side View}}{46}{figure.caption.16}%
-\contentsline {figure}{\numberline {11}{\ignorespaces \relax }}{46}{figure.caption.17}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Measurements and Dimensions}}{47}{figure.caption.18}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Context Level Diagram}}{48}{figure.caption.20}%
-\contentsline {figure}{\numberline {14}{\ignorespaces \relax }}{51}{figure.caption.22}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Cosine Graph}}{51}{figure.caption.23}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {16}{\ignorespaces The Modified Waterfall Model}}{59}{figure.caption.20}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Hardware Architecture}}{93}{figure.caption.30}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Schematic Diagram}}{95}{figure.caption.32}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Pictorial Diagram}}{97}{figure.caption.34}%
+\contentsline {figure}{\numberline {20}{\ignorespaces 3D Model of the proposed watermelon analysis device.}}{99}{figure.caption.35}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Top View}}{100}{figure.caption.36}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Rear View}}{101}{figure.caption.37}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Front View}}{101}{figure.caption.38}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Side View}}{102}{figure.caption.39}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Context Level Diagram}}{103}{figure.caption.41}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Data Flow Diagram}}{105}{figure.caption.43}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Activity Diagram}}{109}{figure.caption.45}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Use Case Diagram}}{110}{figure.caption.47}%
+\contentsline {figure}{\numberline {29}{\ignorespaces System Process Flowchart}}{123}{figure.caption.61}%
+\contentsline {figure}{\numberline {30}{\ignorespaces System Integration}}{126}{figure.caption.63}%
+\contentsline {figure}{\numberline {31}{\ignorespaces System Architecture}}{127}{figure.caption.64}%
 \contentsfinish 

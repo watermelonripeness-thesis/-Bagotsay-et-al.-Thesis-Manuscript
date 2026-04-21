@@ -1,92 +1,148 @@
 PNG copy skipped (palette): /compile/Thesis Format (LaTEX)/figures/theo. fram.png
-Image written (PNG, 10 ms): /compile/Thesis Format (LaTEX)/figures/theo. fram.png
-PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/conceptual-framework.png
-Image written (PNG, 58 ms): /compile/Thesis Format (LaTEX)/figures/conceptual-framework.png
+Image written (PNG, 6 ms): /compile/Thesis Format (LaTEX)/figures/theo. fram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/conceptual-framework.png
+Image written (PNG, 65 ms): /compile/Thesis Format (LaTEX)/figures/conceptual-framework.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/sorting-machine.png
+Image written (PNG, 5 ms): /compile/Thesis Format (LaTEX)/figures/sorting-machine.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png
+Image written (PNG, 7 ms): /compile/Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/setup-experiment.png
+Image written (PNG, 4 ms): /compile/Thesis Format (LaTEX)/figures/setup-experiment.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/acoustic-properties.png
+Image written (PNG, 4 ms): /compile/Thesis Format (LaTEX)/figures/acoustic-properties.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/setup-exp2.png
+Image written (PNG, 5 ms): /compile/Thesis Format (LaTEX)/figures/setup-exp2.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/experimental-flowchart.png
+Image written (PNG, 10 ms): /compile/Thesis Format (LaTEX)/figures/experimental-flowchart.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/training-dataset.png
+Image written (PNG, 44 ms): /compile/Thesis Format (LaTEX)/figures/training-dataset.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/dl1.png
+Image written (PNG, 39 ms): /compile/Thesis Format (LaTEX)/figures/dl1.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/workflow.png
+Image written (PNG, 107 ms): /compile/Thesis Format (LaTEX)/figures/workflow.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/pipeline_2.png
+Image written (PNG, 21 ms): /compile/Thesis Format (LaTEX)/figures/pipeline_2.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/scoring-mechanism.png
+Image written (PNG, 4 ms): /compile/Thesis Format (LaTEX)/figures/scoring-mechanism.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/YOLO-RFEW.png
+Image written (PNG, 27 ms): /compile/Thesis Format (LaTEX)/figures/YOLO-RFEW.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/ann.png
+Image written (PNG, 27 ms): /compile/Thesis Format (LaTEX)/figures/ann.png
 PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/modified-waterfall-model.png
 Image written (PNG, 1 ms): /compile/Thesis Format (LaTEX)/figures/modified-waterfall-model.png
-PNG copy skipped (other): ./figures/system_architecture.png
-Image written (PNG, 5 ms): ./figures/system_architecture.png
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/esp32s3.jpg
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/ov5640.jpg
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/mic_inmp441.jpg
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/16x2.png
+Image written (PNG, 289 ms): /compile/Thesis Format (LaTEX)/figures/16x2.png
+Image written (JPG, 2 ms): /compile/Thesis Format (LaTEX)/figures/18650.png
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/solenoid.jpg
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/buckconv.jpg
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/relay.png
+Image written (PNG, 11 ms): /compile/Thesis Format (LaTEX)/figures/relay.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/hardware_architecture.png
+Image written (PNG, 47 ms): /compile/Thesis Format (LaTEX)/figures/hardware_architecture.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/circuit-diagram.png
+Image written (PNG, 96 ms): /compile/Thesis Format (LaTEX)/figures/circuit-diagram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/pictorial_diagram.png
+Image written (PNG, 149 ms): /compile/Thesis Format (LaTEX)/figures/pictorial_diagram.png
 PNG copy skipped (other): ./figures/3d-model.png
-Image written (PNG, 10 ms): ./figures/3d-model.png
-PNG copy skipped (other): ./figures/top_view.png
-Image written (PNG, 6 ms): ./figures/top_view.png
-PNG copy skipped (other): ./figures/rear_view.png
-Image written (PNG, 6 ms): ./figures/rear_view.png
-PNG copy skipped (other): ./figures/front_view.png
-Image written (PNG, 6 ms): ./figures/front_view.png
-PNG copy skipped (other): ./figures/side_view.png
-Image written (PNG, 7 ms): ./figures/side_view.png
-PNG copy skipped (other): ./figures/m&d1.png
-Image written (PNG, 26 ms): ./figures/m&d1.png
-PNG copy skipped (other): ./figures/m&d2.png
-Image written (PNG, 20 ms): ./figures/m&d2.png
-Image written (JPG, 0 ms): ./figures/sinegraph.jpg
-Image written (JPG, 0 ms): ./figures/cosinegraph.jpg
-Latexmk: Missing input file 'output.lot' (or dependence on it) from following:
-  No file output.lot.
-Latexmk: Missing input file 'output.lof' (or dependence on it) from following:
-  No file output.lof.
-Latexmk: Missing input file 'figures/circuit_diagram' (or dependence on it) from following:
-  ! LaTeX Error: File `figures/circuit_diagram' not found.
-Latexmk: Missing input file 'figures/context_level_diagram' (or dependence on it) from following:
-  ! LaTeX Error: File `figures/context_level_diagram' not found.
-Latexmk: Missing bbl file '/compile/output.bbl' in following:
- No file output.bbl.
+Image written (PNG, 7 ms): ./figures/3d-model.png
+PNG copy skipped (alpha): ./figures/top_view.png
+Image written (PNG, 52 ms): ./figures/top_view.png
+PNG copy skipped (alpha): ./figures/rear_view.png
+Image written (PNG, 36 ms): ./figures/rear_view.png
+PNG copy skipped (alpha): ./figures/front_view.png
+Image written (PNG, 39 ms): ./figures/front_view.png
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/side_view.jpg
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/context_level_diagram.png
+Image written (PNG, 21 ms): /compile/Thesis Format (LaTEX)/figures/context_level_diagram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/data_flow_diagram.png
+Image written (PNG, 77 ms): /compile/Thesis Format (LaTEX)/figures/data_flow_diagram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/activity_diagram.png
+Image written (PNG, 26 ms): /compile/Thesis Format (LaTEX)/figures/activity_diagram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/use_case_diagram.png
+Image written (PNG, 68 ms): /compile/Thesis Format (LaTEX)/figures/use_case_diagram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/system_process.png
+Image written (PNG, 162 ms): /compile/Thesis Format (LaTEX)/figures/system_process.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/sysint.png
+Image written (PNG, 111 ms): /compile/Thesis Format (LaTEX)/figures/sysint.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/system_architecture.png
+Image written (PNG, 366 ms): /compile/Thesis Format (LaTEX)/figures/system_architecture.png
 PNG copy skipped (palette): /compile/Thesis Format (LaTEX)/figures/theo. fram.png
-Image written (PNG, 13 ms): /compile/Thesis Format (LaTEX)/figures/theo. fram.png
-PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/conceptual-framework.png
-Image written (PNG, 63 ms): /compile/Thesis Format (LaTEX)/figures/conceptual-framework.png
+Image written (PNG, 5 ms): /compile/Thesis Format (LaTEX)/figures/theo. fram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/conceptual-framework.png
+Image written (PNG, 66 ms): /compile/Thesis Format (LaTEX)/figures/conceptual-framework.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/sorting-machine.png
+Image written (PNG, 5 ms): /compile/Thesis Format (LaTEX)/figures/sorting-machine.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png
+Image written (PNG, 7 ms): /compile/Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/setup-experiment.png
+Image written (PNG, 4 ms): /compile/Thesis Format (LaTEX)/figures/setup-experiment.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/acoustic-properties.png
+Image written (PNG, 4 ms): /compile/Thesis Format (LaTEX)/figures/acoustic-properties.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/setup-exp2.png
+Image written (PNG, 5 ms): /compile/Thesis Format (LaTEX)/figures/setup-exp2.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/experimental-flowchart.png
+Image written (PNG, 10 ms): /compile/Thesis Format (LaTEX)/figures/experimental-flowchart.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/training-dataset.png
+Image written (PNG, 42 ms): /compile/Thesis Format (LaTEX)/figures/training-dataset.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/dl1.png
+Image written (PNG, 38 ms): /compile/Thesis Format (LaTEX)/figures/dl1.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/workflow.png
+Image written (PNG, 114 ms): /compile/Thesis Format (LaTEX)/figures/workflow.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/pipeline_2.png
+Image written (PNG, 21 ms): /compile/Thesis Format (LaTEX)/figures/pipeline_2.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/scoring-mechanism.png
+Image written (PNG, 4 ms): /compile/Thesis Format (LaTEX)/figures/scoring-mechanism.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/YOLO-RFEW.png
+Image written (PNG, 27 ms): /compile/Thesis Format (LaTEX)/figures/YOLO-RFEW.png
+PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/ann.png
+Image written (PNG, 27 ms): /compile/Thesis Format (LaTEX)/figures/ann.png
 PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/modified-waterfall-model.png
 Image written (PNG, 1 ms): /compile/Thesis Format (LaTEX)/figures/modified-waterfall-model.png
-PNG copy skipped (other): ./figures/system_architecture.png
-Image written (PNG, 5 ms): ./figures/system_architecture.png
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/esp32s3.jpg
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/ov5640.jpg
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/mic_inmp441.jpg
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/16x2.png
+Image written (PNG, 329 ms): /compile/Thesis Format (LaTEX)/figures/16x2.png
+Image written (JPG, 4 ms): /compile/Thesis Format (LaTEX)/figures/18650.png
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/solenoid.jpg
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/buckconv.jpg
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/relay.png
+Image written (PNG, 14 ms): /compile/Thesis Format (LaTEX)/figures/relay.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/hardware_architecture.png
+Image written (PNG, 48 ms): /compile/Thesis Format (LaTEX)/figures/hardware_architecture.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/circuit-diagram.png
+Image written (PNG, 80 ms): /compile/Thesis Format (LaTEX)/figures/circuit-diagram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/pictorial_diagram.png
+Image written (PNG, 139 ms): /compile/Thesis Format (LaTEX)/figures/pictorial_diagram.png
 PNG copy skipped (other): ./figures/3d-model.png
-Image written (PNG, 10 ms): ./figures/3d-model.png
-PNG copy skipped (other): ./figures/top_view.png
-Image written (PNG, 7 ms): ./figures/top_view.png
-PNG copy skipped (other): ./figures/rear_view.png
-Image written (PNG, 6 ms): ./figures/rear_view.png
-PNG copy skipped (other): ./figures/front_view.png
-Image written (PNG, 7 ms): ./figures/front_view.png
-PNG copy skipped (other): ./figures/side_view.png
-Image written (PNG, 8 ms): ./figures/side_view.png
-PNG copy skipped (other): ./figures/m&d1.png
-Image written (PNG, 24 ms): ./figures/m&d1.png
-PNG copy skipped (other): ./figures/m&d2.png
-Image written (PNG, 39 ms): ./figures/m&d2.png
-Image written (JPG, 0 ms): ./figures/sinegraph.jpg
-Image written (JPG, 0 ms): ./figures/cosinegraph.jpg
-Latexmk: Missing input file 'figures/circuit_diagram' (or dependence on it) from following:
-  ! LaTeX Error: File `figures/circuit_diagram' not found.
-Latexmk: Missing input file 'figures/context_level_diagram' (or dependence on it) from following:
-  ! LaTeX Error: File `figures/context_level_diagram' not found.
-PNG copy skipped (palette): /compile/Thesis Format (LaTEX)/figures/theo. fram.png
-Image written (PNG, 26 ms): /compile/Thesis Format (LaTEX)/figures/theo. fram.png
-PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/conceptual-framework.png
-Image written (PNG, 48 ms): /compile/Thesis Format (LaTEX)/figures/conceptual-framework.png
-PNG copy skipped (other): /compile/Thesis Format (LaTEX)/figures/modified-waterfall-model.png
-Image written (PNG, 1 ms): /compile/Thesis Format (LaTEX)/figures/modified-waterfall-model.png
-PNG copy skipped (other): ./figures/system_architecture.png
-Image written (PNG, 5 ms): ./figures/system_architecture.png
-PNG copy skipped (other): ./figures/3d-model.png
-Image written (PNG, 8 ms): ./figures/3d-model.png
-PNG copy skipped (other): ./figures/top_view.png
-Image written (PNG, 6 ms): ./figures/top_view.png
-PNG copy skipped (other): ./figures/rear_view.png
-Image written (PNG, 6 ms): ./figures/rear_view.png
-PNG copy skipped (other): ./figures/front_view.png
-Image written (PNG, 6 ms): ./figures/front_view.png
-PNG copy skipped (other): ./figures/side_view.png
-Image written (PNG, 25 ms): ./figures/side_view.png
-PNG copy skipped (other): ./figures/m&d1.png
-Image written (PNG, 21 ms): ./figures/m&d1.png
-PNG copy skipped (other): ./figures/m&d2.png
-Image written (PNG, 16 ms): ./figures/m&d2.png
-Image written (JPG, 0 ms): ./figures/sinegraph.jpg
-Image written (JPG, 0 ms): ./figures/cosinegraph.jpg
-Latexmk: Missing input file 'figures/circuit_diagram' (or dependence on it) from following:
-  ! LaTeX Error: File `figures/circuit_diagram' not found.
-Latexmk: Missing input file 'figures/context_level_diagram' (or dependence on it) from following:
-  ! LaTeX Error: File `figures/context_level_diagram' not found.
+Image written (PNG, 6 ms): ./figures/3d-model.png
+PNG copy skipped (alpha): ./figures/top_view.png
+Image written (PNG, 41 ms): ./figures/top_view.png
+PNG copy skipped (alpha): ./figures/rear_view.png
+Image written (PNG, 26 ms): ./figures/rear_view.png
+PNG copy skipped (alpha): ./figures/front_view.png
+Image written (PNG, 29 ms): ./figures/front_view.png
+Image written (JPG, 0 ms): /compile/Thesis Format (LaTEX)/figures/side_view.jpg
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/context_level_diagram.png
+Image written (PNG, 15 ms): /compile/Thesis Format (LaTEX)/figures/context_level_diagram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/data_flow_diagram.png
+Image written (PNG, 59 ms): /compile/Thesis Format (LaTEX)/figures/data_flow_diagram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/activity_diagram.png
+Image written (PNG, 20 ms): /compile/Thesis Format (LaTEX)/figures/activity_diagram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/use_case_diagram.png
+Image written (PNG, 73 ms): /compile/Thesis Format (LaTEX)/figures/use_case_diagram.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/system_process.png
+Image written (PNG, 143 ms): /compile/Thesis Format (LaTEX)/figures/system_process.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/sysint.png
+Image written (PNG, 95 ms): /compile/Thesis Format (LaTEX)/figures/sysint.png
+PNG copy skipped (alpha): /compile/Thesis Format (LaTEX)/figures/system_architecture.png
+Image written (PNG, 405 ms): /compile/Thesis Format (LaTEX)/figures/system_architecture.png
 Latexmk: ====Undefined refs and citations with line #s in .tex file:
-  Label `fig:theoritical_framework' multiply defined
+  Label `tab:uc-01' multiply defined
+  ! LaTeX Error: Unicode character ̈ (U+0308)
+  ! LaTeX Error: Unicode character ̆ (U+0306)
+  ! LaTeX Error: Unicode character ̈ (U+0308)
+  ! LaTeX Error: Unicode character ̆ (U+0306)
