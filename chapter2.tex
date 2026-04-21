@@ -1,3 +1,5 @@
+
+
 \chapter{REVIEW OF RELATED LITERATURE}
 
 
@@ -7,57 +9,58 @@ This chapter reviews existing literature and studies on classifying watermelon r
 %-----------------------------------------------------------------------------------------------------------------------
 \section{Theoretical Framework}
 
-This study will be grounded in deep learning and machine learning principles, which will provide a framework for enabling systems to learn patterns from data and make accurate predictions on new, unseen samples. These approaches will be particularly effective in handling complex, high-dimensional, and multimodal data, making them suitable for analyzing both acoustic signals and visual features for watermelon ripeness classification.
+This study will be grounded in deep learning and machine learning principles, as shown in Figure \ref{fig:theoretical_framework}, which will provide a framework for enabling systems to learn patterns from data and make accurate predictions on new, unseen samples. These approaches will be particularly effective in handling complex, high-dimensional, and multimodal data, making them suitable for analyzing both acoustic signals and visual features for watermelon ripeness classification.
+
+\begin{figure}[ht]
+        \caption{Theoretical Framework}
+        \label{fig:theoretical_framework}
+        \centering
+        \includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/theo. fram.png}
+\end{figure}
 
 In this context, the study will utilize measurable features extracted from sensory data, specifically the acoustic signals produced by standardized mechanical knocks and the images of the watermelon’s rind color and surface appearance. These inputs will be processed using Digital Signal Processing (DSP) and image pre-processing techniques, which will transform raw data into structured representations suitable for model learning. Deep learning methods will further enhance this process by automatically extracting relevant and discriminative features from both audio and image data, reducing reliance on manual feature engineering.
 
 The system will integrate acoustic and visual data through a classification model designed to assess ripeness accurately and consistently. By leveraging deep learning alongside DSP techniques, the proposed device will capture both internal and external indicators of fruit maturity. This multimodal approach will improve robustness and predictive performance compared to traditional single-method systems.
-By integrating these methods, the proposed device will offer a portable, non-destructive, and data-driven approach to determining watermelon ripeness, providing farmers with an objective and reliable alternative to traditional, experience-based assessment methods.
 
-\begin{figure}{}
-    \centering
-    \includegraphics[width=0.5\linewidth]{Thesis Format (LaTEX)/figures/theo. fram.png}
-    \textit{\caption{Theoretical Framework}}
-    \label{fig:theoritical_framework}
-\end{figure}
+By integrating these methods, the proposed device will offer a portable, non-destructive, and data-driven approach to determining watermelon ripeness, providing farmers with an objective and reliable alternative to traditional, experience-based assessment methods.
 
 Digital  signal processing, machine learning, and computer vision work together to extract features from watermelon tapping sounds and the appearance of watermelon tendrils.
 
 \subsection{Digital Signal Processing}
 
-Manual determination of fruit and vegetable ripeness often involves simple acoustic or tactile cues — for example, farmers tapping a watermelon and listening for differences in sound or feeling firmness changes. Such practices implicitly rely on the idea that internal physical differences manifest as audible or vibrational signal changes (Hamid, N. A., et al., 2023). Digital Signal Processing formalizes this intuition by capturing acoustic signals (e.g., recorded tapping sounds) and transforming them using techniques such as the Fast Fourier Transform (FFT) to extract features like dominant frequency and spectral amplitude, which correlate with internal structural properties. A prototype watermelon ripeness tester used a microphone to record thumping sounds and then converted them into FFT waveforms using MATLAB, showing that frequency magnitude patterns could distinguish ripe from unripe watermelons (Okafor, V., 2020).
+Manual determination of fruit and vegetable ripeness often involves simple acoustic or tactile cues — for example, farmers tapping a watermelon and listening for differences in sound or feeling firmness changes. Such practices implicitly rely on the idea that internal physical differences manifest as audible or vibrational signal changes \citep{hamid_2025_a}. Digital Signal Processing formalizes this intuition by capturing acoustic signals (e.g., recorded tapping sounds) and transforming them using techniques such as the Fast Fourier Transform (FFT) to extract features like dominant frequency and spectral amplitude, which correlate with internal structural properties. A prototype watermelon ripeness tester used a microphone to record thumping sounds and then converted them into FFT waveforms using MATLAB, showing that frequency magnitude patterns could distinguish ripe from unripe watermelons \citep{okafor_2020_design}.
 
-Further supporting this, recent research in watermelon maturity classification demonstrates that frequency‑domain analysis of acoustic signals collected from different parts of the watermelon significantly enhances ripeness discrimination when combined with machine learning models such as SVM and logistic regression, improving classification reliability for future mobile‑based ripeness detection systems (Li, Y., Bu, Y., Guo, W., 2025). DSP is also central to other non‑destructive quality detection technologies, where preprocessing, filtering, and feature extraction improve the signal‑to‑noise ratio and enable robust characterization of physical fruit properties (Liu et al., 2025). These theoretical and empirical foundations illustrate that DSP is a key enabler for transforming raw sensor data into discriminative, actionable features for automated ripeness analysis.
+Further supporting this, recent research in watermelon maturity classification demonstrates that frequency-domain analysis of acoustic signals collected from different parts of the watermelon significantly enhances ripeness discrimination when combined with machine learning models such as SVM and logistic regression, improving classification reliability for future mobile-based ripeness detection systems \citep{li_2025_factors}. DSP is also central to other non-destructive quality detection technologies, where preprocessing, filtering, and feature extraction improve the signal-to-noise ratio and enable robust characterization of physical fruit properties \citep{liu_2025_nondestructive}. These theoretical and empirical foundations illustrate that DSP is a key enabler for transforming raw sensor data into discriminative, actionable features for automated ripeness analysis.
 
 
 \subsection{Machine Learning}
 
-Machine learning is crucial in predicting fruit ripeness due to its ability to learn complex patterns from high‑dimensional data and to generalize across variations in environment, sensor conditions, and biological variability. Reviews of AI‑driven fruit maturity and quality detection confirm that ML models — including deep learning and traditional classifiers — significantly outperform manual and heuristic approaches by extracting meaningful relationships between input features and quality labels (Jie, M. et al., 2024; Hamid, N. A., et al., 2025). These models can integrate diverse feature sets derived from acoustic DSP and image analysis to improve prediction accuracy and robustness.
+Machine learning is crucial in predicting fruit ripeness due to its ability to learn complex patterns from high-dimensional data and to generalize across variations in environment, sensor conditions, and biological variability. Reviews of AI-driven fruit maturity and quality detection confirm that ML models — including deep learning and traditional classifiers — significantly outperform manual and heuristic approaches by extracting meaningful relationships between input features and quality labels \citep{jie_2024_stateoftheart, hamid_2025_a}. These models can integrate diverse feature sets derived from acoustic DSP and image analysis to improve prediction accuracy and robustness.
 
-For example, a comparative analysis of machine learning approaches applied to watermelon maturity using acoustic and quality features showed that Support Vector Machine (SVM) and LightGBM models achieved high classification accuracies (exceeding 97\%) when using frequency and amplitude acoustic features combined with quality indicators (Parvathy Nayana, N., et. al., 2025). This demonstrates that ML models can effectively interpret complex feature patterns and improve predictive performance in real‑world agricultural systems. Additionally, non‑destructive classification of fruit sweetness and quality using a fusion of acoustic signals and image processing techniques reached high performance with various ML classifiers, showing that combining modalities can enhance the reliability of ripeness prediction (Chawgien, K., Kiattisin, S., 2021).
+For example, a comparative analysis of machine learning approaches applied to watermelon maturity using acoustic and quality features showed that Support Vector Machine (SVM) and LightGBM models achieved high classification accuracies (exceeding 97\%) when using frequency and amplitude acoustic features combined with quality indicators \citep{parvathynayana_2025_a}. This demonstrates that ML models can effectively interpret complex feature patterns and improve predictive performance in real-world agricultural systems. Additionally, non-destructive classification of fruit sweetness and quality using a fusion of acoustic signals and image processing techniques reached high performance with various ML classifiers, showing that combining modalities can enhance the reliability of ripeness prediction \citep{chawgien_2021_machine}.
 
-Beyond classification, ML supports multimodal feature fusion and real‑time prediction, making it indispensable for portable detection systems that aggregate heterogeneous input data. Reviewing current technological trends in fruit maturity assessment shows a growing emphasis on ML‑powered models that can optimize feature selection, adjust to sensory noise, and deliver scalable performance across diverse crops and environments (Jie, M. et al., 2024).
+Beyond classification, ML supports multimodal feature fusion and real-time prediction, making it indispensable for portable detection systems that aggregate heterogeneous input data. Reviewing current technological trends in fruit maturity assessment shows a growing emphasis on ML-powered models that can optimize feature selection, adjust to sensory noise, and deliver scalable performance across diverse crops and environments \citep{jie_2024_stateoftheart}.
 
 
 \subsection{Deep Learning}
 
-Deep learning has emerged as a dominant approach in agricultural fruit ripeness evaluation by learning discriminative visual representations directly from image data — such as color gradients, texture changes, shape features, and surface patterns — that correspond with maturity stages. Models such as convolutional neural networks (CNNs) and YOLO variants have demonstrated high effectiveness in detecting and classifying fruit at various ripeness levels in both controlled and real field conditions without relying on hand-crafted feature engineering. For example, intelligent detection of muskmelon ripeness in greenhouse environments using a YOLO‑RFEW model achieved strong detection accuracy while remaining lightweight and computationally efficient (Defang et al., 2024).
+Deep learning has emerged as a dominant approach in agricultural fruit ripeness evaluation by learning discriminative visual representations directly from image data — such as color gradients, texture changes, shape features, and surface patterns — that correspond with maturity stages. Models such as convolutional neural networks (CNNs) and YOLO variants have demonstrated high effectiveness in detecting and classifying fruit at various ripeness levels in both controlled and real field conditions without relying on hand-crafted feature engineering. For example, intelligent detection of muskmelon ripeness in greenhouse environments using a YOLO-RFEW model achieved strong detection accuracy while remaining lightweight and computationally efficient \citep{defang_2024_intelligent}.
 
-State-of-the-art reviews note that deep learning–based techniques are widely applied to extract color, texture, and shape features during fruit growth stages, enabling automated maturity estimation that circumvents the limitations of manual inspection (Jie, M. et al., 2024). Furthermore, airborne and UAV-mounted deep learning vision systems have been applied to strawberry maturity detection with high classification performance, optimizing harvest timing and crop management (Singh, R., Gadade, A. M., & Hussain, I., 2025).
+State-of-the-art reviews note that deep learning–based techniques are widely applied to extract color, texture, and shape features during fruit growth stages, enabling automated maturity estimation that circumvents the limitations of manual inspection \citep{jie_2024_stateoftheart}. Furthermore, airborne and UAV-mounted deep learning vision systems have been applied to strawberry maturity detection with high classification performance, optimizing harvest timing and crop management \citep{singh_2025_robust}.
 
 These advances highlight the suitability of deep learning for visual ripeness classification in precision agriculture, where learned feature representations can detect subtle variations in external indicators — such as rind color patterns — that correspond to different ripeness stages. Integrating deep learning–based rind color classification with DSP-derived acoustic features and a late fusion framework creates a holistic, multimodal sensing system for ripeness detection, improving accuracy, reliability, and on-farm applicability for portable tools such as the proposed watermelon ripeness detector.
 
 
 \section{Conceptual Framework}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\linewidth]{Thesis Format (LaTEX)/figures/conceptual-framework.png}
-    \caption{Conceptual Framework}
-    \label{fig:theoritical_framework}
-\end{figure}
+The conceptual framework will illustrate the processes and data flow of the proposed Watermelon Ripeness Detection System, which will adopt a multimodal approach by integrating both image and audio analyses, as shown in Figure \ref{fig:conceptual_framework}. The system will acquire data from two sources: a local dataset consisting of watermelon color images and an online dataset containing watermelon acoustic signals. These two data types will undergo separate processing pipelines to capture both external and internal indicators of ripeness. By combining these modalities, the system will address the limitations of single-modality approaches and will aim to improve classification accuracy and reliability.
 
-The conceptual framework will illustrate the processes and data flow of the proposed Watermelon Ripeness Detection System, which will adopt a multimodal approach by integrating both image and audio analyses. The system will acquire data from two sources: a local dataset consisting of watermelon color images and an online dataset containing watermelon acoustic signals. These two data types will undergo separate processing pipelines to capture both external and internal indicators of ripeness. By combining these modalities, the system will address the limitations of single-modality approaches and will aim to improve classification accuracy and reliability.
+\begin{figure}[h]
+    \caption{Conceptual Framework}
+    \label{fig:conceptual_framework}
+    \centering
+    \includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/conceptual-framework.png}
+\end{figure}
 
 For the image pipeline, the locally collected images will first undergo image preprocessing, which will include resizing, normalization, and noise reduction to ensure consistency and improve data quality. These steps will be necessary to minimize irrelevant variations and enhance important visual features such as color and texture. The processed images will then be used in model training, where machine learning and deep learning models will learn to classify ripeness levels based on these features. To further optimize performance, hyperparameter tuning will be conducted by adjusting parameters such as learning rate, batch size, and model architecture. This process will ensure that the most effective configuration is achieved, resulting in the selection of the best-performing model for deployment.
 
@@ -76,87 +79,85 @@ Acoustic-based methods for fruit ripeness assessment rely on digital signal proc
 \subsubsection{Watermelon Sorting Process by Frequency Identification and Artificial Neural Network
 }
 
-The study investigates the long-standing challenge of accurately sorting watermelons based on ripeness—a process traditionally performed through manual tapping and subjective auditory judgment (Wongkalasin et al., 2023). The purpose of the research is to develop a more objective, consistent, and modernized method of quality assessment using a frequency-based approach combined with artificial neural networks. To achieve this, the researchers generated controlled sound signals that were transmitted through watermelon samples, collected the resulting vibration responses, and analyzed the signal frequency and amplitude using Fast Fourier Transform (FFT). These processed acoustic features were then used as inputs to a feed-forward neural network trained to differentiate between various ripeness levels. A total of 30 watermelons were tested, each cut open afterward for ground-truth validation of their actual internal quality.
+The study investigates the long-standing challenge of accurately sorting watermelons based on ripeness—a process traditionally performed through manual tapping and subjective auditory judgment \citep{wongkalasin_2021_watermelon}. The purpose of the research is to develop a more objective, consistent, and modernized method of quality assessment using a frequency-based approach combined with artificial neural networks. To achieve this, the researchers generated controlled sound signals that were transmitted through watermelon samples, collected the resulting vibration responses, and analyzed the signal frequency and amplitude using Fast Fourier Transform (FFT), as illustrated in Figure \ref{fig:sorting-machine}. These processed acoustic features were then used as inputs to a feed-forward neural network trained to differentiate between various ripeness levels. A total of 30 watermelons were tested, each cut open afterward for ground-truth validation of their actual internal quality.
 
 \begin{figure}[ht]
+    \caption{Principle operation of the sorting machine 
+	\citep{wongkalasin_2021_watermelon}}
+	\label{fig:sorting-machine}
 	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png}
-	\caption{Feedforward neural network model (Adapted from Wongkalasin et al., 2023)}
-	\label{fig:waterfall}
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/sorting-machine.png}
 \end{figure}
 
-\[
-x[n] = \frac{1}{N} \sum_{k=0}^{N-1} X[k] e^{2\pi ink/N} \quad n = 0, \ldots, N-1 \tag{1}
-\]
 
-where
-
-\noindent $X[k]$ = the size of conversion domain
-
-\noindent $X[n]$ = the size of signal in different frequency range measured randomly
-
-The findings showed that 129 Hz and 172 Hz produced the most distinct amplitude patterns for differentiating unripe, ripe, and near-rotten fruits, allowing the neural network to classify watermelons with reasonable accuracy. The study concluded that frequency-based analysis integrated with neural network processing provides a modern, non-destructive approach to automated sorting. However, the researchers acknowledged that the system’s reliability is limited by the small sample size and the use of only one watermelon variety, meaning broader testing is required to fully validate accuracy and optimize performance across different cultivars. 
+The findings showed that 129 Hz and 172 Hz, as illustrated in Figure \ref{fig:feedforward-neural-network-model}, produced the most distinct amplitude patterns for differentiating unripe, ripe, and near-rotten fruits, allowing the neural network to classify watermelons with reasonable accuracy. The study concluded that frequency-based analysis integrated with neural network processing provides a modern, non-destructive approach to automated sorting. However, the researchers acknowledged that the system’s reliability is limited by the small sample size and the use of only one watermelon variety, meaning broader testing is required to fully validate accuracy and optimize performance across different cultivars. 
 
 \begin{figure}[ht]
+    \caption{Feedforward neural network model \citep{wongkalasin_2021_watermelon}} 
+    \label{fig:feedforward-neural-network-model}
 	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/sorting-machine.png}
-	\caption{Principle operation of the sorting machine (Adapted from Wongkalasin et al., 2023)}
-	\label{fig:waterfall}
+	\includegraphics[width=0.9\linewidth]{Thesis Format (LaTEX)/figures/feedforward-neural-network-model.png}
+	
 \end{figure}
 
 This study provides a key technical precedent for the proposed acoustic analysis. It validates that processed sound signals (using FFT) can classify ripeness via a neural network, which supports the methodological foundation. The identified resonant frequencies (129 Hz, 172 Hz) serve as a benchmark to evaluate the proposed MFCC-based feature extraction. Critically, the study's limitations—small sample size, single variety, and controlled lab conditions—directly outline the gaps the present research addresses. This research aims to advance the approach by employing MFCCs for better noise resilience, using a larger local dataset, and testing in real field conditions to create a practical farm-level tool.
 
 \subsubsection{Evaluation Of Watermelon Ripeness Using Self Developed Ripening Detector}
 
-The study investigates the use of a self-developed acoustic ripeness detector as an objective method for evaluating watermelon ripeness, offering an alternative to traditional subjective techniques such as manual tapping and visual inspection (Pamungkas & Bintoro, 2021). The primary purpose of the research is to determine whether acoustic impulse responses can reliably indicate ripeness levels. In the methodology, a mechanical tapping device was used to generate consistent impacts on the fruit, while the resulting sound signals were recorded and processed in MATLAB. Key acoustic features, including dominant frequency and magnitude, were extracted and analyzed across watermelons harvested at five different maturity stages.
+The study investigates the use of a self-developed acoustic ripeness detector as an objective method for evaluating watermelon ripeness, offering an alternative to traditional subjective techniques such as manual tapping and visual inspection \citep{pamungkas_2021_evaluation}. The primary purpose of the research is to determine whether acoustic impulse responses can reliably indicate ripeness levels. In the methodology, shown in Figure \ref{fig:setup-experiment} a mechanical tapping device was used to generate consistent impacts on the fruit, while the resulting sound signals were recorded and processed in MATLAB. Key acoustic features, including dominant frequency and magnitude, were extracted and analyzed across watermelons harvested at five different maturity stages.
 
 \begin{figure}[ht]
+    \caption{Setup experiment for acoustic data acquisition \citep{pamungkas_2021_evaluation}}
+	\label{fig:setup-experiment}
 	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/setup-experiment.png}
-	\caption{Setup experiment for acoustic data acquisition (Adapted from Pamungkas & Bintoro, 2021)}
-	\label{fig:waterfall}
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/setup-experiment.png}
+	
 \end{figure}
 
-The findings reveal that as watermelon maturity increased, both dominant frequency and magnitude decreased, showing strong correlation with fruit weight and soluble solids content, which are established indicators of ripeness. These results demonstrate that the detector can reliably differentiate ripeness levels based on acoustic characteristics. However, a notable limitation of the study is that it relies on a controlled experimental setup and requires mechanical tapping, which may limit practicality in large-scale or field applications. Additionally, the approach focuses on a limited set of acoustic features, potentially overlooking other informative signal characteristics.
+The findings reveal that as watermelon maturity increased, both dominant frequency and magnitude decreased, showing strong correlation with fruit weight and soluble solids content, which are established indicators of ripeness, as shown in Figure \ref{fig:acoustic-properties}. These results demonstrate that the detector can reliably differentiate ripeness levels based on acoustic characteristics. However, a notable limitation of the study is that it relies on a controlled experimental setup and requires mechanical tapping, which may limit practicality in large-scale or field applications. Additionally, the approach focuses on a limited set of acoustic features, potentially overlooking other informative signal characteristics.
 
 \begin{figure}[ht]
+    \caption{The relationship between acoustic properties and physicochemical parameters of watermelon \citep{pamungkas_2021_evaluation}}
+	\label{fig:acoustic-properties}
 	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/acoustic-properties.png}
-	\caption{The relationship between acoustic properties and physicochemical parameters of watermelon (Adapted from Pamungkas & Bintoro, 2021)}
-	\label{fig:waterfall}
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/acoustic-properties.png}
+	
 \end{figure}
 
 This study is significant as it strongly validates the use of acoustic signals for non-destructive ripeness detection, providing a clear physiological basis for the proposed system. The inverse relationship between maturity and frequency/magnitude offers a crucial benchmark for acoustic modeling. The limitation of a controlled setup underscores the need for the present research to develop a portable solution for field use. Furthermore, the study highlights a key gap: its reliance on a narrow set of acoustic features could be complemented by integrating computer vision. By fusing acoustic data with visual analysis of external maturity indicators—such as ground-spot color and rind texture—a hybrid system could significantly improve classification robustness, addressing internal and external ripeness cues that a single-modality acoustic approach may miss.
 
 \subsubsection{Non-Destructive Acoustic Screening of Pineapple Ripeness by Unsupervised Machine Learning and Wavelet Kernel Methods}
 
-The study addresses the practical challenge of consistently screening pineapple ripeness on export production lines, where human workers are prone to fatigue-induced errors and subjective inconsistency after prolonged listening (Chen et al., 2022). The purpose of the research is to develop an automated, non-destructive acoustic screening device capable of reliably classifying pineapples as raw or ripe directly on a conveyor system. The methodology involves injecting controlled excitation sounds into the fruit through a vibrator mediated by a custom acoustic coupler, then recording the penetrated sounds for analysis. A Taguchi experiment design was employed to systematically evaluate five acoustic coupler configurations across material, angle, and contact area parameters, ultimately identifying a screw-locked pinning bean board as the optimal coupler based on signal-to-noise ratio. The study explicitly demonstrates that conventional Fourier Transform analysis is insufficient for this application: both time-domain waveforms and frequency-domain spectral plots of raw and ripe pineapples appear visually indistinguishable, confirming that standard FFT cannot resolve the subtle acoustic differences caused by internal ripeness changes.
+The study addresses the practical challenge of consistently screening pineapple ripeness on export production lines, where human workers are prone to fatigue-induced errors and subjective inconsistency after prolonged listening \citep{chen_2021_nondestructive}. The purpose of the research is to develop an automated, non-destructive acoustic screening device capable of reliably classifying pineapples as raw or ripe directly on a conveyor system. The methodology involves injecting controlled excitation sounds into the fruit through a vibrator mediated by a custom acoustic coupler, then recording the penetrated sounds for analysis. A Taguchi experiment design was employed to systematically evaluate five acoustic coupler configurations across material, angle, and contact area parameters, ultimately identifying a screw-locked pinning bean board as the optimal coupler based on signal-to-noise ratio. The study explicitly demonstrates that conventional Fourier Transform analysis is insufficient for this application: both time-domain waveforms and frequency-domain spectral plots of raw and ripe pineapples appear visually indistinguishable, confirming that standard FFT cannot resolve the subtle acoustic differences caused by internal ripeness changes.
 
 \begin{figure}[ht]
+    \caption{Setup experiment for acoustic data acquisition. Raw waveform (left) and ripe waveform (right) \citep{chen_2021_nondestructive}}
+	\label{fig:setup-exp2}
 	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/setup-exp2.png}
-	\caption{Setup experiment for acoustic data acquisition. Raw waveform (left) and ripe waveform (right) (Adapted from Chen et al., 2022)}
-	\label{fig:waterfall}
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/setup-exp2.png}
+	
 \end{figure}
 
-To overcome this limitation, the study applies Morlet Wavelet Kernel decomposition, which provides simultaneous time and frequency resolution—offering high time resolution at high frequencies and high frequency resolution at low frequencies—allowing it to reveal structural differences that FFT cannot detect. The wavelet transform of ripe pineapples shows a clear spectral ridge at approximately 300 Hz, which is absent or muted in raw fruit, providing a discriminative feature for classification. These wavelet-derived features are processed through an unsupervised pipeline using cross-wavelet power spectrum coherence as the distance metric, followed by singular value decomposition for principal component extraction, and finally AdaBoost-based classification. From 124 original recordings totaling 3,475 sound frames after preprocessing, 2,780 unlabeled frames were used for unsupervised clustering and 695 labeled frames were reserved for testing. The system achieved 98.56\% classification accuracy with a 0.93 F1-score. A notable limitation is that approximately 70\% of initial recordings had to be discarded due to acoustic coupler quality issues, and the entire experiment was conducted under controlled, quiet laboratory conditions using a single pineapple variety, raising questions about robustness in noisy field environments.
+To overcome this limitation, the study applies Morlet Wavelet Kernel decomposition, which provides simultaneous time and frequency resolution—offering high time resolution at high frequencies and high frequency resolution at low frequencies—allowing it to reveal structural differences that FFT cannot detect. The wavelet transform of ripe pineapples shows a clear spectral ridge at approximately 300 Hz, which is absent or muted in raw fruit, providing a discriminative feature for classification, as shown in Figure \ref{fig:setup-exp2}. These wavelet-derived features are processed through an unsupervised pipeline using cross-wavelet power spectrum coherence as the distance metric, followed by singular value decomposition for principal component extraction, and finally AdaBoost-based classification. From 124 original recordings totaling 3,475 sound frames after preprocessing, 2,780 unlabeled frames were used for unsupervised clustering and 695 labeled frames were reserved for testing. The system achieved 98.56\% classification accuracy with a 0.93 F1-score. A notable limitation is that approximately 70\% of initial recordings had to be discarded due to acoustic coupler quality issues, and the entire experiment was conducted under controlled, quiet laboratory conditions using a single pineapple variety, raising questions about robustness in noisy field environments.
 
 This study carries direct and substantial relevance to the proposed watermelon ripeness detector. Most critically, it provides empirical evidence that raw FFT fails to capture acoustic differences between ripeness stages in fruit tapping applications, because percussion sounds are non-periodic and transient rather than sinusoidal—a finding with direct implications for acoustic feature selection in any tapping-based ripeness system. This motivates the use of time-frequency representations such as Mel Frequency Cepstral Coefficients (MFCCs) in the proposed system, which, like wavelet decomposition, simultaneously resolves temporal and spectral characteristics of short-duration signals. Additionally, the Taguchi-based acoustic coupler optimization provides a methodological precedent for the mechanical tapping and microphone placement design in the proposed device, reinforcing the importance of coupler geometry in achieving high signal quality. The study's unsupervised classification approach is also noteworthy: since ripeness is a continuous and gradually changing state rather than a binary condition, unsupervised or semi-supervised strategies may better reflect the underlying biology—a consideration that could inform future iterations of the proposed system when labeled training data from local watermelon varieties is limited.
 
 \subsubsection{Design and Fabrication of a Watermelon Ripeness Tester Using Matlab Software GUI}
 
-The study investigates the longstanding challenge of determining watermelon ripeness, a process traditionally carried out through manual thumping and subjective auditory judgment that is inconsistent and difficult to standardize. The purpose of the research is to design and fabricate a machine-based ripeness detection system that analyzes thumping sounds in a more objective and repeatable way (Okafor, 2020). To achieve this, a custom apparatus was constructed consisting of a mechanical wooden thumping component, a microphone to capture the resulting sound, and a MATLAB-based graphical user interface to display both the audio waveform and FFT waveform outputs. Sound signals captured from each watermelon were analyzed using Fast Fourier Transform within a frequency range of 100 Hz to 4000 Hz, and ripeness classification was determined based on the average magnitude of the FFT output. A total of ten watermelons were tested and subsequently cut open to verify whether the system's classifications matched their actual internal condition.
+The study investigates the longstanding challenge of determining watermelon ripeness, a process traditionally carried out through manual thumping and subjective auditory judgment that is inconsistent and difficult to standardize. The purpose of the research is to design and fabricate a machine-based ripeness detection system that analyzes thumping sounds in a more objective and repeatable way \citep{okafor_2020_design}. To achieve this, a custom apparatus was constructed consisting of a mechanical wooden thumping component, a microphone to capture the resulting sound, and a MATLAB-based graphical user interface to display both the audio waveform and FFT waveform outputs. The overall experimental workflow is summarized in 
+Figure~\ref{fig:experimental_flowchart}. Sound signals captured from each watermelon were analyzed using Fast Fourier Transform within a frequency range of 100 Hz to 4000 Hz, and ripeness classification was determined based on the average magnitude of the FFT output. A total of ten watermelons were tested and subsequently cut open to verify whether the system's classifications matched their actual internal condition.
 
 \begin{figure}[ht]
+    \caption{Experimental flow chart \citep{okafor_2020_design}}
+	\label{fig:experimental_flowchart}
 	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/experimental-flowchart.png}
-	\caption{Experimental flow chart (Adapted from Okafor, 2020)}
-	\label{fig:waterfall}
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/experimental-flowchart.png}
+ 
 \end{figure}
 
-The results showed that watermelons with an average FFT magnitude below 0.00025 were classified as unripe, while those above this threshold were classified as ripe, with the overall magnitude range falling between 0.00019 and 0.00030 (Okafor, 2020). The system's classifications were confirmed to be largely accurate upon physical inspection of the fruit. The study concluded that FFT magnitude analysis of thumping sounds offers a practical and efficient alternative to traditional ripeness assessment, and recommended further development toward a portable device or smartphone application capable of performing the same detection using an embedded microphone.
+The results showed that watermelons with an average FFT magnitude below 0.00025 were classified as unripe, while those above this threshold were classified as ripe, with the overall magnitude range falling between 0.00019 and 0.00030 \citep{okafor_2020_design}. The system's classifications were confirmed to be largely accurate upon physical inspection of the fruit. The study concluded that FFT magnitude analysis of thumping sounds offers a practical and efficient alternative to traditional ripeness assessment, and recommended further development toward a portable device or smartphone application capable of performing the same detection using an embedded microphone.
 
-This study provides a useful foundational reference for acoustic-based fruit ripeness detection, confirming that FFT magnitude analysis of thumping sounds can meaningfully distinguish between ripe and unripe watermelons (Okafor, 2020). The established magnitude threshold of 0.00025 serves as a reference point for evaluating other signal processing approaches. However, the study's limitations are considerable, including a very small sample size of only ten fruits, a strictly binary classification with no distinction between ripeness gradations, and a bulky non-portable setup confined to laboratory conditions. These gaps directly inform the direction of the present research, which aims to address them by incorporating a larger and more diverse dataset, introducing more nuanced ripeness categories, and developing a system suited for practical use in real field or market settings.
+This study provides a useful foundational reference for acoustic-based fruit ripeness detection, confirming that FFT magnitude analysis of thumping sounds can meaningfully distinguish between ripe and unripe watermelons \citep{okafor_2020_design}. The established magnitude threshold of 0.00025 serves as a reference point for evaluating other signal processing approaches. However, the study's limitations are considerable, including a very small sample size of only ten fruits, a strictly binary classification with no distinction between ripeness gradations, and a bulky non-portable setup confined to laboratory conditions. These gaps directly inform the direction of the present research, which aims to address them by incorporating a larger and more diverse dataset, introducing more nuanced ripeness categories, and developing a system suited for practical use in real field or market settings.
 
 
 \subsection{Machine Learning}
@@ -165,43 +166,46 @@ Machine learning methods for fruit ripeness assessment apply statistical classif
 
 \subsubsection{Watermelon Ripeness Detector Using Near Infrared Spectroscopy}
 
-The study presents the design and implementation of a low-cost, portable watermelon ripeness detection system based on near-infrared spectroscopy (NIRS) and machine learning (Arboleda et al., 2020). Its main purpose is to provide a non-destructive and objective alternative to traditional ripeness assessment methods such as tapping or visual inspection, which are often inaccurate and subjective. The methodology involves collecting reflectance spectral data from the watermelon surface using a compact NIR sensor integrated with a Raspberry Pi Zero W. A total of 200 watermelon samples were analyzed and classified using a Support Vector Machine (SVM) to distinguish between ripe and unripe fruits.
+The study presents the design and implementation of a low-cost, portable watermelon ripeness detection system based on near-infrared spectroscopy (NIRS) and machine learning \citep{arboleda_2020_watermelon}. Its main purpose is to provide a non-destructive and objective alternative to traditional ripeness assessment methods such as tapping or visual inspection, which are often inaccurate and subjective. The methodology involves collecting reflectance spectral data from the watermelon surface using a compact NIR sensor integrated with a Raspberry Pi Zero W. A total of 200 watermelon samples were analyzed and classified using a Support Vector Machine (SVM) to distinguish between ripe and unripe fruits.
 
 \begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/training-dataset.png}
-	\caption{Training dataset: a) scatter plot, and b) statistic information (Adapted from Arboleda et al., 2020)}
-	\label{fig:waterfall}
+	\caption{Training dataset: a) scatter plot, and b) statistic information \citep{arboleda_2020_watermelon}}
+	\label{fig:training-dataset}
+    \centering
+    \includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/training-dataset.png}
+    
 \end{figure}
 
-The findings show that the proposed system achieved a classification accuracy of 92.5\%, demonstrating that reliable ripeness detection can be achieved even with a limited number of wavelength bands. This highlights the effectiveness of combining simple NIRS hardware with machine learning in real-world agricultural settings. However, a key limitation of the study is that it performs binary classification only and relies on a small dataset, which may limit generalizability across different watermelon varieties and growing conditions. Additionally, the use of manually selected wavelength bands and a single machine learning model may restrict scalability and robustness. Despite these limitations, the study is significant for the present research as it provides a validated proof-of-concept for a portable, sensor-based detection system, demonstrating the practical viability of deploying low-cost hardware in the field. The high accuracy achieved with a limited sensor also reinforces the potential for integrating other modalities, such as acoustic analysis, to move beyond binary classification and create a more comprehensive and nuanced ripeness assessment tool suitable for farm-level use.
+The findings show that the proposed system achieved a classification accuracy of 92.5\% as shown in Figure \ref{fig:training-dataset}, demonstrating that reliable ripeness detection can be achieved even with a limited number of wavelength bands. This highlights the effectiveness of combining simple NIRS hardware with machine learning in real-world agricultural settings. However, a key limitation of the study is that it performs binary classification only and relies on a small dataset, which may limit generalizability across different watermelon varieties and growing conditions. Additionally, the use of manually selected wavelength bands and a single machine learning model may restrict scalability and robustness. Despite these limitations, the study is significant for the present research as it provides a validated proof-of-concept for a portable, sensor-based detection system, demonstrating the practical viability of deploying low-cost hardware in the field. The high accuracy achieved with a limited sensor also reinforces the potential for integrating other modalities, such as acoustic analysis, to move beyond binary classification and create a more comprehensive and nuanced ripeness assessment tool suitable for farm-level use.
 
 \subsubsection{Supervised Binary Classification Methods for Strawberry Ripeness Discrimination from Bioimpedance Data}
 
-The use of supervised machine learning for binary ripeness classification of strawberry fruit (Ibba et al., 2021) using sensor-derived features extracted from bioimpedance shows a reproducible ML pipeline, addressing the absence of a standardized methodology for this type of agricultural sensor data.. A total of 923 strawberry fruits were measured and labeled as ripe or unripe based on a CIELab color threshold, yielding 684 training and 239 test samples. The raw sensor data were reduced to 18 features through a two-stage selection process: a manual stage based on correlation analysis between features and ripeness labels, and an automated backward sequential feature selection combined with grid search hyperparameter tuning under ten-fold cross-validation. Six supervised binary classifiers were trained and compared: Logistic Regression, Decision Tree, Naive Bayes Classifier, K-Nearest Neighbors, Support Vector Machine, and Multi-Layer Perceptron. MLP models were optimized separately using a 60:20:20 training, validation, and internal test split to promote generalization, while the remaining five classifiers used 10,000-round bootstrap validation for stability assessment before final evaluation on the held-out test set.
+The use of supervised machine learning for binary ripeness classification of strawberry fruit \citep{pietroibba_2021_supervised} using sensor-derived features extracted from bioimpedance shows a reproducible ML pipeline, addressing the absence of a standardized methodology for this type of agricultural sensor data. A total of 923 strawberry fruits were measured and labeled as ripe or unripe based on a CIELab color threshold, yielding 684 training and 239 test samples. The raw sensor data were reduced to 18 features through a two-stage selection process: a manual stage based on correlation analysis between features and ripeness labels, and an automated backward sequential feature selection combined with grid search hyperparameter tuning under ten-fold cross-validation. Six supervised binary classifiers were trained and compared: Logistic Regression, Decision Tree, Naive Bayes Classifier, K-Nearest Neighbors, Support Vector Machine, and Multi-Layer Perceptron. MLP models were optimized separately using a 60:20:20 training, validation, and internal test split to promote generalization, while the remaining five classifiers used 10,000-round bootstrap validation for stability assessment before final evaluation on the held-out test set.
 
 \begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/dl1.png}
-	\caption{Overview of the Staged Sensor-to-Classification Pipeline for Binary Ripeness Detection (Adapted from Ibba et al., 2021)}
-	\label{fig:overview1}
+    \caption{Overview of the Staged Sensor-to-Classification Pipeline for Binary Ripeness Detection \citep{pietroibba_2021_supervised}} 
+    \label{fig:overview1}
+    \centering
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/dl1.png}
+    
 \end{figure}
 
 As illustrated in Figure \ref{fig:overview1}, the pipeline progresses from raw sensor data through a structured feature reduction and classifier optimization stage before final binary output — demonstrating that a multi-stage, sensor-to-classification pipeline is a viable and reproducible framework for agricultural ripeness detection, a principle the proposed system similarly adopts across its image and acoustic processing branches.
 
 \subsubsection{Automatic Classification of the Ripeness Stage of Mango Fruit Using a Machine Learning Approach}
 
-Classifying the ripeness stage of the Nam Dok Mai Si Tong mango cultivar presents a unique challenge, as its skin remains uniformly yellow regardless of maturity, making traditional visual cues ineffective for determining ripeness (Worasawate et al., 2022). To address this limitation, a hybrid machine learning workflow was developed, beginning with the unsupervised clustering of biochemical properties—total soluble solids, titratable acidity, and the TSS/TA ratio—to generate reliable ripeness labels for the samples. These cluster-derived labels were then paired with sensor-based features, including mango weight, RGB skin color values, capacitance, and voltage from a parallel-plate sensor, allowing the authors to train Gaussian Naive Bayes, Support Vector Machine, and Feed-Forward Artificial Neural Network models under a fourfold cross-validation scheme. 
+Classifying the ripeness stage of the Nam Dok Mai Si Tong mango cultivar presents a unique challenge, as its skin remains uniformly yellow regardless of maturity, making traditional visual cues ineffective for determining ripeness \citep{worasawate_2022_automatic}. To address this limitation, a hybrid machine learning workflow was developed, 
+as illustrated in Figure~\ref{fig:workflow}, beginning with the unsupervised clustering of biochemical properties—total soluble solids, titratable acidity, and the TSS/TA ratio—to generate reliable ripeness labels for the samples. These cluster-derived labels were then paired with sensor-based features, including mango weight, RGB skin color values, capacitance, and voltage from a parallel-plate sensor, allowing the authors to train Gaussian Naive Bayes, Support Vector Machine, and Feed-Forward Artificial Neural Network models under a fourfold cross-validation scheme. 
+
+The workflow highlights how unsupervised clustering and supervised classification were strategically combined to overcome the absence of distinguishable visual ripeness indicators. By integrating biochemical-grounded labeling, sensor-acquired features, and dataset balancing through SMOTETomek, the approach establishes a systematic framework for ripeness prediction in fruit varieties with subtle or unreliable external cues. This methodological structure directly parallels the needs of the present research, where generating dependable labels and extracting multimodal features are similarly essential for constructing an accurate watermelon ripeness classification system.
 
 \begin{figure}[ht]
+	\caption{Workflow for Predicting Mango Ripeness \citep{worasawate_2022_automatic}}
+	\label{fig:workflow}
 	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/workflow.png}
-	\caption{Workflow for Predicting Mango Ripeness (Adapted from Worasawate et al., 2022)}
-	\label{fig:overview1}
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/workflow.png}
+    
 \end{figure}
-
-The workflow highlights how unsupervised clustering and supervised classification were strategically combined to overcome the absence of distinguishable visual ripeness indicators. By integrating biochemical-grounded labeling, sensor-acquired features, and dataset balancing through SMOTETomek, the approach establishes a systematic framework for ripeness prediction in fruit varieties with subtle or unreliable external cues. This methodological structure directly parallels the needs of the present research, where generating dependable labels and extracting multimodal features are similarly essential for constructing an accurate watermelon ripeness classification system. 
-
 
 \subsection{Deep Learning}
 
@@ -209,24 +213,26 @@ Deep learning approaches to fruit quality assessment leverage convolutional arch
 
 \subsubsection{Application of Hyperspectral Imaging for Watermelon Seed Classification Using Deep Learning and Scoring Mechanism}
 
-The study investigates the use of near-infrared hyperspectral imaging (NIR-HSI) integrated with deep learning techniques for the fast and non-destructive classification of watermelon seed varieties (Qi et al., 2024). Its primary purpose is to address the challenges of high dimensionality and noise in hyperspectral data while improving classification accuracy. Spectral data from 2,283 seeds across 10 varieties were captured within the 1053–1681 nm wavelength range, followed by region-of-interest extraction and spectral correction to ensure data consistency.
+The study investigates the use of near-infrared hyperspectral imaging (NIR-HSI) integrated with deep learning techniques for the fast and non-destructive classification of watermelon seed varieties \citep{qi_2024_application}. Its primary purpose is to address the challenges of high dimensionality and noise in hyperspectral data while improving classification accuracy. Spectral data from 2,283 seeds across 10 varieties were captured within the 1053–1681 nm wavelength range, followed by region-of-interest extraction and spectral correction to ensure data consistency.
 
 \begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/pipeline_2.png}
-	\caption{Workflow for Predicting Mango Ripeness (Adapted from Worasawate et al., 2022)}
+	\caption{Overall Pipeline Flowchart \citep{qi_2024_application}}
 	\label{fig:pipeline}
+	\centering
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/pipeline_2.png}
+    
 \end{figure}
 
-The pipeline adopted in this study follows a structured sequence: raw hyperspectral images of watermelon seeds are acquired, corrected, and passed through region-of-interest extraction, after which spectral data undergoes SG smoothing and SNV normalization before dimensionality reduction via SPA and classification through three deep learning models as shown in the Figure X. Both traditional machine learning models (SVM, XGBoost) and deep learning models (LeNet, GoogLeNet, and ResNet) were evaluated. 
+The pipeline adopted in this study follows a structured sequence: raw hyperspectral images of watermelon seeds are acquired, corrected, and passed through region-of-interest extraction, after which spectral data undergoes SG smoothing and SNV normalization before dimensionality reduction via SPA and classification through three deep learning models as shown in the Figure \ref{fig:pipeline}. Both traditional machine learning models (SVM, XGBoost) and deep learning models (LeNet, GoogLeNet, and ResNet) were evaluated. 
 
-The key finding of the study is that a weighted ensemble scoring mechanism, which fuses predictions from multiple deep learning models, significantly outperforms individual models, achieving a test accuracy of 87.97\%. Each of the three models was trained independently and exhibited different misclassification tendencies across varieties, which motivated the use of a fusion strategy rather than relying on any single model output.
+The key finding of the study is that a weighted ensemble scoring mechanism, shown in Figure \ref{fig:scoring-mechanism} which fuses predictions from multiple deep learning models, significantly outperforms individual models, achieving a test accuracy of 87.97\%. Each of the three models was trained independently and exhibited different misclassification tendencies across varieties, which motivated the use of a fusion strategy rather than relying on any single model output.
 
 \begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/pipeline_2.png}
-	\caption{Workflow for Predicting Mango Ripeness (Adapted from Worasawate et al., 2022)}
+    \caption{Scoring Mechanism Model \citep{qi_2024_application}}
 	\label{fig:scoring-mechanism}
+	\centering
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/scoring-mechanism.png}
+	
 \end{figure}
 
 This study is relevant to the present research in that it demonstrates how deep learning models can be applied to agricultural classification tasks involving complex, high-dimensional sensor data. The use of one-dimensional convolutional neural networks on spectral feature inputs, alongside an ensemble scoring mechanism that combines multiple model outputs through weighted fusion, provides a conceptual reference for structuring a learning-based classification pipeline. While the sensor modality differs significantly, the underlying principle of using deep learning to extract discriminative features from continuous signal data and improve classification reliability through model combination is applicable to the image-based ripeness classification component of the present study. It is also worth noting that the hyperspectral imaging equipment used in this study is large and stationary, which stands in contrast to the present research's objective of building a portable device suited for on-farm use.
@@ -234,91 +240,95 @@ This study is relevant to the present research in that it demonstrates how deep 
 
 \subsubsection{Intelligent Detection of Muskmelon Ripeness in Greenhouse Environment Based on YOLO-RFEW}
 
-This study focuses on improving the accuracy and efficiency of muskmelon fruit ripeness detection for real-time deployment in picking robots. Its main purpose is to address challenges associated with low detection efficiency and the complexity of deploying lightweight target detection models in agricultural robotics, providing a system that is both accurate and computationally efficient (Defang et al., 2024).
+This study focuses on improving the accuracy and efficiency of muskmelon fruit ripeness detection for real-time deployment in picking robots. Its main purpose is to address challenges associated with low detection efficiency and the complexity of deploying lightweight target detection models in agricultural robotics, providing a system that is both accurate and computationally efficient \citep{defang_2024_intelligent}.
 
 \begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/YOLO-RFEW.png}
-	\caption{Workflow for Predicting Mango Ripeness (Adapted from Worasawate et al., 2022)}
+    \caption{Structure of the YOLO-RFEW Model \citep{defang_2024_intelligent}}
 	\label{fig:yolo-rfew}
+	\centering
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/YOLO-RFEW.png}
+    
 \end{figure}
 
-The methodology involves developing an enhanced YOLO-RFEW model based on YOLOv8n as shown in Figure X. Key innovations include replacing standard convolutions with RFAConv in the backbone to prioritize important feature regions, enhancing the C2f module into a C2f-FE module with FasterNet and Efficient Multi-Scale attention (EMA) for better feature extraction and fusion, and optimizing the Weighted Intersection over Union (WIoU) as the loss function for improved target frame prediction. The model was tested using two types of muskmelon maturity datasets (M-u and M-r), and its performance was compared with multiple lightweight and standard YOLO models (Defang et al., 2024).
+The methodology involves developing an enhanced YOLO-RFEW model based on YOLOv8n as shown in Figure \ref{fig:yolo-rfew}. Key innovations include replacing standard convolutions with RFAConv in the backbone to prioritize important feature regions, enhancing the C2f module into a C2f-FE module with FasterNet and Efficient Multi-Scale attention (EMA) for better feature extraction and fusion, and optimizing the Weighted Intersection over Union (WIoU) as the loss function for improved target frame prediction. The model was tested using two types of muskmelon maturity datasets (M-u and M-r), and its performance was compared with multiple lightweight and standard YOLO models \citep{defang_2024_intelligent}.
 
 The findings demonstrate that YOLO-RFEW achieves high detection accuracy, with precision, recall, F1 score, and mean Average Precision (mAP) values of 93.16\%, 83.22\%, 87.91\%, and 90.82\%, respectively, while maintaining a lightweight model size of 4.75 MB and an inference time of 1.5 ms. It outperforms other YOLO variants and lightweight models in both accuracy and computational efficiency. These results indicate that the proposed model is not only theoretically sound but also practically valuable, offering a feasible and efficient solution for real-time muskmelon ripeness detection in robotic harvesting applications.
+
 This study is relevant as it demonstrates that lightweight, optimized deep learning models can achieve high detection accuracy while remaining computationally efficient enough for real-time, on-device deployment which is a core requirement of the proposed portable field tool. The YOLO-RFEW model's achievement of 90.82\% mAP at only 4.75 MB and 1.5 ms inference time provides a strong benchmark and proof-of-concept that compact vision models can meet the performance demands of agricultural ripeness detection without requiring high-end hardware. Furthermore, the study's architectural innovations, particularly the use of attention mechanisms such as EMA for improved feature extraction and fusion, offer methodological insights for enhancing the proposed system's deep learning-based visual component, especially in classifying watermelon rind appearance under variable natural lighting conditions. However, unlike the proposed system, YOLO-RFEW focuses exclusively on external visual detection and is designed for greenhouse-controlled environments, leaving internal ripeness indicators unaddressed. This distinction reinforces the necessity of the present research's multimodal approach, which integrates acoustic signal processing with deep learning-based rind classification to assess both internal and external ripeness cues, thereby delivering a more comprehensive and reliable classification system suited for real-world, pre-harvest farm conditions.
 
-\subsubsection{A non‐destructive approach: Estimation of melon Fruit quality attributes and nutrients using hyperspectral imaging coupled with machine learning}
+\subsubsection{A non‐destructive approach: Estimation of melon fruit quality attributes and nutrients using hyperspectral imaging coupled with machine learning}
 
-The study investigates the longstanding challenge of accurately assessing melon fruit quality and nutrient content, a process traditionally performed through destructive laboratory testing that is time-consuming, costly, and unsuitable for large-scale field application. The purpose of the research is to develop a rapid, non-destructive method of estimating nitrogen, potassium, and sugar concentrations in muskmelon leaves and fruit using hyperspectral imaging (HSI) coupled with deep learning (Shah et al., 2025). To achieve this, hyperspectral images were captured using a Specim IQ portable camera across three melon cultivars grown under varying nitrogen and potassium fertilization treatments in a hydroponic greenhouse. The Successive Projections Algorithm (SPA) was used to identify the most spectrally sensitive bands, and eleven CNN architectures including ResNet, MobileNet, ShuffleNet, RegNet, and EfficientNet variants were trained and compared using both RGB and reconstructed hyperspectral image datasets. Actual nutrient and sugar values were measured through standard laboratory testing of harvested fruit and leaf samples to serve as reference data for model training and validation.
+The study investigates the longstanding challenge of accurately assessing melon fruit quality and nutrient content, a process traditionally performed through destructive laboratory testing that is time-consuming, costly, and unsuitable for large-scale field application. The purpose of the research is to develop a rapid, non-destructive method of estimating nitrogen, potassium, and sugar concentrations in muskmelon leaves and fruit using hyperspectral imaging (HSI) coupled with deep learning \citep{shah_2025_a}. To achieve this, hyperspectral images were captured using a Specim IQ portable camera across three melon cultivars grown under varying nitrogen and potassium fertilization treatments in a hydroponic greenhouse. The Successive Projections Algorithm (SPA) was used to identify the most spectrally sensitive bands, and eleven CNN architectures including ResNet, MobileNet, ShuffleNet, RegNet, and EfficientNet variants were trained and compared using both RGB and reconstructed hyperspectral image datasets. Actual nutrient and sugar values were measured through standard laboratory testing of harvested fruit and leaf samples to serve as reference data for model training and validation.
 
 \begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/ann.png}
-	\caption{Diagrams of the best ANN result for each hyperspectral imaging mode. (Adapted from Shah et al., 2025)}
+	\caption{Diagrams of the best ANN result for each hyperspectral imaging mode \citep{shah_2025_a}}
 	\label{fig:ann-result}
+	\centering
+	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/ann.png}
+    
 \end{figure}
 
-The results demonstrated that hyperspectral image inputs produced more accurate predictions than RGB inputs for nitrogen and potassium content, with MobileNet-v3-l achieving the strongest nitrogen model performance (R²=0.958, MSE=12.188, MAE=1.519) and MobileNet-v2 yielding the best potassium prediction (R²=0.947) (Shah et al., 2025). Interestingly, RGB-based models performed better than HSI models for sugar prediction, with RegNet-y-8gf reaching R²=0.958 for sucrose, a result attributed to the visible color changes that naturally occur as sugar accumulates during fruit ripening. The study concluded that combining deep learning with HSI offers a practical and reliable approach for monitoring nutrient and quality indicators in melon crops at the field level. That said, the models were developed under controlled greenhouse conditions using a limited number of cultivars from a single location, which raises questions about how well the results would hold across more varied growing environments.
+The results, shown in Figure \ref{fig:ann-result} demonstrated that hyperspectral image inputs produced more accurate predictions than RGB inputs for nitrogen and potassium content, with MobileNet-v3-l achieving the strongest nitrogen model performance (R²=0.958, MSE=12.188, MAE=1.519) and MobileNet-v2 yielding the best potassium prediction (R²=0.947) \citep{shah_2025_a}. Interestingly, RGB-based models performed better than HSI models for sugar prediction, with RegNet-y-8gf reaching R²=0.958 for sucrose, a result attributed to the visible color changes that naturally occur as sugar accumulates during fruit ripening. The study concluded that combining deep learning with HSI offers a practical and reliable approach for monitoring nutrient and quality indicators in melon crops at the field level. That said, the models were developed under controlled greenhouse conditions using a limited number of cultivars from a single location, which raises questions about how well the results would hold across more varied growing environments.
 
 This study provides a key technical precedent for non-destructive fruit quality assessment using imaging and machine learning. It validates that image data processed through CNN architectures can reliably predict internal quality indicators without damaging the crop, and the superior performance of RGB imaging for sugar prediction is particularly significant, as it suggests that cost-effective and widely available camera hardware may be sufficient for practical farm-level deployment. This directly supports the present research's decision to use a standard camera module paired with a deep learning classifier for watermelon rind-based ripeness assessment, as it demonstrates that CNN-based image classification can capture meaningful ripeness-related visual features without requiring specialized spectral sensors. Critically, the identified limitations including greenhouse-only testing, limited cultivar diversity, and a single geographic location directly outline gaps that future research must address. Expanding this approach to open-field conditions, a broader range of cultivars, and larger datasets would be essential steps toward developing a robust and universally applicable fruit quality assessment tool.
 
 \section{Synthesis}
-The studies reviewed in this chapter cover three main areas: digital signal processing, machine learning, and deep learning. On the acoustic side, thumping a watermelon and analyzing the resulting sound has been shown to reveal meaningful information about internal ripeness, with specific frequency and magnitude values found to change depending on maturity level (Wongkalasin et al., 2023; Pamungkas \& Bintoro, 2021). However, these findings came from controlled settings with small sample sizes and single varieties, limiting how well the results translate to real field conditions. FFT magnitude has also been tested as a simple binary threshold for ripeness classification, though on a very small sample with no ability to distinguish between ripeness gradations (Okafor, 2020). Critically, standard FFT has been found to be insufficient for tapping-based applications because the sounds produced are short and irregular rather than the steady, repeating signals FFT works best on (Chen et al., 2022), which motivates the use of MFCCs as a more suitable feature extraction approach. On the machine learning side, a low-cost NIR sensor on a Raspberry Pi has been shown to achieve 92.5\% binary classification accuracy (Arboleda et al., 2020), while a structured pipeline covering feature selection, cross-validation, and held-out testing provides a useful methodological reference for classifier development (Ibba et al., 2021). Handling class imbalance through SMOTETomek (Worasawate et al., 2022) has been demonstrated to improve classification reliability. On the deep learning side, compact CNN-based detection models have achieved over 90\% mAP on low-cost hardware (Defang et al., 2024), RGB cameras have been found sufficient for sugar-related ripeness prediction without expensive spectral equipment (Shah et al., 2025), and ensemble mechanisms combining multiple deep learning model outputs have been shown to improve classification reliability over individual models (Qi et al., 2024).	
+The studies reviewed in this chapter cover three main areas: digital signal processing, machine learning, and deep learning. On the acoustic side, thumping a watermelon and analyzing the resulting sound has been shown to reveal meaningful information about internal ripeness, with specific frequency and magnitude values found to change depending on maturity level \citep{wongkalasin_2021_watermelon, pamungkas_2021_evaluation}. However, these findings came from controlled settings with small sample sizes and single varieties, limiting how well the results translate to real field conditions. FFT magnitude has also been tested as a simple binary threshold for ripeness classification, though on a very small sample with no ability to distinguish between ripeness gradations \citep{okafor_2020_design}. Critically, standard FFT has been found to be insufficient for tapping-based applications because the sounds produced are short and irregular rather than the steady, repeating signals FFT works best on \citep{chen_2021_nondestructive}, which motivates the use of MFCCs as a more suitable feature extraction approach. On the machine learning side, a low-cost NIR sensor on a Raspberry Pi has been shown to achieve 92.5\% binary classification accuracy \citep{arboleda_2020_watermelon}, while a structured pipeline covering feature selection, cross-validation, and held-out testing provides a useful methodological reference for classifier development \citep{pietroibba_2021_supervised}. Handling class imbalance through SMOTETomek \citep{worasawate_2022_automatic} has been demonstrated to improve classification reliability. On the deep learning side, compact CNN-based detection models have achieved over 90\% mAP on low-cost hardware \citep{defang_2024_intelligent}, RGB cameras have been found sufficient for sugar-related ripeness prediction without expensive spectral equipment \citep{shah_2025_a}, and ensemble mechanisms combining multiple deep learning model outputs have been shown to improve classification reliability over individual models \citep{qi_2024_application}.	
 
-What the reviewed studies consistently lack is a system that brings these elements together into one portable, field-tested tool. Most work is confined to laboratory conditions, with very few studies validated under real growing conditions. The proposed system aims to address this gap by combining DSP-based acoustic analysis with deep learning-based rind classification, intended for deployment and validation under actual farm conditions. This multimodal, field-deployable approach is designed to produce a more practical and generalizable ripeness classification tool than any of the individual studies reviewed here.
+The reviewed studies consistently lack a system that brings these elements together into one portable, field-tested tool. Most works are confined to laboratory conditions, with very few studies validated under real growing conditions. The proposed system aims to address this gap by combining DSP-based acoustic analysis with deep learning-based rind classification, intended for deployment and validation under actual farm conditions. This multimodal, field-deployable approach is designed to produce a more practical and generalizable ripeness classification tool than any of the individual studies reviewed here. See Table \ref{tab:1} for the summary of the reviewed literature.
 
-\newpage
-
-\footnotesize
-\renewcommand{\arraystretch}{1.3}
-\setlength{\LTleft}{-1.0in}
-\setlength{\LTright}{\fill}
-\begin{longtable}{p{2.0cm} p{2.0cm} p{2.6cm} p{2.0cm} p{1.2cm} p{2.2cm} p{2.8cm}}
-\caption{Comparison Table of Related Studies on Watermelon Ripeness Detection}
-\label{tab:1} \\
-    \toprule
-    \textbf{Authors} & \textbf{Technology Used} & \textbf{Processing Technique} & \textbf{Architecture/ Classifier} & \textbf{Porta-bility} & \textbf{Primary Limitation} & \textbf{Metrics} \\
-    \midrule
-\endfirsthead
-    \multicolumn{7}{l}{} \\
-    \toprule
-    \textbf{Authors} & \textbf{Technology Used} & \textbf{Processing Technique} & \textbf{Architecture/ Classifier} & \textbf{Porta-bility} & \textbf{Primary Limitation} & \textbf{Metrics} \\
-    \midrule
-\endhead
-    \midrule
-    \multicolumn{7}{r}{} \\
-\endfoot
-    \bottomrule
-\endlastfoot
+%\newpage
+%    \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+    %\setlength{\LTleft}{-0.6in}
+    %\setlength{\LTright}{\fill}
+    \begin{landscape}
+    \begin{longtable}{p{2.0cm} p{3cm} p{3cm} p{2.2cm} p{1.7cm} p{3cm} p{3cm}}
+    \caption{Comparison Table of Related Studies on Watermelon Ripeness Detection}
+    \label{tab:1} \\
+        \toprule
+        \textbf{Authors} & \textbf{Technology Used} & \textbf{Processing Technique} & \textbf{Architecture/ Classifier} & \textbf{Portability} & \textbf{Primary Limitation} & \textbf{Metrics} \\
+        \midrule
+    \endfirsthead
+        \multicolumn{7}{l}{} \\
+        \toprule
+        \textbf{Authors} & \textbf{Technology Used} & \textbf{Processing Technique} & \textbf{Architecture/ Classifier} & \textbf{Portability} & \textbf{Primary Limitation} & \textbf{Metrics} \\
+        \midrule
+    \endhead
+        \midrule
+        \multicolumn{7}{r}{} \\
+    \endfoot
+        \bottomrule
+    \endlastfoot
 
     \multicolumn{7}{l}{\textbf{2.3.1 Digital Signal Processing}} \\
     \midrule
-    Wongkalasin et al. (2023) & Vibration Sensor, microphone & Near-Infrared Spectroscopy (NIRS); reflectance data from fruit surface & Feed-Forward ANN & No & Small sample size, single variety, and controlled lab conditions & Discriminative frequencies: 129 Hz, 172 Hz; correct classification confirmed by physical inspection \\
+    \cite{wongkalasin_2021_watermelon} & Vibration Sensor, microphone & Near-Infrared Spectroscopy (NIRS); reflectance data from fruit surface & Feed-Forward ANN & No & Small sample size, single variety, and controlled lab conditions & Discriminative frequencies: 129 Hz, 172 Hz; correct classification confirmed by physical inspection \\
     \midrule
-    Pamungkas \& Bintoro (2021) & Custom mechanical tapping device, microphone & Dominant frequency and magnitude extraction from impulse response & Rule-based threshold (no ML) & Limited & Controlled setup; limited features; not practical for large-scale field use & Frequency and magnitude decrease with maturity; strong correlation with fruit weight and TSS \\
+    \cite{pamungkas_2021_evaluation} & Custom mechanical tapping device, microphone & Dominant frequency and magnitude extraction from impulse response & Rule-based threshold (no ML) & Limited & Controlled setup; limited features; not practical for large-scale field use & Frequency and magnitude decrease with maturity; strong correlation with fruit weight and TSS \\
     \midrule
-    Chen et al. (2022) & Vibrator + Taguchi-optimized acoustic coupler & Morlet Wavelet Kernel decomposition, cross-wavelet power spectrum coherence, SVD for feature extraction & AdaBoost (unsupervised pipeline) & No & $\sim$70\% data discarded due to coupler noise; single variety; quiet lab conditions only & Accuracy: 98.56\%; F1-score: 0.93; spectral ridge at $\sim$300 Hz discriminates ripe fruit \\
+    \cite{chen_2021_nondestructive} & Vibrator + Taguchi-optimized acoustic coupler & Morlet Wavelet Kernel decomposition, cross-wavelet power spectrum coherence, SVD for feature extraction & AdaBoost (unsupervised pipeline) & No & $\sim$70\% data discarded due to coupler noise; single variety; quiet lab conditions only & Accuracy: 98.56\%; F1-score: 0.93; spectral ridge at $\sim$300 Hz discriminates ripe fruit \\
     \midrule
-    Okafor (2020) & Wooden thumper, microphone, PC with MATLAB GUI & FFT magnitude analysis (100--4000 Hz) & Fixed magnitude threshold (0.00025) & No & Very small sample (n=10); binary classification only; non-portable bench setup & Magnitude range: 0.00019--0.00030; below 0.00025 = unripe; above 0.00025 = ripe; confirmed by physical inspection \\
-    \midrule
+    \cite{okafor_2020_design} & Wooden thumper, microphone, PC with MATLAB GUI & FFT magnitude analysis (100--4000 Hz) & Fixed magnitude threshold (0.00025) & No & Very small sample (n=10); binary classification only; non-portable bench setup & Magnitude range: 0.00019--0.00030; below 0.00025 = unripe; above 0.00025 = ripe; confirmed by physical inspection \\
+    \pagebreak
     \multicolumn{7}{l}{\textbf{2.3.2 Machine Learning}} \\
     \midrule
-    Arboleda et al. (2020) & Compact NIR sensor, Raspberry Pi Zero W & Near-Infrared Spectroscopy (NIRS), reflectance data from fruit surface & Support Vector Machine (SVM) & Yes & Binary classification only; small dataset; limited to one sensor modality & Accuracy: 92.5\%; n=200 samples \\
+    \cite{arboleda_2020_watermelon} & Compact NIR sensor, Raspberry Pi Zero W & Near-Infrared Spectroscopy (NIRS), reflectance data from fruit surface & Support Vector Machine (SVM) & Yes & Binary classification only; small dataset; limited to one sensor modality & Accuracy: 92.5\%; n=200 samples \\
     \midrule
-    Ibba et al. (2021) & Bench-top impedance analyzer (Keysight E4990A), custom Ag/AgCl electrodes & Bioimpedance spectroscopy (20 Hz--300 kHz), backward sequential feature selection, grid search; 10-fold CV, bootstrap validation (10,000 rounds) & LR, DT, Naive Bayes, KNN, SVM, MLP (6 classifiers compared) & Yes & Single fruit type (strawberry); binary only; requires direct contact with fruit & MLP: F1=0.72, F0.5=0.82, F2=0.73 (best generalization); KNN: 9.5\% F1 drop train$\to$test (most stable); SVM: highest overfitting \\
+    \cite{pietroibba_2021_supervised} & Bench-top impedance analyzer (Keysight E4990A), custom Ag/AgCl electrodes & Bioimpedance spectroscopy (20 Hz--300 kHz), backward sequential feature selection, grid search; 10-fold CV, bootstrap validation (10,000 rounds) & LR, DT, Naive Bayes, KNN, SVM, MLP (6 classifiers compared) & Yes & Single fruit type (strawberry); binary only; requires direct contact with fruit & MLP: F1=0.72, F0.5=0.82, F2=0.73 (best generalization); KNN: 9.5\% F1 drop train$\to$test (most stable); SVM: highest overfitting \\
     \midrule
-    Worasawate et al. (2022) & ColorMax RGB sensor, parallel-plate capacitor sensor, LCR meter, digital refractometer, pH meter & k-means clustering (label generation), SMOTETomek oversampling, fourfold cross-validation & Gaussian Naive Bayes (GNB), SVM, Feed-Forward ANN (FANN) & Limited & Requires destructive lab reference values for labeling; single cultivar; controlled setting & FANN binary (original): 85.0\%; FANN binary (balanced): $\sim$93.3\%; FANN 3-class: 89.6\%; SMOTETomek improves all classifiers 8--11\% \\
-    \midrule
+    \cite{worasawate_2022_automatic} & ColorMax RGB sensor, parallel-plate capacitor sensor, LCR meter, digital refractometer, pH meter & k-means clustering (label generation), SMOTETomek oversampling, fourfold cross-validation & Gaussian Naive Bayes (GNB), SVM, Feed-Forward ANN (FANN) & Limited & Requires destructive lab reference values for labeling; single cultivar; controlled setting & FANN binary (original): 85.0\%; FANN binary (balanced): $\sim$93.3\%; FANN 3-class: 89.6\%; SMOTETomek improves all classifiers 8--11\% \\
+    \pagebreak
     \multicolumn{7}{l}{\textbf{2.3.3 Deep Learning}} \\
     \midrule
-    Qi et al. (2024) & NIR hyperspectral camera (1053--1681 nm, 256 bands) & Successive Projections Algorithm (SPA) band selection; Savitzky-Golay smoothing; Standard Normal Variate (SNV) normalization & SVM, XGBoost; 1D CNN ensemble (LeNet, GoogLeNet, ResNet) with weighted scoring mechanism & Yes & Cannot distinguish co-occurring same-color objects; requires sufficient color contrast & Weighted ensemble accuracy: 87.97\%; SPA reduces 256 bands to discriminative subset \\
+    \cite{qi_2024_application} & NIR hyperspectral camera (1053--1681 nm, 256 bands) & Successive Projections Algorithm (SPA) band selection; Savitzky-Golay smoothing; Standard Normal Variate (SNV) normalization & SVM, XGBoost; 1D CNN ensemble (LeNet, GoogLeNet, ResNet) with weighted scoring mechanism & Yes & Cannot distinguish co-occurring same-color objects; requires sufficient color contrast & Weighted ensemble accuracy: 87.97\%; SPA reduces 256 bands to discriminative subset \\
     \midrule
-    Defang et al. (2024) & RGB camera (greenhouse environment) & RFAConv backbone, C2f-FE module (FasterNet + EMA attention), WIoU loss function & YOLO-RFEW (enhanced YOLOv8n) & Yes & Visual cues only; no internal ripeness assessment; designed for greenhouse robotics & Precision: 93.16\%; Recall: 83.22\%; F1: 87.91\%; mAP: 90.82\%; Model size: 4.75 MB; Inference: 1.5 ms \\
+    \cite{defang_2024_intelligent} & RGB camera (greenhouse environment) & RFAConv backbone, C2f-FE module (FasterNet + EMA attention), WIoU loss function & YOLO-RFEW (enhanced YOLOv8n) & Yes & Visual cues only; no internal ripeness assessment; designed for greenhouse robotics & Precision: 93.16\%; Recall: 83.22\%; F1: 87.91\%; mAP: 90.82\%; Model size: 4.75 MB; Inference: 1.5 ms \\
     \midrule
-    Shah et al. (2025) & Specim IQ portable hyperspectral camera (400--1000 nm, 204 bands); SONY A7R3 RGB camera & SPA band selection, U$^2$Net image segmentation, RGB and HSI preprocessing pipelines & 11 CNN architectures trained from scratch: ResNet18, ResNet101, SqueezeNet, ShuffleNet, MobileNet-v2, MobileNet-v3-l, RegNet-y-800mf, RegNet-y-8gf, EfficientNet-v2-s & Limited & Greenhouse only; limited cultivar diversity; expensive HSI hardware required & N (HSI): R$^2$=0.958 (MobileNet-v3-l); K (HSI): R$^2$=0.947 (MobileNet-v2); Reducing sugar (RGB): R$^2$=0.936 (ResNet18); Sucrose (RGB): R$^2$=0.958 (RegNet-y-8gf); RGB outperforms HSI for sugar \\
-
+    \cite{shah_2025_a} & Specim IQ portable hyperspectral camera (400--1000 nm, 204 bands); SONY A7R3 RGB camera & SPA band selection, U$^2$Net image segmentation, RGB and HSI preprocessing pipelines & 11 CNN architectures trained from scratch: ResNet18, ResNet101, SqueezeNet, ShuffleNet, MobileNet-v2, MobileNet-v3-l, RegNet-y-800mf, RegNet-y-8gf, EfficientNet-v2-s & Limited & Greenhouse only; limited cultivar diversity; expensive HSI hardware required & N (HSI): R$^2$=0.958 (MobileNet-v3-l); K (HSI): R$^2$=0.947 (MobileNet-v2); Reducing sugar (RGB): R$^2$=0.936 (ResNet18); Sucrose (RGB): R$^2$=0.958 (RegNet-y-8gf); RGB outperforms HSI for sugar \\
 \end{longtable}
+\end{landscape}
 \FloatBarrier
+
 
 }

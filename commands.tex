@@ -1,18 +1,23 @@
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 %LOAD PACKAGES HERE
+\usepackage[justification=centering]{caption}
 \usepackage{colortbl}
 \usepackage{textcomp}
 \usepackage{apacite}   
 \usepackage{natbib}
 \usepackage{amssymb,amsmath,mathrsfs,latexsym,color,wasysym,graphicx,placeins,adjustbox}
 \usepackage{newtxtext,newtxmath}
+\usepackage{pdflscape}
+\usepackage{multirow}
 %\usepackage{graphtex}
 %\usepackage{dcolumn}
 %\usepackage{longtable}
 %\usepackage{hhline}
 %\usepackage{graphtex}
-%\usepackage[none]{hyphenat}
+\usepackage[none]{hyphenat}
+\sloppy
 \usepackage{enumitem}
+\usepackage[natbibapa]{apacite}
 \usepackage{caption}    % For caption customization
 \usepackage{titletoc}
 \usepackage{placeins}
@@ -26,13 +31,15 @@
 \usepackage{tocloft}
 \usepackage{booktabs} % for better looking tables
 \usepackage{longtable}
-
+\usepackage{float}
 \usepackage{tabularx}
 \usepackage{booktabs}
-\usepackage{caption}
 \captionsetup[table]{justification=centering}
-\usepackage{enumitem}
 \setlist[itemize]{listparindent=\parindent}
+
+\usepackage{datetime}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
 %\renewcommand*\sectionmark[1]{\markboth{#1}{}}
 %\renewcommand*\subsectionmark[1]{\markright{#1}{}}
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -52,6 +59,9 @@
 \renewcommand{\textfraction}{0.1}
 \renewcommand{\floatpagefraction}{0.9}
 
+\setlength{\heavyrulewidth}{2pt} 
+\setlength{\lightrulewidth}{1pt} 
+\setlength{\cmidrulewidth}{1pt}
 
 %SHORTCUT COMMANDS
 \counterwithout{table}{chapter} % if using chapters
@@ -144,4 +154,30 @@
 %\renewcommand*\subsectionmark[1]{\markright{#1}{}}
 \captionsetup[table]{position=above, justification=raggedright, singlelinecheck=false, labelformat=simple, labelsep=colon}
 
+\captionsetup[table]{
+	position=above,
+	justification=raggedright,
+	singlelinecheck=false,
+	labelsep=newline,      
+	labelfont=bf,          
+	textfont=it,           
+	labelformat=simple,
+    font={stretch=1.6}
+}
+
+\captionsetup[figure]{
+	position=above,
+	justification=raggedright,
+	singlelinecheck=false,
+	labelsep=newline,      
+	labelfont=bf,          
+	textfont=it,           
+	labelformat=simple,
+    font={stretch=1.6},
+}
+
+
+
+\usepackage{stackengine,graphicx}
+\newcommand\pesos{\stackengine{-.85ex}{P}{\scalebox{1.15}[1]{$\scriptstyle=$}}{O}{c}{F}{T}{S}}
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

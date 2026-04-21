@@ -1,63 +1,60 @@
 {\bfseries \hfill Page No.\vspace \bigskipamount \par }
-\contentsline {chapter}{TITLE PAGE}{ii}{chapter*.1}%
-\contentsline {chapter}{APPROVAL SHEET}{iii}{chapter*.2}%
-\contentsline {chapter}{ABSTRACT}{iv}{chapter*.2}%
-\contentsline {chapter}{DEDICATION}{v}{chapter*.2}%
-\contentsline {chapter}{ACKNOWLEDGMENT}{vi}{chapter*.2}%
-\contentsline {chapter}{TABLE OF CONTENTS}{vii}{chapter*.2}%
-\contentsline {chapter}{LIST OF TABLES}{x}{chapter*.3}%
-\contentsline {chapter}{LIST OF EQUATIONS}{xi}{chapter*.4}%
-\contentsline {chapter}{LIST OF FIGURES}{xii}{chapter*.4}%
-\contentsline {chapter}{LIST OF EQUATIONS}{xiv}{chapter*.6}%
+\contentsline {chapter}{TITLE PAGE}{i}{chapter*.1}%
+\contentsline {chapter}{TABLE OF CONTENTS}{ii}{chapter*.1}%
+\contentsline {chapter}{LIST OF TABLES}{v}{chapter*.2}%
+\contentsline {chapter}{LIST OF FIGURES}{vi}{chapter*.3}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background of the Study}{3}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Statement of the Problem}{5}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Objectives of the Study}{7}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Significance of the Study}{7}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Scope and Limitations}{8}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Definition of Terms}{9}{section.1.6}%
-\contentsline {chapter}{\numberline {2}REVIEW OF RELATED LITERATURE}{11}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Theoretical Framework}{11}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Digital Signal Processing}{12}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Machine Learning}{14}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Computer Vision}{15}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Conceptual Framework}{16}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Literature Review}{18}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Digital Signal Processing}{18}{subsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.1}Watermelon Sorting Process by Frequency Identification and Artificial Neural Network }{18}{subsubsection.2.3.1.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.2}Evaluation Of Watermelon Ripeness Using Self Developed Ripening Detector}{20}{subsubsection.2.3.1.2}%
-\contentsline {subsubsection}{\numberline {2.3.1.3}Non-Destructive Acoustic Screening of Pineapple Ripeness by Unsupervised Machine Learning and Wavelet Kernel Methods}{22}{subsubsection.2.3.1.3}%
-\contentsline {subsection}{\numberline {2.3.2}Machine Learning}{24}{subsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.2.1}Watermelon Ripeness Detector Using Near Infrared Spectroscopy}{24}{subsubsection.2.3.2.1}%
-\contentsline {subsubsection}{\numberline {2.3.2.2}Supervised Binary Classification Methods for Strawberry Ripeness Discrimination from Bioimpedance Data}{26}{subsubsection.2.3.2.2}%
-\contentsline {subsubsection}{\numberline {2.3.2.3}Automatic Classification of the Ripeness Stage of Mango Fruit Using a Machine Learning Approach}{28}{subsubsection.2.3.2.3}%
-\contentsline {subsection}{\numberline {2.3.3}Computer Vision}{28}{subsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.3.1}Application of Hyperspectral Imaging for Watermelon Seed Classification Using Deep Learning and Scoring Mechanism}{28}{subsubsection.2.3.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.3.2}An Automated Pipeline for Supervised Classification of Petal Color from Citizen Science Photographs}{29}{subsubsection.2.3.3.2}%
-\contentsline {section}{\numberline {2.4}Synthesis}{32}{section.2.4}%
-\contentsline {chapter}{\numberline {3}METHODOLOGY}{35}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Research Design \& Procedure}{35}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Data Gathering}{37}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Requirements Analysis}{38}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Hardware Requirements}{38}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Software Requirements}{43}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}System Design}{44}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Hardware Development}{44}{subsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.1.1}System Architecture}{45}{subsubsection.3.4.1.1}%
-\contentsline {subsubsection}{\numberline {3.4.1.2}Circuit Diagram}{45}{subsubsection.3.4.1.2}%
-\contentsline {subsubsection}{\numberline {3.4.1.3}Hardware Design}{45}{subsubsection.3.4.1.3}%
-\contentsline {subsection}{\numberline {3.4.2}Software Development}{51}{subsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.2.1}Software Architecture}{51}{subsubsection.3.4.2.1}%
-\contentsline {section}{\numberline {3.5}Another Section}{51}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Tables}{51}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Images}{54}{section.3.7}%
-\contentsline {chapter}{\numberline {4}RESULTS AND DISCUSSION}{55}{chapter.4}%
-\contentsline {chapter}{\numberline {5}CONCLUSIONS AND RECOMMENDATIONS}{56}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Summary of Findings}{56}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Conclusion}{57}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Recommendations}{58}{section.5.3}%
-\contentsline {chapter}{APPENDICES}{59}{chapter*.24}%
-\contentsline {chapter}{REFERENCES}{60}{chapter*.24}%
-\contentsline {chapter}{CURRICULUM VITAE}{60}{chapter*.24}%
-\contentsline {chapter}{CERTIFICATE OF AUTHENTIC AUTHORSHIP}{61}{chapter*.24}%
+\contentsline {section}{\numberline {1.2}Statement of the Problem}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Objectives of the Study}{8}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Significance of the Study}{9}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Scope and Limitations}{11}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Research Locale and Respondents}{12}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Definition of Terms}{13}{section.1.7}%
+\contentsline {chapter}{\numberline {2}REVIEW OF RELATED LITERATURE}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Theoretical Framework}{15}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Digital Signal Processing}{17}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Machine Learning}{18}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Deep Learning}{20}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Conceptual Framework}{21}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Literature Review}{24}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Digital Signal Processing}{24}{subsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}Watermelon Sorting Process by Frequency Identification and Artificial Neural Network }{24}{subsubsection.2.3.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.2}Evaluation Of Watermelon Ripeness Using Self Developed Ripening Detector}{27}{subsubsection.2.3.1.2}%
+\contentsline {subsubsection}{\numberline {2.3.1.3}Non-Destructive Acoustic Screening of Pineapple Ripeness by Unsupervised Machine Learning and Wavelet Kernel Methods}{31}{subsubsection.2.3.1.3}%
+\contentsline {subsubsection}{\numberline {2.3.1.4}Design and Fabrication of a Watermelon Ripeness Tester Using Matlab Software GUI}{34}{subsubsection.2.3.1.4}%
+\contentsline {subsection}{\numberline {2.3.2}Machine Learning}{37}{subsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.2.1}Watermelon Ripeness Detector Using Near Infrared Spectroscopy}{37}{subsubsection.2.3.2.1}%
+\contentsline {subsubsection}{\numberline {2.3.2.2}Supervised Binary Classification Methods for Strawberry Ripeness Discrimination from Bioimpedance Data}{39}{subsubsection.2.3.2.2}%
+\contentsline {subsubsection}{\numberline {2.3.2.3}Automatic Classification of the Ripeness Stage of Mango Fruit Using a Machine Learning Approach}{40}{subsubsection.2.3.2.3}%
+\contentsline {subsection}{\numberline {2.3.3}Deep Learning}{42}{subsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.3.1}Application of Hyperspectral Imaging for Watermelon Seed Classification Using Deep Learning and Scoring Mechanism}{44}{subsubsection.2.3.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.3.2}Intelligent Detection of Muskmelon Ripeness in Greenhouse Environment Based on YOLO-RFEW}{47}{subsubsection.2.3.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3.3}A non‐destructive approach: Estimation of melon Fruit quality attributes and nutrients using hyperspectral imaging coupled with machine learning}{50}{subsubsection.2.3.3.3}%
+\contentsline {section}{\numberline {2.4}Synthesis}{53}{section.2.4}%
+\contentsline {chapter}{\numberline {3}METHODOLOGY}{59}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Research Design \& Procedure}{59}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Data Gathering}{61}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Requirements Analysis}{63}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Hardware Requirements}{63}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Software Requirements}{74}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}System Design and Development}{75}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Hardware Development}{76}{subsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.1}Hardware Architecture}{76}{subsubsection.3.4.1.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.2}Circuit Diagram}{79}{subsubsection.3.4.1.2}%
+\contentsline {paragraph}{Schematic Diagram}{79}{section*.28}%
+\contentsline {paragraph}{Pictorial Diagram}{82}{section*.30}%
+\contentsline {subsubsection}{\numberline {3.4.1.3}Hardware Design}{83}{subsubsection.3.4.1.3}%
+\contentsline {subsection}{\numberline {3.4.2}Software Development}{88}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}Software Architecture}{88}{subsubsection.3.4.2.1}%
+\contentsline {paragraph}{3.4.2.1.1 Context Level Diagram}{88}{section*.37}%
+\contentsline {paragraph}{3.4.2.1.2 Data Flow Diagram}{90}{section*.39}%
+\contentsline {paragraph}{3.4.2.1.3 Activity Diagram}{93}{section*.41}%
+\contentsline {paragraph}{3.4.2.1.4 Use Case Diagram}{95}{section*.43}%
+\contentsline {paragraph}{3.4.2.1.5 Algorithm}{103}{section*.57}%
+\contentsline {subsection}{\numberline {3.4.3}System Integration}{106}{subsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.3.1}System Architecture}{106}{subsubsection.3.4.3.1}%
+\contentsline {section}{\numberline {3.5}Plans for Testing}{108}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Data Set Preparation}{114}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Model Training and Validation}{116}{section.3.7}%
 \contentsfinish 

@@ -1,0 +1,840 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Araújo%
+, Peres%
+, Ramalho%
+, Lidon%
+\BCBL {}\ \BBA {} Barata%
+}{%
+Araújo%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2023}}%
+}]{%
+arajo_2023_machine}
+\APACinsertmetastar {%
+arajo_2023_machine}%
+\begin{APACrefauthors}%
+Araújo, S\BPBI O.%
+, Peres, R\BPBI S.%
+, Ramalho, J\BPBI C.%
+, Lidon, F.%
+\BCBL {}\ \BBA {} Barata, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{12}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Machine Learning Applications in Agriculture: Current Trends, Challenges, and Future Perspectives} {Machine learning applications in agriculture: Current trends, challenges, and future perspectives}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Agronomy}{13}{}{2976}.
+\newblock
+\begin{APACrefURL} \url{https://www.mdpi.com/2073-4395/13/12/2976} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3390/agronomy13122976} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Arboleda%
+, Parazo%
+\BCBL {}\ \BBA {} Pareja%
+}{%
+Arboleda%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+arboleda_2020_watermelon}
+\APACinsertmetastar {%
+arboleda_2020_watermelon}%
+\begin{APACrefauthors}%
+Arboleda, E\BPBI R.%
+, Parazo, K\BPBI M.%
+\BCBL {}\ \BBA {} Pareja, C\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Watermelon ripeness detector using near infrared spectroscopy} {Watermelon ripeness detector using near infrared spectroscopy}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Jurnal Teknologi dan Sistem Komputer}{8}{}{317-322}.
+\newblock
+\begin{APACrefURL} \url{https://pdfs.semanticscholar.org/729a/2b6eb4d1c28da228e20740878a7a364ddb1d.pdf} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.14710/jtsiskom.2020.13744} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Biglari%
+\ \BBA {} Tang%
+}{%
+Biglari%
+\ \BBA {} Tang%
+}{%
+{\protect \APACyear {2023}}%
+}]{%
+biglari_2023_a}
+\APACinsertmetastar {%
+biglari_2023_a}%
+\begin{APACrefauthors}%
+Biglari, A.%
+\BCBT {}\ \BBA {} Tang, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Review of Embedded Machine Learning Based on Hardware, Application, and Sensing Scheme} {A review of embedded machine learning based on hardware, application, and sensing scheme}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Sensors}{23}{}{2131}.
+\newblock
+\begin{APACrefURL} [{2023-10-02}]\url{https://www.mdpi.com/1424-8220/23/4/2131} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3390/s23042131} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Botero-Valencia%
+\ \protect \BOthers {.}}{%
+Botero-Valencia%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+boterovalencia_2025_machine}
+\APACinsertmetastar {%
+boterovalencia_2025_machine}%
+\begin{APACrefauthors}%
+Botero-Valencia, J.%
+, García-Pineda, V.%
+, Valencia-Arias, A.%
+, Valencia, J.%
+, Reyes-Vera, E.%
+, Mejia-Herrera, M.%
+\BCBL {}\ \BBA {} Hernández-García, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{02}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Machine Learning in Sustainable Agriculture: Systematic Review and Research Perspectives} {Machine learning in sustainable agriculture: Systematic review and research perspectives}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Agriculture}{15}{}{377-377}.
+\newblock
+\begin{APACrefURL} \url{https://www.mdpi.com/2077-0472/15/4/377} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3390/agriculture15040377} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cao%
+, Sun%
+\BCBL {}\ \BBA {} Bao%
+}{%
+Cao%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+cao_2025_a}
+\APACinsertmetastar {%
+cao_2025_a}%
+\begin{APACrefauthors}%
+Cao, Z.%
+, Sun, S.%
+\BCBL {}\ \BBA {} Bao, X.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{07}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Review of Computer Vision and Deep Learning Applications in Crop Growth Management} {A review of computer vision and deep learning applications in crop growth management}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Applied Sciences}{15}{}{8438-8438}.
+\newblock
+\begin{APACrefURL} \url{https://www.mdpi.com/2076-3417/15/15/8438} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3390/app15158438} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Chawgien%
+\ \BBA {} Kiattisin%
+}{%
+Chawgien%
+\ \BBA {} Kiattisin%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+chawgien_2021_machine}
+\APACinsertmetastar {%
+chawgien_2021_machine}%
+\begin{APACrefauthors}%
+Chawgien, K.%
+\BCBT {}\ \BBA {} Kiattisin, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{02}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Machine learning techniques for classifying the sweetness of watermelon using acoustic signal and image processing} {Machine learning techniques for classifying the sweetness of watermelon using acoustic signal and image processing}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computers and Electronics in Agriculture}{181}{}{105938}.
+\newblock
+\begin{APACrefURL} [{2021-05-26}]\url{https://www.researchgate.net/publication/348350315} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.compag.2020.105938} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Chen%
+\ \protect \BOthers {.}}{%
+Chen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+chen_2021_nondestructive}
+\APACinsertmetastar {%
+chen_2021_nondestructive}%
+\begin{APACrefauthors}%
+Chen, Y\BPBI J.%
+, Liou, Y\BHBI C.%
+, Ho, W\BHBI H.%
+, Tsai, J\BHBI T.%
+, Liu, C\BHBI C.%
+\BCBL {}\ \BBA {} Hwang, K\BHBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{07}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Non-destructive acoustic screening of pineapple ripeness by unsupervised machine learning and Wavelet Kernel methods} {Non-destructive acoustic screening of pineapple ripeness by unsupervised machine learning and wavelet kernel methods}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Science Progress}{104}{}{003685042211108}.
+\newblock
+\begin{APACrefURL} \url{https://pubmed.ncbi.nlm.nih.gov/35818893} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1177/00368504221110856} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Defang%
+, Rui%
+, Huamin%
+\BCBL {}\ \BBA {} Shujuan%
+}{%
+Defang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2024}}%
+}]{%
+defang_2024_intelligent}
+\APACinsertmetastar {%
+defang_2024_intelligent}%
+\begin{APACrefauthors}%
+Defang, X.%
+, Rui, R.%
+, Huamin, Z.%
+\BCBL {}\ \BBA {} Shujuan, Z.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{05}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Intelligent Detection of Muskmelon Ripeness in Greenhouse Environment Based on YOLO-RFEW} {Intelligent detection of muskmelon ripeness in greenhouse environment based on yolo-rfew}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Agronomy}{14}{}{1091}.
+\newblock
+\begin{APACrefURL} [{2024-09-30}]\url{https://www.mdpi.com/2073-4395/14/6/1091} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3390/agronomy14061091} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Gowda%
+, Chen%
+, Suganthi%
+, Prasad%
+\BCBL {}\ \BBA {} Dhole%
+}{%
+Gowda%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+gowda_2025_automating}
+\APACinsertmetastar {%
+gowda_2025_automating}%
+\begin{APACrefauthors}%
+Gowda, D\BPBI V.%
+, Chen, Z.%
+, Suganthi, N.%
+, Prasad, K\BPBI D\BPBI V.%
+\BCBL {}\ \BBA {} Dhole, S\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Automating Agricultural Processes With Computer Vision} {Automating agricultural processes with computer vision}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Advances in Environmental Engineering and Green Technologies}{}{}{1--30}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.4018/979-8-3693-8019-2.ch001} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.4018/979-8-3693-8019-2.ch001} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hamid%
+, Syafeeza%
+, Saad%
+\BCBL {}\ \BBA {} Ibrahim%
+}{%
+Hamid%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+hamid_2025_a}
+\APACinsertmetastar {%
+hamid_2025_a}%
+\begin{APACrefauthors}%
+Hamid, N\BPBI A.%
+, Syafeeza, A\BPBI R.%
+, Saad, N\BPBI M.%
+\BCBL {}\ \BBA {} Ibrahim, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Mini Review on Sensor and Artificial Intelligence Approaches for Ripeness Detection and Classification of Oil Palm Fresh Fruit Bunch} {A mini review on sensor and artificial intelligence approaches for ripeness detection and classification of oil palm fresh fruit bunch}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Research and Innovation in Social Science}{IX}{}{2487-2498}.
+\newblock
+\begin{APACrefURL} [{2025-11-07}]\url{https://www.researchgate.net/publication/396259313} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.47772/ijriss.2025.909000213} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ibba%
+\ \protect \BOthers {.}}{%
+Ibba%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+pietroibba_2021_supervised}
+\APACinsertmetastar {%
+pietroibba_2021_supervised}%
+\begin{APACrefauthors}%
+Ibba, P.%
+, Tronstad, C.%
+, Moscetti, R.%
+, Mimmo, T.%
+, Cantarella, G.%
+, Petti, L.%
+\BDBL {}Lugli, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{05}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Supervised binary classification methods for strawberry ripeness discrimination from bioimpedance data} {Supervised binary classification methods for strawberry ripeness discrimination from bioimpedance data}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Scientific Reports}{11}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://rdcu.be/feqSm} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1038/s41598-021-90471-5} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jie%
+, Minjie%
+, Wanpeng%
+\BCBL {}\ \BBA {} Jizhan%
+}{%
+Jie%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2024}}%
+}]{%
+jie_2024_stateoftheart}
+\APACinsertmetastar {%
+jie_2024_stateoftheart}%
+\begin{APACrefauthors}%
+Jie, M.%
+, Minjie, L.%
+, Wanpeng, F.%
+\BCBL {}\ \BBA {} Jizhan, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{11}{}.
+\newblock
+{\BBOQ}\APACrefatitle {State-of-the-Art Techniques for Fruit Maturity Detection} {State-of-the-art techniques for fruit maturity detection}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Agronomy}{14}{}{2783-2783}.
+\newblock
+\begin{APACrefURL} [{2024-12-15}]\url{https://www.mdpi.com/2073-4395/14/12/2783} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3390/agronomy14122783} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Koç%
+\ \BBA {} Akbalik%
+}{%
+Koç%
+\ \BBA {} Akbalik%
+}{%
+{\protect \APACyear {2025}}%
+}]{%
+savako_2025_nondestructive}
+\APACinsertmetastar {%
+savako_2025_nondestructive}%
+\begin{APACrefauthors}%
+Koç, S.%
+\BCBT {}\ \BBA {} Akbalik, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{09}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Non-Destructive Prediction of Maturity from the Sound of Hand Hitting a Watermelon Using Machine Learning} {Non-destructive prediction of maturity from the sound of hand hitting a watermelon using machine learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Türk doğa ve fen dergisi :/Türk doğa ve fen dergisi}{14}{}{192-201}.
+\newblock
+\begin{APACrefURL} [{2025-11-25}]\url{https://www.researchgate.net/publication/395889903} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.46810/tdfd.1652908} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Li%
+, Bu%
+\BCBL {}\ \BBA {} Guo%
+}{%
+Li%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+li_2025_factors}
+\APACinsertmetastar {%
+li_2025_factors}%
+\begin{APACrefauthors}%
+Li, Y.%
+, Bu, Y.%
+\BCBL {}\ \BBA {} Guo, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Factors influencing watermelon ripeness classification using acoustic signals collected via mobile phones} {Factors influencing watermelon ripeness classification using acoustic signals collected via mobile phones}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Food Composition and Analysis}{148}{}{108496-108496}.
+\newblock
+\begin{APACrefURL} [{2026-02-05}]\url{https://www.sciencedirect.com/science/article/abs/pii/S0889157525013122} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.jfca.2025.108496} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+B.~Liu%
+\ \protect \BOthers {.}}{%
+B.~Liu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2023}}%
+}]{%
+liu_2023_research}
+\APACinsertmetastar {%
+liu_2023_research}%
+\begin{APACrefauthors}%
+Liu, B.%
+, Xin, Q.%
+, Zhang, M.%
+, Chen, J.%
+, Lu, Q.%
+, Zhou, X.%
+\BDBL {}Sun, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Research Progress on Mango Post-Harvest Ripening Physiology and the Regulatory Technologies} {Research progress on mango post-harvest ripening physiology and the regulatory technologies}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Foods}{12}{}{173}.
+\newblock
+\begin{APACrefURL} \url{https://www.mdpi.com/2304-8158/12/1/173} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3390/foods12010173} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+J.~Liu%
+\ \protect \BOthers {.}}{%
+J.~Liu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+liu_2025_nondestructive}
+\APACinsertmetastar {%
+liu_2025_nondestructive}%
+\begin{APACrefauthors}%
+Liu, J.%
+, Sun, J.%
+, Wang, Y.%
+, Liu, X.%
+, Zhang, Y.%
+\BCBL {}\ \BBA {} Fu, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{06}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Non-Destructive Detection of Fruit Quality: Technologies, Applications and Prospects} {Non-destructive detection of fruit quality: Technologies, applications and prospects}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Foods}{14}{}{2137}.
+\newblock
+\begin{APACrefURL} \url{https://www.mdpi.com/2304-8158/14/12/2137} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3390/foods14122137} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Nugroho%
+, Chew%
+, Eswaran%
+\BCBL {}\ \BBA {} Tay%
+}{%
+Nugroho%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2024}}%
+}]{%
+nugrohoh_2024_resourceoptimized}
+\APACinsertmetastar {%
+nugrohoh_2024_resourceoptimized}%
+\begin{APACrefauthors}%
+Nugroho, H.%
+, Chew, J\BPBI X.%
+, Eswaran, S.%
+\BCBL {}\ \BBA {} Tay, F\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Resource-optimized cnns for real-time rice disease detection with ARM cortex-M microprocessors} {Resource-optimized cnns for real-time rice disease detection with arm cortex-m microprocessors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Plant Methods}{20}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://link.springer.com/article/10.1186/s13007-024-01280-6} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1186/s13007-024-01280-6} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Okafor%
+}{%
+Okafor%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+okafor_2020_design}
+\APACinsertmetastar {%
+okafor_2020_design}%
+\begin{APACrefauthors}%
+Okafor, V\BPBI C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{05}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Design and Fabrication of a Watermelon Ripeness Tester Using Matlab Software GUI} {Design and fabrication of a watermelon ripeness tester using matlab software gui}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Engineering Research and Reports}{12}{}{25-36}.
+\newblock
+\begin{APACrefURL} [{2021-02-03}]\url{https://journaljerr.com/index.php/JERR/article/view/235} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.9734/jerr/2020/v12i217077} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pamungkas%
+\ \BBA {} Bintoro%
+}{%
+Pamungkas%
+\ \BBA {} Bintoro%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+pamungkas_2021_evaluation}
+\APACinsertmetastar {%
+pamungkas_2021_evaluation}%
+\begin{APACrefauthors}%
+Pamungkas, W\BPBI A.%
+\BCBT {}\ \BBA {} Bintoro, N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{02}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Evaluation of watermelon ripeness using self-developed ripening detector} {Evaluation of watermelon ripeness using self-developed ripening detector}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IOP Conference Series: Earth and Environmental Science}{653}{}{012020}.
+\newblock
+\begin{APACrefURL} [{2022-11-24}]\url{https://iopscience.iop.org/article/10.1088/1755-1315/653/1/012020} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1088/1755-1315/653/1/012020} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Parvathy~Nayana%
+\ \protect \BOthers {.}}{%
+Parvathy~Nayana%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+parvathynayana_2025_a}
+\APACinsertmetastar {%
+parvathynayana_2025_a}%
+\begin{APACrefauthors}%
+Parvathy~Nayana, N.%
+, Arun~Kumar, T.%
+, Aradwad, P\BPBI P.%
+, Achal, L.%
+, Das, R.%
+, Ramya, C.%
+\BDBL {}Sahoo, P\BPBI K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{04}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A comparative analysis of machine learning approaches for predicting maturity in watermelon using acoustic and quality features} {A comparative analysis of machine learning approaches for predicting maturity in watermelon using acoustic and quality features}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Food Chemistry}{486}{}{144431}.
+\newblock
+\begin{APACrefURL} \url{https://www.sciencedirect.com/science/article/pii/S0308814625016826} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.foodchem.2025.144431} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Perez‐Udell%
+, Udell%
+\BCBL {}\ \BBA {} Chang%
+}{%
+Perez‐Udell%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2023}}%
+}]{%
+perezudell_2023_an}
+\APACinsertmetastar {%
+perezudell_2023_an}%
+\begin{APACrefauthors}%
+Perez‐Udell, R\BPBI A.%
+, Udell, A\BPBI T.%
+\BCBL {}\ \BBA {} Chang, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {An automated pipeline for supervised classification of petal color from citizen science photographs} {An automated pipeline for supervised classification of petal color from citizen science photographs}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Applications in Plant Sciences}{11}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://pmc.ncbi.nlm.nih.gov/articles/PMC9934523/} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1002/aps3.11505} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Qi%
+, He%
+, Huang%
+, Yan%
+\BCBL {}\ \BBA {} Zhang%
+}{%
+Qi%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2024}}%
+}]{%
+qi_2024_application}
+\APACinsertmetastar {%
+qi_2024_application}%
+\begin{APACrefauthors}%
+Qi, H.%
+, He, M.%
+, Huang, Z.%
+, Yan, J.%
+\BCBL {}\ \BBA {} Zhang, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{05}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Application of Hyperspectral Imaging for Watermelon Seed Classification Using Deep Learning and Scoring Mechanism} {Application of hyperspectral imaging for watermelon seed classification using deep learning and scoring mechanism}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Food Quality}{2024}{}{1-13}.
+\newblock
+\begin{APACrefURL} [{2025-10-28}]\url{https://www.researchgate.net/publication/380981281} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1155/2024/7313214} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Shah%
+\ \protect \BOthers {.}}{%
+Shah%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+shah_2025_a}
+\APACinsertmetastar {%
+shah_2025_a}%
+\begin{APACrefauthors}%
+Shah, I\BPBI H.%
+, Jinhui, W.%
+, Ding, X.%
+, Li, X.%
+, Rehman, A.%
+, Azam, M.%
+\BDBL {}Chang, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{03}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A non‐destructive approach: Estimation of melon Fruit quality attributes and nutrients using hyperspectral imaging coupled with machine learning} {A non‐destructive approach: Estimation of melon fruit quality attributes and nutrients using hyperspectral imaging coupled with machine learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Smart Agricultural Technology}{10}{}{100811}.
+\newblock
+\begin{APACrefURL} [{2026-03-20}]\url{https://www.sciencedirect.com/science/article/pii/S2772375525000450#abs0001} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.atech.2025.100811} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Singh%
+, Gadade%
+\BCBL {}\ \BBA {} Hussain%
+}{%
+Singh%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+singh_2025_robust}
+\APACinsertmetastar {%
+singh_2025_robust}%
+\begin{APACrefauthors}%
+Singh, R.%
+, Gadade, A\BPBI M.%
+\BCBL {}\ \BBA {} Hussain, I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{10}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Robust real-time strawberry maturity detection using UAV-mounted deep learning for precision agriculture} {Robust real-time strawberry maturity detection using uav-mounted deep learning for precision agriculture}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{BMC Plant Biology}{25}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://rdcu.be/feqMo} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1186/s12870-025-07246-7} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wongkalasin%
+, Upachaban%
+, Daosawang%
+, Pannucharoenwong%
+\BCBL {}\ \BBA {} Ratanadecho%
+}{%
+Wongkalasin%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+wongkalasin_2021_watermelon}
+\APACinsertmetastar {%
+wongkalasin_2021_watermelon}%
+\begin{APACrefauthors}%
+Wongkalasin, K.%
+, Upachaban, T.%
+, Daosawang, W.%
+, Pannucharoenwong, N.%
+\BCBL {}\ \BBA {} Ratanadecho, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{12}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Watermelon Sorting Process by Frequency Identification and Artificial Neural Network} {Watermelon sorting process by frequency identification and artificial neural network}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Applied Science and Engineering Progress}{}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://www.researchgate.net/publication/357379374} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.14416/j.asep.2021.12.004} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Worasawate%
+, Sakunasinha%
+\BCBL {}\ \BBA {} Chiangga%
+}{%
+Worasawate%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2022}}%
+}]{%
+worasawate_2022_automatic}
+\APACinsertmetastar {%
+worasawate_2022_automatic}%
+\begin{APACrefauthors}%
+Worasawate, D.%
+, Sakunasinha, P.%
+\BCBL {}\ \BBA {} Chiangga, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2022}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Automatic Classification of the Ripeness Stage of Mango Fruit Using a Machine Learning Approach} {Automatic classification of the ripeness stage of mango fruit using a machine learning approach}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{AgriEngineering}{4}{}{32-47}.
+\newblock
+\begin{APACrefURL} \url{https://www.mdpi.com/2624-7402/4/1/3} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3390/agriengineering4010003} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zhang%
+\ \BBA {} Li%
+}{%
+Zhang%
+\ \BBA {} Li%
+}{%
+{\protect \APACyear {2023}}%
+}]{%
+zhang_2023_a}
+\APACinsertmetastar {%
+zhang_2023_a}%
+\begin{APACrefauthors}%
+Zhang, Z.%
+\BCBT {}\ \BBA {} Li, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{05}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Review of Artificial Intelligence in Embedded Systems} {A review of artificial intelligence in embedded systems}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Micromachines}{14}{}{897}.
+\newblock
+\begin{APACrefURL} [{2023-06-28}]\url{https://www.mdpi.com/2072-666X/14/5/897} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.3390/mi14050897} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

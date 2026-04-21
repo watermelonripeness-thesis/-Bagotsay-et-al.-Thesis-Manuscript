@@ -1,6 +1,3 @@
-
-
-
 \makeatletter
 \renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
   {3.25ex \@plus1ex \@minus.2ex}%
@@ -30,18 +27,18 @@
 
 \section{Research Design \& Procedure}
 
-    \begin{figure}[h]
-    	\centering
-    	\includegraphics[width=0.65\linewidth]{Thesis Format (LaTEX)/figures/modified-waterfall-model.png}
+    \begin{figure}[!ht]
     	\caption{The Modified Waterfall Model}
     	\label{fig:waterfall}
+        \centering
+    	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/modified-waterfall-model.png}
     \end{figure}
     
-    The proposed research will utilize the Modified Waterfall Methodology, which has a linear and sequential structure, but with overlapping phases or “feedback loops”. This methodology is best for software-hardware systems, which is fit for our proposed study.
+    The proposed research will utilize the Modified Waterfall Methodology, which has a linear and sequential structure, but with overlapping phases or “feedback loops”, as seen in \ref{fig:waterfall}. This methodology is best for software-hardware systems, which is fit for our proposed study.
     
-    The research design chosen for this study was the System Development Life Cycle (SDLC), specifically the modified Waterfall Model in Figure 2. The sequential structure of the Waterfall Model—which consists of requirements gathering, requirements analysis, system design \& development, and testing—aligns with the implementation of object detection and audio classification for pre-harvest watermelons. Additionally, with the modified Waterfall Model, an option to go back to the previous phase is available in the event that errors occur in the current phase.  
+    The research design chosen for this study was the System Development Life Cycle (SDLC), specifically the modified Waterfall Model in Figure \ref{fig:waterfall}. The sequential structure of the Waterfall Model—which consists of requirements gathering, requirements analysis, system design \& development, and testing—aligns with the implementation of object detection and audio classification for pre-harvest watermelons. Additionally, with the modified Waterfall Model, an option to go back to the previous phase is available in the event that errors occur in the current phase.  
     
-    Because the core requirements of the system such as the established resonant frequency (Wongkalasin et. al., 2023) and the efficacy of SVM and ensemble modeling (Arboleda et. al, 2020; Qi et. al, 2024) are already well defined, a structure and sequential framework provides the necessary discipline for the development. However, the “modified” aspect of this model is critical for addressing the transition from the “controlled lab conditions” to the “real-world field conditions” targeted in our study since we are dealing with pre-harvest watermelons, meaning they are still grown. By incorporating feedback loops between phases, this SDLC allows for essential backtracking, which is particularly vital when integrating acoustic sensors and image analysis, as both may require iterative recalibration during development and integration phase. Furthermore, the model respects the inherent physical dependency of the system itself, where the collection of dataset is logically gated by the successful design and integration of the microphone, camera and microcontroller since we will be needing it to collect audio and image data. This ensures that each stage, from hardware-software to integration phase, undergoes rigorous verification before progressing, mitigating the risk of cascading errors in the final system. By structuring the development this way, the Waterfall Model directly supports the methodological rigor, flexibility, and practical reliability required to deliver a system capable of addressing the persistent issue of manual pre-harvest watermelon inspection in agricultural farms.
+    Because the core requirements of the system such as the established resonant frequency \citep{wongkalasin_2021_watermelon} and the efficacy of SVM and ensemble modeling \citep{arboleda_2020_watermelon, qi_2024_application} are already well defined, a structure and sequential framework provides the necessary discipline for the development. However, the “modified” aspect of this model is critical for addressing the transition from the “controlled lab conditions” to the “real-world field conditions” targeted in our study since we are dealing with pre-harvest watermelons, meaning they are still grown. By incorporating feedback loops between phases, this SDLC allows for essential backtracking, which is particularly vital when integrating acoustic sensors and image analysis, as both may require iterative recalibration during development and integration phase. Furthermore, the model respects the inherent physical dependency of the system itself, where the collection of dataset is logically gated by the successful design and integration of the microphone, camera and microcontroller since we will be needing it to collect audio and image data. This ensures that each stage, from hardware-software to integration phase, undergoes rigorous verification before progressing, mitigating the risk of cascading errors in the final system. By structuring the development this way, the Waterfall Model directly supports the methodological rigor, flexibility, and practical reliability required to deliver a system capable of addressing the persistent issue of manual pre-harvest watermelon inspection in agricultural farms.
     
 
 \section{Data Gathering}
@@ -62,21 +59,22 @@
     
     \begin{itemize}
     
-    	\item \textbf{Integrated Circuit.} The inclusion of a microcontroller or microprocessor is essential in the proposed system as it enables the integration and real-time execution of computer vision, machine learning, and acoustic signal analysis within a single device. The system must simultaneously process image data for watermelon color analysis and acoustic signals generated from tapping, extract relevant features from both modalities, and perform classification using trained machine learning models. These combined tasks require sufficient processing capability, including support for parallel execution, to handle multiple data streams efficiently. Local processing is critical in multimodal agricultural systems, as it enables synchronized handling of visual and acoustic data while maintaining real-time responsiveness and system autonomy (Biglari \& Tang, 2023).
-        
-        Different microcontroller and microprocessor platforms present trade-offs in terms of processing speed, compatibility, peripheral support, and overall system performance. The Arduino Uno operates at a relatively low clock speed with limited memory, making it suitable for basic sensor interfacing but not for image processing or machine learning tasks. The ESP32 improves on this with a dual-core processor, higher clock speed, and support for communication protocols such as I2C, SPI, and UART, allowing better handling of multiple peripherals; however, it has limited native camera support. The ESP32-CAM integrates a camera module and supports wireless communication, making it compact and cost-effective, though its limited RAM constrains complex processing tasks. The ESP32-S3-CAM provides enhanced processing performance, improved memory capacity, and better support for AI-related instructions and camera interfaces, making it more suitable for handling both image and acoustic data, although it still operates under embedded resource constraints. In contrast, the Raspberry Pi 4 Model B and Raspberry Pi Zero 2 W offers significantly higher processing speed, larger memory, and compatibility with full operating systems and advanced libraries for computer vision and machine learning, but at the cost of higher power consumption and increased system complexity. These comparisons highlight the trade-offs between computational capability and resource efficiency, emphasizing the need to select a platform that balances performance, peripheral support, and energy consumption for reliable real-time operation (Biglari \& Tang, 2023; Nugroho et al., 2024).
+    	\item \textbf{Integrated Circuit.} The inclusion of a microcontroller or microprocessor is essential in the proposed system as it enables the integration and real-time execution of computer vision, machine learning, and acoustic signal analysis within a single device. The system must simultaneously process image data for watermelon color analysis and acoustic signals generated from tapping, extract relevant features from both modalities, and perform classification using trained machine learning models. These combined tasks require sufficient processing capability, including support for parallel execution, to handle multiple data streams efficiently. Local processing is critical in multimodal agricultural systems, as it enables synchronized handling of visual and acoustic data while maintaining real-time responsiveness and system autonomy \citep{biglari_2023_a}.
 
-            \begin{table}[ht]
+        Different microcontroller and microprocessor platforms present trade-offs in terms of processing speed, compatibility, peripheral support, and overall system performance. The Arduino Uno operates at a relatively low clock speed with limited memory, making it suitable for basic sensor interfacing but not for image processing or machine learning tasks. The ESP32 improves on this with a dual-core processor, higher clock speed, and support for communication protocols such as I2C, SPI, and UART, allowing better handling of multiple peripherals; however, it has limited native camera support. The ESP32-CAM integrates a camera module and supports wireless communication, making it compact and cost-effective, though its limited RAM constrains complex processing tasks. The ESP32-S3-CAM provides enhanced processing performance, improved memory capacity, and better support for AI-related instructions and camera interfaces, making it more suitable for handling both image and acoustic data, although it still operates under embedded resource constraints. In contrast, the Raspberry Pi 4 Model B and Raspberry Pi Zero 2 W offers significantly higher processing speed, larger memory, and compatibility with full operating systems and advanced libraries for computer vision and machine learning, but at the cost of higher power consumption and increased system complexity. These comparisons highlight the trade-offs between computational capability and resource efficiency, emphasizing the need to select a platform that balances performance, peripheral support, and energy consumption for reliable real-time operation \citep{biglari_2023_a, nugrohoh_2024_resourceoptimized}. Table \ref{tab:ic_comparison} shows a detailed comparison of what possible integrated circuits we will be using based on our analysis.
+
+            \begin{table}[!ht]
             \noindent
             \makebox[\textwidth][c]{
-            \begin{minipage}{0.85\textwidth}
-            \centering
+            \begin{minipage}{\textwidth}
             \caption{Detailed Comparison Table for Integrated Circuits}
             \label{tab:ic_comparison}
-            \footnotesize
-            \renewcommand{\arraystretch}{1.3}
+            \centering
             
-            \begin{tabular}{p{2.4cm} p{2.7cm} p{2.7cm} p{2.7cm}}
+            % \footnotesize
+            \renewcommand{\arraystretch}{1.4}
+            
+            \begin{tabular}{p{2.4cm} p{4cm} p{3cm} p{3cm}}
             \toprule
             \textbf{Features} & \textbf{ESP32-S3-N16R8} & \textbf{Raspberry Pi Zero 2 W} & \textbf{Raspberry Pi 4} \\
             \midrule
@@ -105,18 +103,19 @@
             \FloatBarrier
         
 
-    \item \textbf{Pulse Thumper.} A pulse thumper is essential for delivering a standardized, repeatable impact to the target surface. The thumper should be able to provide quick consistent force for each impact to ensure that the resulting acoustic signals are comparable across different measurements. It should be driven electronically, allowing for precise control over the impact force and timing. The thumper should also be adjustable to accommodate various testing conditions, ensuring the system’s versatility. Furthermore, it is important to minimize the risk of surface damage to the target during testing, ensuring the system is non-destructive while still producing accurate results.
+    \item \textbf{Pulse Thumper.} A pulse thumper is essential for delivering a standardized, repeatable impact to the target surface. The thumper should be able to provide quick consistent force for each impact to ensure that the resulting acoustic signals are comparable across different measurements. It should be driven electronically, allowing for precise control over the impact force and timing. The thumper should also be adjustable to accommodate various testing conditions, ensuring the system’s versatility. Furthermore, it is important to minimize the risk of surface damage to the target during testing, ensuring the system is non-destructive while still producing accurate results. In our analysis, we determined what possible mechanisms we can use for this function as shown in Table \ref{tab:thumper_comparison}.
 
-          \begin{table}[ht]
+          \begin{table}[!ht]
             \noindent
             \makebox[\textwidth][c]{
-            \begin{minipage}{0.85\textwidth}
+            \begin{minipage}{0.95\textwidth}
             \caption{Detailed Comparison Table for Thumper}
             \label{tab:thumper_comparison}
-            \footnotesize
+            \centering
+            % \footnotesize
             \renewcommand{\arraystretch}{1.3}
             
-            \begin{tabular}{p{2.4cm} p{2.7cm} p{2.7cm} p{2.7cm}}
+            \begin{tabular}{p{2.5cm} p{3cm} p{3cm} p{3cm}}
             \toprule
             \textbf{Features} & \textbf{Push-Pull Solenoid} & \textbf{Servo-based Tapper} & \textbf{Motor-driven Mechanism} \\
             \midrule
@@ -145,33 +144,27 @@
             
             \bottomrule
             \end{tabular}
-            \end{minipage}%
+            \end{minipage}
             }
             \end{table}
             \FloatBarrier
-
-
-
-
-
-        
-    
+ 
     \item \textbf{Microphone.} A microphone is essential for recording the acoustic waves generated by a pulse thumper, as these signals possess frequency data directly linked to watermelon ripeness. The chosen sensor must be capable of precise recording within the target frequency spectrum and remain sensitive to minor resonance shifts. Strategic placement near the impact point is vital to filter out ambient interference and maintain steady data collection. Furthermore, digital output microphones are recommended to mitigate signal loss and noise, thereby enhancing the quality of the data used for analysis.
     
-    Different microphone categories offer various advantages regarding signal integrity, noise resistance, and hardware integration. Although analog electret condenser microphones are popular for their affordability and ease of use, they are prone to interference and necessitate extra circuitry for signal conditioning. Conversely, digital MEMS sensors, including the INMP441 and SPH0645LM4H, feature integrated analog-to-digital converters and utilize I2S communication to provide higher noise immunity and clearer data. The MAX9814 Electret Microphone Amplifier offers a middle ground with automatic gain control to stabilize signal levels, though this may interfere with features reliant on precise amplitude measurements. Existing research suggests that MEMS microphones are better suited for embedded acoustic tasks because of their small footprint, reliable frequency stability, and resistance to external noise, whereas analog versions are still practical for budget-restricted or basic setups (Zhang & Li., 2023). These factors underscore the importance of choosing a microphone that optimizes the trade-off between signal precision, stability, and hardware compatibility.
+    Different microphone categories offer various advantages regarding signal integrity, noise resistance, and hardware integration. Although analog electret condenser microphones are popular for their affordability and ease of use, they are prone to interference and necessitate extra circuitry for signal conditioning. Conversely, digital MEMS sensors, including the INMP441 and SPH0645LM4H, feature integrated analog-to-digital converters and utilize I2S communication to provide higher noise immunity and clearer data. The MAX9814 Electret Microphone Amplifier offers a middle ground with automatic gain control to stabilize signal levels, though this may interfere with features reliant on precise amplitude measurements. Existing research suggests that MEMS microphones are better suited for embedded acoustic tasks because of their small footprint, reliable frequency stability, and resistance to external noise, whereas analog versions are still practical for budget-restricted or basic setups \citep{zhang_2023_a}. These factors underscore the importance of choosing a microphone that optimizes the trade-off between signal precision, stability, and hardware compatibility. Upon our analysis, we determined the possible microphones we will be using based on IC compatibility and availability, as shown in Table \ref{tab:microphone_comparison}.
 
 
-         \begin{table}[ht]
+    \begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
-    \begin{minipage}{0.85\textwidth}
-    \centering
+    \begin{minipage}{\textwidth}
     \caption{Detailed Comparison Table for Microphone Module}
     \label{tab:microphone_comparison}
-    \footnotesize
+    \centering
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
 
-    \begin{tabular}{p{2.4cm} p{2.7cm} p{2.7cm} p{2.7cm}}
+    \begin{tabular}{p{2.4cm} p{3.2cm} p{3.2cm} p{3.2cm}}
     \toprule
     \textbf{Features} & \textbf{MAX9814 Electret Microphone Amplifier} & \textbf{INMP441 MEMS Microphone} & \textbf{SPH0645LM4H MEMS Microphone} \\
     \midrule
@@ -203,111 +196,110 @@
     
     \item \textbf{Camera.} A small camera unit is necessary to photograph the watermelon’s exterior for ripeness assessment, specifically to analyze visual indicators like texture and skin color. The device must deliver adequate resolution and color fidelity under ambient outdoor light to facilitate dependable feature extraction. Positioned on the housing to face the specimen, the camera needs to interface seamlessly with the main processor while minimizing energy draw for mobile operation.
         
-    Various camera modules offer different balances of image fidelity, computational needs, and hardware compatibility. Entry-level options, such as the OV7670, provide basic imaging but lack integrated compression, which places a heavier burden on the processor. Alternatively, the OV2640 module offers improved resolution and hardware-based JPEG compression, effectively lowering memory and processing overhead. The ESP32-CAM provides a highly integrated, affordable alternative by combining a microcontroller with a camera sensor (usually the OV2640) and wireless connectivity; however, its restricted memory and processing power may limit the complexity of image analysis compared to more robust platforms. Research in embedded vision emphasizes that choosing a camera requires weighing image quality against power and processing constraints to ensure stable, real-time functionality in field settings (Cao et al., 2025; Awais et al., 2025). These considerations highlight the importance of selecting a module that efficiently meets the system’s operational goals.
+    Various camera modules offer different balances of image fidelity, computational needs, and hardware compatibility. Entry-level options, such as the OV7670, provide basic imaging but lack integrated compression, which places a heavier burden on the processor. Alternatively, the OV2640 module offers improved resolution and hardware-based JPEG compression, effectively lowering memory and processing overhead. The ESP32-CAM provides a highly integrated, affordable alternative by combining a microcontroller with a camera sensor (usually the OV2640) and wireless connectivity; however, its restricted memory and processing power may limit the complexity of image analysis compared to more robust platforms. Research in embedded vision emphasizes that choosing a camera requires weighing image quality against power and processing constraints to ensure stable, real-time functionality in field settings \citep{cao_2025_a}. These considerations highlight the importance of selecting a module that efficiently meets the system’s operational goals. Table \ref{tab:camera_comparison} summarizes cameras with differing qualities that are compatible with the tabulated ICs were presented as possible candidates.
 
-
-        \begin{table}[ht]
-    \noindent
-    \makebox[\textwidth][c]{
-    \begin{minipage}{0.85\textwidth}
-    \centering
-    \caption{Detailed Comparison Table for Camera Modules}
-    \label{tab:camera_comparison}
-    \footnotesize
-    \renewcommand{\arraystretch}{1.3}
-
-    \begin{tabular}{p{2.4cm} p{2.7cm} p{2.7cm} p{2.7cm}}
-    \toprule
-    \textbf{Features} & \textbf{OV7670 Camera Module} & \textbf{OV2640 Camera Module} & \textbf{OV5640 Camera Module} \\
-    \midrule
-
-    Resolution & VGA (640$\times$480) & UXGA (1600$\times$1200) & QSXGA (2592$\times$1944) \\
-
-    Image Compression & None (RAW output) & Built-in JPEG compression & Built-in JPEG compression \\
-
-    Interface & DVP (parallel) & DVP (parallel) & DVP (parallel) and MIPI CSI-2 \\
-
-    Processing Requirement & High (no compression, heavy MCU load) & Lower (onboard compression reduces load) & Moderate (Hardware ISP handles AE/AF/AWB) \\
-
-    Memory Requirement & 614KB per frame (High) & 384KB per frame (Moderate) & 20--50KB \\
-
-    Power Consumption & $\sim$60mW (Active) & $\sim$120--140mW (Active) & $\sim$140--160mW (Active) \\
-
-    Compatibility & Standard MCUs (Arduino/ESP32) & Most ESP32-CAM boards & High-end ESP32-S3 / Pi Kits \\
-
-    Ease of Integration & Difficult (Requires complex FIFO/DMA) & Moderate (Standardized libraries) & Moderate (Requires specific AF drivers) \\
-
-    Image Quality & Low (VGA, grainy) & Good (Sharp for static objects) & Excellent (Autofocus \& Color Depth) \\
-
-    Advantages & Low cost, simple hardware & Better resolution, efficient processing & Autofocus support, high resolution, excellent color/ISP \\
-
-    Disadvantages & No compression, high processing load & Slightly higher cost & Higher cost \\
-
-    Suitability to System & Less suitable & Suitable & Highly suitable \\
-
-    \bottomrule
-    \end{tabular}
-    \end{minipage}%
-    }
-\end{table}
-\FloatBarrier
+        \begin{table}[H]
+        % \noindent
+        \makebox[\textwidth][c]{
+        \begin{minipage}{\textwidth}
+        % \centering
+        \caption{Detailed Comparison Table for Camera Modules}
+        \label{tab:camera_comparison}
+        % \footnotesize
+        \renewcommand{\arraystretch}{1}
     
-    	\item \textbf{LCD Display.} An LCD display will be used to present the ripeness classification result to the user. Based on the 3D model, a character or small graphical LCD module will be mounted on the back face of the device for easy reading during operation. The display will need to interface with the microprocessor over I2C or SPI and should be readable under outdoor lighting conditions.
-
-
-        \begin{table}[ht]
-    \noindent
-    \makebox[\textwidth][c]{
-    \begin{minipage}{0.85\textwidth}
-    \centering
-    \caption{Detailed Comparison Table for LCD Display}
-    \label{tab:lcd_comparison}
-    \footnotesize
-    \renewcommand{\arraystretch}{1.3}
-
-    \begin{tabular}{p{3.5cm} p{4cm} p{4cm}}
-    \toprule
-    \textbf{Features} & \textbf{16$\times$2 LCD with I2C Module} & \textbf{OLED Display} \\
-    \midrule
-
-    Operating Voltage & 4.7V--5.3V & 3.3V or 5V \\
-
-    Display Technology & Liquid Crystal Display & Organic Light Emitting Diode \\
-
-    Resolution & 16 characters $\times$ 2 rows & Varies (e.g., 128$\times$64, 128$\times$32 pixels) \\
-
-    Color & Monochrome & Monochrome or full-color \\
-
-    Backlight & Required (LED backlight) & None \\
-
-    Interface & Parallel (4-bit/8-bit) or I2C (via PCF8574) & I2C or SPI \\
-
-    Visibility in Sunlight & Good (reflective mode possible) & Poor (washes out) \\
-
-    Size/Form Factor & Larger, fixed form & Compact, slim \\
-
-    Microcontroller Compatibility & ESP32, Arduino, STM32, etc. & ESP32, Arduino, STM32, etc. \\
-
-    Library Support & LiquidCrystal, LiquidCrystal\_I2C & Adafruit SSD1306, U8g2 \\
-
-    \bottomrule
-    \end{tabular}
-    \end{minipage}%
-    }
-\end{table}
-\FloatBarrier
+        \begin{tabular}{p{2.4cm} p{3cm} p{3cm} p{3cm}}
+        \toprule
+        \textbf{Features} & \textbf{OV7670 Camera Module} & \textbf{OV2640 Camera Module} & \textbf{OV5640 Camera Module} \\
+        \midrule
     
-    	\item \textbf{Power Supply} The device must be powered by a reliable, rechargeable battery that can support all system components during typical field use. The battery should be selected based on the power requirements of the microcontroller and mechanical actuator, providing enough capacity for the system to operate without frequent recharging. A power regulation system, such as a step-down voltage converter, should be used to ensure stable operation of the microcontroller and peripherals. Additionally, provisions should be made to prevent power drops or “brownouts,” especially when high-power components like the actuator are engaged.
+        Resolution & VGA (640$\times$480) & UXGA (1600$\times$1200) & QSXGA (2592$\times$1944) \\
+    
+        Image Compression & None (RAW output) & Built-in JPEG compression & Built-in JPEG compression \\
+    
+        Interface & DVP (parallel) & DVP (parallel) & DVP (parallel) and MIPI CSI-2 \\
+    
+        Processing Requirement & High (no compression, heavy MCU load) & Lower (onboard compression reduces load) & Moderate (Hardware ISP handles AE/AF/AWB) \\
+    
+        Memory Requirement & 614KB per frame (High) & 384KB per frame (Moderate) & 20--50KB \\
+    
+        Power Consumption & $\sim$60mW (Active) & $\sim$120--140mW (Active) & $\sim$140--160mW (Active) \\
+    
+        Compatibility & Standard MCUs (Arduino/ESP32) & Most ESP32-CAM boards & High-end ESP32-S3 / Pi Kits \\
+    
+        Ease of Integration & Difficult (Requires complex FIFO/DMA) & Moderate (Standardized libraries) & Moderate (Requires specific AF drivers) \\
+    
+        Image Quality & Low (VGA, grainy) & Good (Sharp for static objects) & Excellent (Autofocus \& Color Depth) \\
+    
+        Advantages & Low cost, simple hardware & Better resolution, efficient processing & Autofocus support, high resolution, excellent color/ISP \\
+    
+        Disadvantages & No compression, high processing load & Slightly higher cost & Higher cost \\
+    
+        Suitability to System & Less suitable & Suitable & Highly suitable \\
+    
+        \bottomrule
+        \end{tabular}
+        \end{minipage}%
+        }
+        \end{table}
+        \FloatBarrier
+    
+    \item \textbf{LCD Display.} An LCD display will be used to present the ripeness classification result to the user. Based on the 3D model, a character or small graphical LCD module will be mounted on the back face of the device for easy reading during operation. The display will need to interface with the microprocessor over I2C or SPI and should be readable under outdoor lighting conditions. Table \ref{tab:lcd_comparison} shows the possible LCD we will be using for our system.
 
 
-    \begin{table}[ht]
+        \begin{table}[!ht]
+            \noindent
+            \makebox[\textwidth][c]{
+            \begin{minipage}{\textwidth}
+            \caption{Detailed Comparison Table for LCD Display}
+            \label{tab:lcd_comparison}
+            \centering
+            % \footnotesize
+            \renewcommand{\arraystretch}{1.3}
+        
+            \begin{tabular}{p{3.5cm} p{4cm} p{4cm}}
+            \toprule
+            \textbf{Features} & \textbf{16$\times$2 LCD with I2C Module} & \textbf{OLED Display} \\
+            \midrule
+        
+            Operating Voltage & 4.7V--5.3V & 3.3V or 5V \\
+        
+            Display Technology & Liquid Crystal Display & Organic Light Emitting Diode \\
+        
+            Resolution & 16 characters $\times$ 2 rows & Varies (e.g., 128$\times$64, 128$\times$32 pixels) \\
+        
+            Color & Monochrome & Monochrome or full-color \\
+        
+            Backlight & Required (LED backlight) & None \\
+        
+            Interface & Parallel (4-bit/8-bit) or I2C (via PCF8574) & I2C or SPI \\
+        
+            Visibility in Sunlight & Good (reflective mode possible) & Poor (washes out) \\
+        
+            Size/Form Factor & Larger, fixed form & Compact, slim \\
+        
+            Microcontroller Compatibility & ESP32, Arduino, STM32, etc. & ESP32, Arduino, STM32, etc. \\
+        
+            Library Support & LiquidCrystal, LiquidCrystal\_I2C & Adafruit SSD1306, U8g2 \\
+        
+            \bottomrule
+            \end{tabular}
+            \end{minipage}%
+            }
+        \end{table}
+        \FloatBarrier
+    
+    \item \textbf{Power Supply.} The device must be powered by a reliable, rechargeable battery that can support all system components during typical field use. The battery should be selected based on the power requirements of the microcontroller and mechanical actuator, providing enough capacity for the system to operate without frequent recharging. A power regulation system, such as a step-down voltage converter, should be used to ensure stable operation of the microcontroller and peripherals. Additionally, provisions should be made to prevent power drops or “brownouts,” especially when high-power components like the actuator are engaged. We analyzed possible power supply candidates based on the operating voltages of the components we listed in prior tables, and their suitability for our system, as shown in Table \ref{tab:battery_comparison}. 
+
+
+    \begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
-    \begin{minipage}{0.85\textwidth}
-    \centering
+    \begin{minipage}{\textwidth}
     \caption{Detailed Comparison Table for Power Supply}
     \label{tab:battery_comparison}
-    \footnotesize
+    \centering
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
 
     \begin{tabular}{p{3.5cm} p{4cm} p{4cm}}
@@ -336,26 +328,211 @@
 \end{table}
 \FloatBarrier
     
-    	\item \textbf{Enclosure.} Based on the 3D model, the system will be housed in a
-    	custom-designed handheld enclosure that integrates all components in a fixed
-    	layout---with the pulse thumper at the front, the microphone and camera facing the fruit,
-    	the microprocessor mounted internally, and the LCD display and battery at the rear. The
-    	enclosure will likely be 3D-printed to match the designed form factor and will need to be
-    	sturdy enough for regular outdoor farm use.
+    \item \textbf{Enclosure.} Based on the 3D model, the system will be housed in a custom- designed handheld enclosure that integrates all components in a fixed layout---with the pulse thumper at the front, the microphone and camera facing the fruit, the microprocessor mounted internally, and the LCD display and battery at the rear. The enclosure will likely be 3D-printed to match the designed form factor and will need to be sturdy enough for regular outdoor farm use.
+    
+\renewcommand{\arraystretch}{1.3}
+\begin{landscape}
+\begin{longtable}{p{2.5cm} p{2.8cm} p{5cm} p{2.5cm} p{2.5cm} p{2.5cm}}
+\caption{Complete Comparison Table of Hardware Requirements}
+\label{tab:hardware_comparison} \\
+    \toprule
+    \textbf{Component} & \textbf{Models} & \textbf{Key Features} & \textbf{Advantages} & \textbf{Disadvantages} & \textbf{Suitability to System} \\
+    \midrule
+\endfirsthead
+    \multicolumn{6}{l}{} \\
+    \toprule
+    \textbf{Component} & \textbf{Models} & \textbf{Key Features} & \textbf{Advantages} & \textbf{Disadvantages} & \textbf{Suitability to System} \\
+    \midrule
+\endhead
+    \midrule
+    \multicolumn{6}{r}{} \\
+\endfoot
+    \bottomrule
+\endlastfoot
+
+% \multicolumn{6}{l}{\textbf{Microcontroller \& Microprocessor}} \\
+% \midrule
+\multirow{5}{2.0cm}{Microcontroller \& Microprocessor}
+    & Raspberry Pi Zero W 2 & 1GHz Quad, 512MB RAM & Medium performance & High power, complex setup & Moderately suitable \\[4pt]
+    & ESP32 & Dual-core, 240MHz, wireless, 4MB--16MB External SPI Flash Memory & Good for sensors, moderate processing & Limited for image processing & Partially suitable \\[4pt]
+    & ESP32-CAM & Built-in camera, Wi-Fi, MicroSD Compatible & Compact, cost-effective & Limited RAM and performance & Limited multimodal use \\[4pt]
+    & \textbf{ESP32-S3-CAM} & AI instructions, camera support, MicroSD Compatible, 8MB--32MB External SPI Flash Memory & Balanced performance for ML + DSP & Still resource- constrained & Highly suitable \\[4pt]
+    & Raspberry Pi 4 & Quad-core, up to 8GB RAM & High performance, full ML support & High power, complex setup & Highly suitable \\
+\midrule
+
+\multirow{3}{2.0cm}{Microphone}
+    & MAX9814 Electret Microphone Amplifier & Analog with auto gain & Stabilizes signal amplitude & May distort amplitude features & Moderately suitable \\[4pt]
+    & \textbf{INMP441 MEMS Microphone} & Digital I2S output & Low noise, compact & Requires digital interface & Highly suitable \\[4pt]
+    & SPH0645LM4H MEMS Microphone & Digital MEMS, I2S & Stable frequency response & Slightly higher cost & Highly suitable \\
+\midrule
+
+\multirow{3}{2.0cm}{Camera}
+    & OV7670 Camera Module & Low resolution & Used for basic projects & High processing load, runs hot & Slightly suitable \\[4pt]
+    & OV2640 Camera Module & High resolution, 2MP & Lower processing demand & Moderate cost & Suitable \\[4pt]
+    & \textbf{OV5640 Camera} & High resolution, 5MP & Better color acquisition & Runs hot & Highly suitable \\
+\midrule
+
+\multirow{2}{2.0cm}{LCD Display}
+    & 16X2 LCD with I2C Module & Character display & Low power, simple & Limited visuals & Suitable \\[4pt]
+    & OLED Display & High contrast & Clear output, low power & Smaller size & Highly suitable \\
+\midrule
+
+\multirow{2}{2.0cm}{Power Supply}
+    & \textbf{Li-ion Battery 18650 3.6V 3600mah} & Rechargeable & Portable & Requires protection circuit & Suitable \\[4pt]
+    & Li-Po Battery & Lightweight & High energy density & Sensitive to overcharge & Suitable \\
+\midrule
+
+\multirow{3}{2.0cm}{Pulse Thumper}
+    & \textbf{Push-Pull Solenoid} & Electromagnetic & Fast, controllable & High power consumption & Suitable \\[4pt]
+    & Servo-based tapper & Controlled motion & Adjustable force & Slower response & Moderately suitable \\[4pt]
+    & Motor-driven Mechanism & Rotational impact & Continuous operation & Less precise & Less suitable \\
+
+\end{longtable}
+\end{landscape}
+\FloatBarrier
 
 \end{itemize}
+
+\subsubsection{Justification of Selected Hardware Components}
+
+The selection of hardware components for the proposed watermelon ripeness detection system is guided by the requirements of multimodal data acquisition, real-time embedded processing, energy efficiency, and system reliability within resource-constrained environments. The system integrates acoustic analysis and image-based classification; therefore, each component was chosen based on its ability to provide accurate sensing while operating within the memory, processing, and power limitations of an embedded platform.
+
+The ESP32-S3 WROOM (N16R8) will be selected as the primary microcontroller due to its balanced computational capability and low power consumption relative to higher-end microprocessors such as Raspberry Pi platforms. While Raspberry Pi devices offer greater processing power and full operating system support, they incur significantly higher energy consumption and system complexity. In contrast, the ESP32-S3 supports embedded machine learning through TinyML frameworks and includes hardware-accelerated digital signal processing features suitable for acoustic analysis tasks such as Fast Fourier Transform (FFT). Its integrated peripherals, including I2S for digital audio input and a DVP interface for camera modules, enable efficient handling of both acoustic and visual data streams. Furthermore, the inclusion of external PSRAM and flash memory allows buffering of image data and execution of quantized, resource-optimized convolutional neural network (CNN) models, making it highly suitable for multimodal inference within embedded constraints.
+
+The OV5640 camera module is selected for image acquisition due to its high-resolution imaging capability and onboard image signal processing (ISP). Compared to lower-resolution alternatives such as the OV7670 and OV2640, the OV5640 provides improved detail through its 5-megapixel resolution, enabling more accurate extraction of visual features such as color variation and surface texture associated with ripeness. The module's built-in JPEG compression reduces memory and bandwidth requirements, while ISP functions such as auto-exposure and auto white balance partially offload low-level image processing from the microcontroller. However, consistent with its documented characteristics, the OV5640 still imposes moderate processing and integration requirements, including driver configuration and memory management. Despite its relatively higher power consumption, its superior image quality and processing support justify its selection for CNN-based classification tasks.
+
+The INMP441 MEMS microphone is chosen to support acoustic analysis due to its digital I2S output and stable signal characteristics. Unlike analog microphones that rely on analog-to-digital conversion and may introduce noise or distortion, the INMP441 directly outputs 24-bit PCM digital audio, ensuring higher signal integrity. This allows the system to capture subtle variations in resonance and damping properties produced during the thumping process. Additionally, the absence of automatic gain control (AGC) preserves the consistency of amplitude-related features, which is critical for machine learning-based classification. Although its frequency response is limited to approximately 60~Hz to 15~kHz, this range remains sufficient to capture the dominant acoustic signatures relevant to watermelon ripeness detection.
+
+A 6V push-pull solenoid will be employed to generate controlled acoustic excitation. This actuator provides direct linear motion, producing consistent and repeatable impacts on the watermelon surface. Such repeatability is essential to ensure that variations in recorded acoustic signals are attributable to differences in fruit properties rather than inconsistencies in the excitation mechanism. The solenoid's simple ON/OFF control also facilitates precise timing synchronization with the microphone using minimal control logic. While the device exhibits moderate durability and relatively higher power consumption compared to alternatives such as servo-based or motor-driven mechanisms, it remains more suitable for this application due to its simplicity, strong impulse force, and high repeatability under intermittent operation conditions.
+
+For user interaction, a 16$\times$2 LCD with an I2C interface will be incorporated to display classification results and system status. The module provides a simple and resource-efficient output method, requiring minimal processing overhead and only two communication lines, thereby preserving available GPIO pins. In comparison to OLED displays, the LCD offers better visibility under strong ambient lighting conditions, making it more appropriate for outdoor or agricultural environments where readability is critical. Although limited to character-based output, its functionality is sufficient for the system's requirements.
+
+The system will be powered by a 3.6V 18650 lithium-ion battery, selected for its high energy capacity, cost-effectiveness, and widespread availability. This battery type supports the system's portability and is capable of supplying the combined power demands of the microcontroller, camera module, microphone, and solenoid actuator. Its standardized cylindrical form factor enables easy replacement and maintenance in field conditions. While the use of this battery requires an external protection circuit or battery management system, this is a standard design consideration and does not significantly increase system complexity.
+
+The selected components collectively address the functional and non-functional requirements of the system while explicitly accounting for embedded resource constraints. The integration of high-quality sensing devices, a capable yet energy- efficient processing unit, and a reliable actuation mechanism enables accurate acquisition and analysis of both acoustic and visual data. This design ensures that the system can perform real-time ripeness classification in a portable and practical manner suitable for field deployment.
+
+\subsubsection{Hardware Costs}
+
+The proposed watermelon ripeness detection system integrates multiple hardware components to enable multimodal data acquisition, processing, and user interaction within a standalone embedded platform. Each component performs a specific function, ranging from sensing and actuation to processing and output display, forming a cohesive system that supports both acoustic and image-based analysis. Table \ref{tab:hardware_components} shows the selected components after hardware analysis with an image and a short description for their function. 
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+% \footnotesize
+\begin{longtable}{p{3cm} p{4cm} p{6cm}}
+\caption{Hardware Components and Their Functions}
+\label{tab:hardware_components} \\
+    \toprule
+    \textbf{Component} & \textbf{Image} & \textbf{Function} \\
+    \midrule
+\endfirsthead
+    \multicolumn{3}{l}{} \\
+    \toprule
+    \textbf{Component} & \textbf{Image} & \textbf{Function} \\
+    \midrule
+\endhead
+    \midrule
+\endlastfoot
+
+ESP32-S3 WROOM CAM N16R8 &
+\begin{center}
+    \includegraphics[width=3cm, height=2.5cm, keepaspectratio]{Thesis Format (LaTEX)/figures/esp32s3.jpg}
+\end{center} &
+Main microcontroller that handles data processing, sensor interfacing, and on-device machine learning inference for both image and acoustic analysis. \\
+\midrule
+
+OV5640 Camera &
+\begin{center}
+    \includegraphics[width=3cm, height=2.5cm, keepaspectratio]{Thesis Format (LaTEX)/figures/ov5640.jpg}
+\end{center} &
+Captures high-resolution images of the watermelon for visual feature extraction and CNN-based classification. \\
+\midrule
+
+INMP441 MEMS Microphone &
+\begin{center}
+    \includegraphics[width=3cm, height=2.5cm, keepaspectratio]{Thesis Format (LaTEX)/figures/mic_inmp441.jpg}
+\end{center} &
+Records the acoustic response of the watermelon using digital I2S output for accurate signal acquisition and processing. \\
+\midrule
+
+16$\times$2 I2C LCD &
+\begin{center}
+    \includegraphics[width=3cm, height=2.5cm, keepaspectratio]{Thesis Format (LaTEX)/figures/16x2.png}
+\end{center} &
+Displays the final ripeness classification and system status to the user in a simple, readable format. \\
+\midrule
+
+18650 3.6V Battery &
+\begin{center}
+    \includegraphics[width=3cm, height=2.5cm, keepaspectratio]{Thesis Format (LaTEX)/figures/18650.png}
+\end{center} &
+Provides portable power supply for the entire system, enabling standalone field operation. \\
+\midrule
+
+6V Push-Pull Solenoid &
+\begin{center}
+    \includegraphics[width=3cm, height=2.5cm, keepaspectratio]{Thesis Format (LaTEX)/figures/solenoid.jpg}
+\end{center} &
+Generates a controlled mechanical ``thump'' to produce consistent acoustic signals from the watermelon. \\
+\midrule
+
+Buck Converter &
+\begin{center}
+    \includegraphics[width=3cm, height=2.5cm, keepaspectratio]{Thesis Format (LaTEX)/figures/buckconv.jpg}
+\end{center} &
+Steps down and regulates voltage from the battery to safe operating levels for the microcontroller and peripherals. \\
+\midrule
+
+Relay Module &
+\begin{center}
+    \includegraphics[width=3cm, height=2.5cm, keepaspectratio]{Thesis Format (LaTEX)/figures/relay.png}
+\end{center} &
+Acts as a switch to safely control the high-current solenoid using low-power signals from the microcontroller.
+
+\end{longtable}
+\end{center}
+
+
+\FloatBarrier
+
+The costs for the selected components are shown in Table \ref{tab:hardware_costs}, based on their estimated market price.
+\begin{table}[!ht]
+    \noindent
+    \makebox[\textwidth][c]{
+    \begin{minipage}{\textwidth}
+    \centering
+    \caption{Hardware Costs}
+    \label{tab:hardware_costs}
+    % \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+
+    \begin{tabular}{p{5cm} p{2cm} p{4cm}}
+    \toprule
+    \textbf{Component} & \textbf{Quantity} & \textbf{Estimated Cost} \\
+    \midrule
+
+    ESP32-S3 WROOM CAM N16R8 & 1 & $\sim$\pesos 350 \\
+    OV5640 Camera             & 1 & $\sim$\pesos 300 \\
+    INMP441 MEMS Microphone   & 1 & $\sim$\pesos 80  \\
+    16$\times$2 I2C LCD       & 1 & $\sim$\pesos 160 \\
+    18650 3.6V Battery        & 2 & $\sim$\pesos 180 \\
+    6V Push-Pull Solenoid     & 1 & $\sim$\pesos 170 \\
+    Buck Converter            & 1 & $\sim$\pesos 90  \\
+    Relay Module              & 1 & $\sim$\pesos 40  \\
+    \midrule
+    \textbf{Total}            &   & $\sim$\pesos 1,370 \\
+
+    \bottomrule
+    \end{tabular}
+    \end{minipage}%
+    }
+\end{table}
+\FloatBarrier
 
 \subsection{Software Requirements}
 
 \begin{itemize}
 
-	\item \textbf{Programming Language and IDE.} The firmware and processing logic
-	will be written in C/C++ using the Arduino IDE or PlatformIO, both of which have
-	strong community support for ESP32 and similar boards. MicroPython will be another
-	option that allows Python-style scripting directly on the microcontroller, which may
-	simplify the implementation of the signal processing and classification routines. The
-	development team will choose based on familiarity and which option best supports the
-	audio and camera libraries available for the target board.
+	\item \textbf{Programming Language and IDE.} The firmware and processing logic will be written in C/C++ using the Arduino IDE or PlatformIO, both of which have strong community support for ESP32 and similar boards. MicroPython will be another option that allows Python-style scripting directly on the microcontroller, which may simplify the implementation of the signal processing and classification routines. The development team will choose based on familiarity and which option best supports the audio and camera libraries available for the target board.
 
 	\item \textbf{Signal Processing.} The signal processing pipeline will need to extract
 	basic frequency-domain features from the recorded tap sound. This will involve
@@ -371,13 +548,7 @@
 	the fruit. The method is designed to operate on low-resource hardware, making it
 	feasible for deployment on devices without dedicated GPUs.
 
-	\item \textbf{Machine Learning Classifier.} The classifier that combines acoustic and
-	visual features to determine ripeness will be kept simple. Given the structured,
-	low-dimensional nature of the feature input, a lightweight classical approach will be
-	well-suited for this task. The model will be trained on a desktop computer then
-	converted into a compact, hardcoded form for deployment on the microcontroller. No
-	deep learning framework or complex model architecture will be required---the feature set
-	will be small enough that a straightforward classifier will be adequate.
+	\item \textbf{Machine Learning Classifier.} The classifier that combines acoustic and visual features to determine ripeness will be kept simple. Given the structured, low-dimensional nature of the feature input, a lightweight classical approach will be well-suited for this task. The model will be trained on a desktop computer then converted into a compact, hardcoded form for deployment on the microcontroller. No deep learning framework or complex model architecture will be required---the feature set will be small enough that a straightforward classifier will be adequate.
 
 	\item \textbf{Version Control.} Git will be used to manage the project's source code
 	and keep track of changes throughout development. A shared repository on a platform
@@ -385,6 +556,121 @@
 	as it evolves.
 
 \end{itemize}
+
+\subsubsection{User Definition}
+
+The proposed watermelon ripeness detection and classification system is intended for individuals directly involved in pre-harvest assessment of watermelons in agricultural settings. The primary user of the system is the end user, while the microcontroller serves as the secondary system actor responsible for processing sensor inputs and generating the required classification outputs. Defining these users and actors is necessary to clarify how the software responds to acoustic input, visual input, and output presentation during field operation.
+
+The end user is the primary user of the system, specifically watermelon farmers and agricultural workers who will utilize the device in the field to assess the ripeness of watermelons prior to harvest. This user initiates the ripeness assessment by capturing the image of the watermelon, then holding the device against the watermelon surface and tapping it to produce an acoustic response. The end user receives the ripeness classification result through the output interface of the device and uses this information to make informed harvesting decisions. As the main intended beneficiary of the proposed system, the end user interacts with it through physical handling of the device, initiation of the image capturing and tapping procedure, and interpretation of the classification result presented by the system.
+
+The microcontroller serves as the secondary actor of the system because it is responsible for carrying out the core processing operations required for ripeness detection and classification. It manages the capture of acoustic signals through the microphone, acquisition of visual data through the camera module, extraction of frequency-domain features through MFCC-based signal processing, analysis of rind color through deep learning, fusion of acoustic and visual classification results through a confusion matrix, and presentation of the final ripeness class to the end user. Although it is not a human user, the microcontroller functions as the central processing component that enables the system to respond to physical inputs and produce the corresponding classification outputs defined in the use case diagram.
+
+
+\subsubsection{Functional Requirements}
+
+The functional requirements define the specific operations and capabilities that the system must perform the following as shown in Table \ref{tab:functional_requirements}.
+
+\begin{table}[!ht]
+    \noindent
+    \makebox[\textwidth][c]{
+    \begin{minipage}{\textwidth}
+    \caption{Functional Requirements}
+    \label{tab:functional_requirements}
+    \centering
+    % \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+
+    \begin{tabular}{p{1cm} p{9cm}}
+    \toprule
+    \textbf{No.} & \textbf{Functional Requirement} \\
+    \midrule
+
+    1  & The system shall capture the image of a watermelon's rind using an onboard camera module. \\
+    % \midrule
+    2  & The system shall generate an acoustic response of a watermelon using a custom pulse thumper. \\
+    % \midrule
+    3  & The system shall record the acoustic response generated by the pulse thumper using an integrated microphone. \\
+    % \midrule
+    4  & The system shall extract the features of the watermelon rind color using image preprocessing. \\
+    % \midrule
+    5  & The system shall extract the features of the watermelon acoustic response using digital signal processing. \\
+    % \midrule
+    6  & The system shall classify the watermelon as ripe or unripe based on the extracted watermelon rind image features. \\
+    % \midrule
+    7  & The system shall classify the watermelon as ripe or unripe based on the extracted watermelon acoustic response features. \\
+    % \midrule
+    8  & The system shall cross-verify the acoustic response classification with the rind image classification to produce a final ripeness classification. \\
+    % \midrule
+    9  & The system shall display the final ripeness classification result to the user through an output interface. \\
+    % \midrule
+    10 & The system shall operate as a standalone embedded device without requiring an external internet connection or paired computing device during field use. \\
+
+    \bottomrule
+    \end{tabular}
+    \end{minipage}%
+    }
+\end{table}
+
+% \FloatBarrier
+
+\subsubsection{Non-functional Requirements}
+
+The non-functional requirements define the quality attributes and constraints that the system must satisfy in its operation, as shown in Table 
+\ref{tab:nonfunctional_requirements}
+
+\begin{table}[!ht]
+    \noindent
+    \makebox[\textwidth][c]{
+    \begin{minipage}{\textwidth}
+    \caption{Non-functional Requirements}
+    \label{tab:nonfunctional_requirements}
+    \centering
+    % \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+
+    \begin{tabular}{p{3cm} p{9cm}}
+    \toprule
+    \textbf{Category} & \textbf{Requirement} \\
+    \midrule
+
+    Performance &
+        The system shall successfully provide a final classification. \newline\newline
+        The system shall complete acoustic capture with minimal delay after thumper activation. \newline\newline
+        The system shall perform all processing and ML inference on-device without external connectivity. \\
+    % \midrule
+
+    Accuracy &
+        The system shall maintain reliable classification accuracy against destructive ground-truth validation. \\
+    % \midrule
+
+    Portability &
+        The system shall be hand-operable, lightweight, and suitable for field use. \\
+    % \midrule
+
+    Usability &
+        The system shall provide clear and readable results under typical outdoor conditions. \newline\newline
+        The system shall deliver the minimum force required to avoid fruit damage. \\
+    % \midrule
+
+    Reliability &
+        The system shall operate consistently and achieve repeatable results for consecutive tests on the same fruit. \\
+    % \midrule
+
+    Scalability &
+        The system shall allow future firmware updates for new ML models without hardware modifications. \\
+    % \midrule
+
+    Robustness &
+        The system shall tolerate variations in outdoor ambient noise. \newline\newline
+        The system shall maintain consistent color classification under varying outdoor illumination. \\
+
+    \bottomrule
+    \end{tabular}
+    \end{minipage}%
+    }
+\end{table}
+\FloatBarrier
+
 
 \section{System Design and Development}
 
@@ -400,47 +686,51 @@ This subsection details the design and development of the hardware components re
 Hardware architecture is a high-level functional map that defines the organization of a system's core components and their underlying communication protocols. It serves as a structural blueprint, outlining how a central processing hub coordinates with various sensing and actuation modules through standardized data buses to ensure reliable information flow across the entire device.
 
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/hardware_architecture.png}
-	\caption{Hardware Architecture}
-	\label{fig:hardware_architecture}
+\begin{figure}[!ht]
+    \caption{Hardware Architecture}
+    \label{fig:hardware_architecture}
+    \centering
+	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/hardware_architecture.png}	
 \end{figure}
 \FloatBarrier
 
-This architecture defines a robust edge computing device that effectively bridges multimodal sensing, intelligent processing, and physical actuation. A central processing hub coordinates incoming sensor data to drive various output modules and mechanical triggers. Crucially, the system utilizes an isolated power management strategy, ensuring that sensitive logic components remain stable and protected from the heavier electrical demands of the actuation hardware.
+This architecture defines a robust edge computing device that effectively bridges multimodal sensing, intelligent processing, and physical actuation as shown in Figure \ref{fig:hardware_architecture}. A central processing hub coordinates incoming sensor data to drive various output modules and mechanical triggers. Crucially, the system utilizes an isolated power management strategy, ensuring that sensitive logic components remain stable and protected from the heavier electrical demands of the actuation hardware.
 
+% \newpage
 \subsubsection{Circuit Diagram}
+The circuit diagram shows the electrical connections of the system, showing how the hardware components are integrated around the central processing unit for both image and acoustic analysis. This section includes the schematic and pictorial diagrams, illustrating both the wiring and physical setup of the components. It also shows how signals and power are distributed among the components, as well as how they interact and support the system's overall functionality. These diagrams provide a clear view of the system’s electrical structure and implementation.
+% \pagebreak
 
- \paragraph{Schematic Diagram}~
+ \paragraph{3.4.1.2.1 Schematic Diagram}~
 
-\FloatBarrier
-\begin{figure}[ht]
+% \FloatBarrier
+\begin{figure}[!ht]
+    \caption{Schematic Diagram}
+    \label{fig:schematic_diagram}
 	\centering
-	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/circuit-diagram.png}
-	\caption{Circuit Diagram}
-	\label{fig:circuit_diagram}
+	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/circuit-diagram.png}	
 \end{figure}
-\FloatBarrier
+% \FloatBarrier
 
-The schematic diagram shown in the figure above illustrates the detailed connections of the system using the selected components chosen during hardware requirements. At the center of the system is the ESP32-S3 N16N8 WROOM1 CAM microcontroller, which serves as the brain or the hub for processing both audio and image analysis. Key components include the INMP441 microphone, OV5640 camera, 16x2 I2C LCD display. 
+The schematic diagram shown in Figure \ref{fig:schematic_diagram} illustrates the detailed connections of the system using the selected components chosen during hardware requirements. At the center of the system is the ESP32-S3 N16N8 WROOM1 CAM microcontroller, which serves as the brain or the hub for processing both audio and image analysis. Key components include the INMP441 microphone, OV5640 camera, 16x2 I2C LCD display. 
 
 Based on the datasheet of the ESP32-S3-WROOM CAM, the built-in camera port shares the same connections as the left GPIO pins of the ESP32-S3 board except GPIO 14, which the OV5640 camera will use. Pins 15, 16, 17, 18, 8, 19, 20, and 3 of the MCU is the 8-bit parallel bus, which are grouped to allow the ESP32-S3's LCD-CAM peripheral to "read" the state of all 8 pins at once in a single clock cycle. Pin 46 (PCLK) of the MCU tells the ESP32 when a new pixel of data is ready, pin 6 (XCLK) provides a high-frequency (usually 20MHz or 24MHz) clock to "drive" the camera's internal brain, pins 7 \& 15 (HSYNC/VSYNC) signal the end of a line (Horizontal) and the end of a frame (Vertical). They are essential for the ESP32 to "reconstruct" the image in memory, and pin 45 (PWDN) is used to put the camera to sleep. 
 
 The INMP441 uses I2C, which sends a digital bitstream, which requires very precise timing, unlike analog mics. Pin 39 (SCK) is the serial clock of the microphone and this provides the heartbeat for the data transfer, pin 40 (WS) tells the ESP32-S3 if the audio data is for the left or right channel, pin 41 (SD) is where the actual audio “bits” travel, and L/R pins are pulled to ground making use of the left channel of the microphone. The 16x2 LCD uses an I2C port expander, reducing the number of pins needed to connect to the MCU into 4. Pins SCL and SDK of the expander are connected to the 9 and 15 GPIO pins of the MCU.
 
- \paragraph{Pictorial Diagram}~
+% \newpage
+     \paragraph{3.4.1.2.2 Pictorial Diagram}~
+    
+     \FloatBarrier
+    \begin{figure}[!ht]
+        \caption{Pictorial Diagram}
+    	\label{fig:picto_diagram}
+    	\centering
+    	\includegraphics[width=1\linewidth]{Thesis Format (LaTEX)/figures/pictorial_diagram.png}
+    \end{figure}
+    \FloatBarrier
 
- \FloatBarrier
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/pictorial_diagram.png}
-	\caption{Pictorial Diagram}
-	\label{fig:circuit_diagram}
-\end{figure}
-\FloatBarrier
-
-The figure above illustrates the physical connections of the system in a realistic way, using the chosen components during hardware requirements. At the center of the system is the ESP32-S3 N16N8 CAM microcontroller, which serves as the brain or the hub for processing both audio and image analysis. Key components include the INMP441 microphone, OV5640 camera, 16x2 I2C LCD display, two 18650 batteries connected in a series, and a push-pull solenoid. Other components include a buck converter to bring down the total voltage of the battery to 5V which the microcontroller needs, a relay to control the solenoid, and a flyback diode to protect the microcontroller from the EMF produced by the push-pull solenoid when it operates.
+Figure \ref{fig:picto_diagram} illustrates the physical connections of the system in a realistic way, using the chosen components during hardware requirements. At the center of the system is the ESP32-S3 N16N8 CAM microcontroller, which serves as the brain or the hub for processing both audio and image analysis. Key components include the INMP441 microphone, OV5640 camera, 16x2 I2C LCD display, two 18650 batteries connected in a series, and a push-pull solenoid. Other components include a buck converter to bring down the total voltage of the battery to 5V which the microcontroller needs, a relay to control the solenoid, and a flyback diode to protect the microcontroller from the EMF produced by the push-pull solenoid when it operates.
 
  
 \subsubsection{Hardware Design}
@@ -460,10 +750,10 @@ module, microphone sensor, tapping mechanism, and LCD display. The model provide
 clear visualization of how the components are integrated within the enclosure.
  
 \begin{figure}[!hb]
+    \caption{3D Model of the proposed watermelon analysis device.}
+    \label{fig:3d_model}
 	\centering
-	\includegraphics[width=0.65\linewidth]{figures/3d-model}
-	\caption{3D Model of the proposed watermelon analysis device.}
-	\label{fig:3d_model}
+	\includegraphics[width=1\linewidth]{figures/3d-model}
 \end{figure}
 \clearpage
  
@@ -476,60 +766,65 @@ components to enable consistent data acquisition during the ripeness detection p
 \vspace{6pt}
  
 The two-dimensional (2D) model of the proposed device. This section includes
-multiple orthographic views, such as the top, side, front, and back views, to illustrate
+multiple orthographic views, such as the top (Figure \ref{fig:top_view}), side (Figure \ref{fig:side_view}), front (Figure \ref{fig:front_view}), and rear (Figure \ref{fig:rear_view}) views, to illustrate
 the structural layout of the hardware system. These views provide a clearer
 representation of the device's dimensions, component placement, and overall
 configuration.
  
-\begin{figure}[ht]
+\begin{figure}[!ht]
+    \caption{Top View}
+    \label{fig:top_view}
 	\centering
 	\includegraphics[width=0.75\linewidth]{figures/top_view}
-	\caption{Top View}
-	\label{fig:top_view}
 \end{figure}
  
-\begin{figure}[ht]
+\begin{figure}[!ht]
+    \caption{Rear View}
+    \label{fig:rear_view}
 	\centering
 	\includegraphics[width=0.75\linewidth]{figures/rear_view}
-	\caption{Rear View}
-	\label{fig:rear_view}
+	
 \end{figure}
  
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.75\linewidth]{figures/front_view}
+\begin{figure}[!ht]
 	\caption{Front View}
 	\label{fig:front_view}
+    \centering
+	\includegraphics[width=0.75\linewidth]{figures/front_view}
+	
 \end{figure}
  
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.75\linewidth]{Thesis Format (LaTEX)/figures/side_view.jpg}
+\begin{figure}[!ht]
 	\caption{Side View}
 	\label{fig:side_view}
+    \centering
+	\includegraphics[width=0.75\linewidth]{Thesis Format (LaTEX)/figures/side_view.jpg}
+	
 \end{figure}
  
-\newpage
+% \newpage
  
 
-\clearpage
+% \clearpage
  
 \subsection{Software Development}
 
 This section presents the software development aspect of the system, covering the architectural design and algorithmic foundations that govern its operation. The software architecture is described through a series of diagrams that illustrate the system's structure, data flow, and behavioral logic, followed by a discussion of the algorithm underlying the ripeness detection and classification process.
  
 \subsubsection{Software Architecture}
+
+The software architecture describes the overall software design of the system, from the highest level of functional organization down to module interactions. The proposed system uses a modular, pipeline based approach that integrates image and acoustic analysis within a single embedded platform. It is described through context  level, data flow, activity, and use case diagrams, showing how data is processed from acquisition to cross validation to produce a final ripeness result.
  
 \paragraph{3.4.2.1.1    Context Level Diagram}~
  
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/context_level_diagram.png}
-	\caption{Context Level Diagram}
+\begin{figure}[!ht]
+	%\centering
+    \caption{Context Level Diagram}
 	\label{fig:context_level_diagram}
+	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/context_level_diagram.png}
 \end{figure}
 
-The context level diagram presents the proposed watermelon ripeness detection system as a single high-level process that interacts with two main external entities, namely the farmer and the microcontroller, as shown in Figure 13.
+The context level diagram presents the proposed watermelon ripeness detection system as a single high-level process that interacts with two main external entities, namely the farmer and the microcontroller, as shown in Figure \ref{fig:context_level_diagram}.
 
 The farmer initializes the system, which starts the system and sets the sensors, thumper, and LCD display to their default values. The farmer also receives the visual output from the system through the LCD display after the classified image and audio have been cross-validated by the system. 
 
@@ -537,67 +832,78 @@ The microcontroller, on the other hand, receives the raw image capture from the 
 
 Overall, the context level diagram illustrates how the proposed system operates as a centralized process that coordinates inputs from both the farmer and the microcontroller to produce a final ripeness classification. The system relies on the farmer and the microcontroller for initialization and delivers its output back to the farmer through the LCD display, while the microcontroller serves as the processing backbone responsible for handling both the image and audio pipelines. By integrating the extracted features from both modalities through cross-validation, the system is able to arrive at a unified and more reliable determination of watermelon ripeness than either input could provide on its own.
 
-\begin{samepage}
+% \begin{samepage}
 \paragraph{3.4.2.1.2	Data Flow Diagram}~
 
     
-\FloatBarrier
-    \begin{figure}[ht]  
-    	\centering
-    	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/data_flow_diagram.png}
+% \FloatBarrier
+    
+% \FloatBarrier
+% \end{samepage}
+
+    The data flow diagram represents the internal flow of data when the external entities, namely the farmer and microcontroller, interact with the system and its data storage as shown in Figure \ref{fig:data_flow_diagram}. 
+
+    \begin{figure}[H]  
     	\caption{Data Flow Diagram}
     	\label{fig:data_flow_diagram}
+        \centering
+    	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/data_flow_diagram.png}
     \end{figure}
-\FloatBarrier
-\end{samepage}
-
-    The Data Flow Diagram represents the internal flow of data when the external entities, namely the farmer and microcontroller, interact with the system and its data storage as shown in Figure 27. 
 
 	The flow of data begins when the farmer initializes the system, which sets the values of all sensors, the thumper, and the LCD display to their default. This sends a signal to the microcontroller to start the image capture for the raw image, which is then preprocessed. The raw image is first color corrected, which ensures consistent and color-accurate representation regardless of lighting conditions, and then passed through an RGB to HSV conversion process to yield the HSV values of the image. The HSV values are then used for feature extraction, which generates an image feature vector which is then put through an image classification process, which determines whether the image is of a ripe or unripe watermelon based on its features. The resulting image ripeness classification is then stored in the Image Ripeness Data storage. 
     
 	After image classification, a signal is sent to the thumper, and the resulting audio generated by the thumper is then recorded by the microcontroller. The raw audio signal is first passed through audio cleaning to remove noise, producing cleaned audio output. The cleaned audio is then segmented to isolate the relevant acoustic response produced by the thumper, discarding the surrounding silence and non-event parts of the recording. The resulting segmented audio is then passed through a windowing function to produce windowed frames to reduce discontinuities and prevent spectral leakage of the audio signal. A Fast Fourier Transform is then applied on the windowed frames, which converts each frame from a time-domain signal into its frequency components, revealing what frequencies are present in the thump response. These frequency components are then mapped onto the Mel scale, which compresses the frequency range to match how human hearing perceives sound, emphasizing the frequency regions most relevant to the acoustic properties of the thump. Log compression is then applied to further scale the energy values in a way that reduces the dominance of very large values. A Discrete Cosine Transform is then applied to produce Mel-frequency cepstral coefficients (MFCCs), which serve as  a compact and informative representation of the tonal characteristics of ripe or unripe audio signals. These MFCCs are used by the audio classification process to produce an audio ripeness classification, which is then stored in the Audio Ripeness Data Storage.
     
-	Once both classifications are available, the cross-validation process retrieves both the image and audio ripeness classifications from their respective data stores and combines them through a confusion matrix to arrive at a single, more reliable final ripeness classification, which is stored in the Final Ripeness Data Storage. Finally, the ripeness score display process retrieves the final ripeness classification from storage and displays it to the farmer through the system’s LCD screen to complete the data flow of the system.
+    Once both classifications are available, the system retrieves the image and audio results, combines them through cross-validation to produce a more reliable final ripeness classification, and stores it in the Final Ripeness Data Storage. The final classification is then retrieved and displayed to the farmer on the LCD screen.
 
- \paragraph{3.4.2.1.3	Activity Diagram}~
+     \paragraph{3.4.2.1.3 Activity Diagram}~
+    
+     % \FloatBarrier
+    
+    % \FloatBarrier
 
- \FloatBarrier
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\linewidth, height=0.85\textheight, keepaspectratio]{Thesis Format (LaTEX)/figures/activity_diagram.png}
-	\caption{Activity Diagram}
-	\label{fig:activity_diagram}
-\end{figure}
-\FloatBarrier
+The system begins by triggering the camera, which then captures an image as shown in Figure \ref{fig:activity_diagram}. A decision check follows where if the image was not successfully taken, the flow loops back to the trigger camera step. Once a valid image is captured, it proceeds to image processing, then image classification. After classification, the system triggers a thumper, followed by an attempt to record audio. If audio was not successfully recorded, the process loops back to the trigger thumper step. Once audio is confirmed, it moves into audio processing, then cross validation, where the image and audio data are reconciled. 
+    
+Finally, the system displays the result, ending the process. The diagram illustrates the overall flow of the system, depicting how visual and audio data are captured, processed, and validated in sequence to produce a reliable output. It reflects the step-by-step operation of the system from initial image capture to final result display.
 
-The system begins by triggering the camera, which then captures an image as shown in the diagram. A decision check follows where if the image was not successfully taken, the flow loops back to the trigger camera step. Once a valid image is captured, it proceeds to image processing, then image classification. After classification, the system triggers a thumper, followed by an attempt to record audio. If audio was not successfully recorded, the process loops back to the trigger thumper step. Once audio is confirmed, it moves into audio processing, then cross validation, where the image and audio data are reconciled. 
+\begin{figure}[H]
+    	\caption{Activity Diagram}
+    	\label{fig:activity_diagram}
+        \centering
+    	\includegraphics[width=\linewidth, height=0.85\textheight, keepaspectratio]{Thesis Format (LaTEX)/figures/activity_diagram.png}
+    \end{figure}
 
-Finally, the system displays the result, ending the process. The diagram illustrates the overall flow of the system, depicting how visual and audio data are captured, processed, and validated in sequence to produce a reliable output, reflecting the step-by-step operation of the system from initial image capture to final result display. 
-
+\pagebreak
 \paragraph{3.4.2.1.4	Use Case Diagram}~
  
+The system's functional scope and actor interactions are captured in the diagram shown in Figure~\ref{fig:use_case_diagram}, which defines the interactions between the primary actor, the microcontroller, and the system's core processes.
+
 \begin{figure}[h]
-	\centering
-	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/use_case_diagram.png}
 	\caption{Use Case Diagram}
 	\label{fig:use_case_diagram}
+    \centering
+	\includegraphics[width=0.7\linewidth]{Thesis Format (LaTEX)/figures/use_case_diagram.png}
+	
 \end{figure}
+
+
 
 \FloatBarrier
 
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
-    \centering
-    \footnotesize
-    \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-01}
+    \centering
+    % \footnotesize
+    \renewcommand{\arraystretch}{1.3}
 
     \begin{tabular}{p{3.5cm} p{8cm}}
     \toprule
 
     Use Case ID & UC-01 \\
+    
 
     Use Case Name & Capture Image \\
 
@@ -632,12 +938,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
     }
 \end{table}
 
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-01}
 
@@ -680,12 +986,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
 % UC-03
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-03}
 
@@ -728,12 +1034,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
 % UC-04
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-04}
 
@@ -775,12 +1081,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
 % UC-05
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-05}
 
@@ -822,12 +1128,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
 % UC-06
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-06}
 
@@ -870,12 +1176,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
 % UC-07
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-07}
 
@@ -918,12 +1224,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
 % UC-08
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-08}
 
@@ -966,12 +1272,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
 % UC-09
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-09}
 
@@ -1013,12 +1319,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
 % UC-10
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-10}
 
@@ -1062,12 +1368,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
 % UC-11
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-11}
 
@@ -1110,12 +1416,12 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
 % UC-12
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
     \centering
-    \footnotesize
+    % \footnotesize
     \renewcommand{\arraystretch}{1.3}
     \label{tab:uc-12}
 
@@ -1158,22 +1464,23 @@ Finally, the system displays the result, ending the process. The diagram illustr
 \end{table}
 
  \FloatBarrier
+
+
 \paragraph{3.4.2.1.5	Algorithm}~
 
-\FloatBarrier
- 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\linewidth, height=0.85\textheight, keepaspectratio]{Thesis Format (LaTEX)/figures/system_process.png}
-	\caption{Activity Diagram}
+%\FloatBarrier
+
+\begin{figure}[!h]
+    \caption{System Process Flowchart}
 	\label{fig:system_process_flowchart}
+    \centering
+	\includegraphics[width=\linewidth, height=0.85\textheight, keepaspectratio]{Thesis Format (LaTEX)/figures/system_process.png}
 \end{figure}
 
 \FloatBarrier
 
-
-\begin{algorithm}[H]
-\footnotesize
+\begin{algorithm}[h]
+% \footnotesize
 \caption{Multimodal Ripeness Classification (Part 1)}
 \KwIn{Acoustic Signal (\textit{audioSignal}), Watermelon Color Images (\textit{imageW})}
 \KwOut{Watermelon ripeness classification (\textit{Final\_result})}
@@ -1206,7 +1513,7 @@ Set all sensors, actuators, and display to default state\;
 \end{algorithm}
 
 \begin{algorithm}[H]
-\footnotesize
+% \footnotesize
 \caption{Multimodal Ripeness Classification (Part 2)}
 
 \While{system is active (continued)}{
@@ -1246,25 +1553,32 @@ Set all sensors, actuators, and display to default state\;
 \FloatBarrier
 
 \subsection{System Integration}
+\begin{figure}[h]
+	\caption{System Integration}
+	\label{fig:system_integration}
+    \centering
+	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/sysint.png}
+\end{figure}
 
-The proposed system operates through two sequential sensing modalities that together characterize the ripeness of a watermelon. The acoustic modality processes the sound data captured from a mechanical thump on the fruit's surface using digital signal processing, while the visual modality analyzes the appearance of the rind through a convolutional neural network. The outputs of both modalities are then fused through weighted voting to produce a final binary classification, which is subsequently displayed to the user as either ripe or unripe.
+\FloatBarrier
+The proposed system operates through two sequential sensing modalities that together characterize the ripeness of a watermelon as shown in Figure \ref{fig:system_integration}. The acoustic modality processes the sound data captured from a mechanical thump on the fruit's surface using digital signal processing, while the visual modality analyzes the appearance of the rind through a convolutional neural network. The outputs of both modalities are then fused through weighted voting to produce a final binary classification, which is subsequently displayed to the user as either ripe or unripe.
 
 
 \subsubsection{System Architecture}
 
-The system architecture utilizes a multimodal processing framework that integrates visual and acoustic data through a synchronized three-stage pipeline. By leveraging a central microprocessor to orchestrate sensor inputs, the design ensures seamless communication between the imaging system and the acoustic sensors, creating a robust foundation for automated watermelon ripeness detection.
+The system architecture shown in Figure \ref{fig:system_architecture} utilizes a multimodal processing framework that integrates visual and acoustic data through a synchronized three-stage pipeline. By leveraging a central microprocessor to orchestrate sensor inputs, the design ensures seamless communication between the imaging system and the acoustic sensors, creating a robust foundation for automated watermelon ripeness detection.
 
  
 \begin{figure}[h]
-	\centering
-	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/system_architecture.png}
 	\caption{System Architecture}
 	\label{fig:system_architecture}
+    \centering
+	\includegraphics[width=\linewidth]{Thesis Format (LaTEX)/figures/system_architecture.png}
 \end{figure}
 
 \FloatBarrier
 
- The operational flow begins with ML-based image classification that triggers a mechanical pulse, followed by the capture and processing of acoustic signals via cepstral feature extraction. By cross-validating these distinct data streams, the system performs a comprehensive analysis to determine the final ripeness level, which is then communicated to the user through the integrated LCD interface.
+ The operational flow begins with ML-based image classification that triggers a mechanical pulse, followed by the capture and processing of acoustic signals via cepstral feature extraction as shown in Figure \ref{fig:system_architecture}. By cross-validating these distinct data streams, the system performs a comprehensive analysis to determine the final ripeness level, which is then communicated to the user through the integrated LCD interface.
 
 \section{Plans for Testing}
 
@@ -1277,7 +1591,7 @@ Testing will be conducted under varying outdoor conditions, including different 
 The testing procedure will follow a structured approach:
 
 
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
@@ -1307,7 +1621,7 @@ All test results will be recorded and analyzed to determine the effectiveness of
 
 \FloatBarrier
 
-\begin{table}[ht]
+\begin{table}[!ht]
     \noindent
     \makebox[\textwidth][c]{
     \begin{minipage}{0.85\textwidth}
@@ -1343,6 +1657,8 @@ All test results will be recorded and analyzed to determine the effectiveness of
     }
 \end{table}
 \FloatBarrier
+
+Table \ref{tab:testing-metrics} above enumerates the metrics that will be measured for the study. The metrics are classified according to their aligned category and under which part of the study are these being required. Further details on each of the metrics are discussed as follows.
 
 Accuracy, precision, recall, and F1-score form the core of the classification evaluation and work together to describe how well the system distinguishes between unripe, ripe, and overripe watermelons. Accuracy provides the most straightforward view by measuring the overall proportion of samples the system classifies correctly, though it can be misleading on its own when one class appears more frequently than others. Precision and recall address this limitation by reporting performance at the individual class level. Precision captures how often the system's positive predictions for a given class are actually correct, essentially measuring how much the system avoids false alarms, while recall captures how many of the true instances of each class the system successfully identifies, measuring how much it avoids misses. The F1-score then combines both into a single balanced figure per class, which is particularly important here because ripe watermelons are expected to be more prevalent in field conditions, meaning a high overall accuracy score could still mask poor detection of the less common unripe category. 
 
