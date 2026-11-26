@@ -29,6 +29,10 @@
 \usepackage{amsfonts}
 %Shortcut Environments
 \usepackage{tocloft}
+\usepackage{setspace}
+% Keep the chapter baseline stable across font changes and table breaks.
+\newenvironment{thesisprose}{\setstretch{2}}{\par}
+\AddToHook{env/longtable/begin}{\setstretch{1}}
 \usepackage{booktabs} % for better looking tables
 \usepackage{longtable}
 \usepackage{float}

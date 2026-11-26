@@ -1,6 +1,6 @@
 \chapter{RESULTS AND DISCUSSION}
 
-{\baselineskip=2\baselineskip
+\begin{thesisprose}
 
 This chapter presents the results of the performance testing and validation of the portable, non-destructive watermelon ripeness detection system, organized according to the study's research objectives. It covers the hardware specifications of the completed prototype and the environment in which it was deployed, the design and validation of the acoustic-optical system used for feature extraction and classification (Objective 1), the development and performance evaluation of the portable, field-deployable unit (Objective 2), and the validation of the system's end-to-end accuracy, reliability, and usability using established classification and agreement metrics (Objective 3). The chapter further compares the system against related studies on acoustic-based ripeness detection, lightweight deep learning classification, and multimodal sensing pipelines, placing the contributions of this work within the wider body of literature on non-destructive agricultural quality assessment.
 
@@ -620,35 +620,35 @@ This section describes the physical assembly of all the hardware components and 
 
 The ESP32-S3 coordinated the camera, thumper, microphone, and display described in Section 4.1. It processed the rind image first and retained the image prediction while the operator positioned the thumper against the same watermelon. A separate button press started the acoustic measurement. The firmware then combined the two predictions and displayed the result for that assessment.
 
-\textbf{Acoustic Hardware Placement/Models Used and Best Model Chosen}
+\subsubsection*{Acoustic Hardware Placement/Models Used and Best Model Chosen}
 
 The INMP441 microphone was mounted above the rounded contact tip of the thumper, close to where the tip struck the rind. The firmware began collecting audio through the microphone’s I\textsuperscript{2}S interface before the ESP32-S3 activated the relay that powered the solenoid. Recording continued after the tap to capture the fruit’s response. The controller marked the point in the recording when the relay was activated so the software could locate the portion of the signal to analyze.
 
 Seven acoustic classifiers were evaluated, namely Naive Bayes, Support Vector Machine, Decision Tree, Random Forest, XGBoost, Logistic Regression, and K-Nearest Neighbors. The tuned Decision Tree matched the accuracy of the default XGBoost model, correctly classifying 98 of the 99 held-out recordings. It added approximately 0.05 KB to the firmware, the smallest increase among the acoustic models evaluated for deployment. Its C implementation also matched the Python predictions on all 99 recordings. The firmware used the tree to classify features extracted from the microphone recording.
 
-\textbf{Acoustic Hyperparameters}
+\subsubsection*{Acoustic Hyperparameters}
 
 The selected Decision Tree had a maximum depth of three. A node needed at least 10 samples before a split could be considered, and each terminal node had to contain at least 15 samples. The tree used Gini impurity to evaluate candidate splits, a feature fraction of 0.90, and equal weight for each training sample. The depth and leaf-size limits kept the tree from forming highly specific rules based on small groups of recordings.
 
 These settings determined the structure of the exported tree. On the device, the firmware selected the segment containing the tap response, extracted its signal features, and standardized them using the stored scaling parameters. The C implementation then evaluated the tree’s branching rules and returned a ripe or unripe prediction for the acoustic measurement.
 
-\textbf{Image Hardware Placement/Image Models Trained and Best Model Chosen}
+\subsubsection*{Image Hardware Placement/Image Models Trained and Best Model Chosen}
 
 The OV5640 camera was mounted on an adjustable bracket on the barrel, allowing the operator to aim it at the rind. The firmware displayed a live preview with a guide marking the central area used for analysis. After capture, the controller stored the frame in memory, cropped the marked area, and applied glare reduction, sharpening, and brightness normalization. It then resized the processed image to 96 \ensuremath{\times} 96 pixels for classification.
 
 The eight image architectures evaluated were MobileNetV1, MobileNetV2, MobileNetV3 Small, SqueezeNet v1.1, EfficientNet-B0, EfficientNet-Lite0, ShuffleNetV1, and ShuffleNetV2. EfficientNet-B0 and EfficientNet-Lite0 each classified 47 of the 49 held-out images correctly before conversion. After INT8 conversion, EfficientNet-B0 classified 48 correctly, while EfficientNet-Lite0 classified 40 correctly. EfficientNet-B0 was selected for deployment based on its performance after conversion. It ran through TensorFlow Lite Micro on the ESP32-S3, and the firmware retained its image prediction and confidence for the combined assessment.
 
-\textbf{Image Hyperparameters}
+\subsubsection*{Image Hyperparameters}
 
 The selected EfficientNet-B0 configuration used the Lion optimizer, binary cross-entropy loss, and a batch size of 16. A dropout rate of 0.4 was applied before the classification layer, and an L2 penalty of 0.001 was applied to that layer. Both settings helped limit how closely the classifier fitted the training images. The weights from epoch 8 were retained because they produced the lowest validation loss of 0.1386 in the selected run. Those weights were converted to INT8 for deployment, and the firmware converted the prepared RGB pixel values to the integer format expected by the model.
 
-\textbf{Interpretation of F1 score of imbalanced dataset}
+\subsubsection*{Interpretation of F1 score of imbalanced dataset}
 
 The held-out acoustic set contained 31 ripe and 68 unripe recordings. Classifying every recording as unripe would have yielded 68.69\% accuracy while missing all 31 ripe recordings. The ripe-class F1 score accounted for both how often a ripe prediction was correct and how many ripe recordings the model detected. The tuned Decision Tree correctly identified 30 of the 31 ripe recordings and all 68 unripe recordings, giving it a ripe-class F1 score of 0.984.
 
 The optical evaluation used macro F1, which averages the F1 scores for ripe and unripe images and gives each class equal weight. The quantized EfficientNet-B0 achieved a macro F1 score of 0.9796 on the held-out image set. These scores describe the two classifiers on their respective test sets. The combined device was evaluated separately during field testing in Section 4.4.
 
-\textbf{Cross Validation}
+\subsubsection*{Cross Validation}
 
 At the device level, cross-validation involved checking the image and acoustic predictions for the same watermelon before issuing the final verdict. The ESP32-S3 stored the image prediction and its confidence while the acoustic measurement was taken. Once the tap recording had been processed, the firmware paired the two predictions and combined them using the log-likelihood ratio weighting procedure described in Section 3.4.3. The image confidence guided the weight assigned to the image prediction. The acoustic weighting accounted for whether the tap response was detected automatically or a fallback segment was used.
 
@@ -1202,4 +1202,4 @@ Table~\ref{tab:comparison-of-related-studies-on-digital-signal-1348} compares th
 \endgroup
 \end{landscape}
 
-\par}
+\end{thesisprose}

@@ -2,7 +2,7 @@
 
 \chapter{METHODOLOGY}
 
-{\baselineskip=2\baselineskip
+\begin{thesisprose}
 
 This chapter describes the methodological framework used in developing the machine learning–based watermelon ripeness detection system. It details the research design adopted in the study, the requirements analysis, and the procedures for data gathering and acquisition. The chapter further explains the image collection process, data preprocessing techniques, model training and validation, and system evaluation methods. These procedures were systematically implemented to ensure accurate ripeness classification, model reliability, and consistency of results under real-world agricultural conditions.
 
@@ -755,7 +755,7 @@ Full recharge time & \textbf{\textit{\textasciitilde{}}}\textbf{\textit{1.1 – 
 
 This subsection describes the physical structure of the proposed system used for watermelon ripeness analysis. The design includes a three-dimensional (3D) model to visualize the overall structure and a two-dimensional (2D) model that presents the dimensional layout and component placement.
 
-\textbf{3D Model}
+\subsubsection*{3D Model}
 
 This section shows the arrangement of major components such as the camera module, microphone sensor, tapping mechanism, and LCD display. The model provides a clear visualization of how the components are integrated within the enclosure.3D Model
 
@@ -768,7 +768,7 @@ This section shows the arrangement of major components such as the camera module
 
 The design ensures proper positioning of the imaging and acoustic sensing components to enable consistent data acquisition during the ripeness detection process.
 
-\textbf{2D Model}
+\subsubsection*{2D Model}
 
 The two-dimensional (2D) model of the proposed device. This section includes multiple orthographic views, such as the top, side, front, and back views, to illustrate the structural layout of the hardware system. These views provide a clearer representation of the device’s dimensions, component placement, and overall configuration.
 
@@ -1701,7 +1701,7 @@ Unripe watermelon image and audio samples were collected on September 10, 2026, 
 
 For both classes, multiple recordings were taken from each watermelon, and the images and recordings were collected independently, so individual fruits were not tracked and the image and audio samples were not paired by fruit. Since the two classes were collected at different sites, on different dates, and in different fruit positions, differences between them may partly reflect these collection conditions, which is examined in Section 4.2.1.4. All samples were organized and stored according to their assigned binary label prior to preprocessing.
 
-\textbf{Audio Data Collection}
+\subsubsection*{Audio Data Collection}
 
 \FloatBarrier
 \begingroup
@@ -1754,7 +1754,7 @@ Total & 155 & 339 & 494 & 100\% \\
 
 The recordings were divided into training and test sets using an 80/20 split stratified by class, so that both sets kept the same class ratio, with a fixed random seed of 42 for reproducibility. The split was performed before augmentation and feature scaling, ensuring that no information from the test set influenced the training data. No separate validation set was created, since validation was performed within the training set through k-fold cross-validation during hyperparameter tuning. The class imbalance was not corrected by resampling, but was addressed through the stratified split and by scoring hyperparameter tuning on the F1-score of the ripe class, as described in Section 3.7.
 
-\textbf{Image Data Collection}
+\subsubsection*{Image Data Collection}
 
 \begin{figure}[htbp]
   \caption{Images per class}
@@ -1787,7 +1787,7 @@ The red, green, and blue channel histograms showed differences in the pixel-inte
 
 This subsection describes how the raw recordings were converted into the acoustic features used to train the classifiers. It also presents an exploratory analysis of these features to examine how they related to each other and to the ripeness label.
 
-\textbf{Thump Window Detection}
+\subsubsection*{Thump Window Detection}
 
 All recordings were captured at a sampling rate of 16 kHz as single-channel (mono) audio. Each recording lasted about 1.3 to 1.4 seconds, but the thump response occupied only a short portion of it, with the rest consisting of near-silence, background sound, and handling noise. Computing features over the full recording would therefore mostly describe this noise instead of the fruit’s acoustic response, so the thump response was first isolated using an adaptive windowing method.
 
@@ -1843,7 +1843,7 @@ Unripe & 339 & 0.707 \ensuremath{\pm} 0.021 & 0.676–0.785 & 49.1 \ensuremath{\
 
 With the thump response isolated, 31 acoustic features were extracted from each window using the librosa library. These features fall into three groups, summarized in Table~\ref{tab:extracted-acoustic-features-715}. The spectral features and MFCCs were computed using librosa’s default short-time Fourier transform settings, with windows shorter than the FFT length zero-padded by the library. The five spectral and time-domain features were averaged across the frames of the thump window, while the mean and standard deviation of each MFCC were taken across the same frames. The definition and formula of each feature are provided in Table~\ref{app:table-B1} in \hyperref[app:section-B]{Appendix~B}.
 
-\textbf{Feature Extraction}
+\subsubsection*{Feature Extraction}
 
 \FloatBarrier
 \begingroup
@@ -1901,7 +1901,7 @@ To see how well these five features separated the two classes, their pairplots a
 
 The per-class normalized version rescales each class to its own range, which removes the difference between the classes and instead shows the shape of each class’s distribution and how the features relate to each other within it. Within both classes, spectral centroid, rolloff, and bandwidth remained strongly positively related to one another and negatively related to the mean of MFCC2, indicating that the redundancy observed in the correlation matrix holds within each class and not only between them. In contrast, the mean of MFCC3 showed no clear relationship with the other features within either class, suggesting that its strong correlation with the label comes mainly from the difference between the two classes. Since the two classes were already well separated by a few features, relatively simple classifiers were expected to perform well, which supported the comparison of lightweight models suitable for deployment on the ESP32-S3 in Section 3.7.
 
-\textbf{Dominant Frequency Analysis}
+\subsubsection*{Dominant Frequency Analysis}
 
 To compare the recordings with the dominant frequencies reported in the literature, the dominant frequency of each recording was taken as the frequency with the highest FFT magnitude, using a Hann window and zero-padding to 16,384 points. The detected thump windows were too short for this purpose, since 16 ripe and 49 unripe recordings had their peak fall at the 50 Hz lower limit of the search. A longer segment, from 20 ms before the thump peak to 300 ms after it, was used instead, where only one unripe recording reached this limit. The dominant frequency was found in two ranges: 50 to 400 Hz, which covers the frequencies reported by \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)}, and 50 to 2,000 Hz, a wider range that also includes the higher frequencies of the thump.
 
@@ -1968,7 +1968,7 @@ Lighting and color normalization were performed using OpenCV’s 8-bit CIELAB re
 
 Audio augmentation was applied to the training recordings using NumPy and librosa, prior to feature scaling, hyperparameter tuning, and model training. The signal-to-noise ratio (SNR) of each recording was computed as the ratio of the thump window’s power to that of the background segment before the thump, expressed in decibels. The ripe recordings, collected at the market, had a median SNR of 29.5 dB within the thump window, while the unripe recordings, collected at the farm, had a median of 54.0 dB, so neither set reflected the louder background noise the device may encounter in open fields. Additive background noise was therefore used to improve the generalization of the classifiers to noisier field conditions, since it changes the recording environment without altering the frequency content of the thump that separates ripe from unripe samples. Each training recording was given two augmented copies, one per noise type described below, while the test set was left unchanged.
 
-\textbf{Selection of Noise Type and Level}
+\subsubsection*{Selection of Noise Type and Level}
 
 To select the noise types and levels, a sensitivity test was conducted on the training recordings using white, pink, brown, and real background noise at SNRs of 30, 20, 10, and 5 dB. The share of noisy copies assigned to the wrong class by a reference classifier trained on the clean data was measured, along with the length of the detected thump windows. At 10 dB and below, the windows lengthened for all noise types, reaching the 0.6-second limit for white and pink noise, and the misclassification rate rose sharply, with 30\% to 41\% of the ripe copies misclassified even under real and brown noise. White and pink noise also shifted the spectral features toward the opposite class at higher SNRs, while real and brown noise kept the misclassification rate near that of the clean data at 20 and 30 dB, as summarized in Table~\ref{tab:misclassification-rate-of-noisy-training-copies-758} and Figure~\ref{fig:noise-sensitivity-of-classification-and-window-d-760}. Real and brown noise were therefore selected, each added at an SNR drawn at random between 20 and 30 dB relative to the power of the clean thump window.
 
@@ -2005,7 +2005,7 @@ Real & 3.2 & 2.2 & 4.0 & 3.3 & 41.1 & 7.4 & 62.1 & \textbf{7.7} \\
   \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/noise-sensitivity-of-classification-and-window-detection-82.png}}
 \end{figure}
 
-\textbf{Real Background Noise}
+\subsubsection*{Real Background Noise}
 
 Background segments were taken from the silent portion of each training recording, from 0.3 seconds up to 50 ms before the thump window, excluding 38 segments that contained sudden spikes. For each augmented copy, randomly selected segments were joined with short fades to cover the full length of the recording, scaled to the target SNR, and added to it. Because these segments were captured by the device itself, this simulates the actual sounds the microphone picks up during use, including its own electrical noise and the activity around it. A sample recording before and after adding real background noise is shown in Figure~\ref{fig:original-recording-left-and-recording-with-real-764}.
 
@@ -2016,7 +2016,7 @@ Background segments were taken from the silent portion of each training recordin
   \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/original-recording-left-and-recording-with-real-background-n-83.png}}
 \end{figure}
 
-\textbf{Brown Noise}
+\subsubsection*{Brown Noise}
 
 \begin{figure}[htbp]
   \caption{Original recording (left) and recording with brown noise (right)}
@@ -2056,7 +2056,7 @@ After noise was added, the thump window of each augmented copy was detected and 
 
 Image augmentation was applied to the training set to improve the model’s ability to generalize to variations in image orientation during actual field use. The implemented transformations consisted of random horizontal flipping, random vertical flipping, and random rotation. These transformations were applied dynamically during training, producing variations of the existing images without creating a fixed additional set of saved files. The original ripeness labels were retained, and no random augmentation was applied to the validation and test sets.
 
-\textbf{Horizontal and Vertical Flip}
+\subsubsection*{Horizontal and Vertical Flip}
 
 Horizontal and vertical flipping reversed the training images from left to right and from top to bottom, respectively, while preserving their original ripeness labels. These transformations exposed the model to different orientations of the same rind features. They were intended to reduce the model’s dependence on a fixed arrangement of visual patterns during classification.
 
@@ -2074,7 +2074,7 @@ Horizontal and vertical flipping reversed the training images from left to right
   \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/original-image-left-vs-vertically-flipped-right-augmented-im-86.png}}
 \end{figure}
 
-\textbf{Rotation}
+\subsubsection*{Rotation}
 
 Random rotation changed the orientation of training images by up to 36\textdegree{} in either direction. This range corresponded to the rotation factor of 0.1 used in the augmentation layer. The transformation introduced variations in camera angle that could occur when capturing watermelon rind images with a handheld device. Rotated images retained their original ripe or unripe labels and were generated during training.
 
@@ -2097,19 +2097,19 @@ This subsection enumerates the classifiers used for audio classification and the
 
 Seven supervised machine learning classifiers were trained and compared for the binary classification of the extracted acoustic features: Naive Bayes, Support Vector Machine, Decision Tree, Random Forest, XGBoost, Logistic Regression, and K-Nearest Neighbors. These algorithms represent different learning approaches, namely probabilistic, margin-based, tree-based, ensemble, linear, and instance-based learning, which allowed the study to determine which type of decision boundary best separated ripe from unripe acoustic responses. Because the selected model had to run on the ESP32-S3, the comparison also considered the size of each trained model and whether it could be converted for on-device inference. The following subsections describe each classifier and the hyperparameters tuned for it.
 
-\textbf{Naive Bayes}
+\subsubsection*{Naive Bayes}
 
 Naive Bayes is a probabilistic classifier based on Bayes' theorem. It assumes that the input features are conditionally independent of one another given the class (\hyperlink{cite.domingos1997}{Domingos \& Pazzani, 1997}). For each sample, the classifier computes the posterior probability of each class and assigns the class with the highest probability. Naive Bayes was included as a lightweight probabilistic baseline for comparison with the other classifiers. Its inclusion is consistent with previous research on watermelon quality classification, in which Naive Bayes was evaluated alongside other supervised learning algorithms using acoustic signals and image-derived features (\hyperlink{cite.chawgien2021}{Chawgien \& Kiattisin, 2021}).
 
 This study used the Gaussian variant, which models each feature within each class as a normal distribution with a mean and variance estimated from the training data. The tuned hyperparameter was var\_\allowbreak{}smoothing, which adds a portion of the largest feature variance to all variances to keep the calculation numerically stable.
 
-\textbf{Support Vector Machine}
+\subsubsection*{Support Vector Machine}
 
 The Support Vector Machine (SVM) is a supervised classifier that constructs a decision boundary to separate samples belonging to different classes (\hyperlink{cite.cortes1995}{Cortes \& Vapnik, 1995}). Through a kernel function, the input vectors could be represented in a higher-dimensional feature space, allowing the classifier to construct linear or nonlinear decision boundaries. The formulation also accommodated training data that could not be perfectly separated. SVM was included because it was suitable for evaluating classification performance on a relatively small, high-dimensional dataset consisting of 31 acoustic features and 494 recordings. Its application was also supported by previous studies involving acoustic watermelon classification and maturity prediction (\hyperlink{cite.chawgien2021}{Chawgien \& Kiattisin, 2021}; \hyperlink{cite.koc2025}{Koç \& Akbalik, 2025}). The different kernel options allowed the study to assess whether the acoustic responses of ripe and unripe watermelons were better separated by a linear or nonlinear decision boundary.
 
 The tuned hyperparameters were the regularization parameter C, the kernel type (linear, radial basis function, polynomial, or sigmoid), the kernel coefficient gamma, the polynomial degree, the independent kernel term coef0, and the class weighting. Gamma applies to the radial basis function, polynomial, and sigmoid kernels. The degree applies only to the polynomial kernel, and coef0 applies only to the polynomial and sigmoid kernels. The balanced class weighting adjusts the weight of each class in inverse proportion to its frequency in the training data. The classifier was configured to output class probability estimates.
 
-\textbf{Decision Tree}
+\subsubsection*{Decision Tree}
 
 The Decision Tree classifier used in this study follows the Classification and Regression Trees (CART) method (\hyperlink{cite.breiman1984}{Breiman et al., 1984}). The tree recursively partitions the feature space using binary splits. At each node, it selects the feature and threshold that minimize the impurity of the resulting child nodes, and splitting continues until a stopping condition is reached. Each terminal node, or leaf, assigns a class, and the predicted class probability is the fraction of training samples of that class within the leaf.
 
@@ -2117,7 +2117,7 @@ The Decision Tree classifier was included because of its interpretability, as it
 
 The tuned hyperparameters were the maximum tree depth, the minimum number of samples required to split a node, the minimum number of samples required at a leaf, the impurity criterion (Gini impurity or entropy), the number of features considered at each split, and the class weighting.
 
-\textbf{Random Forest}
+\subsubsection*{Random Forest}
 
 The Random Forest classifier is an ensemble of decision trees in which each tree depends on a random vector sampled independently and with the same distribution for all trees (\hyperlink{cite.breiman2001}{Breiman, 2001}). Each tree is trained on a bootstrap sample of the training data when bootstrapping is enabled, or on the full training set otherwise. Only a random subset of features is considered when splitting each node. The predictions of all trees are combined to produce the final classification.
 
@@ -2125,7 +2125,7 @@ Random Forest was included to evaluate whether combining multiple decision trees
 
 The tuned hyperparameters were the number of trees, the maximum tree depth, the minimum number of samples required to split a node and at a leaf, the number of features considered at each split, whether bootstrap sampling was used, and the class weighting. The balanced\_\allowbreak{}subsample option computes the class weights separately from the bootstrap sample of each tree (\hyperlink{cite.scikit2026}{scikit-learn developers, 2026}).
 
-\textbf{XGBoost}
+\subsubsection*{XGBoost}
 
 XGBoost is a gradient tree boosting system that predicts the output as the sum of the outputs of several regression trees (\hyperlink{cite.chen2016}{Chen \& Guestrin, 2016}). Trees are added one at a time, and each new tree is fitted to reduce a regularized objective made up of a training loss and a penalty on model complexity. The penalty includes a term on the number of leaves, controlled by gamma, and an L2 term on the leaf weights, controlled by reg\_\allowbreak{}lambda. The contribution of each new tree is scaled by a shrinkage factor, set through the learning rate, and features can be subsampled when building the trees.
 
@@ -2133,13 +2133,13 @@ XGBoost was also included because it offered a boosting-based approach for learn
 
 The tuned hyperparameters were the number of trees, the maximum tree depth, the learning rate, the row subsampling ratio, the column subsampling ratios per tree and per level, the minimum sum of instance weight required in a child node, gamma, and the L1 (reg\_\allowbreak{}alpha) and L2 (reg\_\allowbreak{}lambda) regularization terms. Binary log loss was used as the evaluation metric.
 
-\textbf{Logistic Regression}
+\subsubsection*{Logistic Regression}
 
 Logistic Regression models the probability that a sample belongs to the positive class as a logistic function of a weighted linear combination of its features (\hyperlink{cite.cox1958}{Cox, 1958}). A regularization penalty is added during training to limit the size of the weights. The L1 penalty uses the absolute values of the weights, the L2 penalty uses their squared values, and the elastic net penalty combines both (\hyperlink{cite.zou2005}{Zou \& Hastie, 2005}). It was included as a linear baseline to determine whether the extracted acoustic features could distinguish ripe from unripe watermelons using a linear decision boundary. Its regularization options also provided a means of controlling model complexity when dealing with potentially correlated MFCC features. Because its predictions were based on a weighted combination of the input features, the resulting model was also evaluated as a potential candidate for resource-constrained microcontroller deployment. Its practical suitability depended on the measured inference time and memory requirements on the target device.
 
 The tuned hyperparameters were the inverse regularization strength C, the penalty type, the solver, the elastic net mixing ratio l1\_\allowbreak{}ratio, and the class weighting. The l1\_\allowbreak{}ratio value sets the proportion of the L1 penalty and is used only with the elastic net penalty. The liblinear solver supports the L1 and L2 penalties, while the saga solver also supports the elastic net penalty. The maximum number of solver iterations was set to 5,000.
 
-\textbf{K-Nearest Neighbors}
+\subsubsection*{K-Nearest Neighbors}
 
 The K-Nearest Neighbors (KNN) classifier assigns a sample to the class most frequently represented among its (k) nearest training samples (\hyperlink{cite.cover1967}{Cover \& Hart, 1967}). The nearest samples are identified using a selected distance metric. KNN was included as a non-parametric, instance-based approach that did not require a predefined linear or parametric decision boundary. This allowed the study to evaluate whether ripe and unripe acoustic responses formed distinguishable local clusters within the feature space.
 
@@ -2149,7 +2149,7 @@ The tuned hyperparameters were the number of neighbors (k), neighbor weighting, 
 
 \subsubsection{Architectures}
 
-\textbf{MobileNetV1}
+\subsubsection*{MobileNetV1}
 
 \begin{figure}[htbp]
   \caption[MobileNetV1 architecture. Adapted from Phiphiphatphaisit and Surinta (2020).]{MobileNetV1 architecture. Adapted from \protect\hyperlink{cite.phip2020}{Phiphiphatphaisit and Surinta (2020)}.}
@@ -2162,7 +2162,7 @@ MobileNetV1 is built on depthwise separable convolutions, which split a standard
 
 The ImageNet weights were frozen and the input was scaled to the range \ensuremath{-}1 to 1. The backbone has 218,544 parameters, and the dense layer adds 257 trainable parameters.
 
-\textbf{MobileNetV2}
+\subsubsection*{MobileNetV2}
 
 \begin{figure}[htbp]
   \caption[MobileNetV2 architecture. Adapted from Muhathir et al. (2026).]{MobileNetV2 architecture. Adapted from \protect\hyperlink{cite.muhathir2026}{Muhathir et al. (2026)}.}
@@ -2175,7 +2175,7 @@ MobileNetV2 replaces the blocks of its predecessor with inverted residual blocks
 
 This study used the full-width model (width multiplier 1.0) with frozen ImageNet weights and the input scaled to the range \ensuremath{-}1 to 1. The backbone has 2,257,984 parameters, and the dense layer adds 1,281 trainable parameters.
 
-\textbf{MobileNetV3}
+\subsubsection*{MobileNetV3}
 
 \begin{figure}[htbp]
   \caption[MobileNetV3 architecture. Adapted from Qian et al. (2021).]{MobileNetV3 architecture. Adapted from \protect\hyperlink{cite.qian2021}{Qian et al. (2021)}.}
@@ -2188,7 +2188,7 @@ MobileNetV3 was designed with hardware-aware architecture search and combines th
 
 The ImageNet weights were frozen, and the scaling of the input to the range \ensuremath{-}1 to 1 is part of the Keras model. The backbone has 441,000 parameters, and the dense layer adds 577 trainable parameters.
 
-\textbf{EfficientNet-B0}
+\subsubsection*{EfficientNet-B0}
 
 \begin{figure}[htbp]
   \caption[EfficientNet-B0 architecture. Adapted from Su and Wang (2020).]{EfficientNet-B0 architecture. Adapted from \protect\hyperlink{cite.su2020}{Su and Wang (2020)}.}
@@ -2201,7 +2201,7 @@ EfficientNet-B0 is the baseline network of the EfficientNet family, which was fo
 
 The Keras model contains its own rescaling and normalization layers, so it received pixel values from 0 to 255. The ImageNet weights were frozen. The backbone has 4,049,571 parameters, and the dense layer adds 1,281 trainable parameters. An L2 penalty of 0.001 was applied to the weights of the dense layer.
 
-\textbf{EfficientNet-Lite0}
+\subsubsection*{EfficientNet-Lite0}
 
 \begin{figure}[htbp]
   \caption[EfficientNet-Lite0 architecture. Adapted from Almutairi et al. (2022).]{EfficientNet-Lite0 architecture. Adapted from \protect\hyperlink{cite.alm2022}{Almutairi et al. (2022)}.}
@@ -2214,7 +2214,7 @@ EfficientNet-Lite0 is a variant of EfficientNet-B0 adapted for mobile and edge d
 
 This study loaded a pretrained feature-extraction version from TensorFlow Hub and kept it frozen. Its input was scaled to the range 0 to 1, and it returns a vector of 1280 values, so no additional pooling was needed. The model has 3,414,305 parameters, of which 1,281 in the dense layer were trained. An L2 penalty of 0.001 was applied to the weights of the dense layer.
 
-\textbf{ShuffleNetV1}
+\subsubsection*{ShuffleNetV1}
 
 \begin{figure}[htbp]
   \caption[ShuffleNetV1 architecture. Adapted from Li et al. (2024).]{ShuffleNetV1 architecture. Adapted from \protect\hyperlink{cite.li2024}{Li et al. (2024)}.}
@@ -2227,7 +2227,7 @@ ShuffleNetV1 lowers the cost of the 1\ensuremath{\times}1 convolutions, which do
 
 The network was trained from scratch with the input scaled to the range \ensuremath{-}1 to 1. The backbone has 929,208 parameters, and the dense layer adds 961.
 
-\textbf{ShuffleNetV2}
+\subsubsection*{ShuffleNetV2}
 
 \begin{figure}[htbp]
   \caption[ShuffleNetV2 architecture. Adapted from Ma et al. (2018).]{ShuffleNetV2 architecture. Adapted from \protect\hyperlink{cite.ma2018}{Ma et al. (2018)}.}
@@ -2240,7 +2240,7 @@ ShuffleNetV2 was designed using practical guidelines about memory access cost an
 
 The network was trained from scratch with the input scaled to the range \ensuremath{-}1 to 1. The backbone has 1,269,784 parameters, and the dense layer adds 1,025.
 
-\textbf{SqueezeNet v1.1}
+\subsubsection*{SqueezeNet v1.1}
 
 \begin{figure}[htbp]
   \caption[SqueezeNet v1.1 architecture. Adapted from Lee et al. (2026).]{SqueezeNet v1.1 architecture. Adapted from \protect\hyperlink{cite.lee2026}{Lee et al. (2026)}.}
@@ -2253,11 +2253,13 @@ SqueezeNet reduces the number of parameters by building the network from fire mo
 
 The network was assembled layer by layer and loaded with published ImageNet weights, which were frozen. The input was converted to BGR channel order and the ImageNet channel means were subtracted, without scaling. The backbone has 722,496 parameters, and the dense layer adds 513 trainable parameters.
 
+% Scope the temporary page layout and its baseline to this landscape page.
+\begingroup
 \newgeometry{left=1in,right=1in,top=1in,bottom=1in}
 \begin{landscape}
 \subsection{Training}
 
-\textbf{Audio Model Training}
+\subsubsection*{Audio Model Training}
 
 \begin{figure}[H]
   \caption{Audio Classification Pipeline}
@@ -2267,6 +2269,7 @@ The network was assembled layer by layer and loaded with published ImageNet weig
 \end{figure}
 \end{landscape}
 \restoregeometry
+\endgroup
 
 Figure~\ref{fig:audio-classification-pipeline-882} presents the audio classification pipeline, from the processing of the raw thump recordings to the export of the final model. It shows the main stages of the pipeline: thump detection and feature extraction, data splitting and augmentation, feature standardization, and the training, tuning, and comparison of the seven classifiers, ending with the export of the selected model for on-device use.
 
@@ -2367,9 +2370,11 @@ Hyperparameter optimization was conducted using RandomizedSearchCV with grouped 
 
 Each combination was scored using the F1-score of the ripe class, which was chosen over accuracy because ripe samples formed the minority class in the training data. Combinations not supported by the library, such as the elastic net penalty with the liblinear solver, were assigned a score of zero so that they could not be selected. The best-performing configuration for each classifier was then refit on the full augmented training set.
 
+% Scope the temporary page layout and its baseline to this landscape page.
+\begingroup
 \newgeometry{left=1in,right=1in,top=1in,bottom=1in}
 \begin{landscape}
-\textbf{Image Model Training}
+\subsubsection*{Image Model Training}
 
 \begin{figure}[H]
   \caption{Image Classification Pipeline}
@@ -2379,6 +2384,7 @@ Each combination was scored using the F1-score of the ripe class, which was chos
 \end{figure}
 \end{landscape}
 \restoregeometry
+\endgroup
 
 The eight image architectures described in Section 3.7.2.1 were trained on the rind photographs prepared in Section 3.6.3. The orientation stored in each image file was applied, each image was converted to RGB, and resized to 96 \ensuremath{\times} 96 pixels. The models received this same input format during training, validation, and testing.
 
@@ -2423,7 +2429,7 @@ The models were fitted using binary cross-entropy in batches of 16, with an uppe
 
 This section presents the audio machine learning model and the image deep learning architecture validation procedures conducted in this study.
 
-\textbf{Audio Model Validation}
+\subsubsection*{Audio Model Validation}
 
 No separate validation set was created for the audio models. With only 395 original training recordings, of which 124 were ripe, setting aside a fixed validation set would have reduced the data available for training and left too few ripe samples for a stable performance estimate. Validation was therefore performed through 5-fold cross-validation within the training set, which allowed every training recording to contribute to both training and validation while the test set remained untouched.
 
@@ -2433,7 +2439,9 @@ The cross-validation results were used only for tuning and selecting the hyperpa
 
 Several steps were taken to keep information from the test set out of training and validation. The recordings were split into training and test sets at the file level before any feature extraction or augmentation, and the background noise used for augmentation was drawn only from the training recordings. The scaling parameters were likewise computed from the training set only, including its augmented copies. Since the scaler was fit on the full training set before cross-validation, each validation fold had a small influence on its own scaling; this affects only the validation scores and not the final test results.
 
-\textbf{Image Model Validation} A fixed validation set of 48 prepared photographs was used to monitor the image models during training. After each epoch, the model classified the 25 ripe and 23 unripe validation images with augmentation and dropout disabled. Validation loss and accuracy were measured with the model weights fixed. Using the same set at every epoch and across all runs provided a common basis for comparing checkpoints and optimizers.
+\subsubsection*{Image Model Validation}
+
+A fixed validation set of 48 prepared photographs was used to monitor the image models during training. After each epoch, the model classified the 25 ripe and 23 unripe validation images with augmentation and dropout disabled. Validation loss and accuracy were measured with the model weights fixed. Using the same set at every epoch and across all runs provided a common basis for comparing checkpoints and optimizers.
 
 Validation loss guided adjustments to the learning rate during training. If the loss did not improve by more than 0.0001 over the best value tracked by the learning-rate rule for four epochs, the rate was halved down to a minimum of 0.0000001. A separate stopping rule ended fitting after eight epochs without a new minimum in validation loss. The weights from the epoch with the lowest validation loss in each run were saved and restored before evaluation.
 
@@ -2445,7 +2453,7 @@ Loss accounts for the scores assigned to the actual labels. Two runs can therefo
 
 This section presents the audio machine learning model and image deep learning testing procedures conducted in this study.
 
-\textbf{Audio Model Testing}
+\subsubsection*{Audio Model Testing}
 
 After tuning and selection, the audio classifiers were evaluated on the held-out test set of 99 original recordings (31 ripe and 68 unripe). These recordings were excluded from training, hyperparameter tuning, augmentation, and the computation of the scaling parameters, and were used only once at this stage, so that the results would reflect performance on recordings the classifiers had never encountered. Both the default and tuned versions of all seven classifiers were evaluated on this same test set, allowing the effect of hyperparameter tuning to be compared directly.
 
@@ -2459,7 +2467,7 @@ The model for deployment was selected based on its F1-score on the test set, its
 
 The feature importances of the tree-based classifiers (Decision Tree, Random Forest, and XGBoost) were also examined to identify which features contributed most to their predictions. This was done to check whether the classifiers relied on acoustic characteristics of the thump response or on features that could reflect differences in the recording environment between the market and farm collection sites, given the difference in background noise identified in Section 3.6.2.
 
-\textbf{Image Model Testing}
+\subsubsection*{Image Model Testing}
 
 The saved checkpoints were evaluated on the 49 held-out photographs, comprising 25 ripe and 24 unripe images. These files were reserved from weight fitting and checkpoint selection. Their prepared versions used the common lighting and color reference calculated before partitioning, as described in Section 3.6.2. Every completed run was evaluated on this test set. The main comparison used one configuration per architecture, selected by validation loss.
 
@@ -2473,4 +2481,4 @@ The eight retained configurations were converted to TensorFlow Lite with 8-bit i
 
 Each converted model was tested on the same 49 prepared images. The input scale and zero point converted the RGB values to integers, and the output scale and zero point were used to recover the unripe score. Predictions were assigned at the same 0.5 cutoff.
 
-\par}
+\end{thesisprose}
