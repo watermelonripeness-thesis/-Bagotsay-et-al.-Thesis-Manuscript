@@ -510,6 +510,7 @@ Figure~\ref{app:figure-D5} in \hyperref[app:section-D]{Appendix~D} compares held
 Figure~\ref{app:figure-D6} gives equal weight to the ripe and unripe F1-scores for each run. Both configurations that classified all test images correctly had a macro F1-score of 1.000. A larger difference between the two metrics appeared for MobileNetV3 Small with Adadelta. Its accuracy was 53.06\%, while its macro F1-score was about 0.412. ShuffleNetV2 stayed near 0.33 across the optimizer sweep. The confusion matrices for the retained runs show how the errors were distributed between the two classes.
 
 \FloatBarrier
+\begin{landscape}
 \begingroup
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -536,6 +537,8 @@ ShuffleNetV2 & 0.5102 & 0.2551 & 0.5000 & 0.3378 & 0.4017 & 0.4461 \\
 \hline
 \end{longtable}
 \endgroup
+\end{landscape}
+
 
 \begin{figure}[htbp]
   \caption{Held-out confusion matrix for EfficientNet-B0 with Lion}
@@ -1014,6 +1017,7 @@ The deployed Decision Tree obtained an F1-score of at least 0.968 at all three l
 To evaluate the system's performance efficiency, on-device execution latency was benchmarked directly on the deployed ESP32-S3 microcontroller using the identical firmware, quantized model weights, and PSRAM memory allocation used during field validation. Because the prototype operates in a sequential two-step workflow—capturing and classifying the rind image first, followed by operator repositioning of the barrel against the rind for solenoid actuation and acoustic classification—manual handling time between button presses and fixed 1.24s I2S audio capture windows (400 ms pre-trigger, 40 ms solenoid pulse, and 800 ms post-trigger recording) were excluded. High-resolution hardware timers (esp\_\allowbreak{}timer\_\allowbreak{}get\_\allowbreak{}time()) measured pure computational execution across \textit{N}=[46] consecutive assessment cycles, which is the number of times the watermelon was evaluated during testing including the three inconclusive results.
 
 \FloatBarrier
+\begin{landscape}
 \begingroup
 \small
 \setlength{\tabcolsep}{3pt}
@@ -1038,6 +1042,8 @@ Decision Fusion (LLR Calculation + Confidence Weighting) & 0.059 ms & 0.003 ms &
 \hline
 \end{longtable}
 \endgroup
+\end{landscape}
+
 
 As summarized in Table~\ref{tab:summary-of-on-device-inference-and-processing-ti-1307}, the optical modality accounted for 99.86\% of total on-device computation time, averaging 16,920.902 ms (SD = 44.020 ms; range: 16,830.137 – 17,007.572 ms). Within this branch, optical preprocessing—comprising center-cropping of the RGB565 frame, glare reduction (tile CLAHE), sharpening, CIE brightness normalization, and downscaling—required a mean of 1,723.102 ms (SD = 10.354 ms; range: 1,682.084 – 1,747.173 ms, or 10.17\% of total compute time). INT8 EfficientNet-B0 inference executed via TensorFlow Lite Micro within the PSRAM tensor arena accounted for the remaining 15,197.800 ms (SD = 38.749 ms; range: 15,135.180 – 15,276.626 ms, or 89.69\% of total compute time), reflecting the computational cost of depthwise-separable convolutions and external Octal SPI PSRAM memory transfers on the microcontroller.
 
@@ -1056,6 +1062,7 @@ The present study also strikes the fruit, but uses a solenoid so that each tap i
 A fixed peak-frequency threshold was not used because the relationship between dominant frequency and ripeness depended on the range examined. Within 50 to 400 Hz, the median dominant frequency was lower for ripe watermelons, consistent with \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)}. However, ripe recordings also carried more energy between about 551 and 1,417 Hz, so when the range extended to 2,000 Hz the median for ripe recordings was more than twice that of unripe recordings. Spectral centroid, which summarizes where this energy is concentrated, accounted for about 0.90 of the deployed model's feature importance, while the MFCCs contributed relatively little. Part of this higher-frequency energy may reflect collection conditions rather than ripeness itself, since ripe watermelons were recorded on market display surfaces while unripe watermelons were recorded on the vine, whereas \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)} tested all their fruit detached and on the same holder.
 
 \FloatBarrier
+\begin{landscape}
 \begingroup
 \small
 \setlength{\tabcolsep}{3pt}
@@ -1082,6 +1089,8 @@ A fixed peak-frequency threshold was not used because the relationship between d
 \endgroup
 
 \textit{Note.} MFCC = mel-frequency cepstral coefficient; ZCR = zero-crossing rate; SD = standard deviation.
+\end{landscape}
+
 
 \subsection{Machine Learning for Ripeness Classification}
 
