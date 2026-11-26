@@ -1,0 +1,1196 @@
+\chapter{RESULTS AND DISCUSSION}
+
+{\baselineskip=2\baselineskip
+
+This chapter presents the results of the performance testing and validation of the portable, non-destructive watermelon ripeness detection system, organized according to the study's research objectives. It covers the hardware specifications of the completed prototype and the environment in which it was deployed, the design and validation of the acoustic-optical system used for feature extraction and classification (Objective 1), the development and performance evaluation of the portable, field-deployable unit (Objective 2), and the validation of the system's end-to-end accuracy, reliability, and usability using established classification and agreement metrics (Objective 3). The chapter further compares the system against related studies on acoustic-based ripeness detection, lightweight deep learning classification, and multimodal sensing pipelines, placing the contributions of this work within the wider body of literature on non-destructive agricultural quality assessment.
+
+\section{Research Hardware Specifications}
+
+The research hardware setup comprises several key modules working together to enable non-destructive watermelon ripeness evaluation. At its core, an ESP32-S3 microcontroller coordinates data acquisition, sensor control, and local model inference. Visual features are captured via an OV5640 camera, while acoustic responses from a 6V solenoid pulse thumper are recorded using an INMP441 MEMS microphone. System outputs and real-time previews are displayed on an ST7789 TFT IPS LCD, with the entire setup powered by a dual 18650 lithium-ion battery system.
+
+\subsection{Actual Prototype}
+
+The physical enclosure of the actual prototype for the portable watermelon ripeness evaluation system was fabricated using 3D printing technology with Polyethylene Terephthalate Glycol (PETG) filament. PETG was selected due to its superior mechanical and physical properties, including high impact resistance, excellent durability, chemical resistance, and strong layer adhesion, making it highly suitable for robust 3D printing. Its formability and structural strength ensure that the 3D-printed enclosure can endure the mechanical stress from the 20N solenoid and environmental exposure from agricultural fields without degrading. The prototype is designed in an ergonomic gun-like form factor that allows for convenient handheld operation during pre-harvest assessment. The design houses the power subsystem within the pistol grip, secures the pulse thumper mechanism and other small components on the body, acoustic recorder on the tip of the barrel shaped like a dome, an TFT IPS display on the rear, and finally the camera module with microcontroller inside the barrel due to the physical restraints of the camera length. There are slight changes in the design of the physical prototype to ensure that each component fits in the printed housing. For instance, the position and length of the friction hinge is shortened to provide allowance for the flat-flexible cable of the camera to ensure it is not bent during angle adjustment as seen in the right and left side views. It is also carved in the middle to fit the camera. Figures~\ref{fig:top-view-979} to~\ref{fig:right-side-view-991} presents different views of the actual prototype.
+
+\begin{figure}[htbp]
+  \caption{Top View}
+  \label{fig:top-view-979}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/top-view-100.png}}
+\end{figure}
+
+In Figure~\ref{fig:top-view-979}, we can see the OV5640 camera on the friction hinge, responsible for taking watermelon images, facing upwards as the system is not in use. During field operation, the camera can be adjusted at any desired angle between 0 and 140 degrees.
+
+\begin{figure}[htbp]
+  \caption{Rear View}
+  \label{fig:rear-view-982}
+  \centering
+  \includegraphics[width=0.668\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/rear-view-101.png}}
+\end{figure}
+
+Figure~\ref{fig:rear-view-982} which is the rear view of the prototype shows the ST7789 TFT IPS LCD display fixed inside the yellow square and the handle that also serves as the battery compartment. The bottom of the handle also lies the USB-C charging port for the system.
+
+\begin{figure}[htbp]
+  \caption{Front View}
+  \label{fig:front-view-985}
+  \centering
+  \includegraphics[width=0.910\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/front-view-102.png}}
+\end{figure}
+
+The front view of the prototype shows the INMP441 MEMS microphone and below it is the plastic ball-shaped tip of the thumper that is responsible for making contact with the watermelon’s surface. Around the dome-shaped end of the barrel, a headset cushion was installed. This serves as a buffer, to minimize background noise such as wind or chatter captured by the INMP441 microphone during field operation when the system is in use.
+
+\begin{figure}[htbp]
+  \caption{Left Side View}
+  \label{fig:left-side-view-988}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/left-side-view-103.png}}
+\end{figure}
+
+\begin{figure}[htbp]
+  \caption{Right Side View}
+  \label{fig:right-side-view-991}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/right-side-view-104.png}}
+\end{figure}
+
+The reclined position of the OV5640 camera can be clearly seen in Figures~\ref{fig:left-side-view-988} and~\ref{fig:right-side-view-991}, settled on the shortened friction hinge. As mentioned, the camera can rise and be adjusted at angles between 0 and 140 degrees. In the left view of the prototype, a USB Type-C female input is placed near the end of the barrel. It is an extension that connects to the ESP32-S3 WROOM N16R8 which is housed within the barrel, making code uploads easier.
+
+\subsection{Final Hardware Specifications}
+
+The final hardware architecture of the portable watermelon ripeness detection system integrates multimodal data acquisition, automated mechanical actuation, on-device processing, and real-time user feedback into a cohesive, field-deployable unit. At the core of the processing subsystem is the ESP32-S3 WROOM (N16R8) microcontroller, which features a dual-core 240 MHz Xtensa architecture, integrated wireless connectivity, 16MB of Flash memory, and 8MB of external PSRAM. This configuration provides the necessary computational capacity and memory overhead to execute on-device Fast Fourier Transform (FFT) acoustic signal processing and quantized convolutional neural network (CNN) image inference locally, eliminating the need for external cloud connectivity during field operations.
+
+The data acquisition subsystem comprises specialized optical and acoustic sensors designed to capture external and internal maturity indicators. Visual features of the watermelon rind are captured using an OV5640 5-megapixel camera module equipped with onboard JPEG compression and hardware image signal processing (ISP) functions such as auto-exposure and white balance, ensuring consistent image quality under variable outdoor daylight conditions. Simultaneously, acoustic responses generated during fruit tapping are recorded via an INMP441 digital MEMS microphone. Utilizing a digital I2S interface, the microphone delivers high-frequency stability and 24-bit PCM output, avoiding the amplitude distortion and noise susceptibility associated with traditional analog sensors.
+
+Mechanical excitation is standardized through an integrated actuation subsystem driven by a 6V push-pull solenoid. Acting as an automated pulse thumper, the solenoid delivers a consistent, repeatable impact force to the watermelon surface across trials, ensuring that acoustic variations are strictly attributable to the physiological properties of the fruit rather than manual striking inconsistencies. System status, camera previews, and final classification outputs are presented to the operator via an ST7789 TFT IPS display featuring a 240\ensuremath{\times}240 resolution and high contrast for outdoor sunlight readability. Power is supplied by a dual 18650 lithium-ion battery configuration (3.6V, 2200mAh per cell), although a separate power source such as a power bank is required due to the severe voltage sag across the circuit when the solenoid fires.
+
+\section{Designing of an Acoustic-Optical System}
+
+This section presents the design of the portable acoustic-optical system developed to evaluate the ripeness of Sweet 16 F1 watermelons on the vine. The device combines two sensing modes: an acoustic branch that records the response of the fruit to a solenoid-driven tap through an INMP441 microphone, and an optical branch that captures an image of the rind through an OV5640 camera. Both branches are handled by an ESP32-S3 microcontroller, which performs signal processing, classification, and fusion entirely on the device without an internet connection. The design was guided by the need for a handheld, low-cost tool that farmers could use directly in the field. The following subsections discuss the hardware components, the assessment flow, and the integration of the acoustic and optical modules into a single working prototype.
+
+\subsection{Acoustic Subsystem}
+
+This section presents the results of the acoustic subsystem, from the tuning of the seven classifiers to the selection and deployment of the final model. The classifiers were trained on the augmented training set of 1,185 samples, consisting of 395 original recordings and their noise-augmented copies, and evaluated on the 99 original test recordings, as described in Sections 3.6 and 3.7. Each classifier was evaluated in both its default and tuned configurations, on the clean test set and on noisy versions of it, to assess both its accuracy and its robustness to background noise. The following subsections present the hyperparameter tuning results, the training and cross-validation results, the comparison of the classifiers’ performance, and the selected model and its deployment on the ESP32-S3.
+
+\subsubsection{Acoustic Hyperparameter Tuning}
+
+This section presents the results of the hyperparameter search for the seven acoustic classifiers and compares their performance before and after tuning.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.23611\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.26389\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.18056\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.31944\linewidth-2\tabcolsep\relax}}
+\caption{Default and Tuned Hyperparameters of the Acoustic Classifiers}\label{tab:default-and-tuned-hyperparameters-of-the-acousti-1007}\\
+\hline
+{\bfseries \textbf{Classifier}} & {\bfseries \textbf{Hyperparameter}} & {\bfseries \textbf{Default}} & {\bfseries \textbf{Tuned}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Classifier}} & {\bfseries \textbf{Hyperparameter}} & {\bfseries \textbf{Default}} & {\bfseries \textbf{Tuned}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+Naive Bayes & var\_\allowbreak{}smoothing & 1 \ensuremath{\times} 10\textsuperscript{-}\textsuperscript{9} & 7.32 \ensuremath{\times} 10\textsuperscript{-}\textsuperscript{1}\textsuperscript{0} \\
+Support Vector Machine & C & 1.0 & 413.93 \\
+ & kernel & rbf & rbf \\
+ & gamma & scale & 2.25 \ensuremath{\times} 10\textsuperscript{-}\textsuperscript{4} \\
+ & degree & 3 & 5\textsuperscript{a} \\
+ & coef0 & 0.0 & 0.5\textsuperscript{a} \\
+ & class\_\allowbreak{}weight & None & balanced \\
+Decision Tree & max\_\allowbreak{}depth & None & 3 \\
+ & min\_\allowbreak{}samples\_\allowbreak{}split & 2 & 10 \\
+ & min\_\allowbreak{}samples\_\allowbreak{}leaf & 1 & 15 \\
+ & criterion & gini & gini \\
+ & max\_\allowbreak{}features & None & 0.9 \\
+ & class\_\allowbreak{}weight & None & None \\
+Random Forest & n\_\allowbreak{}estimators & 100 & 150 \\
+ & max\_\allowbreak{}depth & None & 10 \\
+ & min\_\allowbreak{}samples\_\allowbreak{}split & 2 & 2 \\
+ & min\_\allowbreak{}samples\_\allowbreak{}leaf & 1 & 10 \\
+ & max\_\allowbreak{}features & sqrt & 0.5 \\
+ & bootstrap & True & False \\
+ & class\_\allowbreak{}weight & None & None \\
+XGBoost & n\_\allowbreak{}estimators & 100 & 700 \\
+ & max\_\allowbreak{}depth & 6 & 3 \\
+ & learning\_\allowbreak{}rate & 0.3 & 0.219 \\
+ & subsample & 1.0 & 0.9 \\
+ & colsample\_\allowbreak{}bytree & 1.0 & 1.0 \\
+ & colsample\_\allowbreak{}bylevel & 1.0 & 1.0 \\
+ & min\_\allowbreak{}child\_\allowbreak{}weight & 1 & 3 \\
+ & gamma & 0 & 0.05 \\
+ & reg\_\allowbreak{}alpha & 0 & 0.001 \\
+ & reg\_\allowbreak{}lambda & 1 & 1 \\
+Logistic Regression & C & 1.0 & 0.303 \\
+ & penalty & l2 & l1 \\
+ & solver & lbfgs & saga \\
+ & l1\_\allowbreak{}ratio & None & 0.7\textsuperscript{b} \\
+ & class\_\allowbreak{}weight & None & None \\
+K-Nearest Neighbors & n\_\allowbreak{}neighbors & 5 & 1 \\
+ & weights & uniform & distance \\
+ & metric & minkowski & manhattan \\
+ & p & 2 & 3\textsuperscript{c} \\
+ & leaf\_\allowbreak{}size & 30 & 40 \\
+\hline
+\end{longtable}
+\endgroup
+
+\textit{Note.} \textsuperscript{a} Not used by the RBF kernel; applies only to the polynomial and sigmoid kernels. \textsuperscript{b} Not used with the L1 penalty; applies only to the elastic net penalty. \textsuperscript{c} Not used with the Manhattan metric; applies only to the Minkowski metric.
+
+The default and tuned hyperparameters of each classifier are shown in Table~\ref{tab:default-and-tuned-hyperparameters-of-the-acousti-1007}. The most notable change was in the Decision Tree, whose maximum depth was limited from unlimited to 3 and whose leaves were each required to hold at least 15 samples. The Support Vector Machine kept its RBF kernel but with a much larger regularization parameter C (413.93) and balanced class weights, while XGBoost used more trees (700) with a shallower depth (3). For K-Nearest Neighbors, the search selected a single nearest neighbor with distance weighting and the Manhattan metric.
+
+\begin{figure}[htbp]
+  \caption{Cross-Validation (a) and Test (b) F1-Scores of the Acoustic Classifiers Before and After Tuning}
+  \label{fig:cross-validation-a-and-test-b-f1-scores-of-the-a-1012}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/cross-validation-a-and-test-b-f1-scores-of-the-acoustic-clas-105.png}}
+\end{figure}
+
+As shown in Figure~\ref{fig:cross-validation-a-and-test-b-f1-scores-of-the-a-1012}(a), tuning raised the mean cross-validation F1-score of six of the seven classifiers, with the largest gains in the Decision Tree, from 0.911 to 0.954, and the Support Vector Machine, from 0.917 to 0.958, while Naive Bayes remained unchanged at 0.916. On the test set, shown in Figure~\ref{fig:cross-validation-a-and-test-b-f1-scores-of-the-a-1012}(b), tuning improved the F1-score of the Support Vector Machine, Decision Tree, Random Forest, and Logistic Regression, with the Decision Tree again showing the largest gain, from 0.933 to 0.984, as the depth and leaf-size constraints prevented it from memorizing the training data. XGBoost and K-Nearest Neighbors scored slightly lower on the test set after tuning, since tuning selects the configuration with the highest cross-validation score rather than the highest test score. For XGBoost, the cross-validation F1-score rose from 0.942 to 0.956 while the test F1-score fell from 0.984 to 0.967, a difference of a single test recording that falls within the confidence intervals reported in Section 4.2.1.3. The cross-validation scores of all sampled Decision Tree configurations by maximum depth are provided in Figure~\ref{app:figure-C1} in \hyperref[app:section-C]{Appendix~C}.
+
+\subsubsection{Acoustic Model Training and Validation}
+
+This section examines how well each tuned classifier generalized beyond its training data, using its training, cross-validation, and test F1-scores and its learning curve.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.20000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.19304\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.17565\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.27826\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.15304\linewidth-2\tabcolsep\relax}}
+\caption{Training, Cross-Validation, and Test F1-Scores of the Acoustic Classifiers}\label{tab:training-cross-validation-and-test-f1-scores-of-1022}\\
+\hline
+{\bfseries \textbf{Classifier}} & {\bfseries \textbf{Configuration}} & {\bfseries \textbf{Training F1}} & {\bfseries \textbf{CV F1 (Mean \ensuremath{\pm} SD)}} & {\bfseries \textbf{Test F1}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Classifier}} & {\bfseries \textbf{Configuration}} & {\bfseries \textbf{Training F1}} & {\bfseries \textbf{CV F1 (Mean \ensuremath{\pm} SD)}} & {\bfseries \textbf{Test F1}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+Naive Bayes & Default & 0.917 & 0.916 \ensuremath{\pm} 0.017 & 0.935 \\
+ & Tuned & 0.917 & 0.916 \ensuremath{\pm} 0.017 & 0.935 \\
+Support Vector Machine & Default & 0.979 & 0.917 \ensuremath{\pm} 0.041 & 0.949 \\
+ & Tuned & 0.973 & 0.958 \ensuremath{\pm} 0.009 & 0.967 \\
+Decision Tree & Default & 1.000 & 0.911 \ensuremath{\pm} 0.007 & 0.933 \\
+ & Tuned & 0.967 & 0.954 \ensuremath{\pm} 0.017 & 0.984 \\
+Random Forest & Default & 1.000 & 0.941 \ensuremath{\pm} 0.008 & 0.951 \\
+ & Tuned & 0.991 & 0.957 \ensuremath{\pm} 0.016 & 0.968 \\
+XGBoost & Default & 1.000 & 0.942 \ensuremath{\pm} 0.010 & 0.984 \\
+ & Tuned & 1.000 & 0.956 \ensuremath{\pm} 0.015 & 0.967 \\
+Logistic Regression & Default & 0.953 & 0.936 \ensuremath{\pm} 0.015 & 0.951 \\
+ & Tuned & 0.949 & 0.943 \ensuremath{\pm} 0.011 & 0.967 \\
+K-Nearest Neighbors & Default & 0.988 & 0.933 \ensuremath{\pm} 0.032 & 0.967 \\
+ & Tuned & 1.000 & 0.945 \ensuremath{\pm} 0.038 & 0.951 \\
+\hline
+\end{longtable}
+\endgroup
+
+\textit{Note.} CV = grouped 5-fold stratified cross-validation on the augmented training set. Training F1 is computed on the full augmented training set.
+
+Table~\ref{tab:training-cross-validation-and-test-f1-scores-of-1022} compares the F1-scores of each classifier on the training set, in cross-validation, and on the test set. In their default configurations, the Decision Tree, Random Forest, and XGBoost all reached a training F1-score of 1.000 but only 0.911 to 0.942 in cross-validation, generalization gaps of 5.8 to 8.9 percentage points that indicate they had memorized the training data. After tuning, the gap narrowed for the Decision Tree, with a training F1-score of 0.967 and a cross-validation F1-score of 0.954, showing that the tuned tree generalized well instead of fitting the training data exactly. In contrast, tuned XGBoost and K-Nearest Neighbors still reached a training F1-score of 1.000, consistent with their more complex or memorizing configurations.
+
+\begin{figure}[htbp]
+  \caption{Training and validation F1-scores by training-set size}
+  \label{fig:training-and-validation-f1-scores-by-training-se-1025}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/training-and-validation-f1-scores-by-training-set-size-106.png}}
+\end{figure}
+
+Figure~\ref{fig:training-and-validation-f1-scores-by-training-se-1025} shows the training and validation F1-scores of each tuned classifier as the number of training samples increased, where each line is the mean across the five cross-validation folds and the shaded band shows one standard deviation. For the Support Vector Machine, Decision Tree, and Logistic Regression, the validation score rose toward the training score as more data was added, ending within about one to two percentage points of it, which indicates that these classifiers generalized well and would likely benefit from additional data. Random Forest kept a steady gap of about two to three percentage points, indicating mild overfitting. XGBoost and K-Nearest Neighbors remained at or near a training F1-score of 1.000 at every training size while their validation scores stayed around 0.93 to 0.95, a persistent gap that shows they memorized the training data; for K-Nearest Neighbors, this is inherent to using a single neighbor, since each training sample is its own nearest neighbor.
+
+Naive Bayes showed a different pattern, with its training and validation scores overlapping at about 0.92 and remaining flat as data increased, indicating underfitting rather than overfitting. This is consistent with its assumption that features are independent of one another given the class, which does not hold for the acoustic features, since spectral centroid, bandwidth, and rolloff were strongly correlated with each other, as shown in Section 3.6.1. As a result, the model could not learn more from additional data, which also explains why tuning did not change its performance.
+
+\begin{figure}[htbp]
+  \caption{Training, Cross-Validation, and Test F1-Scores of the Tuned Acoustic Classifiers}
+  \label{fig:training-cross-validation-and-test-f1-scores-of-1029}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/training-cross-validation-and-test-f1-scores-of-the-tuned-ac-107.png}}
+\end{figure}
+
+As shown in Figure~\ref{fig:training-cross-validation-and-test-f1-scores-of-1029}, the test F1-scores of most tuned classifiers were slightly higher than their cross-validation scores. This is expected, since each cross-validation fold contains noise-augmented copies of the recordings, which are harder to classify than the original recordings in the clean test set. The Decision Tree showed the largest difference, with a cross-validation F1-score of 0.954 and a test F1-score of 0.984.
+
+\begin{figure}[htbp]
+  \caption{F1-Scores of the Tuned Acoustic Classifiers Across the Five Cross-Validation Folds}
+  \label{fig:f1-scores-of-the-tuned-acoustic-classifiers-acro-1033}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/f1-scores-of-the-tuned-acoustic-classifiers-across-the-five-108.png}}
+\end{figure}
+
+Figure~\ref{fig:f1-scores-of-the-tuned-acoustic-classifiers-acro-1033} shows the spread of the F1-scores across the five cross-validation folds. The Support Vector Machine had the most consistent scores (0.958 \ensuremath{\pm} 0.009), while K-Nearest Neighbors varied the most, from about 0.88 to 0.98 across folds (0.945 \ensuremath{\pm} 0.038), reflecting its sensitivity to which recordings were available as neighbors. The Decision Tree, Random Forest, and XGBoost showed similar spreads, with fold scores between about 0.93 and 0.98. Naive Bayes had the lowest scores overall, between about 0.90 and 0.95.
+
+\subsubsection{Acoustic Model Performance Comparison and Best Model}
+
+This section compares the performance of the classifiers on the held-out test set and under background noise, and presents the selection of the final acoustic model.
+
+\FloatBarrier
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.14948\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20447\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.13746\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.14089\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.10653\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.08763\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.17354\linewidth-2\tabcolsep\relax}}
+\caption{Test Set Performance of the Acoustic Classifiers}\label{tab:test-set-performance-of-the-acoustic-classifiers-1040}\\
+\hline
+{\bfseries \textbf{Classifier}} & {\bfseries \textbf{Configuration}} & {\bfseries \textbf{Accuracy}} & {\bfseries \textbf{Precision}} & {\bfseries \textbf{Recall}} & {\bfseries \textbf{F1}} & {\bfseries \textbf{F1 95\% CI}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Classifier}} & {\bfseries \textbf{Configuration}} & {\bfseries \textbf{Accuracy}} & {\bfseries \textbf{Precision}} & {\bfseries \textbf{Recall}} & {\bfseries \textbf{F1}} & {\bfseries \textbf{F1 95\% CI}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+Naive Bayes & Default & 0.960 & 0.935 & 0.935 & 0.935 & 0.857–0.986 \\
+ & Tuned & 0.960 & 0.935 & 0.935 & 0.935 & 0.857–0.986 \\
+Support Vector Machine & Default & 0.970 & 1.000 & 0.903 & 0.949 & 0.877–1.000 \\
+ & Tuned & 0.980 & 1.000 & 0.935 & 0.967 & 0.909–1.000 \\
+Decision Tree & Default & 0.960 & 0.966 & 0.903 & 0.933 & 0.861–0.986 \\
+ & \textbf{Tuned} & \textbf{0.990} & \textbf{1.000} & \textbf{0.968} & \textbf{0.984} & \textbf{0.943–1.000} \\
+Random Forest & Default & 0.970 & 0.967 & 0.935 & 0.951 & 0.882–1.000 \\
+ & Tuned & 0.980 & 0.968 & 0.968 & 0.968 & 0.913–1.000 \\
+XGBoost & Default & 0.990 & 1.000 & 0.968 & 0.984 & 0.943–1.000 \\
+ & Tuned & 0.980 & 1.000 & 0.935 & 0.967 & 0.909–1.000 \\
+Logistic Regression & Default & 0.970 & 0.967 & 0.935 & 0.951 & 0.881–1.000 \\
+ & Tuned & 0.980 & 1.000 & 0.935 & 0.967 & 0.909–1.000 \\
+K-Nearest Neighbors & Default & 0.980 & 1.000 & 0.935 & 0.967 & 0.909–1.000 \\
+ & Tuned & 0.970 & 0.967 & 0.935 & 0.951 & 0.880–1.000 \\
+\hline
+\end{longtable}
+\endgroup
+
+\textit{Note}. Test set of 99 original recordings (31 ripe, 68 unripe), with ripe as the positive class. Confidence intervals were computed from 2,000 bootstrap resamples. The selected model is in bold.
+
+The test set performance of each classifier is shown in Table~\ref{tab:test-set-performance-of-the-acoustic-classifiers-1040}, with the ripe class treated as the positive class. The tuned Decision Tree and the default XGBoost achieved the highest F1-score of 0.984 and accuracy of 0.990, with a precision of 1.000 and a recall of 0.968, meaning that no unripe watermelon was classified as ripe and only one of the 31 ripe watermelons was missed. Accuracy alone would have been misleading for this test set, since a classifier that labeled every recording as unripe would still reach an accuracy of 0.687 while detecting no ripe watermelons, which is why the F1-score was used as the main basis for comparison. However, the 95\% confidence intervals of the top classifiers overlap considerably, with the tuned Decision Tree ranging from 0.943 to 1.000 and the tuned Support Vector Machine, Random Forest, XGBoost, and Logistic Regression from about 0.91 to 1.000, so their differences in F1-score are not statistically meaningful on their own.
+
+\begin{figure}[htbp]
+  \caption{Test Accuracy (a) and Macro F1-Score (b) of the Default and Tuned Acoustic Classifiers}
+  \label{fig:test-accuracy-a-and-macro-f1-score-b-of-the-defa-1045}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/test-accuracy-a-and-macro-f1-score-b-of-the-default-and-tune-109.png}}
+\end{figure}
+
+Figure~\ref{fig:test-accuracy-a-and-macro-f1-score-b-of-the-defa-1045} compares the test accuracy and macro F1-score of each classifier before and after tuning, where the macro F1-score is the average of the F1-scores of the ripe and unripe classes and therefore weights both classes equally. All classifiers achieved an accuracy of 0.960 or higher in both configurations, with the tuned Decision Tree reaching the highest accuracy of 0.990 and a macro F1-score of 0.988. Among the tuned classifiers, the Support Vector Machine, XGBoost, and Logistic Regression followed with a macro F1-score of 0.976, Random Forest with 0.977, K-Nearest Neighbors with 0.965, and Naive Bayes with the lowest at 0.953.
+
+\begin{figure}[htbp]
+  \caption{Confusion Matrix of the Tuned Decision Tree}
+  \label{fig:confusion-matrix-of-the-tuned-decision-tree-1048}
+  \centering
+  \includegraphics[width=0.658\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/confusion-matrix-of-the-tuned-decision-tree-110.png}}
+\end{figure}
+
+The confusion matrix of the tuned Decision Tree, which achieved the highest F1-score among the tuned classifiers, is shown in Figure~\ref{fig:confusion-matrix-of-the-tuned-decision-tree-1048}. It correctly classified all 68 unripe recordings and 30 of the 31 ripe recordings, so its only error was one ripe watermelon classified as unripe. The confusion matrices of all seven tuned classifiers are provided in Figure~\ref{app:figure-C2} in \hyperref[app:section-C]{Appendix~C}, where the Support Vector Machine, XGBoost, and Logistic Regression also classified every unripe recording correctly but missed two ripe recordings each, Random Forest made one error in each class, and Naive Bayes and K-Nearest Neighbors made four and three errors, respectively. Across all classifiers, missed ripe watermelons were more common than unripe watermelons classified as ripe, indicating that the classifiers tended toward the unripe class when uncertain. The confusion matrices of the default classifiers are also provided in Figure~\ref{app:figure-C3} in \hyperref[app:section-C]{Appendix~C}.
+
+\begin{figure}[htbp]
+  \caption{ROC Curves of the Tuned Acoustic Classifiers}
+  \label{fig:roc-curves-of-the-tuned-acoustic-classifiers-1050}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/roc-curves-of-the-tuned-acoustic-classifiers-111.png}}
+\end{figure}
+
+As shown in Figure~\ref{fig:roc-curves-of-the-tuned-acoustic-classifiers-1050}, all tuned classifiers achieved areas under the ROC curve between 0.960 and 0.983, with the Decision Tree highest at 0.983. Because the Decision Tree produces only a few distinct probability values from its 7 leaves, its curve consists of fewer steps than those of the other classifiers, but it still reaches the highest area under the curve.
+
+\begin{figure}[htbp]
+  \caption{Precision-Recall Curves of the Tuned Acoustic Classifiers}
+  \label{fig:precision-recall-curves-of-the-tuned-acoustic-cl-1054}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/precision-recall-curves-of-the-tuned-acoustic-classifiers-112.png}}
+\end{figure}
+
+The Precision-Recall curves in Figure~\ref{fig:precision-recall-curves-of-the-tuned-acoustic-cl-1054} show average precision values between 0.925 and 0.981, with XGBoost highest at 0.981, followed by the Decision Tree and Random Forest at 0.978. All values were well above the baseline of 0.31, which is the proportion of ripe recordings in the test set and the precision a classifier would achieve by chance.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.21544\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.22083\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.17774\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20826\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.17774\linewidth-2\tabcolsep\relax}}
+\caption{F1-Scores of the Acoustic Classifiers Trained With and Without Augmentation}\label{tab:f1-scores-of-the-acoustic-classifiers-trained-wi-1060}\\
+\hline
+{\bfseries \textbf{Classifier}} & {\bfseries \textbf{Clean, Without Aug.}} & {\bfseries \textbf{Clean, With Aug.}} & {\bfseries \textbf{Mean Noisy, Without Aug.}} & {\bfseries \textbf{Mean Noisy, With Aug.}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Classifier}} & {\bfseries \textbf{Clean, Without Aug.}} & {\bfseries \textbf{Clean, With Aug.}} & {\bfseries \textbf{Mean Noisy, Without Aug.}} & {\bfseries \textbf{Mean Noisy, With Aug.}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+Naive Bayes & 0.935 & 0.935 & 0.911 & 0.910 \\
+Support Vector Machine & 0.967 & 0.967 & 0.923 & 0.941 \\
+\textbf{Decision Tree} & \textbf{0.968} & \textbf{0.984} & \textbf{0.950} & \textbf{0.964} \\
+Random Forest & 0.968 & 0.968 & 0.947 & 0.957 \\
+XGBoost & 0.951 & 0.967 & 0.951 & 0.970 \\
+Logistic Regression & 0.951 & 0.967 & 0.914 & 0.959 \\
+K-Nearest Neighbors & 0.967 & 0.951 & 0.951 & 0.957 \\
+\hline
+\end{longtable}
+\endgroup
+
+\textit{Note.} Tuned classifiers only. Mean noisy F1 is the average across the six noisy test sets (real and brown noise at 30, 25, and 20 dB).
+
+Table~\ref{tab:f1-scores-of-the-acoustic-classifiers-trained-wi-1060} compares the tuned classifiers trained with and without noise augmentation, on both the clean test set and the average of the six noisy test sets. Augmentation increased the mean noisy F1-score of six of the seven classifiers, with the largest gain in Logistic Regression, from 0.914 to 0.959, while Naive Bayes remained essentially unchanged. For the Decision Tree, augmentation increased the F1-score on the clean test set from 0.968 to 0.984 and the mean noisy F1-score from 0.950 to 0.964. This shows that training on noisy copies improved the classifiers’ robustness to background noise without lowering their performance on clean recordings. The full results under each noise condition are shown in Table~\ref{app:table-C1} in \hyperref[app:section-C]{Appendix~C}.
+
+\begin{figure}[htbp]
+  \caption{F1-Scores of the Tuned Acoustic Classifiers Under Each Test Condition, With and Without Augmentation}
+  \label{fig:f1-scores-of-the-tuned-acoustic-classifiers-unde-1065}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/f1-scores-of-the-tuned-acoustic-classifiers-under-each-test-113.png}}
+\end{figure}
+
+Figure~\ref{fig:f1-scores-of-the-tuned-acoustic-classifiers-unde-1065} shows the F1-score of each tuned classifier on the clean test set and under real and brown noise at 30, 25, and 20 dB, with solid lines for the classifiers trained with augmentation and dashed lines for those trained without it. For most classifiers, the scores remained close to their clean values at 30 and 25 dB and dropped most at 20 dB, where brown noise caused the largest decreases, down to about 0.83 for the non-augmented Naive Bayes, Support Vector Machine, and Logistic Regression. Augmentation reduced these decreases in most cases, with the augmented classifiers generally staying above their non-augmented versions at the noisiest levels. For the Decision Tree, the augmented model kept an F1-score of 0.968 or higher under real noise at all three levels and under brown noise at 30 and 25 dB, while its score under brown noise at 20 dB, 0.900, was slightly below the 0.909 of the non-augmented tree, a difference of a single recording.
+
+The top classifiers achieved similar performance: the tuned Decision Tree had the highest F1-score among the tuned classifiers and matched the best default classifier, but its confidence interval overlapped with those of the Support Vector Machine, Random Forest, XGBoost, and Logistic Regression. Since these differences were not statistically meaningful, the selection depended on the classifiers’ suitability for deployment on the ESP32-S3. The tuned Decision Tree was selected as the final acoustic model because it combined the highest test F1-score with the smallest memory footprint among the deployable classifiers, as discussed in Section 4.2.1.4, while its learning curve showed the smallest gap between training and validation among the tree-based classifiers. Augmentation also improved its performance on both clean and noisy recordings.
+
+\subsubsection{Selected Model and Deployment}
+
+This section presents the results of deploying the selected Decision Tree on the ESP32-S3, along with its decision rules and the features it relied on.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.14948\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.14261\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.18557\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.18729\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.12199\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.21306\linewidth-2\tabcolsep\relax}}
+\caption{Deployment Results of the Exported Acoustic Classifiers on the ESP32-S3}\label{tab:deployment-results-of-the-exported-acoustic-clas-1073}\\
+\hline
+{\bfseries \textbf{Classifier}} & {\bfseries \textbf{Test F1}} & {\bfseries \textbf{Header Size (KB)}} & {\bfseries \textbf{Flash Added (KB)}} & {\bfseries \textbf{RAM Added (B)}} & {\bfseries \textbf{C vs. Python Agreement}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Classifier}} & {\bfseries \textbf{Test F1}} & {\bfseries \textbf{Header Size (KB)}} & {\bfseries \textbf{Flash Added (KB)}} & {\bfseries \textbf{RAM Added (B)}} & {\bfseries \textbf{C vs. Python Agreement}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+\textbf{Decision Tree} & \textbf{0.984} & \textbf{1.66} & \textbf{0.05} & \textbf{0} & \textbf{99/\allowbreak{}99} \\
+Random Forest & 0.968 & 444.17 & 27.59 & 0 & 99/\allowbreak{}99 \\
+Support Vector Machine & 0.967 & 74.80 & 71.72 & \textbf{8} & 99/\allowbreak{}99 \\
+Logistic Regression & 0.967 & 1.86 & 0.54 & 8 & 99/\allowbreak{}99 \\
+Naive Bayes & 0.935 & 5.06 & 2.00 & 0 & 97/\allowbreak{}99 \\
+XGBoost & 0.967 & Not exported\textsuperscript{a} &  &  &  \\
+K-Nearest Neighbors & 0.951 & Not exported\textsuperscript{b} &  &  &  \\
+\hline
+\end{longtable}
+\endgroup
+
+\textit{Note.} Flash added is measured against a baseline sketch with the same input handling but no model. \textsuperscript{a} The conversion failed in micromlgen. \textsuperscript{b} Not supported by micromlgen.
+
+Table~\ref{tab:deployment-results-of-the-exported-acoustic-clas-1073} shows the results of converting the tuned classifiers into C code for the ESP32-S3. Five of the seven classifiers were successfully converted using micromlgen, while XGBoost failed to convert and K-Nearest Neighbors is not supported by the library. The predictions of the converted Decision Tree, Random Forest, Support Vector Machine, and Logistic Regression matched those of their Python versions on all 99 test recordings, while Naive Bayes differed on two recordings due to floating-point rounding near its decision boundary. The Decision Tree required a header file of only 1.66 KB and added about 0.05 KB of flash memory and no RAM to the program, compared with 27.59 KB for the Random Forest and 71.72 KB for the Support Vector Machine.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.75395\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.24605\linewidth-2\tabcolsep\relax}}
+\caption{Decision Rules of the Deployed Decision Tree}\label{tab:decision-rules-of-the-deployed-decision-tree-1079}\\
+\hline
+{\bfseries \textbf{Condition}} & {\bfseries \textbf{Prediction}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Condition}} & {\bfseries \textbf{Prediction}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+Spectral centroid > 1,051 Hz & Ripe \\
+Spectral centroid \ensuremath{\leq} 1,051 Hz, RMS energy \ensuremath{\leq} 0.186, and MFCC7 mean \ensuremath{\leq} \ensuremath{-}2.65 & Ripe \\
+Spectral centroid \ensuremath{\leq} 1,051 Hz, otherwise & Unripe \\
+\hline
+\end{longtable}
+\endgroup
+
+The decision rules of the selected Decision Tree are summarized in Table~\ref{tab:decision-rules-of-the-deployed-decision-tree-1079}, with the thresholds converted from standardized values back to their original units. These thresholds were learned during training as the splits that best separated ripe from unripe samples, measured by Gini impurity. The tree first checks the spectral centroid: recordings with a spectral centroid above 1,051 Hz are classified as ripe. Recordings below this threshold are classified as unripe, unless both their RMS energy is at most 0.186 and their mean MFCC7 is at most \ensuremath{-}2.65, in which case they are classified as ripe. In effect, the deployed model relies mainly on a single spectral centroid threshold, with one additional rule that uses the loudness of the thump and its spectral shape.
+
+\begin{figure}[htbp]
+  \caption{Feature Importance of the Selected Decision Tree}
+  \label{fig:feature-importance-of-the-selected-decision-tree-1083}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/feature-importance-of-the-selected-decision-tree-114.png}}
+\end{figure}
+
+The feature importances of the Decision Tree, shown in Figure~\ref{fig:feature-importance-of-the-selected-decision-tree-1083}, with spectral centroid accounting for about 0.90 of the total importance, followed by RMS energy at about 0.06 and the mean of MFCC7 at about 0.03. This is consistent with the exploratory data analysis in Section 3.6.3, where spectral centroid had the strongest correlation with the ripeness label. However, the reliance on RMS energy warrants caution, since the loudness of a thump can also depend on the strength of the strike and the recording conditions.
+
+The spectral centroid threshold can be traced to the average spectra of the two classes in Section 3.6.3 (Figure~\ref{fig:average-normalized-spectrum-of-ripe-and-unripe-r-742}). Within 50 to 400 Hz, ripe recordings had a lower dominant frequency than unripe recordings, consistent with \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)}, and unripe recordings carried more energy from about 152 to 551 Hz. Above the crossover at 551 Hz, ripe recordings carried more energy up to about 1,417 Hz, with the largest difference of 9.7 dB at 808 Hz, after which the two spectra stayed within 1 dB of each other and offered little separation. Because the spectral centroid is the energy-weighted average frequency, this additional energy between 551 and 1,417 Hz raised the spectral centroid of ripe recordings, which the tree captured with its 1,051 Hz threshold. The tree's main rule therefore reflects this higher-frequency energy rather than the lower resonant frequency reported in the literature.
+
+\subsection{Image Subsystem}
+
+The image subsystem used close-range rind photographs to classify watermelon ripeness for the acoustic-optical system. Eight architectures were compared on the same prepared dataset using the training, validation, and testing procedure in Section 3.7. Each architecture supplied a checkpoint selected by validation loss. Their held-out performance and INT8 export sizes provided the basis for selecting an image model for the ESP32-S3.
+
+\subsubsection{Image Hyperparameter Tuning}
+
+All 136 architecture and optimizer runs completed. The optimizer was varied within each architecture while the data split, augmentation, and stopping rules were held fixed. Table~\ref{tab:retained-optimizer-and-validation-result-for-eac-1094} shows the retained optimizer, checkpoint, loss, and accuracy for each model.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.22000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.19500\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.19500\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.19500\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.19500\linewidth-2\tabcolsep\relax}}
+\caption{Retained Optimizer and Validation Result for Each Image Model}\label{tab:retained-optimizer-and-validation-result-for-eac-1094}\\
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Optimizer}} & {\bfseries \textbf{Retained epoch}} & {\bfseries \textbf{Validation loss}} & {\bfseries \textbf{Validation accuracy (\%)}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Optimizer}} & {\bfseries \textbf{Retained epoch}} & {\bfseries \textbf{Validation loss}} & {\bfseries \textbf{Validation accuracy (\%)}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+\textbf{EfficientNet-B0} & \textbf{Lion} & \textbf{8} & \textbf{0.1386} & \textbf{95.83} \\
+EfficientNet-Lite0 & Ftrl & 79 & 0.3524 & 85.42 \\
+ShuffleNetV1 & SGD (momentum) & 28 & 0.0433 & 97.92 \\
+MobileNetV2 & Lion & 12 & 0.0853 & 97.92 \\
+MobileNetV3 Small & Lion & 11 & 0.1220 & 97.92 \\
+MobileNetV1 & MultiOptimizer & 26 & 0.3923 & 87.50 \\
+SqueezeNet v1.1 & Nadam & 26 & 0.4920 & 79.17 \\
+ShuffleNetV2 & Adadelta & 1 & 0.6923 & 52.08 \\
+\hline
+\end{longtable}
+\endgroup
+
+Lion was retained for EfficientNet-B0, MobileNetV2, and MobileNetV3 Small. The other models each retained a different optimizer. Figures~\ref{app:figure-D1} and~\ref{app:figure-D2} in \hyperref[app:section-D]{Appendix~D} compare validation loss and accuracy across the full sweep.
+
+Each cell in Figure~\ref{app:figure-D1} represents the validation loss of one completed run. The ShuffleNetV1 row spanned 0.0433 with SGD and momentum to 0.6936 with RMSprop, showing that the optimizer made a large difference for this architecture. SqueezeNet v1.1 reached 0.4920 with Nadam, while its Adadelta run reached 2.0845. ShuffleNetV2’s losses fell within a narrower range of 0.6923 to 0.7123 across all 17 settings.
+
+Figure~\ref{app:figure-D2} reports accuracy on the same validation photographs. Each correct label changes accuracy by about 2.08 percentage points. The retained ShuffleNetV1, MobileNetV2, and MobileNetV3 Small runs each classified 47 of 48 photographs correctly. EfficientNet-B0 with RMSprop also classified 47 correctly (97.92\%), while Lion classified 46 (95.83\%). Lion was retained because its loss was 0.1386 compared with 0.1431 for RMSprop. The difference illustrates how the selection procedure used the scores assigned to the true classes in addition to the number of correct labels. ShuffleNetV2 stayed between 23 and 25 correct labels across the sweep.
+
+\subsubsection{Image Model Training and Validation}
+
+Table~\ref{tab:training-measurements-at-the-retained-epoch-1102} reports the training loss and accuracy at the retained epoch for each selected run. The fitting time covers the full run in Colaboratory, including validation after each epoch. Each run continued for eight epochs after its retained checkpoint while early stopping checked for further improvement.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.22000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.12603\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.16349\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.16349\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.16349\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.16349\linewidth-2\tabcolsep\relax}}
+\caption{Training Measurements at the Retained Epoch}\label{tab:training-measurements-at-the-retained-epoch-1102}\\
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Retained epoch}} & {\bfseries \textbf{Epochs run}} & {\bfseries \textbf{Training loss}} & {\bfseries \textbf{Training accuracy (\%)}} & {\bfseries \textbf{Fitting time (s)}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Retained epoch}} & {\bfseries \textbf{Epochs run}} & {\bfseries \textbf{Training loss}} & {\bfseries \textbf{Training accuracy (\%)}} & {\bfseries \textbf{Fitting time (s)}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+EfficientNet-B0 & 8 & 16 & 0.1756 & 93.56 & 23.73 \\
+EfficientNet-Lite0 & 79 & 87 & 0.2285 & 92.53 & 46.24 \\
+ShuffleNetV1 & 28 & 36 & 0.0717 & 97.94 & 98.05 \\
+MobileNetV2 & 12 & 20 & 0.2101 & 93.30 & 16.33 \\
+MobileNetV3 Small & 11 & 19 & 0.2318 & 90.98 & 12.15 \\
+MobileNetV1 & 26 & 34 & 0.4358 & 82.22 & 14.34 \\
+SqueezeNet v1.1 & 26 & 34 & 0.4795 & 77.06 & 12.75 \\
+ShuffleNetV2 & 1 & 9 & 0.8394 & 49.74 & 44.43 \\
+\hline
+\end{longtable}
+\endgroup
+
+EfficientNet-B0 retained epoch 8 of 16 and reached 93.56\% training accuracy at that point. EfficientNet-Lite0 retained epoch 79 of 87, with 92.53\% training accuracy. ShuffleNetV1 reached the highest training accuracy at 97.94\% and took 98.05 seconds for the full fit, the longest of the retained runs. ShuffleNetV2 retained its first epoch, with training accuracy of 49.74\%. Figures~\ref{app:figure-D3} and~\ref{app:figure-D4} in \hyperref[app:section-D]{Appendix~D} show how the loss and accuracy changed before and after those checkpoints.
+
+The dotted lines in Figure~\ref{app:figure-D3} in \hyperref[app:section-D]{Appendix~D} mark the retained epochs. EfficientNet-B0’s training loss fell from 0.5375 to 0.1756 by epoch 8, when its validation loss reached its minimum. EfficientNet-Lite0’s validation loss decreased more gradually. ShuffleNetV1’s validation loss spiked early in training and then settled, with the best checkpoint at epoch 28. ShuffleNetV2’s validation loss rose after the first epoch despite changes in its training loss. EfficientNet-B0’s training loss fell further after its retained epoch, while its validation loss had already reached its minimum.
+
+Figure~\ref{app:figure-D4} in \hyperref[app:section-D]{Appendix~D} shows that the selected MobileNetV2 and MobileNetV3 Small runs reached 97.92\% validation accuracy at their retained epochs, with training accuracies of 93.30\% and 90.98\%, respectively. Training batches used augmentation and dropout, while validation used the prepared images with both disabled. This difference in conditions helps explain why validation accuracy sometimes exceeded training accuracy. ShuffleNetV2’s validation accuracy stayed at 52.08\% across its nine epochs, showing little improvement as fitting continued.
+
+\begin{figure}[htbp]
+  \caption{Training and validation loss (left) and accuracy (right) for ShuffleNetV1 with SGD and momentum.}
+  \label{fig:training-and-validation-loss-left-and-accuracy-r-1110}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/training-and-validation-loss-left-and-accuracy-right-for-shu-115.png}}
+\end{figure}
+
+Figure~\ref{fig:training-and-validation-loss-left-and-accuracy-r-1110} shows that validation loss rose sharply at epoch 7 before falling to 0.0433 at epoch 28, the lowest validation loss among the eight retained runs. At that epoch, training loss was 0.0717, training accuracy was 97.94\%, and the model correctly classified 47 of 48 validation images (97.92\%). None of the next eight epochs reduced validation loss further.
+
+\subsubsection{Image Model Comparison and Best Model}
+
+Table~\ref{tab:held-out-test-performance-of-the-selected-image-1135} compares the eight retained configurations on the 49 held-out images. EfficientNet-B0 and EfficientNet-Lite0 each classified 47 images correctly, giving 95.92\% accuracy and a macro F1-score of 0.9592. ShuffleNetV1 followed with 46 correct labels and macro F1 of 0.9387. One image represents about 2.04 percentage points of accuracy on this test set.
+
+MobileNetV2 and MobileNetV3 Small correctly classified 44 and 42 photographs, respectively. MobileNetV1 and SqueezeNet v1.1 each classified 40 correctly, and ShuffleNetV2 classified 25. ShuffleNetV1 had the lowest retained validation loss, while the EfficientNet models led this held-out comparison. Figures~\ref{app:figure-D5} and~\ref{app:figure-D6} in \hyperref[app:section-D]{Appendix~D} show how test accuracy and macro F1 varied across the full sweep.
+
+Figure~\ref{app:figure-D5} in \hyperref[app:section-D]{Appendix~D} compares held-out accuracy across all 136 runs. EfficientNet-B0 with SGD and momentum and EfficientNet-Lite0 with Lion each classified all 49 images correctly. The main comparison in Table~\ref{tab:held-out-test-performance-of-the-selected-image-1135} uses the checkpoints selected by validation loss. Across the sweep, EfficientNet-B0’s accuracy ranged from 79.59\% to 100.00\%, and EfficientNet-Lite0’s ranged from 63.27\% to 100.00\%. ShuffleNetV1 also varied widely. Its retained run classified 46 images correctly with SGD and momentum, compared with 25 with standard SGD.
+
+Figure~\ref{app:figure-D6} gives equal weight to the ripe and unripe F1-scores for each run. Both configurations that classified all test images correctly had a macro F1-score of 1.000. A larger difference between the two metrics appeared for MobileNetV3 Small with Adadelta. Its accuracy was 53.06\%, while its macro F1-score was about 0.412. ShuffleNetV2 stayed near 0.33 across the optimizer sweep. The confusion matrices for the retained runs show how the errors were distributed between the two classes.
+
+\FloatBarrier
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.22000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.13000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.13000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.13000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.13000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.13000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.13000\linewidth-2\tabcolsep\relax}}
+\caption{Held-out Test Performance of the Selected Image Configurations}\label{tab:held-out-test-performance-of-the-selected-image-1135}\\
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Accuracy}} & {\bfseries \textbf{Precision}} & {\bfseries \textbf{Recall}} & {\bfseries \textbf{Macro F1}} & {\bfseries \textbf{ROC AUC}} & {\bfseries \textbf{Average precision}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Accuracy}} & {\bfseries \textbf{Precision}} & {\bfseries \textbf{Recall}} & {\bfseries \textbf{Macro F1}} & {\bfseries \textbf{ROC AUC}} & {\bfseries \textbf{Average precision}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+\textbf{EfficientNet-B0} & \textbf{0.9592} & \textbf{0.9615} & \textbf{0.9600} & \textbf{0.9592} & \textbf{0.9967} & \textbf{0.9966} \\
+EfficientNet-Lite0 & 0.9592 & 0.9592 & 0.9592 & 0.9592 & 0.9883 & 0.9899 \\
+ShuffleNetV1 & 0.9388 & 0.9444 & 0.9400 & 0.9387 & 0.9933 & 0.9936 \\
+MobileNetV2 & 0.8980 & 0.9032 & 0.8992 & 0.8978 & 0.9733 & 0.9722 \\
+MobileNetV3 Small & 0.8571 & 0.8871 & 0.8600 & 0.8550 & 0.9933 & 0.9936 \\
+MobileNetV1 & 0.8163 & 0.8293 & 0.8183 & 0.8151 & 0.9367 & 0.9380 \\
+SqueezeNet v1.1 & 0.8163 & 0.8167 & 0.8167 & 0.8163 & 0.9150 & 0.9290 \\
+ShuffleNetV2 & 0.5102 & 0.2551 & 0.5000 & 0.3378 & 0.4017 & 0.4461 \\
+\hline
+\end{longtable}
+\endgroup
+
+\begin{figure}[htbp]
+  \caption{Held-out confusion matrix for EfficientNet-B0 with Lion}
+  \label{fig:held-out-confusion-matrix-for-efficientnet-b0-wi-1141}
+  \centering
+  \includegraphics[width=0.688\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/held-out-confusion-matrix-for-efficientnet-b0-with-lion-116.png}}
+\end{figure}
+
+Figure~\ref{fig:held-out-confusion-matrix-for-efficientnet-b0-wi-1141} shows the errors made by the EfficientNet-B0 checkpoint selected for the image subsystem. It identified all 24 unripe photographs and 23 of the 25 ripe photographs. The two ripe photographs it labeled unripe gave the model 92.31\% precision and 100\% recall for the unripe class. These counts describe the image model before conversion for the device. Figures~\ref{app:figure-D5}--\ref{app:figure-D7} in \hyperref[app:section-D]{Appendix~D} compare the models. Figure~\ref{fig:test-accuracy-on-prepared-and-raw-versions-of-th-1156} compares raw and prepared images.
+
+Figure~\ref{app:figure-D7} in \hyperref[app:section-D]{Appendix~D} shows how the two leading models reached the same accuracy with different errors. EfficientNet-B0 labeled two ripe photographs unripe. EfficientNet-Lite0 made one error in each direction. ShuffleNetV1 identified all 24 unripe photographs but labeled three ripe photographs unripe. ShuffleNetV2 labeled every photograph ripe, accounting for its 25 correct classifications and its zero recall for unripe fruit.
+
+\begin{figure}[htbp]
+  \caption{ROC Curves of the Selected Image Configurations}
+  \label{fig:roc-curves-of-the-selected-image-configurations-1146}
+  \centering
+  \includegraphics[width=0.909\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/roc-curves-of-the-selected-image-configurations-117.png}}
+\end{figure}
+
+Figure~\ref{fig:roc-curves-of-the-selected-image-configurations-1146} plots the share of unripe images correctly identified against the share of ripe images incorrectly flagged at different cutoffs. EfficientNet-B0 had the highest ROC AUC at 0.9967. ShuffleNetV1 and MobileNetV3 Small each reached 0.9933. MobileNetV3 Small’s high ROC AUC shows that it generally ranked unripe photographs above ripe ones, even though its accuracy at the classification cutoff was 85.71\%. The cutoff converts that ordering into a particular set of ripe and unripe decisions. ShuffleNetV2 had an ROC AUC of 0.4017, reflecting weaker separation of the two classes on these photographs.
+
+\begin{figure}[htbp]
+  \caption{Precision-Recall Curves of the Selected Image Configurations.}
+  \label{fig:precision-recall-curves-of-the-selected-image-co-1153}
+  \centering
+  \includegraphics[width=0.909\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/precision-recall-curves-of-the-selected-image-configurations-123.png}}
+\end{figure}
+
+Figure~\ref{fig:precision-recall-curves-of-the-selected-image-co-1153} shows the proportion of correct unripe predictions as the cutoff changes how many unripe photographs are detected. EfficientNet-B0 reached the highest average precision at 0.9966. ShuffleNetV1 and MobileNetV3 Small each reached 0.9936, so their unripe predictions also retained high precision over much of the recall range. The reference line represents the 24 unripe photographs out of 49, about 48.98\%. ShuffleNetV2’s average precision of 0.4461 fell below that reference. These curves complement the confusion matrices by showing how the precision of an unripe call varied across cutoffs.
+
+\begin{figure}[htbp]
+  \caption{Test Accuracy on Prepared and Raw Versions of the Same Images.}
+  \label{fig:test-accuracy-on-prepared-and-raw-versions-of-th-1156}
+  \centering
+  \includegraphics[width=1.000\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/test-accuracy-on-prepared-and-raw-versions-of-the-same-image-124.png}}
+\end{figure}
+
+Figure~\ref{fig:test-accuracy-on-prepared-and-raw-versions-of-th-1156} compares the same fitted models on the raw and prepared versions of the same photographs. Preparation increased the number of correct labels for four of the eight models. MobileNetV2 improved from 39 to 44 correct labels and ShuffleNetV1 from 41 to 46. EfficientNet-B0 correctly classified 47 images with either input, and SqueezeNet v1.1 and ShuffleNetV2 also had equal counts on the two versions. MobileNetV3 Small classified 44 raw images correctly and 42 prepared images correctly. The changes therefore depended on the model and describe the effect of the preparation steps taken together.
+
+\subsubsection{Selected Image Model and Deployment}
+
+Table~\ref{tab:held-out-test-results-and-file-sizes-after-int8-1168} compares the original and INT8 models on the same 49 prepared test images. EfficientNet-B0 led the INT8 exports in accuracy and macro F1-score, classifying 48 images correctly, one more than the Keras version.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.33333\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.33333\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.33333\linewidth-2\tabcolsep\relax}}
+\caption{Held-out Test Results and File Sizes After INT8 Conversion}\label{tab:held-out-test-results-and-file-sizes-after-int8-1168}\\
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Keras accuracy (\%)}} & {\bfseries \textbf{INT8 file size (KiB)}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Keras accuracy (\%)}} & {\bfseries \textbf{INT8 file size (KiB)}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+\textbf{EfficientNet-B0} & \textbf{95.92} & \textbf{4,778.37} \\
+EfficientNet-Lite0 & 95.92 & 3,870.74 \\
+ShuffleNetV1 & 93.88 & 1,236.50 \\
+MobileNetV2 & 89.80 & 2,645.89 \\
+MobileNetV3 Small & 85.71 & 600.02 \\
+MobileNetV1 & 81.63 & 298.80 \\
+SqueezeNet v1.1 & 81.63 & 802.62 \\
+ShuffleNetV2 & 51.02 & 1,480.06 \\
+\hline
+\end{longtable}
+\endgroup
+
+EfficientNet-Lite0 fell from 47 correct labels to 40 after conversion, while ShuffleNetV1 retained 46 correct labels. MobileNetV3 Small improved from 42 to 44. EfficientNet-B0 was selected for its 97.96\% accuracy and 0.9796 macro F1-score. Its 4,778.37 KiB export required more storage than ShuffleNetV1’s 1,236.50 KiB export, which reached 93.88\% accuracy.
+
+The deployed EfficientNet-B0 model is stored as a 4,931,912-byte array in the firmware. TensorFlow Lite Micro runs it on the ESP32-S3 with a 1,600 KiB PSRAM arena for working tensors. It receives a prepared 96 \ensuremath{\times} 96 RGB image. The firmware uses the higher of the ripe and unripe scores as the confidence for its image label, then passes both to the combined decision.
+
+\subsection{Acoustic-Optical System Integration}
+
+This section describes the physical assembly of all the hardware components and the integration of the software components of the device.
+
+The ESP32-S3 coordinated the camera, thumper, microphone, and display described in Section 4.1. It processed the rind image first and retained the image prediction while the operator positioned the thumper against the same watermelon. A separate button press started the acoustic measurement. The firmware then combined the two predictions and displayed the result for that assessment.
+
+\textbf{Acoustic Hardware Placement/Models Used and Best Model Chosen}
+
+The INMP441 microphone was mounted above the rounded contact tip of the thumper, close to where the tip struck the rind. The firmware began collecting audio through the microphone’s I\textsuperscript{2}S interface before the ESP32-S3 activated the relay that powered the solenoid. Recording continued after the tap to capture the fruit’s response. The controller marked the point in the recording when the relay was activated so the software could locate the portion of the signal to analyze.
+
+Seven acoustic classifiers were evaluated, namely Naive Bayes, Support Vector Machine, Decision Tree, Random Forest, XGBoost, Logistic Regression, and K-Nearest Neighbors. The tuned Decision Tree matched the accuracy of the default XGBoost model, correctly classifying 98 of the 99 held-out recordings. It added approximately 0.05 KB to the firmware, the smallest increase among the acoustic models evaluated for deployment. Its C implementation also matched the Python predictions on all 99 recordings. The firmware used the tree to classify features extracted from the microphone recording.
+
+\textbf{Acoustic Hyperparameters}
+
+The selected Decision Tree had a maximum depth of three. A node needed at least 10 samples before a split could be considered, and each terminal node had to contain at least 15 samples. The tree used Gini impurity to evaluate candidate splits, a feature fraction of 0.90, and equal weight for each training sample. The depth and leaf-size limits kept the tree from forming highly specific rules based on small groups of recordings.
+
+These settings determined the structure of the exported tree. On the device, the firmware selected the segment containing the tap response, extracted its signal features, and standardized them using the stored scaling parameters. The C implementation then evaluated the tree’s branching rules and returned a ripe or unripe prediction for the acoustic measurement.
+
+\textbf{Image Hardware Placement/Image Models Trained and Best Model Chosen}
+
+The OV5640 camera was mounted on an adjustable bracket on the barrel, allowing the operator to aim it at the rind. The firmware displayed a live preview with a guide marking the central area used for analysis. After capture, the controller stored the frame in memory, cropped the marked area, and applied glare reduction, sharpening, and brightness normalization. It then resized the processed image to 96 \ensuremath{\times} 96 pixels for classification.
+
+The eight image architectures evaluated were MobileNetV1, MobileNetV2, MobileNetV3 Small, SqueezeNet v1.1, EfficientNet-B0, EfficientNet-Lite0, ShuffleNetV1, and ShuffleNetV2. EfficientNet-B0 and EfficientNet-Lite0 each classified 47 of the 49 held-out images correctly before conversion. After INT8 conversion, EfficientNet-B0 classified 48 correctly, while EfficientNet-Lite0 classified 40 correctly. EfficientNet-B0 was selected for deployment based on its performance after conversion. It ran through TensorFlow Lite Micro on the ESP32-S3, and the firmware retained its image prediction and confidence for the combined assessment.
+
+\textbf{Image Hyperparameters}
+
+The selected EfficientNet-B0 configuration used the Lion optimizer, binary cross-entropy loss, and a batch size of 16. A dropout rate of 0.4 was applied before the classification layer, and an L2 penalty of 0.001 was applied to that layer. Both settings helped limit how closely the classifier fitted the training images. The weights from epoch 8 were retained because they produced the lowest validation loss of 0.1386 in the selected run. Those weights were converted to INT8 for deployment, and the firmware converted the prepared RGB pixel values to the integer format expected by the model.
+
+\textbf{Interpretation of F1 score of imbalanced dataset}
+
+The held-out acoustic set contained 31 ripe and 68 unripe recordings. Classifying every recording as unripe would have yielded 68.69\% accuracy while missing all 31 ripe recordings. The ripe-class F1 score accounted for both how often a ripe prediction was correct and how many ripe recordings the model detected. The tuned Decision Tree correctly identified 30 of the 31 ripe recordings and all 68 unripe recordings, giving it a ripe-class F1 score of 0.984.
+
+The optical evaluation used macro F1, which averages the F1 scores for ripe and unripe images and gives each class equal weight. The quantized EfficientNet-B0 achieved a macro F1 score of 0.9796 on the held-out image set. These scores describe the two classifiers on their respective test sets. The combined device was evaluated separately during field testing in Section 4.4.
+
+\textbf{Cross Validation}
+
+At the device level, cross-validation involved checking the image and acoustic predictions for the same watermelon before issuing the final verdict. The ESP32-S3 stored the image prediction and its confidence while the acoustic measurement was taken. Once the tap recording had been processed, the firmware paired the two predictions and combined them using the log-likelihood ratio weighting procedure described in Section 3.4.3. The image confidence guided the weight assigned to the image prediction. The acoustic weighting accounted for whether the tap response was detected automatically or a fallback segment was used.
+
+When the two predictions agreed and the combined score reached the decision threshold, the device reported their shared classification. When the predictions disagreed, the device could still report Ripe or Unripe if the combined score supported one class strongly enough. A score within the inconclusive range prompted a retrial on the same watermelon. The display showed the final verdict alongside the individual image and sound predictions and an Agree or Disagree indicator.
+
+The prototype met the first objective in Section 1.3 by using digital signal processing to extract acoustic features from the thump response of the watermelon and a camera to capture images of the rind. The ESP32-S3 linked the two measurements to the same fruit and combined their predictions through the log-likelihood ratio fusion described in Section 3.4.3.
+
+The display presented the combined classification alongside the individual image and sound predictions and indicated whether they agreed. When the combined score fell within the inconclusive range, the screen displayed \textit{Inconclusive}, and the operator repeated the assessment on the same fruit. The field performance of the assembled system is presented in Section 4.4.
+
+\section{Development of Portable, Field-deployable System}
+
+The handheld device brings together all key parts in a simple, portable design. The main controller inside the device is the ESP32-S3 microcontroller, which connects and runs all components. The OV5640 camera takes photos of the watermelon rind and shows a live preview on the TFT LCD screen display. The INMP441 digital microphone captures the thump sound when the watermelon is tapped by the system. A solenoid thumper acts as an automatic pulse tapper, striking the fruit. A bright screen displays clear instructions and results to the user, while two rechargeable batteries power the entire unit.
+
+Using the device follows a simple step-by-step process in the field. First, the user points the camera at the center of the watermelon using the guide on the screen, the yellow box at the center of the display. After centering the camera to the watermelon, the user can click the pushbutton, making the system take a photo of the watermelon. It is then processed internally, cleaning up lighting and glare, and runs a neural network model to check the rind pattern. Next, after the system has finished classifying the image, the user holds the tip of the barrel firmly against the watermelon so the thumper tip can touch the rind when the solenoid fires. Pressing the pushbutton makes the thumper tap the fruit while the microphone records the sound. The system analyzes the frequency and timing of the thump sound using a Decision Tree model. Finally, the system combines both the camera and sound results using a decision rule to give a final verdict of Ripe, Unripe, or Inconclusive on the screen.
+
+Building and testing the device successfully met Objective 2 of the study. It proved that a fully portable, standalone tool can check watermelon ripeness directly in the field without needing an internet connection or extra computers. The device is durable, battery-powered, fast, and easy for farmers to use during harvest.
+
+\section{Validation of System Accuracy and Usability}
+
+This section presents the validation and evaluation of the developed portable multimodal acoustic–optical system for watermelon ripeness evaluation in accordance with Objective 2: to validate the system's classification accuracy and evaluate its usability and operational performance. The validation was conducted through actual field testing, wherein the system's ripe and unripe classifications were compared against the farmer's manual inspection of the same watermelon samples, which served as the reference classification. The classification results were analyzed using system accuracy, while Cohen's Kappa was employed to further quantify the degree of agreement between the system and the farmer's assessment. Furthermore, the system was evaluated based on selected non-functional requirements, particularly usability and performance, through the System Usability Scale (SUS) questionnaire and processing time measurements. These evaluations provide an assessment of the system's classification effectiveness, ease of use, and operational efficiency under actual testing conditions.
+
+\subsection{Actual Testing System Accuracy}
+
+This section presents the actual field testing results of the watermelon ripeness detection system using 46 sweet-16 watermelons collected from the Brgy. Balubal farm in Cagayan de Oro City. Each sample was assessed by three independent raters: (1) the automated system, which produced a definitive output of either Ripe or Unripe or an abstention labeled Inconclusive; (2) an experienced farm harvester acting as the farmer reference, who provided a binary Ripe/Unripe manual assessment; and (3) destructive ground truth, established by cutting the fruit and verifying internal flesh condition against the established ripeness threshold.
+
+Agreement between the system and the farmer was quantified using Cohen's kappa on the 2\ensuremath{\times}2 confusion matrix of definitive classifications. Samples for which the system returned an inconclusive result were excluded from the kappa computation and are reported separately as the system's inconclusive rate. Accuracy, precision, recall, and F1-score were computed against destructive ground truth, and the farmer's manual accuracy was also evaluated against the same reference standard to allow a three-way comparison.
+
+Of the 46 watermelons tested, the system produced a definitive classification for 43 samples. Table~\ref{tab:confusion-matrix-of-system-classification-agains-1206} presents the confusion matrix comparing the system's definitive outputs against the farmer's manual assessment.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}}
+\caption{Confusion Matrix of System Classification Against Farmer Manual Assessment (N = 43)}\label{tab:confusion-matrix-of-system-classification-agains-1206}\\
+\hline
+{\bfseries \textbf{System/\allowbreak{}Farmer}} & {\bfseries \textbf{Farmer: Ripe}} & {\bfseries \textbf{Farmer: Unripe}} & {\bfseries \textbf{Row Total}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{System/\allowbreak{}Farmer}} & {\bfseries \textbf{Farmer: Ripe}} & {\bfseries \textbf{Farmer: Unripe}} & {\bfseries \textbf{Row Total}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+\textbf{System: Ripe} & 33 & 1 & 34 \\
+\textbf{System: Unripe} & 2 & 7 & 9 \\
+\textbf{Column Total} & 35 & 8 & 43 \\
+\hline
+\end{longtable}
+\endgroup
+
+As shown in Table~\ref{tab:confusion-matrix-of-system-classification-agains-1206}, the system and the farmer agreed on 40 of the 43 definitive classifications (93.02\%). The 46 field attempts included three inconclusive results. To account for the possibility of chance agreement, the degree of reliability was further quantified using the Cohen's Kappa statistic, which yielded a value of \ensuremath{\kappa} = 0.780
+
+\textit{p}\textit{o} \textit{= (33 + 7) / 43}
+
+\textit{p}\textit{o} \textit{\ensuremath{\approx} 0.9302}
+
+\textit{p}\textit{e} \textit{= (34 \ensuremath{\times} 35 + 9 \ensuremath{\times} 8) / 43}\textsuperscript{\textit{2}}
+
+\textit{p}\textit{e} \textit{= (1190 + 72) / 1849}
+
+\textit{p}\textit{e} \textit{\ensuremath{\approx} 0.6825}
+
+\textit{\ensuremath{\kappa} = (0.9302 \ensuremath{-} 0.6825) / (1 \ensuremath{-} 0.6825)}
+
+\textit{\ensuremath{\kappa} \ensuremath{\approx} 0.780}
+
+Applying the interpretation criteria of \hyperlink{cite.landis1977}{Landis and Koch (1977)}, kappa values of 0.61 to 0.80 denote substantial agreement, while values of 0.81 to 1.00 denote almost perfect agreement. The obtained value of \ensuremath{\kappa} = 0.780 therefore falls within the substantial band, which signifies that the system's ripeness classifications are strongly aligned with expert human judgment. The raw agreement supports this classification, as the system and the farmer gave the same verdict on 40 of the 43 samples (po = 0.9302). Raw agreement alone can be misleading, however, because 81\% of the samples were judged Ripe by the farmer, and a rater that leaned heavily toward "Ripe" would agree with the farmer often by luck. This is why the chance-expected agreement was already high (pe = 0.6825). Kappa removes this inflation, and the system still captured about 78\% of the agreement attainable beyond chance, which shows that its performance reflects genuine classification ability and not the imbalance in the sample. The value also sits near the upper end of its band, only 0.03 below the threshold for almost perfect agreement.
+
+A closer inspection of the confusion matrix reveals that the "Ripe" category exhibited the most robust performance. The system demonstrated a precision of 97.06\% (33 out of 34 predicted ripe samples were confirmed by the farmer) and a recall of 94.29\% (33 out of 35 true ripe samples were correctly identified). From a practical harvesting perspective, this high recall is particularly critical, as it ensures that the vast majority of market-ready fruit is not left unharvested in the field. The "Unripe" category showed a different balance, with a precision of 77.78\% (7 of the 9 samples predicted unripe were confirmed by the farmer) and a higher recall of 87.50\% (7 of the 8 true unripe samples were correctly identified). This pattern indicates a slightly conservative tendency: the system labeled 9 samples as Unripe against the farmer's 8, which is the safer direction for harvesting because it lowers the risk of picking immature fruit, at the cost of occasionally flagging a ripe fruit as unripe. The primary sources of classification error were the 1 false positive and the 2 false negatives.
+
+In practical terms, a substantial kappa means that the system's ripeness decisions are consistent with those of an experienced harvester, whose judgment is the current standard in the field. The system can thus reproduce expert assessment without relying on subjective cues such as sound, rind color, and tendril condition, which vary from one harvester to another. This supports its use as a standardized, objective decision-support tool, especially for less experienced farmers.
+
+Despite this, the agreement was not perfect, since three samples were classified differently. Part of the reason is mathematical. Kappa cannot reach 1.00 when the raters' marginal totals differ, and because the system labeled 34 samples Ripe while the farmer labeled 35, the highest attainable agreement was 42 of 43 samples (0.9767). This gives a maximum possible kappa of about 0.927, so the obtained value reached roughly 84\% of what was achievable for these data. Kappa is also highly sensitive to prevalence. Because the Unripe class contained only 8 samples, each disagreement in that class is penalized heavily, and the result lies close to a category boundary. If just one of the two false negatives had instead been classified correctly, kappa would have risen to approximately 0.85, which falls in the almost perfect band. The gap between substantial and almost perfect agreement here therefore amounts to a single sample and should not be read as a sign of poor performance. These misclassifications also highlight the subjective and often ambiguous nature of determining ripeness in the field. Subtle variations in acoustic resonance and rind appearance may be interpreted differently by the system's algorithms than by human visual and tactile experience, particularly for fruits near the ripeness threshold. The farmer is likewise a human reference and not an absolute standard, so some disagreements may reflect farmer misjudgment as much as system error, which is why both were also compared against the destructive ground truth. In addition, on-site testing introduces variation in ambient noise, sensor placement, and fruit shape or size that a controlled laboratory setup would not.
+
+While the Kappa calculation evaluates the 43 definitive classifications, the 3 remaining watermelons must be accounted for in the overall system evaluation. Because the system is designed to abstain from making a classification when the acoustic and optical predictions disagree and neither is reliable enough to outweigh the other, these 3 inconclusive outputs were counted as errors. To evaluate the system's overall field performance, the Error Rate and Re-trial Frequency were calculated using Eq. (3.15) and Eq. (3.16).
+
+Factoring in the 1 false positive, 2 false negatives, and 3 inconclusive outputs out of the 46 total evaluated fruits, the system yielded an initial Error Rate of 13.04\%. Because the 3 inconclusive results triggered a re-test, the Re-trial Frequency was 6.52\%. These figures show the effect of the additional attempts: although the initial error rate was 13.04\%, the system deferred the ambiguous cases for a re-trial instead of forcing a potentially incorrect output, which supports the reliability of the final classification.
+
+Several limitations should be noted when interpreting these results. The Landis and Koch benchmarks are conventional guidelines and not statistical tests, and with only 43 definitive classifications the kappa estimate carries a wide confidence interval of approximately 0.54 to 1.00. The result should therefore be taken as good evidence of agreement between the system and the farmer and not as a precise measure of it, and a larger sample in future testing would narrow this interval.
+
+Establishing substantial agreement with the farmer demonstrates the system's practical field utility. However, to determine the true biological accuracy of these predictions, the definitive outputs were then cross-referenced against the destructive ground truth (internal flesh inspection). The comparison between the system's outputs and the actual condition of the fruit is presented in Figure~\ref{fig:confusion-matrix-of-system-classification-agains-1225}.
+
+\begin{figure}[htbp]
+  \caption{Confusion Matrix of System Classification Against Destructive Ground Truth (N = 43)}
+  \label{fig:confusion-matrix-of-system-classification-agains-1225}
+  \centering
+  \includegraphics[width=0.903\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/confusion-matrix-of-system-classification-against-destructiv-120.png}}
+\end{figure}
+
+As shown in Figure~\ref{fig:confusion-matrix-of-system-classification-agains-1225}, when evaluated against the physical state of the fruit, the system correctly classified 41 out of the 43 samples, yielding an overall true accuracy of 95.35\%. This high accuracy confirms that the multimodal acoustic-optical approach is highly effective at non-destructively estimating internal fruit quality. A closer examination of the confusion matrix reveals near-perfect performance for the ripe class. Out of the 35 watermelons that were biologically ripe, the system correctly identified 33, resulting in a recall of 94.29\%. Furthermore, the system achieved a precision of 100\% for the ripe class, meaning that every single time the system predicted a watermelon to be ripe, it was biologically correct. From a commercial standpoint, this perfect precision is critical, as it ensures that unripe fruit is never mistakenly passed into the harvest batch, maintaining strict supply chain quality. The system also demonstrated strong performance for the unripe class, correctly identifying all 8 biologically unripe watermelons (100\% recall). The precision for this class was recorded at 80.00\%, as the system conservatively classified two biologically ripe watermelons as unripe.
+
+To contextualize the automated system's performance against the human expert, the farmer's manual assessments were similarly evaluated against the destructive ground truth. Figure~\ref{fig:confusion-matrix-of-farmer-classification-agains-1229} presents the confusion matrix for this comparison.
+
+\begin{figure}[htbp]
+  \caption{Confusion Matrix of Farmer Classification Against Destructive Ground Truth (N = 43)}
+  \label{fig:confusion-matrix-of-farmer-classification-agains-1229}
+  \centering
+  \includegraphics[width=0.740\linewidth,height=.62\textheight,keepaspectratio]{\detokenize{figures/confusion-matrix-of-farmer-classification-against-destructiv-121.png}}
+\end{figure}
+
+As shown in Figure~\ref{fig:confusion-matrix-of-farmer-classification-agains-1229}, the farmer demonstrated a high level of reliability in the field, correctly classifying 42 out of the 43 watermelons for a true accuracy of 97.67\%. A detailed breakdown of the matrix reveals that the farmer was exceptionally conservative in confirming ripeness. Out of the 35 biologically ripe watermelons, the farmer correctly identified 34, resulting in a recall of 97.14\%. Notably, the farmer achieved a precision of 100\% for the ripe class, meaning that every single watermelon the farmer deemed ready for harvest was biologically confirmed as ripe. Consequently, the farmer entirely avoided false positives, ensuring no unripe fruit was mistakenly harvested. For the unripe class, the farmer achieved a perfect 100\% recall by identifying all 8 biologically unripe watermelons; however, a precision of 88.89\% was recorded due to a single false negative, where one ripe watermelon was conservatively left unharvested.
+
+While the individual evaluations against the ground truth highlight the capabilities of both the system and the farmer, a direct, side-by-side comparison is necessary to fully evaluate the system's viability as a replacement or supplementary tool. Table~\ref{tab:three-way-comparison-of-system-ground-truth-and-1239} consolidates the performance metrics of the automated system and the farmer across all evaluation points into a comprehensive three-way comparison.
+
+\FloatBarrier
+\begin{landscape}
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.12576\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.09646\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11111\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11111\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11111\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11111\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11111\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11111\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11111\linewidth-2\tabcolsep\relax}}
+\caption{Three-Way Comparison of System, Ground Truth, and Farmer Performance (Transposed)}\label{tab:three-way-comparison-of-system-ground-truth-and-1239}\\
+\hline
+{\bfseries \textbf{Comparison Type}} & {\bfseries \textbf{Accuracy}} & {\bfseries \textbf{Macro F1-Score}} & {\bfseries \textbf{Precision (Ripe)}} & {\bfseries \textbf{Recall (Ripe)}} & {\bfseries \textbf{Precision (Unripe)}} & {\bfseries \textbf{Recall (Unripe)}} & {\bfseries \textbf{False Positives}} & {\bfseries \textbf{False Negatives}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Comparison Type}} & {\bfseries \textbf{Accuracy}} & {\bfseries \textbf{Macro F1-Score}} & {\bfseries \textbf{Precision (Ripe)}} & {\bfseries \textbf{Recall (Ripe)}} & {\bfseries \textbf{Precision (Unripe)}} & {\bfseries \textbf{Recall (Unripe)}} & {\bfseries \textbf{False Positives}} & {\bfseries \textbf{False Negatives}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+System vs. Farmer & 93.02\% & 89.00\% & 97.06\% & 94.29\% & 77.78\% & 87.50\% & 1 & 2 \\
+System vs. Ground Truth & 95.35\% & 92.98\% & 100.00\% & 94.29\% & 80.00\% & 100.00\% & 0 & 2 \\
+Farmer vs. Ground Truth & 97.67\% & 96.34\% & 100.00\% & 97.14\% & 88.89\% & 100.00\% & 0 & 1 \\
+\hline
+\end{longtable}
+\endgroup
+\end{landscape}
+
+As shown in Table~\ref{tab:three-way-comparison-of-system-ground-truth-and-1239}, the consolidated three-way comparison provides a comprehensive view of the automated system's performance relative to both the human expert and the destructive ground truth across all evaluated metrics.
+
+A primary insight emerges when comparing the overall accuracy metrics across the three evaluations. The system demonstrated a high practical agreement with the farmer at 93.02\%; however, when its definitive predictions were cross-referenced against the physical state of the fruit, its true biological accuracy increased to 95.35\%. This upward shift proves that the system is not merely mimicking human bias or error. Instead, it successfully captures subtle acoustic and visual markers of ripeness that the human expert occasionally missed. The human expert, serving as the benchmark, achieved a near-perfect 97.67\% accuracy against the ground truth. The fact that the automated system's true accuracy closely trails the human expert's baseline by only a marginal 2.32\% strongly validates the system as a highly capable diagnostic tool.
+
+The most commercially significant finding from this comparison lies in the error profile, specifically regarding false positives. In agricultural harvesting, a false positive occurs when an unripe fruit is prematurely passed into the harvest batch, which can severely damage supply chain quality. Table~\ref{tab:three-way-comparison-of-system-ground-truth-and-1239} reveals that both the automated system and the human expert achieved a 100\% precision rate for the Ripe class against the ground truth, resulting in zero false positives. This indicates that the multimodal system is exceptionally safe for commercial deployment, as it never mistakenly allowed a biologically unripe watermelon to be classified as market-ready.
+
+Conversely, the slight difference in their performance can be observed in the false negatives, which occur when a biologically ripe fruit is incorrectly classified as unripe. The farmer made one such error, whereas the system made two. However, this specific conservative bias is highly favorable for an automated agricultural tool. When the system encountered a borderline case, it leaned toward the safer classification, preferring to mistakenly leave a ripe watermelon on the vine for an extra day rather than risking the premature harvest of an unripe one.
+
+Ultimately, the three-way comparison demonstrates that the multimodal fusion of acoustic resonance and visual rind analysis is a scientifically sound and practically viable method for pre-harvest assessment. By matching the human expert in the most critical metric—ensuring that zero unripe fruit is harvested—while achieving a 95.35\% true biological accuracy, the automated system proves itself to be a highly reliable, objective, and safe decision-support tool for modern field operations.
+
+\subsubsection{Comparison of Acoustic, Image, and Fused Classification Performance}
+
+This section compares the acoustic Decision Tree, the EfficientNet-B0 image model, and the fused system on the watermelons assessed during field testing, using cut-fruit inspection as the reference. Of the 46 field test records, three initial attempts returned an Inconclusive verdict, and each was followed by a retrial on the same fruit. The comparison therefore used one result per watermelon, taking the retrial result where one was made, and covered 43 watermelons, comprising 35 ripe and 8 unripe watermelons. Ripe was treated as the positive class, and the per-sample results are provided in Table~\ref{app:table-E1} in \hyperref[app:section-E]{Appendix~E}. The confusion matrices of the three outputs are shown in Table~\ref{tab:confusion-matrices-of-the-acoustic-image-and-fus-1251}.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.24014\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.14516\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20251\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.23297\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.17921\linewidth-2\tabcolsep\relax}}
+\caption{Confusion Matrices of the Acoustic, Image, and Fused Outputs Against Destructive Ground Truth (N = 43)}\label{tab:confusion-matrices-of-the-acoustic-image-and-fus-1251}\\
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Actual}} & {\bfseries \textbf{Predicted Ripe}} & {\bfseries \textbf{Predicted Unripe}} & {\bfseries \textbf{Row Total}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Actual}} & {\bfseries \textbf{Predicted Ripe}} & {\bfseries \textbf{Predicted Unripe}} & {\bfseries \textbf{Row Total}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+Acoustic (Decision Tree) & Ripe & 32 & 3 & 35 \\
+ & Unripe & 5 & 3 & 8 \\
+Image (EfficientNet-B0) & Ripe & 32 & 3 & 35 \\
+ & Unripe & 1 & 7 & 8 \\
+Fused System & Ripe & 33 & 2 & 35 \\
+ & Unripe & 0 & 8 & 8 \\
+\hline
+\end{longtable}
+\endgroup
+
+Table~\ref{tab:confusion-matrices-of-the-acoustic-image-and-fus-1251} shows that the acoustic Decision Tree made the most errors of the three outputs, misclassifying 8 of the 43 watermelons. Five unripe watermelons (F05, F09, F10, F11, and F25) were classified as ripe, and three ripe watermelons (F24, F29, and F38) were classified as unripe. The acoustic model correctly identified only 3 of the 8 unripe fruits and predicted Ripe for 37 of the 43 fruits, which shows a clear lean toward the ripe class.
+
+The EfficientNet-B0 image model misclassified 4 of the 43 watermelons. One unripe watermelon (F22) was classified as ripe, and three ripe watermelons (F24, F26, and F30) were classified as unripe. Two of these four errors were low-confidence predictions, with F22 and F30 both classified at 50\% confidence.
+
+The fused system made the fewest errors, misclassifying only 2 of the 43 watermelons. Both were false negatives (F24 and F26), and the fused system produced no false positives. The acoustic and image models disagreed on 10 of the 43 watermelons, and the fused system resolved 9 of these correctly. Fusion corrected both of the image model's low-confidence misclassifications. For F22, the image prediction was Ripe at only 50\% confidence, and the acoustic result of Unripe was given priority. For F30, the image prediction was Unripe at only 50\% confidence, and the strong adaptive-window acoustic result of Ripe was given priority. Fusion also kept the image model's correct verdicts on the five unripe fruits that the acoustic model had misclassified.
+
+The two remaining errors of the fused system occurred in different ways. For F24, both the image model (Unripe at 88\% confidence) and the acoustic model predicted Unripe, so there was no correct result for the fusion rule to recover. The farmer also assessed this fruit as unripe, which suggests that F24 was a borderline case. For F26, the image model predicted Unripe at 95\% confidence, and this high-confidence result overrode the acoustic model's correct Ripe prediction. The classification performance derived from these matrices is summarized in Table~\ref{tab:classification-performance-of-the-acoustic-image-1258}.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.15799\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.22743\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.24653\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.15972\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20833\linewidth-2\tabcolsep\relax}}
+\caption{Classification Performance of the Acoustic, Image, and Fused Outputs (N = 43)}\label{tab:classification-performance-of-the-acoustic-image-1258}\\
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Accuracy}} & {\bfseries \textbf{Precision}} & {\bfseries \textbf{Recall}} & {\bfseries \textbf{F1-Score}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Accuracy}} & {\bfseries \textbf{Precision}} & {\bfseries \textbf{Recall}} & {\bfseries \textbf{F1-Score}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+Acoustic & 81.40\% & 86.49\% & 91.43\% & 88.89\% \\
+Image & 93.02\% & 97.06\% & 94.29\% & 95.65\% \\
+Fused & 95.35\% & 97.14\% & 97.14\% & 97.14\% \\
+\hline
+\end{longtable}
+\endgroup
+
+\textit{Note.} Ripe was treated as the positive class.
+
+As shown in Table~\ref{tab:classification-performance-of-the-acoustic-image-1258}, the acoustic model had the lowest performance, with an accuracy of 81.40\%. Its recall of 91.43\% shows that it detected most ripe fruits, but its tendency to classify unripe fruits as ripe lowered its precision to 86.49\%, resulting in an F1-score of 88.89\%. The image model performed considerably better, with an accuracy of 90.70\%, a precision of 96.97\%, a recall of 91.43\%, and an F1-score of 94.12\%. Its recall matched that of the acoustic model, but it produced far fewer false positives, which accounts for its higher precision.
+
+The fused system achieved the highest performance across all four metrics, with an accuracy of 95.35\%, a precision of 100\%, a recall of 94.29\%, and an F1-score of 97.06\%. Compared with the image model, fusion improved every metric. Precision rose from 96.97\% to 100\% because the false positive on F22 was removed, and recall rose from 91.43\% to 94.29\% because the ripe fruit F30 was recovered. These results suggest that the fusion rule handles low-confidence image predictions well, but could be improved in how it weighs high-confidence image predictions that conflict with the acoustic result, as seen in F26. Both remaining errors involve single fruits, however, and the field test sample is small.
+
+All three Inconclusive verdicts (F07, F10, and F12) were resolved correctly on retrial, which shows that the Inconclusive output worked as intended by flagging uncertain cases for reassessment rather than committing to an incorrect verdict. Overall, the fused system outperformed both individual models, and its accuracy of 95.35\% approached the 97.67\% achieved by the farmer assessment in Table~\ref{tab:three-way-comparison-of-system-ground-truth-and-1239}.
+
+\subsection{System Evaluation}
+
+This section evaluates the prototype from three complementary perspectives. First, its usability was assessed through the System Usability Scale (SUS) administered to 20 respondents, to determine how easily intended users can operate the device. Second, a signal-to-noise ratio (SNR) analysis was conducted to examine how clearly the acoustic tap could be distinguished from background sound, and how added noise affected the acoustic classifier. Third, the on-device inference time was measured on the deployed ESP32-S3 microcontroller to determine whether the system processes each assessment quickly enough for practical use.
+
+\subsubsection{System Usability Scale}
+
+This section presents the results of the System Usability Scale (SUS) evaluation conducted with 20 respondents. The SUS (\hyperlink{cite.brooke1996}{Brooke, 1996}) is a ten-item questionnaire rated on a five-point Likert scale, where 1 = Strongly Disagree and 5 = Strongly Agree. The questionnaire was presented in English with Cebuano translations, and the complete set of items and individual responses is provided in \hyperref[app:section-F]{Appendix~F}. Following \hyperlink{cite.brooke1996}{Brooke (1996)}, the score of each item was rescored so that the responses to positively worded items (1, 3, 5, 7, and 9) were reduced by 1 and the responses to negatively worded items (2, 4, 6, 8, and 10) were subtracted from 5. The sum of these contributions was then multiplied by 2.5 to obtain the overall SUS score on a scale of 0 to 100. To keep the item-level results comparable with Section 4.4.3, the rescored items are also reported on the 1 to 5 scale (rescored contribution + 1), where negatively worded items are marked (R) and higher values always indicate a more favorable response, using the same interpretation scale (1.00–1.80 = Poor, 1.81–2.60 = Fair, 2.61–3.40 = Good, 3.41–4.20 = Very Good, 4.21–5.00 = Excellent). Since the original SUS produces a single composite score, the items were additionally grouped under the three usability measures defined in ISO 9241-11, namely effectiveness, efficiency, and satisfaction. This grouping is an interpretive aid and is not part of the original scale. The results are summarized in Table~\ref{tab:summary-of-system-usability-scale-evaluation-res-1269}.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.55128\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.44872\linewidth-2\tabcolsep\relax}}
+\caption{Summary of System Usability Scale Evaluation Results}\label{tab:summary-of-system-usability-scale-evaluation-res-1269}\\
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Accuracy}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Model}} & {\bfseries \textbf{Accuracy}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+Effectiveness & 4.03 \\
+Efficiency & 3.24 \\
+Satisfaction & 3.88 \\
+\hline
+\textbf{Overall Mean} & 3.61 \\
+\hline
+\textbf{SUS Score (0-100)} & 65.13 \\
+\hline
+\end{longtable}
+\endgroup
+
+Under ISO 9241-11, effectiveness is the accuracy and completeness with which users achieve their intended goals when using a system. In this evaluation, it was represented by three SUS items covering ease of use, integration of functions, and consistency of system behavior, whose results are shown in Table~\ref{tab:system-effectiveness-sus-evaluation-results-1275}.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.79617\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20383\linewidth-2\tabcolsep\relax}}
+\caption{System Effectiveness (SUS) Evaluation Results}\label{tab:system-effectiveness-sus-evaluation-results-1275}\\
+\hline
+{\bfseries \textbf{Effectiveness}} & {\bfseries \textbf{4.03}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Effectiveness}} & {\bfseries \textbf{4.03}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+I thought the system was easy to use. & 4.15 \\
+I found the various functions in this system were well integrated. & 4.15 \\
+I thought there was too much inconsistency in this system. (R) & 3.80 \\
+\hline
+\end{longtable}
+\endgroup
+
+Ease of use and function integration received the highest ratings (mean = 4.15 — Very Good). All 20 respondents agreed that the system was easy to use (17 Agree, 3 Strongly Agree), and 19 of 20 agreed that its functions were well integrated, reflecting a coherent workflow from image capture to grading output. The lowest item was inconsistency (mean = 3.80 — Very Good). No respondent perceived the system as inconsistent, but 7 of 20 chose a neutral response, which is consistent with the occasional misclassifications and borderline grading decisions noted in Section 4.4.3. Overall, the mean score of 4.03 — Very Good indicates that users were able to accomplish their grading tasks effectively with the system.
+
+Under ISO 9241-11, efficiency refers to the level of resources, in terms of effort, support, and learning, that users must expend to accomplish tasks. Table~\ref{tab:system-efficiency-sus-evaluation-results-1281} presents the mean scores for the five individual items evaluated under this characteristic.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.79617\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20383\linewidth-2\tabcolsep\relax}}
+\caption{System Efficiency (SUS) Evaluation Results}\label{tab:system-efficiency-sus-evaluation-results-1281}\\
+\hline
+{\bfseries \textbf{Efficiency}} & {\bfseries \textbf{4.03}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Efficiency}} & {\bfseries \textbf{4.03}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+I found the system unnecessarily complex. (R) & 4.15 \\
+I think that I would need the support of a technical person to be able to use this system. (R) & 2.05 \\
+I would imagine that most people would learn to use this system very quickly. & 4.00 \\
+I found the system very cumbersome to use. (R) & 3.15 \\
+I needed to learn a lot of things before I could get going with this system. (R) & 1.85 \\
+\hline
+\end{longtable}
+\endgroup
+
+Perceived complexity and cumbersomeness received the highest ratings (mean = 4.15 — Very Good), with all 20 respondents disagreeing that the system was unnecessarily complex and 19 of 20 disagreeing that it was cumbersome. The belief that most people would learn the system quickly was also rated positively (mean = 4.00 — Very Good), with all respondents in agreement. In contrast, the two lowest items in the entire questionnaire belonged to this characteristic: the need for technical support (mean = 2.05 — Fair) and the need to learn many things before starting (mean = 1.85 — Fair). Nineteen of 20 respondents agreed that they would need technical support, and all 20 agreed that they needed prior learning. These results are not contradictory with the learning-speed item: they suggest that the system is simple to operate once understood, but first-time users still feel the need for orientation or guidance before using it independently. This is consistent with the absence of embedded tutorials or tooltips noted in Section 4.4.3 and with the limited technical background of many farmers. Overall, the mean score of 3.24 — Good makes efficiency the weakest area of the system's usability and identifies user onboarding and assistance as the main opportunity for improvement.
+
+Under ISO 9241-11, satisfaction refers to the comfort and acceptability of the system as perceived by its users. Table~\ref{tab:system-satisfaction-sus-evaluation-results-1287} presents the mean scores for the two individual items evaluated under this characteristic.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.79617\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20383\linewidth-2\tabcolsep\relax}}
+\caption{System Satisfaction (SUS) Evaluation Results}\label{tab:system-satisfaction-sus-evaluation-results-1287}\\
+\hline
+{\bfseries \textbf{Satisfaction}} & {\bfseries \textbf{3.88}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Satisfaction}} & {\bfseries \textbf{3.88}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+I think that I would like to use this system frequently. & 3.75 \\
+I felt very confident using the system. & 4.00 \\
+\hline
+\end{longtable}
+\endgroup
+
+Confidence in using the system received the higher rating (mean = 4.00 — Very Good), with all 20 respondents in agreement, indicating that users felt assured in operating the system. The intention to use the system frequently scored slightly lower (mean = 3.75 — Very Good), with 15 respondents in agreement and 5 neutral. No respondent selected Strongly Agree on either item, indicating that satisfaction was positive but measured. Overall, the mean score of 3.88 — Very Good shows that users were generally satisfied with the system and willing to adopt it.
+
+The sum of the rescored item contributions was 26.05 (2.75 + 3.15 + 3.15 + 1.05 + 3.15 + 2.80 + 3.00 + 3.15 + 3.00 + 0.85), which, multiplied by 2.5, yielded an overall SUS score of 65.13. This value lies between the "OK" adjective ratings of \hyperlink{cite.bangor2009}{Bangor et al. (2009)}, within the marginal acceptability range, and is slightly below the commonly cited SUS average of 68 (\hyperlink{cite.sauro2016}{Sauro \& Lewis, 2016}). The result therefore indicates that the system is acceptably usable, with strengths in ease of use, function integration, and user confidence, while the need for technical support and prior learning pulls the overall score below average. Strengthening user onboarding through embedded tutorials, tooltips, or a short orientation for first-time users is the most direct way to raise the score in future versions.
+
+\subsubsection{Signal-to-Noise Ratio (SNR) Analysis}
+
+This section examines how clearly the solenoid tap stood out from the background sound captured by the INMP441 microphone. The SNR measurements were taken from the recordings saved during data collection. During final field testing, the researchers photographed the verdict shown on the device. The device did not retain the audio or display an SNR reading, so an SNR could not be determined for individual field assessments.
+
+To estimate SNR, the first 0.3 seconds of each recording were excluded when locating the tap peak to avoid handling noise. The tap window began 20 ms before the peak and ended when the sound level stayed more than 20 dB below the peak for 30 ms, up to a maximum window length of 0.6 seconds. A segment before the tap in the same recording provided the background measurement. The samples in each segment were squared and averaged to obtain its power. Following Equation~\eqref{eq:formula-636}, the ratio of tap-window power to background power was converted to decibels by taking ten times its base-10 logarithm.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{0.875pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.33333\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.33333\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.33333\linewidth-2\tabcolsep\relax}}
+\caption{Median Signal-to-Noise Ratio of the Watermelon Tap Recordings}\label{tab:median-signal-to-noise-ratio-of-the-watermelon-t-1297}\\
+\hline
+{\bfseries \textbf{Collection site}} & {\bfseries \textbf{Ripeness}} & {\bfseries \textbf{Median SNR (dB)}} \\
+\noalign{{\color[HTML]{000000}\hrule height 0.5pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Collection site}} & {\bfseries \textbf{Ripeness}} & {\bfseries \textbf{Median SNR (dB)}} \\
+\noalign{{\color[HTML]{000000}\hrule height 0.5pt}}
+\endhead
+Market & Ripe & 29.5 \\
+Farm & Unripe & 54.0 \\
+\hline
+\end{longtable}
+\endgroup
+
+As shown in Table~\ref{tab:median-signal-to-noise-ratio-of-the-watermelon-t-1297}, the farm recordings had a median SNR of 54.0 dB, compared with 29.5 dB for the market recordings. The 24.5 dB difference indicates that the tap stood out more clearly above the background in the farm recordings. Because the tap window also contained ambient sound, these values estimate the contrast between the tap and its surroundings. As described in Section 3.6.4, the ripe watermelons were recorded at the market and the unripe watermelons at the farm. The contributions of ripeness and collection site to this difference could therefore not be determined separately.
+
+To examine how noise affected the identification of ripe fruit, copies of the same 99 test recordings were evaluated with two types of added noise at 30, 25, and 20 dB, as described in Section 4.2.1.3. One type came from recorded background sound. The other was brown noise, which concentrates more of its energy at low frequencies. Across the six conditions, the Decision Tree trained with added noise achieved a mean ripe-class F1-score of 0.964, compared with 0.950 for the tree trained without it.
+
+The deployed Decision Tree obtained an F1-score of at least 0.968 at all three levels of recorded background noise. Its largest decrease occurred under brown noise at 20 dB, where the score fell from 0.984 on the original recordings to 0.900. Of the conditions tested, strong low-frequency noise posed the greatest difficulty for the acoustic classifier.
+
+\subsubsection{Inference Time}
+
+To evaluate the system's performance efficiency, on-device execution latency was benchmarked directly on the deployed ESP32-S3 microcontroller using the identical firmware, quantized model weights, and PSRAM memory allocation used during field validation. Because the prototype operates in a sequential two-step workflow—capturing and classifying the rind image first, followed by operator repositioning of the barrel against the rind for solenoid actuation and acoustic classification—manual handling time between button presses and fixed 1.24s I2S audio capture windows (400 ms pre-trigger, 40 ms solenoid pulse, and 800 ms post-trigger recording) were excluded. High-resolution hardware timers (esp\_\allowbreak{}timer\_\allowbreak{}get\_\allowbreak{}time()) measured pure computational execution across \textit{N}=[46] consecutive assessment cycles, which is the number of times the watermelon was evaluated during testing including the three inconclusive results.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}}
+\caption{Summary of On-Device Inference and Processing Times on the ESP32-S3 (N = 46)}\label{tab:summary-of-on-device-inference-and-processing-ti-1307}\\
+\hline
+{\bfseries \textbf{Modality /\allowbreak{} Stage}} & \multicolumn{1}{>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}}{{\bfseries \textbf{Mean Inference Time (ms)}}} & \multicolumn{1}{>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}}{{\bfseries \textbf{SD (ms)}}} & \multicolumn{1}{>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}}{{\bfseries \textbf{Min–Max (ms)}}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Modality /\allowbreak{} Stage}} & \multicolumn{1}{>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}}{{\bfseries \textbf{Mean Inference Time (ms)}}} & \multicolumn{1}{>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}}{{\bfseries \textbf{SD (ms)}}} & \multicolumn{1}{>{\centering\arraybackslash}p{\dimexpr 0.25000\linewidth-2\tabcolsep\relax}}{{\bfseries \textbf{Min–Max (ms)}}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+Optical Preprocessing (\(240 \times 240\) Crop, \(224 \times 224\) CLAHE/\allowbreak{}Sharpen/\allowbreak{}LAB, \(96 \times 96\) Resize) & 1,723.102 ms & 10.354 ms & 1,682.084 – 1,747.173 ms \\
+Optical Model Inference (INT8 EfficientNet-B0) & 15,197.800 ms & 38.749 ms & 15,135.180 – 15,276.626 ms \\
+\textbf{Optical Modality Subtotal} & 16,920.902 ms & 44.020 ms & 16,830.137 – 17,007.572 ms \\
+Acoustic Modality (Windowing, 31 - Feature DSP Extraction \& Decision Tree) & 23.861 ms & 20.853 ms & 5.330 – 59.772 ms \\
+Decision Fusion (LLR Calculation + Confidence Weighting) & 0.059 ms & 0.003 ms & 0.056 – 0.070 ms \\
+\textbf{Total Computational Pipeline} & 16,944.821 ms & 43.468 ms & 16,865.080 – 17,014.104 ms \\
+\hline
+\end{longtable}
+\endgroup
+
+As summarized in Table~\ref{tab:summary-of-on-device-inference-and-processing-ti-1307}, the optical modality accounted for 99.86\% of total on-device computation time, averaging 16,920.902 ms (SD = 44.020 ms; range: 16,830.137 – 17,007.572 ms). Within this branch, optical preprocessing—comprising center-cropping of the RGB565 frame, glare reduction (tile CLAHE), sharpening, CIE brightness normalization, and downscaling—required a mean of 1,723.102 ms (SD = 10.354 ms; range: 1,682.084 – 1,747.173 ms, or 10.17\% of total compute time). INT8 EfficientNet-B0 inference executed via TensorFlow Lite Micro within the PSRAM tensor arena accounted for the remaining 15,197.800 ms (SD = 38.749 ms; range: 15,135.180 – 15,276.626 ms, or 89.69\% of total compute time), reflecting the computational cost of depthwise-separable convolutions and external Octal SPI PSRAM memory transfers on the microcontroller.
+
+In contrast, the acoustic pipeline—spanning relay-click blanking, adaptive thump window isolation, 31-feature extraction (radix-2 FFT, 128-band sparse mel filterbank, and DCT), z-score standardization, and C Decision Tree evaluation—completed in a mean of 23.861 ms (SD = 20.853 ms; range: 5.330 – 59.772 ms, or 0.14\% of total compute time), with higher variance attributable to adaptive strike-window lengths. Log-likelihood ratio (LLR) decision fusion added only 0.059 ms (SD = 0.003 ms; range: 0.056 – 0.070 ms), yielding a combined computational pipeline latency of 16,944.821 ms (SD = 43.468 ms; range: 16,865.080 – 17,014.104 ms). These results confirm that standalone bimodal classification is achievable entirely on-device without external computing hardware, with acoustic processing and decision fusion contributing negligible overhead to the visual inference stage.
+
+\section{Comparison with Related Literature}
+
+This section compares the developed watermelon ripeness assessment device with the ten studies reviewed in Chapter 2. The comparison is organized by the three main areas discussed in that chapter: acoustic signal processing, machine learning for ripeness classification, and image-based assessment. The discussion focuses on how the present study differs from the reviewed works, and the details of each study are given in Tables~\ref{tab:acoustic-measurements-used-to-assess-fruit-matur-1321} to~\ref{tab:comparison-of-related-studies-on-digital-signal-1348}.
+
+\subsection{Digital Signal Processing}
+
+Table~\ref{tab:acoustic-measurements-used-to-assess-fruit-matur-1321} compares the acoustic studies by how the sound was produced and captured, which features were extracted, and where the processing was performed. \hyperlink{cite.wongkalasin2021}{Wongkalasin et al. (2021)} transmitted tones at 129 and 172 Hz through the fruit and measured the amplitude received at those frequencies using the FFT. \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)} struck each watermelon with a spring-loaded device and identified the strongest frequency in the impulse response. They observed a decrease from 161.89 to 148.77 Hz with maturity and proposed 150 Hz or lower as a harvest indicator. \hyperlink{cite.okafor2020}{Okafor (2020)} recorded a mechanical thump and analyzed its FFT magnitude between 100 and 4,000 Hz in MATLAB on a computer. \hyperlink{cite.chen2022}{Chen et al. (2022)} instead used Morlet wavelet decomposition to characterize vibrations in pineapple, noting that tap sounds are too short and irregular to be described well by a single FFT of the whole recording.
+
+The present study also strikes the fruit, but uses a solenoid so that each tap is delivered the same way. The sound is captured by an INMP441 microphone at 16 kHz, and rather than analyzing the whole recording at once, the device isolates a short window around the thump and blanks the 25 ms relay click. This window is divided into Hann-windowed frames before the FFT is applied, and the resulting spectra are passed through a 128-band mel filterbank and a DCT to produce MFCCs. Together with spectral centroid, bandwidth, rolloff, zero-crossing rate, and RMS energy, these form a 31-feature vector. This short-time analysis addresses the limitation raised by \hyperlink{cite.chen2022}{Chen et al. (2022)} while remaining light enough to run on the ESP32-S3, where the full acoustic pipeline completed in a mean of 14.62 ms.
+
+A fixed peak-frequency threshold was not used because the relationship between dominant frequency and ripeness depended on the range examined. Within 50 to 400 Hz, the median dominant frequency was lower for ripe watermelons, consistent with \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)}. However, ripe recordings also carried more energy between about 551 and 1,417 Hz, so when the range extended to 2,000 Hz the median for ripe recordings was more than twice that of unripe recordings. Spectral centroid, which summarizes where this energy is concentrated, accounted for about 0.90 of the deployed model's feature importance, while the MFCCs contributed relatively little. Part of this higher-frequency energy may reflect collection conditions rather than ripeness itself, since ripe watermelons were recorded on market display surfaces while unripe watermelons were recorded on the vine, whereas \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)} tested all their fruit detached and on the same holder.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.24566\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.31886\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.43548\linewidth-2\tabcolsep\relax}}
+\caption{Acoustic measurements used to assess fruit maturity}\label{tab:acoustic-measurements-used-to-assess-fruit-matur-1321}\\
+\hline
+{\bfseries \textbf{Author(s)}} & {\bfseries \textbf{Excitation and capture}} & {\bfseries \textbf{Feature or decision rule}} \\
+\noalign{{\color[HTML]{000000}\hrule height 0.75pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Author(s)}} & {\bfseries \textbf{Excitation and capture}} & {\bfseries \textbf{Feature or decision rule}} \\
+\noalign{{\color[HTML]{000000}\hrule height 0.75pt}}
+\endhead
+\hyperlink{cite.wongkalasin2021}{Wongkalasin et al. (2021)} & Transmitted tones, vibration sensor & Received amplitude at 129 and 172 Hz \\
+\hyperlink{cite.pamungkas2021}{Pamungkas \& Bintoro (2021)} & Spring-loaded knock, clip-on microphone & Dominant frequency and magnitude \\
+\hyperlink{cite.chen2022}{Chen et al. (2022)} & Induced vibration, acoustic coupler & Wavelet features from pineapple vibrations \\
+\hyperlink{cite.okafor2020}{Okafor (2020)} & Mechanical thump, microphone & FFT magnitude threshold of 0.00025 \\
+\noalign{{\color[HTML]{000000}\hrule height 0.75pt}}
+\textbf{This Study (2026)} & Solenoid-driven tap, INMP441 microphone at 16 kHz & 31 features (13 MFCC means and SDs, spectral centroid, bandwidth, rolloff, ZCR, RMS energy) \\
+\noalign{{\color[HTML]{999999}\hrule height 1.5pt}}
+\end{longtable}
+\endgroup
+
+\textit{Note.} MFCC = mel-frequency cepstral coefficient; ZCR = zero-crossing rate; SD = standard deviation.
+
+\subsection{Machine Learning for Ripeness Classification}
+
+Table~\ref{tab:classifier-performance-in-the-reviewed-studies-a-1330} compares the classifiers used in the reviewed studies and the present study, together with the performance each reported, with precision, recall, and F1 given for the ripe class and dashes marking values a study did not report. \hyperlink{cite.arboleda2020}{Arboleda et al. (2020)} used a single classifier, a support vector machine trained on near-infrared reflectance at 730, 760, 810, and 860 nm from 200 Sweet Gold watermelons. On 40 fruit from a separate farm, it correctly classified 37 (92.5\%), identifying all 20 ripe fruit but labeling three unripe fruit as ripe. Since the authors did not report an F1 score, the value in Table~\ref{tab:classifier-performance-in-the-reviewed-studies-a-1330} was computed from this result.
+
+\hyperlink{cite.ibba2021}{Ibba et al. (2021)} compared six classifiers on bioimpedance measurements from 923 strawberries, combining backward feature selection and grid search under tenfold cross-validation with 10,000-round bootstrap validation before testing on an unseen external set of 239 fruit. Only the multilayer perceptrons improved from training to testing, with the single-layer network reaching the highest test F1 of 0.722. \hyperlink{cite.worasawate2022}{Worasawate et al. (2022)} labeled 100 mangoes by k-means clustering of their total soluble solids and titratable acidity, then trained Gaussian naive Bayes, support vector machine, and feedforward neural network classifiers on weight, skin color, and capacitance measurements. Balancing the classes with SMOTETomek raised the two-class accuracy of the neural network from 85.0\% to 93.6\% and of the support vector machine from 75.0\% to 91.1\% under fourfold cross-validation, and Table~\ref{tab:classifier-performance-in-the-reviewed-studies-a-1330} shows their results after balancing. Because these studies differ in fruit, input measurement, and evaluation metric, their scores are not directly comparable.
+
+The present study compared seven classifiers on the 31 acoustic features, tuning each through cross-validated search before evaluating it on 99 held-out recordings, similar to the pipeline described by \hyperlink{cite.ibba2021}{Ibba et al. (2021)}. Ripe fruit accounted for 31 of these recordings, so a rule that labeled every recording unripe would have reached 68.69\% accuracy while missing every ripe fruit. Ripe-class F1 was therefore used to evaluate the harvest decision, for the same reason Ibba et al. chose the F-score over accuracy for their skewed classes. The tuned Decision Tree recognized 30 of the 31 ripe recordings and all 68 unripe recordings, giving a ripe-class F1 of 0.984. Its only error was a ripe fruit labeled unripe, the opposite of the errors made by the classifier of \hyperlink{cite.arboleda2020}{Arboleda et al. (2020)}, where unripe fruit were labeled ripe.
+
+The Decision Tree result also differs from that of \hyperlink{cite.ibba2021}{Ibba et al. (2021)}, whose decision tree had the largest drop in F1 from training to testing, falling from 0.715 to 0.470. In the present study, tuning limited the tree to a depth of three with at least 15 samples per leaf, which raised its test F1 from 0.933 to 0.984. However, the bootstrap confidence intervals of the top five classifiers overlapped (Section 4.2.1.3), so their differences in F1 were not statistically meaningful, and the final choice was made on deployability. Among the reviewed studies, only \hyperlink{cite.arboleda2020}{Arboleda et al. (2020)} ran their classifier on the device, using a Raspberry Pi Zero W, while \hyperlink{cite.ibba2021}{Ibba et al. (2021)} left on-device classification to future work and \hyperlink{cite.worasawate2022}{Worasawate et al. (2022)} evaluated their models in Python. The selected Decision Tree was converted to C for the ESP32-S3, where it matched its Python predictions on all 99 test recordings and added about 0.05 KB of flash memory, compared with 71.72 KB for the support vector machine.
+
+\FloatBarrier
+\begin{landscape}
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.16867\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.16867\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.19980\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11847\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.12751\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11446\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.10241\linewidth-2\tabcolsep\relax}}
+\caption{Classifier Performance in the Reviewed Studies and the Present Study}\label{tab:classifier-performance-in-the-reviewed-studies-a-1330}\\
+\hline
+{\bfseries \textbf{Study}} & {\bfseries \textbf{Classifiers compared}} & {\bfseries \textbf{Best classifier}} & {\bfseries \textbf{Accuracy (\%)}} & {\bfseries \textbf{Precision}} & {\bfseries \textbf{Recall}} & {\bfseries \textbf{F1}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Study}} & {\bfseries \textbf{Classifiers compared}} & {\bfseries \textbf{Best classifier}} & {\bfseries \textbf{Accuracy (\%)}} & {\bfseries \textbf{Precision}} & {\bfseries \textbf{Recall}} & {\bfseries \textbf{F1}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+\hyperlink{cite.arboleda2020}{Arboleda et al. (2020)} & SVM only & SVM & 92.5 & 0.87 & 1.00 & 0.93 \\
+\hyperlink{cite.ibba2021}{Ibba et al. (2021)} & LR, DT, NB, KNN, SVM, MLP (1 and 2 layers) & MLP, 1 layer & – & – & – & 0.722 \\
+\hyperlink{cite.worasawate2022}{Worasawate et al. (2022)} & GNB, SVM, FANN & FANN & 93.6 & 0.914 & – & – \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+This Study (2026) & NB, SVM, DT, RF, XGBoost, LR, KNN & Decision Tree & 99.0 & 1.000 & 0.968 & 0.984 \\
+\hline
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\subsection{Deep Learning}
+
+Table~\ref{tab:comparison-of-related-deep-learning-studies-and-1341} compares three uses of images in crop assessment. \hyperlink{cite.xu2024}{Xu et al. (2024)} addressed the task closest to the present application: identifying ripeness from a photograph of a growing melon. Their detector first had to locate muskmelons in a greenhouse scene and assign each fruit a ripeness class. YOLOv8n achieved 88.31\% mean average precision (mAP), while their modified YOLO-RFEW reached 90.82\%, a gain of 2.51 percentage points on the same task. In the present device, the operator frames one watermelon before taking a photograph. The image model therefore makes one ripe or unripe prediction for the selected fruit.
+
+\hyperlink{cite.qi2024}{Qi et al. (2024)} smoothed and normalized near-infrared spectra from watermelon seeds before comparing five classifiers on both full and selected wavelength bands. On the full-band test set, XGBoost reached 65.46\% accuracy, SVM reached 78.01\%, and ResNet reached 86.77\%. A weighted ensemble of LeNet, GoogLeNet, and ResNet reached 87.97\% across ten varieties. The useful comparison with the present study is how each system combines evidence. Qi et al. pooled outputs from networks observing the same seed spectrum. The present device combines predictions from two different measurements of the same fruit, its rind photograph and its response to a tap.
+
+\hyperlink{cite.shah2025}{Shah et al. (2025)} segmented muskmelon leaves and fruit with U\textsuperscript{2}-Net and compared eleven CNN architectures for estimating nutrients and sugars. Which model performed best depended on the substance being measured and the camera used. MobileNetV3-Large reached an R\textsuperscript{2} of 0.958 for leaf nitrogen from hyperspectral images, while RegNetY-8GF reached the same R\textsuperscript{2} for fruit sucrose from RGB images. The latter result supports examining RGB photographs for information related to fruit quality. Its endpoint was a measured sugar concentration, however, so it gives no binary accuracy for a harvest decision.
+
+The present study divided 485 rind photographs into 388 training, 48 validation, and 49 test images. It evaluated eight architectures with 17 optimizer configurations each and retained the run with the lowest validation loss for each architecture. It compared those models on 96 \ensuremath{\times} 96 RGB rind photographs and evaluated the models again after conversion for the ESP32-S3. Before conversion, EfficientNet-B0 and EfficientNet-Lite0 each classified 47 of 49 held-out photographs correctly. After conversion, their results diverged: EfficientNet-B0 classified 48 correctly, while EfficientNet-Lite0 classified 40. Quantized EfficientNet-B0 was therefore selected for the device, with 97.96\% accuracy and a macro F1 of 0.9796. The quantized model recognized all 24 unripe images and 24 of 25 ripe images. Testing the converted models mattered because the tie observed during model development would otherwise have concealed an eight-image difference at deployment.
+
+\FloatBarrier
+\begin{landscape}
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.14286\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.14286\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.14039\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.17365\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11453\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.14286\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.14286\linewidth-2\tabcolsep\relax}}
+\caption{Comparison of Related Deep Learning Studies and the Present Study}\label{tab:comparison-of-related-deep-learning-studies-and-1341}\\
+\hline
+{\bfseries \textbf{Author(s)}} & {\bfseries \textbf{Technology Used}} & {\bfseries \textbf{Processing Technique}} & {\bfseries \textbf{Architecture}} & {\bfseries \textbf{Portability}} & {\bfseries \textbf{Primary Limitation}} & {\bfseries \textbf{Metrics}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries \textbf{Author(s)}} & {\bfseries \textbf{Technology Used}} & {\bfseries \textbf{Processing Technique}} & {\bfseries \textbf{Architecture}} & {\bfseries \textbf{Portability}} & {\bfseries \textbf{Primary Limitation}} & {\bfseries \textbf{Metrics}} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+\hyperlink{cite.qi2024}{Qi et al. (2024)} & NIR hyperspectral camera (1053–1681 nm, 256 bands) & Successive Projections Algorithm (SPA) band selection; Savitzky-Golay smoothing; Standard Normal Variate (SNV) normalization & SVM, XGBoost; 1D CNN ensemble (LeNet, GoogLeNet, ResNet) with weighted scoring mechanism & Yes & Cannot distinguish co-occurring same-color objects; requires sufficient color contrast & Weighted ensemble accuracy: 87.97\%; SPA reduces 256 bands to discriminative subset \\
+\hyperlink{cite.xu2024}{Xu et al. (2024)} & RGB camera (greenhouse environment) & RFAConv backbone, C2f-FE module (FasterNet + EMA attention), WIoU loss function & YOLO-RFEW (enhanced YOLOv8n) & Yes & Visual cues only;\par no internal ripeness\par assessment;\par designed for greenhouse\par robotics & Precision: 93.16\%; Recall: 83.22\%; F1: 87.91\%; mAP: 90.82\%; Model size: 4.75 MB; Inference: 1.5 ms \\
+\hyperlink{cite.shah2025}{Shah et al. (2025)} & Specim IQ portable hyperspectral camera (400–1000 nm, 204 bands); SONY A7R3 RGB camera & SPA band selection, U\textsuperscript{2}Net image segmentation, RGB and HSI preprocessing pipelines & 11 CNN architectures trained from scratch: ResNet18, ResNet101, SqueezeNet, ShuffleNet, MobileNet-v2, MobileNet-v3-l, RegNet-y-800mf, RegNet-y-8gf, EfficientNet-v2-s & Limited & Greenhouse only; limited cultivar diversity; expensive HSI hardware required & N (HSI): R\textsuperscript{2}=0.958 (MobileNet-v3-l); K (HSI): R\textsuperscript{2}=0.947 (MobileNet-v2); Reducing sugar (RGB): R\textsuperscript{2}=0.936 (ResNet18); Sucrose (RGB): R\textsuperscript{2}=0.958 (RegNet-y-8gf); RGB outperforms HSI for sugar \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\textbf{This Study (2026)} & OV5640 RGB camera on a handheld ESP32-S3 device & Rind images resized to 96 \ensuremath{\times} 96 pixels for RGB classification & EfficientNet-B0 (INT8) & Yes & Image assessment uses external rind features & Accuracy 97.96\%, macro precision 98.00\%, macro recall 98.00\%, macro F1 97.96\% (49 test images) \\
+\hline
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\subsection{Synthesis}
+
+Table~\ref{tab:comparison-of-related-studies-on-digital-signal-1348} compares the ten reviewed studies with the present study in terms of crop, sensing method, classification approach, and assessment target. \hyperlink{cite.wongkalasin2021}{Wongkalasin et al. (2021)}, \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)}, and \hyperlink{cite.okafor2020}{Okafor (2020)} assessed watermelon maturity from its acoustic response, while \hyperlink{cite.arboleda2020}{Arboleda et al. (2020)} classified watermelon ripeness using near-infrared reflectance. \hyperlink{cite.worasawate2022}{Worasawate et al. (2022)} combined several measurements from the same mango, using skin color, weight, and capacitance to classify ripeness. The present study likewise draws on more than one measurement, pairing a solenoid-driven tap with an RGB photograph of the rind while the watermelon is still on the vine. A decision tree evaluates the tap sound, quantized EfficientNet-B0 evaluates the photograph, and the ESP32-S3 combines their predictions into a single harvest verdict. Across 43 Sweet 16 F1 watermelons assessed at the Balubal farm, cut-fruit inspection confirmed 35 acoustic predictions, 40 image predictions, and 41 fused verdicts (95.35\%). Three fruit required a second assessment. In this field trial, combining the two measurements correctly identified one additional ripe watermelon compared with the image model alone.
+
+\FloatBarrier
+\begin{landscape}
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.18378\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.27123\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.27123\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.27376\linewidth-2\tabcolsep\relax}}
+\caption{Comparison of related studies on Digital Signal Processing, Machine Learning, and Deep Learning for fruit ripeness assessment}\label{tab:comparison-of-related-studies-on-digital-signal-1348}\\
+\hline
+{\bfseries \textbf{Author(s)}} & {\bfseries \textbf{Crop and measurement}} & {\bfseries \textbf{Architectures, classifiers, or decision rule}} & {\bfseries \textbf{Assessment target or outcome}} \\
+\hline
+\endfirsthead
+\hline
+{\bfseries \textbf{Author(s)}} & {\bfseries \textbf{Crop and measurement}} & {\bfseries \textbf{Architectures, classifiers, or decision rule}} & {\bfseries \textbf{Assessment target or outcome}} \\
+\hline
+\endhead
+\hyperlink{cite.wongkalasin2021}{Wongkalasin et al. (2021)} & Watermelon, transmitted tones & Feedforward artificial neural network using FFT amplitudes at 129 and 172 Hz & Not fully ripe, ripe, or near rotten \\
+\hyperlink{cite.pamungkas2021}{Pamungkas \& Bintoro (2021)} & Watermelon, spring-loaded knock & Dominant-frequency threshold of 150 Hz or lower & Harvest maturity \\
+\hyperlink{cite.chen2022}{Chen et al. (2022)} & Pineapple, induced vibration & Wavelet kernel decomposition, unsupervised clustering, then AdaBoost classification & Ripeness screening on acoustic frames \\
+\hyperlink{cite.okafor2020}{Okafor (2020)} & Watermelon, mechanical thump & FFT magnitude threshold of 0.00025 & Ripeness \\
+\hyperlink{cite.arboleda2020}{Arboleda et al. (2020)} & Watermelon, near-infrared reflectance & Support vector machine (SVM) & Ripe or unripe, 92.5\% accuracy \\
+\hyperlink{cite.qi2024}{Qi et al. (2024)} & Watermelon seeds, near-infrared hyperspectral images & One-dimensional LeNet, GoogLeNet, and ResNet, each with full and selected bands, plus a weighted scoring ensemble & Ten seed varieties, 87.97\% ensemble accuracy \\
+\hyperlink{cite.xu2024}{Xu et al. (2024)} & Muskmelon, greenhouse RGB images & YOLO-RFEW & Fruit detection by ripeness class, 90.82\% mean average precision for YOLO-RFEW \\
+\hyperlink{cite.shah2025}{Shah et al. (2025)} & Muskmelon leaves and fruit, RGB and hyperspectral images & RegNetY-8GF & Leaf nutrients and fruit sugars, RGB sucrose regression R\textsuperscript{2} of 0.958 for RegNetY-8GF \\
+\hline
+\textbf{This Study (2026)} & Sweet 16 F1 watermelon, solenoid tap and 96 \ensuremath{\times} 96 RGB rind image & Acoustic: naïve Bayes, SVM, decision tree, random forest, XGBoost, logistic regression, KNN. Image: MobileNetV1, MobileNetV2, MobileNetV3-Small, ShuffleNetV1, ShuffleNetV2, SqueezeNet 1.1, EfficientNet-Lite0, EfficientNet-B0. Deployed: decision tree and quantized EfficientNet-B0 with log-likelihood ratio weighting. & Preharvest ripe or unripe verdict, with retest when evidence is inconclusive. Of 43 definitive first attempts, 41 agreed with flesh inspection. \\
+\hline
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\par}

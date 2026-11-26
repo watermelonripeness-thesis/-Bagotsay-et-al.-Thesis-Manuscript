@@ -1,0 +1,39 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.synctex.gz
+*.synctex.gz(busy)
+*.synctex(busy)
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.bcf
+*.run.xml
+*.xdv
+
+# Editor backups
+*.bak
+*.tmp
+*~
+*.swp
+*.backup
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Overleaf
+.overleaf*
