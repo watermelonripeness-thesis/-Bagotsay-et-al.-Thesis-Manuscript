@@ -4,15 +4,19 @@
 \def\toclevel@section{0}
 \makeatother
 
+\makeatletter
 \newcommand{\thesisappendix}[2]{%
   \clearpage
-  \phantomsection\label{app:section-#1}
+  \phantomsection
+  \def\@currentlabel{#1}%
+  \label{app:section-#1}%
   \addcontentsline{toc}{section}{Appendix #1. #2}%
   {\centering\normalfont\bfseries
     Appendix #1\par\nobreak\smallskip
     #2\par}%
   \nobreak\medskip
 }
+\makeatother
 
 
 \makeatletter
