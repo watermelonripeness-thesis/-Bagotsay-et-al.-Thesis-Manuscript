@@ -1,4 +1,4 @@
-# Watermelon ripeness thesis manuscript
+# DESIGN AND DEVELOPMENT OF A PORTABLE MULTIMODAL ACOUSTIC–OPTICAL SYSTEM FOR REAL-TIME WATERMELON RIPENESS EVALUATION
 
 The main document is `thesis.TEX` (uppercase extension). Select this file as the main document in Overleaf and use pdfLaTeX. For a local build with TeX Live, run the following commands in the project root.
 
