@@ -668,11 +668,11 @@ Building and testing the device successfully met Objective 2 of the study. It pr
 
 \section{Validation of System Accuracy and Usability}
 
-This section presents the validation and evaluation of the developed portable multimodal acoustic–optical system for watermelon ripeness evaluation in accordance with Objective 2: to validate the system's classification accuracy and evaluate its usability and operational performance. The validation was conducted through actual field testing, wherein the system's ripe and unripe classifications were compared against the farmer's manual inspection of the same watermelon samples, which served as the reference classification. The classification results were analyzed using system accuracy, while Cohen's Kappa was employed to further quantify the degree of agreement between the system and the farmer's assessment. Furthermore, the system was evaluated based on selected non-functional requirements, particularly usability and performance, through the System Usability Scale (SUS) questionnaire and processing time measurements. These evaluations provide an assessment of the system's classification effectiveness, ease of use, and operational efficiency under actual testing conditions.
+This section presents the validation and evaluation of the developed portable multimodal acoustic–optical system for watermelon ripeness evaluation in accordance with Objective 3: to validate the system's classification accuracy and evaluate its usability and operational performance. The validation was conducted through actual field testing, wherein the system's ripe and unripe classifications were compared against the farmer's manual inspection of the same watermelon samples, which served as the reference classification. The classification results were analyzed using system accuracy, while Cohen's Kappa was employed to further quantify the degree of agreement between the system and the farmer's assessment. Furthermore, the system was evaluated based on selected non-functional requirements, particularly usability and performance, through the System Usability Scale (SUS) questionnaire and processing time measurements. These evaluations provide an assessment of the system's classification effectiveness, ease of use, and operational efficiency under actual testing conditions.
 
 \subsection{Actual Testing System Accuracy}
 
-This section presents the actual field testing results of the watermelon ripeness detection system using 46 sweet-16 watermelons collected from the Brgy. Balubal farm in Cagayan de Oro City. Each sample was assessed by three independent raters: (1) the automated system, which produced a definitive output of either Ripe or Unripe or an abstention labeled Inconclusive; (2) an experienced farm harvester acting as the farmer reference, who provided a binary Ripe/Unripe manual assessment; and (3) destructive ground truth, established by cutting the fruit and verifying internal flesh condition against the established ripeness threshold.
+This section presents the actual field testing results of the watermelon ripeness detection system from 46 assessments of 43 Sweet 16 watermelons collected from the Brgy. Balubal farm in Cagayan de Oro City. Each sample was assessed by three independent raters: (1) the automated system, which produced a definitive output of either Ripe or Unripe or an abstention labeled Inconclusive; (2) an experienced farm harvester acting as the farmer reference, who provided a binary Ripe/Unripe manual assessment; and (3) destructive ground truth, established by cutting the fruit and verifying internal flesh condition against the established ripeness threshold.
 
 Agreement between the system and the farmer was quantified using Cohen's kappa on the 2\ensuremath{\times}2 confusion matrix of definitive classifications. Samples for which the system returned an inconclusive result were excluded from the kappa computation and are reported separately as the system's inconclusive rate. Accuracy, precision, recall, and F1-score were computed against destructive ground truth, and the farmer's manual accuracy was also evaluated against the same reference standard to allow a three-way comparison.
 
@@ -845,8 +845,8 @@ The two remaining errors of the fused system occurred in different ways. For F24
 \noalign{{\color[HTML]{000000}\hrule height 1pt}}
 \endhead
 Acoustic & 81.40\% & 86.49\% & 91.43\% & 88.89\% \\
-Image & 93.02\% & 97.06\% & 94.29\% & 95.65\% \\
-Fused & 95.35\% & 97.14\% & 97.14\% & 97.14\% \\
+Image & 90.70\% & 96.97\% & 91.43\% & 94.12\% \\
+\textbf{Fused} & \textbf{95.35\%} & \textbf{100\%} & \textbf{94.29\%} & \textbf{97.06\%} \\
 \hline
 \end{longtable}
 \endgroup
@@ -865,118 +865,94 @@ This section evaluates the prototype from three complementary perspectives. Firs
 
 \subsubsection{System Usability Scale}
 
-This section presents the results of the System Usability Scale (SUS) evaluation conducted with 20 respondents. The SUS (\hyperlink{cite.brooke1996}{Brooke, 1996}) is a ten-item questionnaire rated on a five-point Likert scale, where 1 = Strongly Disagree and 5 = Strongly Agree. The questionnaire was presented in English with Cebuano translations, and the complete set of items and individual responses is provided in \hyperref[app:section-F]{Appendix~F}. Following \hyperlink{cite.brooke1996}{Brooke (1996)}, the score of each item was rescored so that the responses to positively worded items (1, 3, 5, 7, and 9) were reduced by 1 and the responses to negatively worded items (2, 4, 6, 8, and 10) were subtracted from 5. The sum of these contributions was then multiplied by 2.5 to obtain the overall SUS score on a scale of 0 to 100. To keep the item-level results comparable with Section 4.4.3, the rescored items are also reported on the 1 to 5 scale (rescored contribution + 1), where negatively worded items are marked (R) and higher values always indicate a more favorable response, using the same interpretation scale (1.00–1.80 = Poor, 1.81–2.60 = Fair, 2.61–3.40 = Good, 3.41–4.20 = Very Good, 4.21–5.00 = Excellent). Since the original SUS produces a single composite score, the items were additionally grouped under the three usability measures defined in ISO 9241-11, namely effectiveness, efficiency, and satisfaction. This grouping is an interpretive aid and is not part of the original scale. The results are summarized in Table~\ref{tab:summary-of-system-usability-scale-evaluation-res-1269}.
+The perceived usability of the prototype was measured with the System Usability Scale (SUS) developed by \citet{brooke1996}. The instrument has ten statements that alternate between positive and negative wording, each rated from 1 (Strongly Disagree) to 5 (Strongly Agree). It was administered to 20 respondents after they had used the system, with each English statement accompanied by a Cebuano translation. The tallied responses are provided in \hyperref[app:section-F]{Appendix~F}.
 
-\FloatBarrier
-\begingroup
-\small
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.14}
-\setlength{\arrayrulewidth}{1.5pt}
-\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.55128\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.44872\linewidth-2\tabcolsep\relax}}
-\caption{Summary of System Usability Scale Evaluation Results}\label{tab:summary-of-system-usability-scale-evaluation-res-1269}\\
-\hline
-{\bfseries \textbf{Model}} & {\bfseries \textbf{Accuracy}} \\
-\noalign{{\color[HTML]{000000}\hrule height 1pt}}
-\endfirsthead
-\hline
-{\bfseries \textbf{Model}} & {\bfseries \textbf{Accuracy}} \\
-\noalign{{\color[HTML]{000000}\hrule height 1pt}}
-\endhead
-Effectiveness & 4.03 \\
-Efficiency & 3.24 \\
-Satisfaction & 3.88 \\
-\hline
-\textbf{Overall Mean} & 3.61 \\
-\hline
-\textbf{SUS Score (0-100)} & 65.13 \\
-\hline
-\end{longtable}
-\endgroup
+Scoring followed \citet{brooke1996}. For the positively worded items (1, 3, 5, 7, and 9), the contribution of each item is its mean rating minus 1, and for the negatively worded items (2, 4, 6, 8, and 10) it is 5 minus the mean rating. The ten contributions, each between 0 and 4, were summed and multiplied by 2.5 to give a single composite score from 0 to 100. To describe the results at the item level, each item was also expressed on a 1 to 5 scale in which a higher value always means a more favorable response. Negatively worded items, marked (R), were reversed by subtracting the mean from 6, and the means were interpreted with the same ranges used in the other evaluation sections (1.00--1.80 = Poor, 1.81--2.60 = Fair, 2.61--3.40 = Good, 3.41--4.20 = Very Good, 4.21--5.00 = Excellent). Brooke intended SUS to yield one composite score, so the ten items were additionally grouped under the three components of usability in ISO 9241-11: effectiveness (items 3, 5, and 6), efficiency (items 2, 4, 7, 8, and 10), and satisfaction (items 1 and 9). This grouping is an interpretive aid and is not part of the original instrument. Table~\ref{tab:sus-summary} summarizes the results.
 
-Under ISO 9241-11, effectiveness is the accuracy and completeness with which users achieve their intended goals when using a system. In this evaluation, it was represented by three SUS items covering ease of use, integration of functions, and consistency of system behavior, whose results are shown in Table~\ref{tab:system-effectiveness-sus-evaluation-results-1275}.
+\begin{table}[htbp]
+\centering
+\caption{Summary of System Usability Scale Evaluation Results}
+\label{tab:sus-summary}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Model} & \textbf{Mean Score} & \textbf{Interpretation} \\
+\midrule
+Effectiveness & 4.03 & Very Good \\
+Efficiency & 4.08 & Very Good \\
+Satisfaction & 3.88 & Very Good \\
+\midrule
+\textbf{Overall Mean} & \textbf{4.03} & \textbf{Very Good} \\
+\midrule
+\textbf{SUS Score (0--100)} & \textbf{75.63} & \textbf{Good} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\FloatBarrier
-\begingroup
-\small
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.14}
-\setlength{\arrayrulewidth}{1.5pt}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.79617\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20383\linewidth-2\tabcolsep\relax}}
-\caption{System Effectiveness (SUS) Evaluation Results}\label{tab:system-effectiveness-sus-evaluation-results-1275}\\
-\hline
-{\bfseries \textbf{Effectiveness}} & {\bfseries \textbf{4.03}} \\
-\noalign{{\color[HTML]{000000}\hrule height 1pt}}
-\endfirsthead
-\hline
-{\bfseries \textbf{Effectiveness}} & {\bfseries \textbf{4.03}} \\
-\noalign{{\color[HTML]{000000}\hrule height 1pt}}
-\endhead
+The summed item contributions were 30.25, which, multiplied by 2.5, gave an overall SUS score of 75.63 out of 100. Following the interpretation of \citet{bangor2009}, scores of 70 to 84 correspond to a ``Good'' adjective rating, so the system falls within this band. The response pattern behind the score is consistent. Of the 200 responses collected (20 respondents $\times$ 10 items), 185 (92.5\%) were favorable, 15 (7.5\%) were neutral, and none were unfavorable. No item received an unfavorable answer from any respondent, and every item reached the Very Good range on the 1 to 5 scale.
+
+Under ISO 9241-11, effectiveness is the accuracy and completeness with which users achieve their intended goals when using a system. In this evaluation, it was represented by three SUS items covering ease of use, integration of functions, and consistency of system behavior, whose results are shown in Table~\ref{tab:sus-effectiveness}.
+
+\begin{table}[htbp]
+\centering
+\caption{System Effectiveness (SUS) Evaluation Results}
+\label{tab:sus-effectiveness}
+\begin{tabularx}{\textwidth}{Xc}
+\toprule
+\textbf{Effectiveness} & \textbf{4.03} \\
+\midrule
 I thought the system was easy to use. & 4.15 \\
 I found the various functions in this system were well integrated. & 4.15 \\
 I thought there was too much inconsistency in this system. (R) & 3.80 \\
-\hline
-\end{longtable}
-\endgroup
+\bottomrule
+\end{tabularx}
+\end{table}
 
-Ease of use and function integration received the highest ratings (mean = 4.15 — Very Good). All 20 respondents agreed that the system was easy to use (17 Agree, 3 Strongly Agree), and 19 of 20 agreed that its functions were well integrated, reflecting a coherent workflow from image capture to grading output. The lowest item was inconsistency (mean = 3.80 — Very Good). No respondent perceived the system as inconsistent, but 7 of 20 chose a neutral response, which is consistent with the occasional misclassifications and borderline grading decisions noted in Section 4.4.3. Overall, the mean score of 4.03 — Very Good indicates that users were able to accomplish their grading tasks effectively with the system.
+The effectiveness items averaged 4.03 (Very Good). All 20 respondents agreed that the system was easy to use (17 Agree, 3 Strongly Agree), and 19 of 20 agreed that its functions were well integrated, with 4 selecting Strongly Agree and 1 remaining neutral. This suggests that the stages of the workflow, from image capture to the grading output, were experienced as connected parts of one tool. The inconsistency item was the lowest in this group (3.80, Very Good). Thirteen respondents disagreed that the system was inconsistent (3 of them strongly), none agreed, and 7 chose the neutral option. These neutral responses may reflect the occasional misclassifications or inconclusive outputs encountered during testing, although the questionnaire did not ask respondents to explain their answers. Overall, users judged the system as effective for the grading task, with consistency of behavior being the aspect with the most room to improve.
 
-Under ISO 9241-11, efficiency refers to the level of resources, in terms of effort, support, and learning, that users must expend to accomplish tasks. Table~\ref{tab:system-efficiency-sus-evaluation-results-1281} presents the mean scores for the five individual items evaluated under this characteristic.
+Under ISO 9241-11, efficiency is the amount of effort and resources users must spend to achieve their goals. Here, it was represented by five SUS items covering complexity, need for technical support, speed of learning, ease of handling, and the amount of prior learning required, as presented in Table~\ref{tab:sus-efficiency}.
 
-\FloatBarrier
-\begingroup
-\small
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.14}
-\setlength{\arrayrulewidth}{1.5pt}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.79617\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20383\linewidth-2\tabcolsep\relax}}
-\caption{System Efficiency (SUS) Evaluation Results}\label{tab:system-efficiency-sus-evaluation-results-1281}\\
-\hline
-{\bfseries \textbf{Efficiency}} & {\bfseries \textbf{4.03}} \\
-\noalign{{\color[HTML]{000000}\hrule height 1pt}}
-\endfirsthead
-\hline
-{\bfseries \textbf{Efficiency}} & {\bfseries \textbf{4.03}} \\
-\noalign{{\color[HTML]{000000}\hrule height 1pt}}
-\endhead
+\begin{table}[htbp]
+\centering
+\caption{System Efficiency (SUS) Evaluation Results}
+\label{tab:sus-efficiency}
+\begin{tabularx}{\textwidth}{Xc}
+\toprule
+\textbf{Efficiency} & \textbf{4.08} \\
+\midrule
 I found the system unnecessarily complex. (R) & 4.15 \\
-I think that I would need the support of a technical person to be able to use this system. (R) & 2.05 \\
+I think that I would need the support of a technical person to be able to use this system. (R) & 3.95 \\
 I would imagine that most people would learn to use this system very quickly. & 4.00 \\
-I found the system very cumbersome to use. (R) & 3.15 \\
-I needed to learn a lot of things before I could get going with this system. (R) & 1.85 \\
-\hline
-\end{longtable}
-\endgroup
+I found the system very cumbersome to use. (R) & 4.15 \\
+I needed to learn a lot of things before I could get going with this system. (R) & 4.15 \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
-Perceived complexity and cumbersomeness received the highest ratings (mean = 4.15 — Very Good), with all 20 respondents disagreeing that the system was unnecessarily complex and 19 of 20 disagreeing that it was cumbersome. The belief that most people would learn the system quickly was also rated positively (mean = 4.00 — Very Good), with all respondents in agreement. In contrast, the two lowest items in the entire questionnaire belonged to this characteristic: the need for technical support (mean = 2.05 — Fair) and the need to learn many things before starting (mean = 1.85 — Fair). Nineteen of 20 respondents agreed that they would need technical support, and all 20 agreed that they needed prior learning. These results are not contradictory with the learning-speed item: they suggest that the system is simple to operate once understood, but first-time users still feel the need for orientation or guidance before using it independently. This is consistent with the absence of embedded tutorials or tooltips noted in Section 4.4.3 and with the limited technical background of many farmers. Overall, the mean score of 3.24 — Good makes efficiency the weakest area of the system's usability and identifies user onboarding and assistance as the main opportunity for improvement.
+Efficiency obtained the highest component mean (4.08, Very Good), which is important for a tool intended for users with limited technical background. All 20 respondents disagreed that the system was unnecessarily complex (3 strongly), and all 20 disagreed that they needed to learn many things before they could begin (3 strongly). Nineteen of 20 disagreed that the system was cumbersome, with one neutral, and all 20 agreed that most people would learn to use it quickly. Together, these answers indicate that respondents saw the system as simple to pick up and not demanding to operate. The need for technical support received the lowest rating in this group (3.95, Very Good). Nineteen respondents disagreed that they would need help from a technical person, but none disagreed strongly and one was neutral, so this was the item on which respondents were slightly more cautious. This may reflect how respondents interpreted ``technical person'' in the Cebuano translation, or a reasonable wish for initial guidance during first use, but this was not examined directly. Overall, the results suggest that the prototype can be operated by its intended users without specialized training.
 
-Under ISO 9241-11, satisfaction refers to the comfort and acceptability of the system as perceived by its users. Table~\ref{tab:system-satisfaction-sus-evaluation-results-1287} presents the mean scores for the two individual items evaluated under this characteristic.
+Under ISO 9241-11, satisfaction is the comfort and positive attitude users experience while using a system. In this evaluation, it was represented by two SUS items covering willingness to use the system frequently and confidence in using it, as shown in Table~\ref{tab:sus-satisfaction}.
 
-\FloatBarrier
-\begingroup
-\small
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.14}
-\setlength{\arrayrulewidth}{1.5pt}
-\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.79617\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20383\linewidth-2\tabcolsep\relax}}
-\caption{System Satisfaction (SUS) Evaluation Results}\label{tab:system-satisfaction-sus-evaluation-results-1287}\\
-\hline
-{\bfseries \textbf{Satisfaction}} & {\bfseries \textbf{3.88}} \\
-\noalign{{\color[HTML]{000000}\hrule height 1pt}}
-\endfirsthead
-\hline
-{\bfseries \textbf{Satisfaction}} & {\bfseries \textbf{3.88}} \\
-\noalign{{\color[HTML]{000000}\hrule height 1pt}}
-\endhead
+\begin{table}[htbp]
+\centering
+\caption{System Satisfaction (SUS) Evaluation Results}
+\label{tab:sus-satisfaction}
+\begin{tabularx}{\textwidth}{Xc}
+\toprule
+\textbf{Satisfaction} & \textbf{3.88} \\
+\midrule
 I think that I would like to use this system frequently. & 3.75 \\
 I felt very confident using the system. & 4.00 \\
-\hline
-\end{longtable}
-\endgroup
+\bottomrule
+\end{tabularx}
+\end{table}
 
-Confidence in using the system received the higher rating (mean = 4.00 — Very Good), with all 20 respondents in agreement, indicating that users felt assured in operating the system. The intention to use the system frequently scored slightly lower (mean = 3.75 — Very Good), with 15 respondents in agreement and 5 neutral. No respondent selected Strongly Agree on either item, indicating that satisfaction was positive but measured. Overall, the mean score of 3.88 — Very Good shows that users were generally satisfied with the system and willing to adopt it.
+Satisfaction was the lowest of the three components (3.88), though still within the Very Good range. All 20 respondents agreed that they felt confident using the system (4.00). Willingness to use it frequently was somewhat lower (3.75), with 15 respondents agreeing and 5 neutral. A neutral answer here may reflect the evaluation setting, since respondents could not yet judge how often they would have a need to grade watermelons in their own work, and not necessarily dissatisfaction. Neither item received a Strongly Agree, so satisfaction can be described as positive but reserved.
 
-The sum of the rescored item contributions was 26.05 (2.75 + 3.15 + 3.15 + 1.05 + 3.15 + 2.80 + 3.00 + 3.15 + 3.00 + 0.85), which, multiplied by 2.5, yielded an overall SUS score of 65.13. This value lies between the "OK" adjective ratings of \hyperlink{cite.bangor2009}{Bangor et al. (2009)}, within the marginal acceptability range, and is slightly below the commonly cited SUS average of 68 (\hyperlink{cite.sauro2016}{Sauro \& Lewis, 2016}). The result therefore indicates that the system is acceptably usable, with strengths in ease of use, function integration, and user confidence, while the need for technical support and prior learning pulls the overall score below average. Strengthening user onboarding through embedded tutorials, tooltips, or a short orientation for first-time users is the most direct way to raise the score in future versions.
+Several observations explain why the score is in the Good range and not higher. The first is the pattern of responses. For a positively worded item, ``Agree'' contributes 3 of 4 points and only ``Strongly Agree'' contributes the full 4. Of the 200 responses, 87 were ``Agree'' and 78 were ``Disagree,'' whereas only 7 were ``Strongly Agree'' and 13 were ``Strongly Disagree.'' A respondent who answered ``Agree'' to every positive item and ``Disagree'' to every negative item would produce a score of exactly 75, so the obtained score of 75.63 reflects a uniformly agreeing group with few strong endorsements. Reaching the ``Excellent'' range (85 and above) would require stronger agreement, which is common only for systems that users find clearly outstanding. The second observation is where the remaining 24.37 points were lost. Items 1 and 6 had the largest shortfalls (3.13 and 3.00 points), followed by item 4 (2.63 points), reflecting the neutral responses on willingness to use the system frequently and on inconsistency, and the one neutral and no strong disagreement on technical support. The rest came from the remaining items, which each lost about 2 to 2.5 points because responses were agreement and not strong agreement. No single weakness drives the score. This is consistent with the supplementary split of \citet{sauro2016}, in which the learnability items (4 and 10) scored 76.25 and the remaining eight items scored 75.47, showing no marked difference between ease of first use and general usability.
+
+Taken together, the results show that the prototype is perceived as easy to use, well integrated, not burdensome, and not dependent on technical assistance, and that users feel confident operating it. The areas with the most room for improvement are the consistency of the system's behavior and users' willingness to adopt it for frequent use. Improving classification reliability, for example by reducing the inconclusive and misclassified results described in Section~4.4.1, and giving clearer on-screen feedback are the most direct ways to address them in future versions.
+
+These results should be read with certain limitations in mind. First, with 20 respondents, SUS scores can vary considerably, so 75.63 is best treated as an indication of usability and not a precise value. Second, several items received identical answers from all 20 respondents (items 7 and 9 were unanimous ``Agree''), which may reflect genuine agreement but could also reflect a tendency to respond favorably when evaluating a system presented by its developers. Third, the Cebuano translation of the items was not formally validated. Finally, the ISO 9241-11 grouping is not a validated factor structure, so the component scores are descriptive, and the overall SUS score remains the primary result.
 
 \subsubsection{Signal-to-Noise Ratio (SNR) Analysis}
 
@@ -1014,7 +990,7 @@ The deployed Decision Tree obtained an F1-score of at least 0.968 at all three l
 
 \subsubsection{Inference Time}
 
-To evaluate the system's performance efficiency, on-device execution latency was benchmarked directly on the deployed ESP32-S3 microcontroller using the identical firmware, quantized model weights, and PSRAM memory allocation used during field validation. Because the prototype operates in a sequential two-step workflow—capturing and classifying the rind image first, followed by operator repositioning of the barrel against the rind for solenoid actuation and acoustic classification—manual handling time between button presses and fixed 1.24s I2S audio capture windows (400 ms pre-trigger, 40 ms solenoid pulse, and 800 ms post-trigger recording) were excluded. High-resolution hardware timers (esp\_\allowbreak{}timer\_\allowbreak{}get\_\allowbreak{}time()) measured pure computational execution across \textit{N}=[46] consecutive assessment cycles, which is the number of times the watermelon was evaluated during testing including the three inconclusive results.
+To evaluate the system's performance efficiency, on-device execution latency was benchmarked directly on the deployed ESP32-S3 microcontroller using the identical firmware, quantized model weights, and PSRAM memory allocation used during field validation. Because the prototype operates in a sequential two-step workflow—capturing and classifying the rind image first, followed by operator repositioning of the barrel against the rind for solenoid actuation and acoustic classification—manual handling time between button presses and fixed 1.24s I2S audio capture windows (400 ms pre-trigger, 40 ms solenoid pulse, and 800 ms post-trigger recording) were excluded. High-resolution hardware timers (esp\_\allowbreak{}timer\_\allowbreak{}get\_\allowbreak{}time()) measured pure computational execution across 46 consecutive assessment cycles, which is the number of times the watermelon was evaluated during testing including the three inconclusive results.
 
 \FloatBarrier
 \begin{landscape}
@@ -1055,9 +1031,9 @@ This section compares the developed watermelon ripeness assessment device with t
 
 \subsection{Digital Signal Processing}
 
-Table~\ref{tab:acoustic-measurements-used-to-assess-fruit-matur-1321} compares the acoustic studies by how the sound was produced and captured, which features were extracted, and where the processing was performed. \hyperlink{cite.wongkalasin2021}{Wongkalasin et al. (2021)} transmitted tones at 129 and 172 Hz through the fruit and measured the amplitude received at those frequencies using the FFT. \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)} struck each watermelon with a spring-loaded device and identified the strongest frequency in the impulse response. They observed a decrease from 161.89 to 148.77 Hz with maturity and proposed 150 Hz or lower as a harvest indicator. \hyperlink{cite.okafor2020}{Okafor (2020)} recorded a mechanical thump and analyzed its FFT magnitude between 100 and 4,000 Hz in MATLAB on a computer. \hyperlink{cite.chen2022}{Chen et al. (2022)} instead used Morlet wavelet decomposition to characterize vibrations in pineapple, noting that tap sounds are too short and irregular to be described well by a single FFT of the whole recording.
+Table~\ref{tab:acoustic-measurements-used-to-assess-fruit-matur-1321} compares the acoustic studies by how the sound was produced and captured and which features or decision rules were used. \hyperlink{cite.wongkalasin2021}{Wongkalasin et al. (2021)} transmitted tones at 129 and 172 Hz through the fruit and measured the amplitude received at those frequencies using the FFT. \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)} struck each watermelon with a spring-loaded device and identified the strongest frequency in the impulse response. They observed a decrease from 161.89 to 148.77 Hz with maturity and proposed 150 Hz or lower as a harvest indicator. \hyperlink{cite.okafor2020}{Okafor (2020)} recorded a mechanical thump and analyzed its FFT magnitude between 100 and 4,000 Hz in MATLAB on a computer. \hyperlink{cite.chen2022}{Chen et al. (2022)} instead used Morlet wavelet decomposition to characterize vibrations in pineapple, noting that tap sounds are too short and irregular to be described well by a single FFT of the whole recording.
 
-The present study also strikes the fruit, but uses a solenoid so that each tap is delivered the same way. The sound is captured by an INMP441 microphone at 16 kHz, and rather than analyzing the whole recording at once, the device isolates a short window around the thump and blanks the 25 ms relay click. This window is divided into Hann-windowed frames before the FFT is applied, and the resulting spectra are passed through a 128-band mel filterbank and a DCT to produce MFCCs. Together with spectral centroid, bandwidth, rolloff, zero-crossing rate, and RMS energy, these form a 31-feature vector. This short-time analysis addresses the limitation raised by \hyperlink{cite.chen2022}{Chen et al. (2022)} while remaining light enough to run on the ESP32-S3, where the full acoustic pipeline completed in a mean of 14.62 ms.
+The present study also strikes the fruit, but uses a solenoid so that each tap is delivered the same way. The sound is captured by an INMP441 microphone at 16 kHz, and rather than analyzing the whole recording at once, the device isolates a short window around the thump and blanks the 25 ms relay click. This window is divided into Hann-windowed frames before the FFT is applied, and the resulting spectra are passed through a 128-band mel filterbank and a DCT to produce MFCCs. Together with spectral centroid, bandwidth, rolloff, zero-crossing rate, and RMS energy, these form a 31-feature vector. This short-time analysis addresses the limitation raised by \hyperlink{cite.chen2022}{Chen et al. (2022)} while remaining light enough to run on the ESP32-S3,  where the full acoustic pipeline completed in a mean of 23.86 ms.
 
 A fixed peak-frequency threshold was not used because the relationship between dominant frequency and ripeness depended on the range examined. Within 50 to 400 Hz, the median dominant frequency was lower for ripe watermelons, consistent with \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)}. However, ripe recordings also carried more energy between about 551 and 1,417 Hz, so when the range extended to 2,000 Hz the median for ripe recordings was more than twice that of unripe recordings. Spectral centroid, which summarizes where this energy is concentrated, accounted for about 0.90 of the deployed model's feature importance, while the MFCCs contributed relatively little. Part of this higher-frequency energy may reflect collection conditions rather than ripeness itself, since ripe watermelons were recorded on market display surfaces while unripe watermelons were recorded on the vine, whereas \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)} tested all their fruit detached and on the same holder.
 

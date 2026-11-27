@@ -1389,7 +1389,7 @@ Taking the logarithm of the naive Bayes combination converts each classifier’s
   \label{eq:formula-567}
 \end{equation}
 
-The TPR and FPR are selected according to how reliable each classifier’s prediction is expected to be. For the image classifier, one pair of rates is used when its confidence is at least 0.85 and another when it is lower. For the audio classifier, one pair is used when the thump window is detected adaptively and another when it is not and a fallback window is used instead. A separate pair for weak decision margins was also defined in the firmware but is never selected, since the exported Decision Tree outputs only a class label without a confidence score. This allows a more reliable prediction to carry more weight than a less reliable one.
+The TPR and FPR are selected according to how reliable each classifier’s prediction is expected to be. For the image classifier, one pair of rates is used when its confidence is at least 0.85 and another when it is lower. For the audio classifier, one pair is used when the thump window is detected adaptively and another when it is not and a fallback window is used instead. In the field test records in Table E1 of Appendix E, "Adaptive" refers to a window in which the thump was located automatically and was long enough to analyse, "Padded" refers to a located thump whose window was shorter than 32 samples and was extended forward from its onset to 0.30 s, and "Fixed" refers to a 0.30 s window starting 20 ms before the solenoid relay was activated, used when no thump was located; only the Fixed windows were treated as fallback windows when selecting the acoustic TPR and FPR. A separate pair for weak decision margins was also defined in the firmware but is never selected, since the exported Decision Tree outputs only a class label without a confidence score. This allows a more reliable prediction to carry more weight than a less reliable one.
 
 The weights of the two classifiers are then added to a prior log-odds term L\textsubscript{0} to give the combined log-odds L, as shown in Equation~\eqref{eq:formula-570}, which is converted into a probability of ripeness using the logistic function in Equation~\eqref{eq:formula-571}. The prior log-odds is set to 0, so that neither class is favored before any evidence is considered. Adding the two weights assumes that the image and audio predictions are independent given the true ripeness of the watermelon (\hyperlink{cite.kuncheva2001}{Kuncheva et al., 2001}), so that each prediction provides separate evidence.
 
@@ -1478,7 +1478,6 @@ Confusion Matrix & Classification & Best practice \\
 Per-class P /\allowbreak{} R /\allowbreak{} F1 & Classification & 2-class problem \\
 ROC-AUC & Classification & Multi-modal comparison \\
 Cohen's Kappa (\ensuremath{\kappa}) & Agreement & vs. manual methods and ground truth \\
-Trial Consistency /\allowbreak{} ICC & Reliability & Objective 3 (explicit) \\
 SUS & Usability & Objective 3 (explicit) \\
 Inference Time & System & Objective 2 (real-time) \\
 SNR & Signal & Acoustic pipeline \\
@@ -1499,7 +1498,7 @@ The System Usability Scale (SUS) is a reliable and widely validated tool for mea
 
 The Signal-to-Noise Ratio is measured specifically for the acoustic pipeline to evaluate whether the thumping audio captured by the INMP441 microphone is clean enough to support reliable feature extraction in an outdoor farm setting. Because the device is intended for use in real field conditions, the audio signal is exposed to background noise from wind, farm machinery, and general ambient activity, all of which can interfere with the acoustic features the system relies on. A sufficient SNR confirms that the microphone and signal processing setup can isolate the meaningful thumping response from that environmental noise before classification even begins.
 
-Finally, the Intraclass Correlation Coefficient measures trial consistency by evaluating whether the system produces stable and repeatable outputs when the same watermelon is tested multiple times under the same conditions. This is a direct reliability requirement, since a system that gives different ripeness classifications across repeated trials on the same sample cannot be trusted regardless of how well it performs in single-trial accuracy tests. Across all of these metrics, results are also reported separately for the acoustic subsystem and the visual subsystem before being reported for the fused system, which allows the contribution of each pipeline to be assessed on its own terms and confirms that combining both modalities produces a meaningful improvement over relying on either one alone.
+Across all of these metrics, results are also reported separately for the acoustic subsystem and the visual subsystem before being reported for the fused system, which allows the contribution of each pipeline to be assessed on its own terms and confirms that combining both modalities produces a meaningful improvement over relying on either one alone.
 
 \subsection{Accuracy}
 
@@ -1661,7 +1660,11 @@ A high kappa value indicates that the automated system's decisions align strongl
   \label{eq:formula-649}
 \end{equation}
 
-The System Usability Scale (SUS), developed by \hyperlink{cite.brooke1996}{Brooke (1996)}, is a highly reliable, industry-standard tool used to measure the perceived usability of a system. It consists of a 10-item questionnaire scored on a 5-point Likert scale (from Strongly Disagree to Strongly Agree). The alternating positive and negative statements prevent automatic responses and yield a composite score ranging from 0 to 100. Higher scores indicate better usability, while lower scores suggest significant usability issues.
+The System Usability Scale (SUS), developed by \hyperlink{cite.brooke1996}{Brooke (1996)}, is a widely used, low-cost questionnaire for measuring the perceived usability of a system. It consists of ten statements rated on a five-point Likert scale from 1 (Strongly Disagree) to 5 (Strongly Agree). The statements alternate between positive wording (items 1, 3, 5, 7, and 9) and negative wording (items 2, 4, 6, 8, and 10), which discourages automatic responding because respondents must read each statement before answering. The questionnaire is meant to be completed immediately after the respondent has used the system and before any discussion, and it yields a single composite score from 0 to 100.
+
+Scoring follows \hyperlink{cite.brooke1996}{Brooke (1996)}. For the positively worded items, the contribution of each item is its rating minus 1. For the negatively worded items, it is 5 minus the rating. Each contribution therefore ranges from 0 to 4. The ten contributions are summed and multiplied by 2.5, as shown in Equation~\eqref{eq:formula-649} where $x_{\text{odd}}$ is the rating given to an odd-numbered (positive) item and $x_{\text{even}}$ is the rating given to an even-numbered (negative) item. A higher score indicates better perceived usability. The result is a score out of 100 and not a percentage.
+
+Brooke's paper provides the scoring procedure but no interpretation of the resulting values. The scores in this study were therefore interpreted using the benchmarks in Table~\ref{tab:interpretation-of-sus-scores-bangor-et-al-2009-653}, which draw on the adjective ratings of \hyperlink{cite.bangor2009}{Bangor et al. (2009)} and the grading scale of \hyperlink{cite.sauro2016}{Sauro and Lewis (2016)}, in which a score of 68 is the average across many evaluated systems.
 
 \FloatBarrier
 \begingroup
@@ -1679,18 +1682,37 @@ The System Usability Scale (SUS), developed by \hyperlink{cite.brooke1996}{Brook
 {\bfseries \textbf{Value of} SUS Score} & {\bfseries \textbf{Interpretation}} \\
 \noalign{{\color[HTML]{000000}\hrule height 1pt}}
 \endhead
->80.3 & Excellent (Grade A) \\
-68-80.3 & Good (Grade B) \\
+$>$80.3 & Excellent (Grade A) \\
+68--80.3 & Good (Grade B) \\
 68 & Average (Grade C) \\
-51-67 & Poor (Grade D) \\
-<51 & Awful (Grade F) \\
+51--67 & Poor (Grade D) \\
+$<$51 & Awful (Grade F) \\
 \hline
 \end{longtable}
 \endgroup
 
-In this study, the SUS was used to quantify the practical usability and user acceptability of the handheld watermelon ripeness detection device among its intended end-users: farmers and harvesters. After interacting with the prototype in the field, 20 respondents completed the SUS questionnaire. The results provided a holistic assessment of the device's ergonomics, the legibility of the LCD interface under outdoor lighting, and the ease of executing the mechanical thumping procedure.
+In this study, the SUS was used to measure the perceived usability of the handheld watermelon ripeness detection device among its intended users. After using the prototype in the field, 20 farmers and harvesters at the Brgy.\ Balubal farm completed the questionnaire. To make the survey accessible, each English statement was accompanied by a Cebuano translation. In addition to the overall score, the item results were expressed on a 1 to 5 scale, in which negatively worded items were reverse-scored so that a higher value always indicates a more favorable response. The ten items were also grouped under the three usability components of ISO 9241-11, namely effectiveness, efficiency, and satisfaction, to help describe where the overall score comes from. This grouping is an interpretive aid of the researchers and is not part of the original instrument.
 
-A high SUS score indicates that the physical and software design of the device is intuitive, requiring minimal training for non-technical agricultural workers, which facilitates adoption in real-world farm operations. Conversely, a low score would reveal specific design flaws—such as a confusing interface or an awkward grip—that could hinder field deployment. Ultimately, the SUS metric validates whether the system functions not just as a technical prototype, but as a user-friendly, field-ready decision-support tool.
+A high SUS score suggests that users found the system easy to learn and operate, which supports its adoption by non-technical agricultural workers. A low score would indicate that users experienced difficulty and that the design needs further work. Because the SUS measures overall perceived usability, it does not identify specific causes, such as the grip, display legibility, or the thumping procedure, so any explanation of the result beyond the score itself is treated as an interpretation. The SUS result therefore complements the classification accuracy and the other system evaluations by showing whether intended users find the prototype usable in practice.
+
+\subsection{Error Rate and Re-trial Frequency}
+\label{sec:error-rate-retrial}
+
+\begin{equation}
+\text{Error Rate} = \frac{FP + FN + E}{N} \times 100\%
+\label{eq:error-rate}
+\end{equation}
+
+\begin{equation}
+\text{Re-trial Frequency} = \frac{J}{N} \times 100\%
+\label{eq:retrial-frequency}
+\end{equation}
+
+The Error Rate and Re-trial Frequency are operational metrics used to evaluate the system's field performance, particularly in how it handles ambiguous cases. Unlike accuracy, which is computed only from definitive predictions, the Error Rate is a stricter measure because it also counts the system's failure to reach a decision. In Equation~\eqref{eq:error-rate}, $FP$ (false positives) is the number of fruits the system classified as Ripe that the reference assessment judged Unripe, and $FN$ (false negatives) is the number of fruits the system classified as Unripe that the reference judged Ripe. $E$ is the number of inconclusive outputs, which occur when the acoustic and optical classifications conflict and the system abstains from giving a Ripe or Unripe answer. $N$ is the total number of fruits evaluated, including those with inconclusive outputs. Because it is based on the first attempt on each fruit, the Error Rate expresses the initial, pre-retest performance of the system.
+
+The Re-trial Frequency measures the operational burden created by these abstentions. In Equation~\eqref{eq:retrial-frequency}, $J$ is the number of fruits that required a second trigger of the system because the first attempt returned an inconclusive output.
+
+In this study, the two metrics were used to account for the three watermelons that produced an ``Inconclusive'' result. The system is designed to defer ambiguous cases instead of forcing a potentially incorrect classification, so the operator re-tests the fruit. Reporting the Error Rate and Re-trial Frequency together with the accuracy gives a more transparent view of the system's operational reliability: the Error Rate shows how often the device fails to give a correct answer on the first attempt, and the Re-trial Frequency shows how often the operator must repeat the measurement as a result.
 
 \section{Data Set Preparation}
 
