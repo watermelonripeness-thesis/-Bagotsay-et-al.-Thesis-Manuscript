@@ -372,7 +372,7 @@ Pulse Thumper & \textbf{Push-Pull Solenoid} & Electromagnetic & Fast, controllab
 \endgroup
 \end{landscape}
 
-\setcounter{subsubsection}{1}
+
 \subsubsection{Justification of Selected Hardware Components}
 
 The selection of hardware components for the proposed watermelon ripeness detection system is guided by the requirements of multimodal data acquisition, real-time embedded processing, energy efficiency, and system reliability within resource-constrained environments. The system integrates acoustic analysis and image-based classification; therefore, each component was chosen based on its ability to provide accurate sensing while operating within the memory, processing, and power limitations of an embedded platform.
@@ -397,7 +397,7 @@ The system will be powered by two 3.6V 18650 lithium-ion batteries in series, se
 
 The selected components collectively address the functional and non-functional requirements of the system while explicitly accounting for embedded resource constraints. The integration of high-quality sensing devices, a capable yet energy-efficient processing unit, and a reliable actuation mechanism enables accurate acquisition and analysis of both acoustic and visual data. This design ensures that the system can perform real-time ripeness classification in a portable and practical manner suitable for field deployment.
 
-\setcounter{subsubsection}{1}
+
 \subsubsection{Hardware Costs}
 
 The proposed watermelon ripeness detection system integrates multiple hardware components to enable multimodal data acquisition, processing, and user interaction within a standalone embedded platform. Each component performs a specific function, ranging from sensing and actuation to processing and output display, forming a cohesive system that supports both acoustic and image-based analysis.
@@ -1441,7 +1441,7 @@ The testing procedure followed a structured approach:
 \hline
 3 & Recording of system classification outputs alongside ground truth assessments from on-site classifiers. \\
 \hline
-4 & Measurement of performance and other testing metrics as outlined in Table 20, including accuracy, precision, recall, and F1-score. \\
+4 & Measurement of performance and other testing metrics as outlined in Table~\ref{tab:testing-metrics-for-system-integration-589}, including accuracy, precision, recall, and F1-score. \\
 \hline
 5 & Observation and documentation of system behavior, failure cases, and limitations. \\
 \noalign{{\color[HTML]{F3F3F3}\hrule height 1pt}}
@@ -1589,7 +1589,6 @@ The receiver operating characteristic curve shows how the true positive rate (TP
 
 ROC-AUC was used to examine the completed image and audio models on their respective reserved test sets. The image curves use UNRIPE as the positive class, while the audio curves use RIPE. The reference labels and prediction scores use the same positive class within each calculation. The curves are presented in Figures~\ref{fig:roc-curves-of-the-selected-image-configurations-1146} and~\ref{fig:roc-curves-of-the-tuned-acoustic-classifiers-1050}.
 
-\setcounter{subsection}{8}
 \subsection{Inference and Processing Time}
 
 \begin{equation}
@@ -1727,7 +1726,7 @@ Unripe & 339 & 1.32 \ensuremath{\pm} 0.03 & 1.28–1.41 & 16,000 & 1 (mono) \\
 
 The audio dataset consisted of 494 thump recordings, comprising 155 ripe and 339 unripe recordings, which represented approximately 31.4\% and 68.6\% of the dataset, respectively, giving an unripe-to-ripe ratio of approximately 2.19:1. As shown in Table~\ref{tab:properties-of-the-audio-recordings-by-class-666}, all recordings were captured at a sampling rate of 16 kHz as single-channel (mono) audio, and both classes had nearly the same recording lengths, with most lasting between 1.28 and 1.41 seconds. These counts and properties describe the original recordings before augmentation.
 
-Each recording was captured by placing the device against the rind of the watermelon and triggering the pulse thumper once, with the resulting sound recorded through the INMP441 microphone and saved as a WAV file. The recordings were stored in separate folders for each class and named sequentially, with the folder determining each recording’s label. All 494 recordings were retained, since each contained a detectable thump response, as described in Section 3.6.3.
+Each recording was captured by placing the device against the rind of the watermelon and triggering the pulse thumper once, with the resulting sound recorded through the INMP441 microphone and saved as a WAV file. The recordings were stored in separate folders for each class and named sequentially, with the folder determining each recording’s label. All 494 recordings were retained, since each contained a detectable thump response, as described in Section 3.6.2.
 
 \FloatBarrier
 \begingroup
@@ -1869,7 +1868,7 @@ Cepstral & 26 & Mean and standard deviation of MFCC 1 to MFCC 13 & The overall t
 \end{longtable}
 \endgroup
 
-The features were then standardized to zero mean and unit variance before training, since they differ greatly in scale, with spectral centroid measured in hundreds to thousands of hertz while zero-crossing rate is a small fraction. This prevents features with larger numerical ranges from dominating classifiers that rely on distances or weights, such as the Support Vector Machine, K-Nearest Neighbors, and Logistic Regression.The scaling parameters were computed from the training set only, including the augmented copies described in Section 3.6.3, and applied to the test set, so that no information from the test set influenced the training data. These parameters were also exported as a header file for on-device feature scaling on the ESP32-S3.
+The features were then standardized to zero mean and unit variance before training, since they differ greatly in scale, with spectral centroid measured in hundreds to thousands of hertz while zero-crossing rate is a small fraction. This prevents features with larger numerical ranges from dominating classifiers that rely on distances or weights, such as the Support Vector Machine, K-Nearest Neighbors, and Logistic Regression.The scaling parameters were computed from the training set only, including the augmented copies described in Section 3.6.4, and applied to the test set, so that no information from the test set influenced the training data. These parameters were also exported as a header file for on-device feature scaling on the ESP32-S3.
 
 \begin{figure}[htbp]
   \caption{Correlation Matrix of the Acoustic Features}
@@ -2298,9 +2297,9 @@ Total (original recordings) & 155 & 339 & 494 \\
 \end{longtable}
 \endgroup
 
-Table~\ref{tab:distribution-of-the-watermelon-thump-recordings-886} shows the distribution of the watermelon thump recordings used for training and testing. The 494 recordings comprised 155 ripe and 339 unripe recordings, which were divided into training and test sets in an 80\% to 20\% proportion, stratified by ripeness so that both sets kept the same class proportions. The training set contained 395 original recordings, each of which was given two noise-augmented copies, for a total of 1,185 training samples (372 ripe and 813 unripe). The test set contained 99 original recordings (31 ripe and 68 unripe) and was not augmented. The classifiers were trained on the 31 acoustic features described in Section 3.6.1, whose definitions and formulas are provided in Table~\ref{app:table-B1} in \hyperref[app:section-B]{Appendix~B}.
+Table~\ref{tab:distribution-of-the-watermelon-thump-recordings-886} shows the distribution of the watermelon thump recordings used for training and testing. The 494 recordings comprised 155 ripe and 339 unripe recordings, which were divided into training and test sets in an 80\% to 20\% proportion, stratified by ripeness so that both sets kept the same class proportions. The training set contained 395 original recordings, each of which was given two noise-augmented copies, for a total of 1,185 training samples (372 ripe and 813 unripe). The test set contained 99 original recordings (31 ripe and 68 unripe) and was not augmented. The classifiers were trained on the 31 acoustic features described in Section 3.6.2, whose definitions and formulas are provided in Table~\ref{app:table-B1} in \hyperref[app:section-B]{Appendix~B}.
 
-For training, the ripe class was encoded as the positive class (1) and the unripe class as the negative class (0). All features were standardized to zero mean and unit variance using the mean and standard deviation computed from the training set, including the augmented copies described in Section 3.6.2. The same scaling parameters were applied to the test set and later exported to the ESP32-S3 for on-device feature scaling.
+For training, the ripe class was encoded as the positive class (1) and the unripe class as the negative class (0). All features were standardized to zero mean and unit variance using the mean and standard deviation computed from the training set, including the augmented copies described in Section 3.6.4. The same scaling parameters were applied to the test set and later exported to the ESP32-S3 for on-device feature scaling.
 
 Training was performed in Google Colaboratory using Python 3.13 with the scikit-learn 1.6.1 and XGBoost 3.4.1 libraries. A fixed random seed of 42 was used for data shuffling, cross-validation, and model initialization to ensure that the results could be reproduced.
 
@@ -2386,7 +2385,7 @@ Each combination was scored using the F1-score of the ripe class, which was chos
 \restoregeometry
 \endgroup
 
-The eight image architectures described in Section 3.7.2.1 were trained on the rind photographs prepared in Section 3.6.3. The orientation stored in each image file was applied, each image was converted to RGB, and resized to 96 \ensuremath{\times} 96 pixels. The models received this same input format during training, validation, and testing.
+The eight image architectures described in Section 3.7.1.2 were trained on the rind photographs prepared in Section 3.6.3. The orientation stored in each image file was applied, each image was converted to RGB, and resized to 96 \ensuremath{\times} 96 pixels. The models received this same input format during training, validation, and testing.
 
 \FloatBarrier
 \begingroup
@@ -2461,15 +2460,15 @@ Performance was measured using accuracy, precision, recall, and F1-score, with t
 
 Because the test set contained only 31 ripe recordings, a single misclassified ripe sample changes recall by about 3.2 percentage points. To show how much the scores could vary by chance, 95\% confidence intervals were computed for accuracy and F1-score by resampling the test set with replacement 2,000 times. Differences between classifiers that fell within these intervals were not treated as meaningful on their own.
 
-To assess the effect of augmentation, the tuned classifiers were also evaluated on six noisy versions of the test set, containing real and brown noise at 30, 25, and 20 dB, created using background noise drawn only from the test recordings (Section 3.6.2). The results were compared with those of the same classifiers trained without augmentation, since the clean test set alone cannot show whether training on noisy copies improves robustness to noise. Lower SNRs were not tested because the thump detection itself becomes unreliable below 20 dB, as shown in the sensitivity test.
+To assess the effect of augmentation, the tuned classifiers were also evaluated on six noisy versions of the test set, containing real and brown noise at 30, 25, and 20 dB, created using background noise drawn only from the test recordings (Section 3.6.4). The results were compared with those of the same classifiers trained without augmentation, since the clean test set alone cannot show whether training on noisy copies improves robustness to noise. Lower SNRs were not tested because the thump detection itself becomes unreliable below 20 dB, as shown in the sensitivity test.
 
 The model for deployment was selected based on its F1-score on the test set, its memory footprint, and whether it could be converted into C code for on-device inference on the ESP32-S3, since the classifier must run entirely on the microcontroller. The tuned classifiers were converted into C header files using the micromlgen library, which supported five of the seven: XGBoost could not be converted, and K-Nearest Neighbors is not supported, since it would require the entire training set to be stored on the device. The predictions of each exported model were compared against the Python model on all test samples to confirm that the conversion preserved its behavior. Each exported model was then compiled for the ESP32-S3 to confirm that it fit within the device’s memory, and the flash memory it added beyond a baseline program was measured.
 
-The feature importances of the tree-based classifiers (Decision Tree, Random Forest, and XGBoost) were also examined to identify which features contributed most to their predictions. This was done to check whether the classifiers relied on acoustic characteristics of the thump response or on features that could reflect differences in the recording environment between the market and farm collection sites, given the difference in background noise identified in Section 3.6.2.
+The feature importances of the tree-based classifiers (Decision Tree, Random Forest, and XGBoost) were also examined to identify which features contributed most to their predictions. This was done to check whether the classifiers relied on acoustic characteristics of the thump response or on features that could reflect differences in the recording environment between the market and farm collection sites, given the difference in background noise identified in Section 3.6.4.
 
 \subsubsection*{Image Model Testing}
 
-The saved checkpoints were evaluated on the 49 held-out photographs, comprising 25 ripe and 24 unripe images. These files were reserved from weight fitting and checkpoint selection. Their prepared versions used the common lighting and color reference calculated before partitioning, as described in Section 3.6.2. Every completed run was evaluated on this test set. The main comparison used one configuration per architecture, selected by validation loss.
+The saved checkpoints were evaluated on the 49 held-out photographs, comprising 25 ripe and 24 unripe images. These files were reserved from weight fitting and checkpoint selection. Their prepared versions used the common lighting and color reference calculated before partitioning, as described in Section 3.6.3. Every completed run was evaluated on this test set. The main comparison used one configuration per architecture, selected by validation loss.
 
 The model assigned an unripe label when its unripe score exceeded 0.5 and a ripe label otherwise. Accuracy measured the share of correct labels. Precision, recall, and F1-score were calculated for each class and averaged equally to obtain the macro scores. This gave recognition of ripe and unripe fruit the same weight in the comparison. The confusion matrices recorded the correct classifications and the two directions of error at the classification cutoff.
 
