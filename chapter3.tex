@@ -1931,30 +1931,27 @@ The per-class normalized version rescales each class to its own range, which rem
 To compare the recordings with the dominant frequencies reported in the literature, the dominant frequency of each recording was taken as the frequency with the highest FFT magnitude, using a Hann window and zero-padding to 16,384 points. The detected thump windows were too short for this purpose, since 16 ripe and 49 unripe recordings had their peak fall at the 50 Hz lower limit of the search. A longer segment, from 20 ms before the thump peak to 300 ms after it, was used instead, where only one unripe recording reached this limit. The dominant frequency was found in two ranges: 50 to 400 Hz, which covers the frequencies reported by \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)}, and 50 to 2,000 Hz, a wider range that also includes the higher frequencies of the thump.
 
 \FloatBarrier
-\begin{landscape}
 \begingroup
 \footnotesize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.14}
 \setlength{\arrayrulewidth}{1.5pt}
-\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.11551\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.10231\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.13201\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.08911\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11881\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.08911\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.12211\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11386\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.11716\linewidth-2\tabcolsep\relax}}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.20\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.27\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.27\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.26\linewidth-2\tabcolsep\relax}}
 \caption{Median Dominant Frequency of the Recordings by Search Range}\label{tab:median-dominant-frequency-of-the-recordings-by-s-738}\\
 \hline
-{\bfseries \textbf{Noise Type}} & {\bfseries \textbf{30 dB Ripe}} & {\bfseries \textbf{30 dB Unripe}} & {\bfseries \textbf{20 dB Ripe}} & {\bfseries \textbf{20 dB Unripe}} & {\bfseries \textbf{10 dB Ripe}} & {\bfseries \textbf{10 dB Unripe}} & {\bfseries \textbf{5 dB Ripe}} & {\bfseries \textbf{5 dB Unripe}} \\
+{\bfseries Search Range} & {\bfseries Ripe (n = 155)} & {\bfseries Unripe (n = 339)} & {\bfseries Mann-Whitney U} \\
 \noalign{{\color[HTML]{000000}\hrule height 1pt}}
 \endfirsthead
 \hline
-{\bfseries \textbf{Noise Type}} & {\bfseries \textbf{30 dB Ripe}} & {\bfseries \textbf{30 dB Unripe}} & {\bfseries \textbf{20 dB Ripe}} & {\bfseries \textbf{20 dB Unripe}} & {\bfseries \textbf{10 dB Ripe}} & {\bfseries \textbf{10 dB Unripe}} & {\bfseries \textbf{5 dB Ripe}} & {\bfseries \textbf{5 dB Unripe}} \\
+{\bfseries Search Range} & {\bfseries Ripe (n = 155)} & {\bfseries Unripe (n = 339)} & {\bfseries Mann-Whitney U} \\
 \noalign{{\color[HTML]{000000}\hrule height 1pt}}
 \endhead
-White & 28.2 & 0.4 & 82.3 & 1.1 & 99.2 & 0.0 & 99.2 & 0.0 \\
-Pink & 7.3 & 0.7 & 21.0 & 8.5 & 83.9 & 8.1 & 99.2 & 0.0 \\
-Brown & 2.4 & 2.6 & 4.0 & 12.2 & 29.8 & 31.7 & 59.7 & 29.2 \\
-Real & 3.2 & 2.2 & 4.0 & 3.3 & 41.1 & 7.4 & 62.1 & \textbf{7.7} \\
+50--400 Hz & 168.0 Hz (137.2--222.7) & 281.2 Hz (201.2--343.8) & $p < 0.001$ \\
+50--2,000 Hz & 644.5 Hz (350.6--741.7) & 315.4 Hz (205.1--362.3) & $p < 0.001$ \\
 \hline
+\multicolumn{4}{>{\raggedright\arraybackslash}p{\dimexpr\linewidth-2\tabcolsep\relax}}{\textit{Note.} Values are medians with interquartile ranges in parentheses. Dominant frequencies were taken from 20 ms before to 300 ms after the thump peak.} \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
 As shown in Table~\ref{tab:median-dominant-frequency-of-the-recordings-by-s-738}, ripe recordings had a lower median dominant frequency than unripe recordings within 50 to 400 Hz (Mann-Whitney U, p < 0.001), which agrees with the decrease in dominant frequency with maturity reported by \hyperlink{cite.pamungkas2021}{Pamungkas and Bintoro (2021)}. Over 50 to 2,000 Hz, the order reversed, with ripe recordings having more than twice the median dominant frequency of unripe recordings (Mann-Whitney U, p < 0.001). In the narrower range, 3 ripe and 1 unripe recordings had their peak at the 50 Hz limit, which is too few to affect the medians.
 
