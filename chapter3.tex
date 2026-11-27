@@ -175,12 +175,12 @@ Software Integration & Easy (Single ADC pin reading) & Moderate (Requires I2S pe
 \endgroup
 
 \begin{itemize}
-
-\item \textbf{Camera.} A small camera unit is necessary to photograph the watermelon’s exterior for ripeness assessment, specifically to analyze visual indicators like texture and skin color. The device must deliver adequate resolution and color fidelity under ambient outdoor light to facilitate dependable feature extraction. Positioned on the housing to face the specimen, the camera needs to interface seamlessly with the main processor while minimizing energy draw for mobile operation.
-
+	
+	\item \textbf{Camera.} A small camera unit is necessary to photograph the watermelon’s exterior for ripeness assessment, specifically to analyze visual indicators like texture and skin color. The device must deliver adequate resolution and color fidelity under ambient outdoor light to facilitate dependable feature extraction. Positioned on the housing to face the specimen, the camera needs to interface seamlessly with the main processor while minimizing energy draw for mobile operation.
+	
+	Various camera modules offer different balances of image fidelity, computational needs, and hardware compatibility. Entry-level options, such as the OV7670, provide basic imaging but lack integrated compression, which places a heavier burden on the processor. Alternatively, the OV2640 module offers improved resolution and hardware-based JPEG compression, effectively lowering memory and processing overhead. The ESP32-CAM provides a highly integrated, affordable alternative by combining a microcontroller with a camera sensor (usually the OV2640) and wireless connectivity; however, its restricted memory and processing power may limit the complexity of image analysis compared to more robust platforms. Research in embedded vision emphasizes that choosing a camera requires weighing image quality against power and processing constraints to ensure stable, real-time functionality in field settings (\hyperlink{cite.cao2025}{Cao et al., 2025}; \hyperlink{cite.awais2025}{Awais et al., 2025}). These considerations highlight the importance of selecting a module that efficiently meets the system’s operational goals.
+	
 \end{itemize}
-
-Various camera modules offer different balances of image fidelity, computational needs, and hardware compatibility. Entry-level options, such as the OV7670, provide basic imaging but lack integrated compression, which places a heavier burden on the processor. Alternatively, the OV2640 module offers improved resolution and hardware-based JPEG compression, effectively lowering memory and processing overhead. The ESP32-CAM provides a highly integrated, affordable alternative by combining a microcontroller with a camera sensor (usually the OV2640) and wireless connectivity; however, its restricted memory and processing power may limit the complexity of image analysis compared to more robust platforms. Research in embedded vision emphasizes that choosing a camera requires weighing image quality against power and processing constraints to ensure stable, real-time functionality in field settings (\hyperlink{cite.cao2025}{Cao et al., 2025}; \hyperlink{cite.awais2025}{Awais et al., 2025}). These considerations highlight the importance of selecting a module that efficiently meets the system’s operational goals.
 
 \FloatBarrier
 \begingroup
@@ -372,7 +372,11 @@ Pulse Thumper & \textbf{Push-Pull Solenoid} & Electromagnetic & Fast, controllab
 \endgroup
 \end{landscape}
 
+<<<<<<< Updated upstream
 
+=======
+\setcounter{subsubsection}{0}
+>>>>>>> Stashed changes
 \subsubsection{Justification of Selected Hardware Components}
 
 The selection of hardware components for the proposed watermelon ripeness detection system is guided by the requirements of multimodal data acquisition, real-time embedded processing, energy efficiency, and system reliability within resource-constrained environments. The system integrates acoustic analysis and image-based classification; therefore, each component was chosen based on its ability to provide accurate sensing while operating within the memory, processing, and power limitations of an embedded platform.
@@ -598,7 +602,7 @@ This subsection details the design and development of the hardware components re
 
 Hardware architecture is a high-level functional map that defines the organization of a system's core components and their underlying communication protocols. It serves as a structural blueprint, outlining how a central processing hub coordinates with various sensing and actuation modules through standardized data buses to ensure reliable information flow across the entire device.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \caption{Hardware Architecture}
   \label{fig:hardware-architecture-394}
   \centering
@@ -630,7 +634,7 @@ The push-pull solenoid, which is responsible for thumping the watermelon, is con
 
 \paragraph{Pictorial Diagram}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \caption{Pictorial Diagram}
   \label{fig:pictorial-diagram-408}
   \centering
@@ -757,7 +761,7 @@ This subsection describes the physical structure of the proposed system used for
 
 \subsubsection*{3D Model}
 
-This section shows the arrangement of major components such as the camera module, microphone sensor, tapping mechanism, and LCD display. The model provides a clear visualization of how the components are integrated within the enclosure.3D Model
+This section shows the arrangement of major components such as the camera module, microphone sensor, tapping mechanism, and LCD display. The model provides a clear visualization of how the components are integrated within the enclosure.
 
 \begin{figure}[htbp]
   \caption{3D Model of the proposed watermelon analysis device.}
