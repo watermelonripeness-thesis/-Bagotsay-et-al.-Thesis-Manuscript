@@ -1695,7 +1695,7 @@ In this study, the SUS was used to measure the perceived usability of the handhe
 
 A high SUS score suggests that users found the system easy to learn and operate, which supports its adoption by non-technical agricultural workers. A low score would indicate that users experienced difficulty and that the design needs further work. Because the SUS measures overall perceived usability, it does not identify specific causes, such as the grip, display legibility, or the thumping procedure, so any explanation of the result beyond the score itself is treated as an interpretation. The SUS result therefore complements the classification accuracy and the other system evaluations by showing whether intended users find the prototype usable in practice.
 
-\subsection{Error Rate and Re-trial Frequency}
+\subsection{Error Rate}
 \label{sec:error-rate-retrial}
 
 \begin{equation}
@@ -1703,16 +1703,9 @@ A high SUS score suggests that users found the system easy to learn and operate,
 \label{eq:error-rate}
 \end{equation}
 
-\begin{equation}
-\text{Re-trial Frequency} = \frac{J}{N} \times 100\%
-\label{eq:retrial-frequency}
-\end{equation}
+The Error Rate is an operational metric used to evaluate the system's field performance, particularly in how it handles ambiguous cases. Unlike accuracy, which is computed only from definitive predictions, the Error Rate is a stricter measure because it also counts the system's failure to reach a decision. In Equation~\eqref{eq:error-rate}, $FP$ (false positives) is the number of assessments in which the system classified the fruit as Ripe but the reference assessment judged it Unripe, and $FN$ (false negatives) is the number of assessments in which the system classified the fruit as Unripe but the reference judged it Ripe. $E$ is the number of inconclusive outputs, which occur when the combined evidence from the acoustic and optical classifiers is too weak to support either class. $N$ is the total number of assessments, including those that ended in an inconclusive output.
 
-The Error Rate and Re-trial Frequency are operational metrics used to evaluate the system's field performance, particularly in how it handles ambiguous cases. Unlike accuracy, which is computed only from definitive predictions, the Error Rate is a stricter measure because it also counts the system's failure to reach a decision. In Equation~\eqref{eq:error-rate}, $FP$ (false positives) is the number of fruits the system classified as Ripe that the reference assessment judged Unripe, and $FN$ (false negatives) is the number of fruits the system classified as Unripe that the reference judged Ripe. $E$ is the number of inconclusive outputs, which occur when the acoustic and optical classifications conflict and the system abstains from giving a Ripe or Unripe answer. $N$ is the total number of fruits evaluated, including those with inconclusive outputs. Because it is based on the first attempt on each fruit, the Error Rate expresses the initial, pre-retest performance of the system.
-
-The Re-trial Frequency measures the operational burden created by these abstentions. In Equation~\eqref{eq:retrial-frequency}, $J$ is the number of fruits that required a second trigger of the system because the first attempt returned an inconclusive output.
-
-In this study, the two metrics were used to account for the three watermelons that produced an ``Inconclusive'' result. The system is designed to defer ambiguous cases instead of forcing a potentially incorrect classification, so the operator re-tests the fruit. Reporting the Error Rate and Re-trial Frequency together with the accuracy gives a more transparent view of the system's operational reliability: the Error Rate shows how often the device fails to give a correct answer on the first attempt, and the Re-trial Frequency shows how often the operator must repeat the measurement as a result.
+In this study, the Error Rate was used to account for the three assessments that produced an ``Inconclusive'' result. The system is designed to defer ambiguous cases instead of forcing a potentially incorrect classification. An abstention is not an incorrect classification, but it is also not a usable result, so it was counted as an error to avoid overstating performance. Reporting the Error Rate together with accuracy and kappa therefore gives a more transparent view of the system's operational reliability: accuracy and kappa describe how well the system performs when it commits to a decision, while the Error Rate shows how often the system fails to give a correct answer.
 
 \section{Data Set Preparation}
 

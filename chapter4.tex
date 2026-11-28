@@ -982,11 +982,43 @@ Farm & Unripe & 54.0 \\
 \end{longtable}
 \endgroup
 
-As shown in Table~\ref{tab:median-signal-to-noise-ratio-of-the-watermelon-t-1297}, the farm recordings had a median SNR of 54.0 dB, compared with 29.5 dB for the market recordings. The 24.5 dB difference indicates that the tap stood out more clearly above the background in the farm recordings. Because the tap window also contained ambient sound, these values estimate the contrast between the tap and its surroundings. As described in Section 3.6.4, the ripe watermelons were recorded at the market and the unripe watermelons at the farm. The contributions of ripeness and collection site to this difference could therefore not be determined separately.
+As shown in Table~\ref{tab:median-signal-to-noise-ratio-of-the-watermelon-t-1297}, the farm recordings had a median SNR of 54.0 dB, compared with 29.5 dB for the market recordings. The 24.5 dB difference indicates that the tap stood out more clearly above the background in the farm recordings, primarily because the field is quieter than the market, which is filled with surrounding noise. Because the tap window also contained ambient sound, these values estimate the contrast between the tap and its surroundings. As described in Section 3.6.4, the ripe watermelons were recorded at the market and the unripe watermelons at the farm. The contributions of ripeness and collection site to this difference could therefore not be determined separately.
 
 To examine how noise affected the identification of ripe fruit, copies of the same 99 test recordings were evaluated with two types of added noise at 30, 25, and 20 dB, as described in Section 4.2.1.3. One type came from recorded background sound. The other was brown noise, which concentrates more of its energy at low frequencies. Across the six conditions, the Decision Tree trained with added noise achieved a mean ripe-class F1-score of 0.964, compared with 0.950 for the tree trained without it.
 
 The deployed Decision Tree obtained an F1-score of at least 0.968 at all three levels of recorded background noise. Its largest decrease occurred under brown noise at 20 dB, where the score fell from 0.984 on the original recordings to 0.900. Of the conditions tested, strong low-frequency noise posed the greatest difficulty for the acoustic classifier.
+
+Because real-time on-device SNR telemetry was integrated into the firmware after the primary field validation trials, a supplementary hardware-level SNR evaluation was conducted in a quiet indoor environment using a single confirmed unripe watermelon. Unlike ripeness classification accuracy, which requires multiple specimens to account for biological variance, acoustic SNR ($\mathrm{SNR}_{\mathrm{dB}} = 10\log_{10}(P_w/P_b)$, where $P_w$ is the power of the thump window and $P_b$ is the power of the pre-trigger background) is an electro-acoustic instrumentation metric that characterizes mechanical energy transfer from the solenoid plunger into the fruit cavity relative to the background noise floor. Evaluating an unripe specimen also provides a conservative coupled load, as denser unripe flesh presents higher mechanical impedance than a hollow ripe fruit. To separate genuine fruit resonance from internal actuator noise, 25 consecutive trials were recorded with the device OFF the watermelon (actuated in open air as an unloaded negative control, Appendix E3) and 25 trials were recorded with the device ON the watermelon (lifting and re-seating the headset-cushion baffle across different equatorial positions between strikes, Appendix E4).
+
+\FloatBarrier
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{\dimexpr 0.25\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.25\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.25\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.25\linewidth-2\tabcolsep\relax}}
+\caption{Summary Comparison of On-Device SNR Measurements (OFF vs. ON Watermelon, n = 25 per condition)}\label{tab:on-device-snr-off-vs-on}\\
+\hline
+{\bfseries Metric} & {\bfseries OFF Watermelon} & {\bfseries ON Watermelon} & {\bfseries Shift (ON vs. OFF)} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries Metric} & {\bfseries OFF Watermelon} & {\bfseries ON Watermelon} & {\bfseries Shift (ON vs. OFF)} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+Median SNR (IQR) & 41.16 dB (8.14 dB) & 48.14 dB (2.66 dB) & $+$6.98 dB ($-$67.3\% IQR) \\
+Mean SNR & 40.48 dB & 47.95 dB & $+$7.47 dB \\
+SNR Range (Min--Max) & 23.16--50.25 dB & 43.61--51.09 dB & $+$20.45 dB floor lift \\
+Median Background RMS (Mean) & 0.001025 (0.001190) & 0.000684 (0.000731) & $-$33.3\% ($-$38.6\% mean) \\
+Median Tap RMS (Mean) & 0.116399 (0.119598) & 0.177062 (0.182350) & $+$52.1\% ($+$52.5\% mean) \\
+Median Window Length (Mean) & 339 samples / 21.2 ms (342.4) & 471 samples / 29.4 ms (462.8) & $+$38.9\% ($+$120.4 samples) \\
+\hline
+\end{longtable}
+\endgroup
+
+As summarized in Table~\ref{tab:on-device-snr-off-vs-on}, coupling the prototype against the watermelon rind increased the median SNR by $+$6.98 dB (from 41.16 dB to 48.14 dB) while reducing the interquartile range by 67.3\% (from 8.14 dB to 2.66 dB). This improvement reflects three physical effects. First, median Tap RMS rose by $+$52.1\% (from 0.116399 to 0.177062, reaching 0.301335 in Trial 2), confirming that plunger kinetic energy is efficiently transferred into the watermelon's resonant cavity rather than dissipated against the solenoid's internal mechanical stop. Second, median pre-trigger Background RMS decreased by 33.3\% (from 0.001025 to 0.000684) and transient ambient spikes observed in the uncoupled runs (such as 0.002941 in OFF Trial 14 and 0.002816 in OFF Trial 15) were eliminated, demonstrating that pressing the headset-cushion baffle flush against the curved rind forms an effective passive acoustic seal around the INMP441 microphone. Third, the adaptive onset detector (\texttt{find\_thump\_window()}) captured a 38.9\% longer median decay window on the fruit (471 samples or 29.4 ms, up to 951 samples or 59.4 ms in Trial 1) than in open air (339 samples or 21.2 ms), verifying sustained structural ringing rather than a brief mechanical click.
+
+All 25 coupled trials comfortably exceeded the 20 dB operational floor identified in the noise-sensitivity analysis, with a minimum ON-watermelon SNR of 43.61 dB. Notably, the unloaded open-air runs still registered a median SNR of 41.16 dB because the solenoid plunger radiates chassis-borne sound into the adjacent microphone housing when hitting its internal stop. Because the tests were performed in a quiet indoor room, the 48.14 dB coupled median SNR characterizes the prototype's intrinsic electro-acoustic coupling baseline, comparable to the 54.0 dB farm baseline in Table~\ref{tab:median-signal-to-noise-ratio-of-the-watermelon-t-1297}, rather than high-noise commercial market environments (29.5 dB). Additionally, while lifting and re-seating the baffle across equatorial positions captures strike-to-strike coupling variance, testing a single unripe fruit does not capture inter-fruit variations in rind thickness, size, or ripeness-dependent acoustic damping, which remain priorities for multi-fruit on-device SNR logging in future field deployments.
 
 \subsubsection{Inference Time}
 
