@@ -1424,7 +1424,7 @@ Field testing was conducted at a watermelon farm in Barangay Balubal, Cagayan de
 
 Ripe and Unripe were the two prediction classes. An Inconclusive result was coded as an assessment error and prompted a retrial on the same fruit. The three Inconclusive results were excluded from the binary confusion matrix, which used the retrial result for each affected fruit, but they remained errors in the first-attempt evaluation.
 
-Watermelons selected for testing were assessed by the system and subsequently evaluated by experienced farm harvesters to establish a ground truth reference for each sample. The system was operated in its intended handheld configuration, with each watermelon tested individually by holding the device at a 10 cm distance from the watermelon to capture an image of the watermelon fruit rind, and then placing the device against the fruit to tap using the thumper and record the generated audio. Multiple trials were performed per sample to ensure consistency and reliability of results.
+Watermelons selected for testing were assessed by the system and by an experienced farm harvester, then cut open for destructive inspection, which served as the ground truth. The system was operated in its intended handheld configuration, with each watermelon tested individually by holding the device at a 10 cm distance from the watermelon to capture an image of the watermelon fruit rind, and then placing the device against the fruit to tap using the thumper and record the generated audio. A retrial was performed only when the system returned an Inconclusive result.
 
 Testing was conducted in a single session under open-field conditions, with natural lighting and ambient background noise. For each assessment, the individual predictions of the acoustic and image classifiers were recorded alongside the fused result, so that each could be evaluated separately.
 
@@ -1443,7 +1443,7 @@ The testing procedure followed a structured approach:
 \hline
 2 & Collection of acoustic and image data from individual watermelon samples. \\
 \hline
-3 & Recording of system classification outputs alongside ground truth assessments from on-site classifiers. \\
+3 & Recording of system classification outputs alongside the farm harvester's assessment and the destructive ground truth. \\
 \hline
 4 & Measurement of performance and other testing metrics as outlined in Table~\ref{tab:testing-metrics-for-system-integration-589}, including accuracy, precision, recall, and F1-score. \\
 \hline
@@ -1673,7 +1673,7 @@ Brooke's paper provides the scoring procedure but no interpretation of the resul
 \renewcommand{\arraystretch}{1.14}
 \setlength{\arrayrulewidth}{1.5pt}
 \begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.49795\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.50205\linewidth-2\tabcolsep\relax}}
-\caption[Interpretation of SUS Scores (Bangor et al., 2009)]{Interpretation of SUS Scores (\protect\hyperlink{cite.bangor2009}{Bangor et al., 2009})}\label{tab:interpretation-of-sus-scores-bangor-et-al-2009-653}\\
+\caption[Interpretation of SUS Scores (Bangor et al., 2009; Sauro \& Lewis, 2016)]{Interpretation of SUS Scores (\protect\hyperlink{cite.bangor2009}{Bangor et al., 2009}; \protect\hyperlink{cite.sauro2016}{Sauro \& Lewis, 2016})}\label{tab:interpretation-of-sus-scores-bangor-et-al-2009-653}\\
 \hline
 {\bfseries \textbf{Value of} SUS Score} & {\bfseries \textbf{Interpretation}} \\
 \noalign{{\color[HTML]{000000}\hrule height 1pt}}
@@ -1957,7 +1957,7 @@ As shown in Table~\ref{tab:median-dominant-frequency-of-the-recordings-by-s-738}
 
 \textit{Note.} Each spectrum was taken from 20 ms before to 300 ms after the thump peak, with the mean of the recording removed, and normalized to its own peak between 50 and 2,000 Hz before averaging.
 
-The average spectra in Figure~\ref{fig:average-normalized-spectrum-of-ripe-and-unripe-r-742} show the cause of this reversal. Both classes had a low peak at around 160 to 200 Hz, but it was much stronger in unripe recordings, which also peaked near 345 and 520 Hz. Ripe recordings instead had their strongest response in a broad region from about 550 to 800 Hz, and were up to about 10 dB stronger than unripe recordings from about 550 to 1,500 Hz, with the two classes converging above that. This shifted the ripe recordings’ dominant frequency upward over the wider range and is also reflected in their higher spectral centroid. This difference is examined further in Section 4.2.1.4.
+The average spectra in Figure~\ref{fig:average-normalized-spectrum-of-ripe-and-unripe-r-742} show the cause of this reversal. Both classes had a low peak at around 160 to 200 Hz, but it was much stronger in unripe recordings, which also peaked near 345 and 520 Hz. Ripe recordings instead had their strongest response in a broad region from about 550 to 800 Hz, and were stronger than unripe recordings from about 551 to 1,417 Hz, by up to 9.7 dB at 808 Hz, with the two spectra staying within 1 dB of each other above that. This shifted the ripe recordings' dominant frequency upward over the wider range and is also reflected in their higher spectral centroid. This difference is examined further in Section~\ref{sec:selected-model-deployment}.
 
 \subsection{Image Preprocessing}
 
