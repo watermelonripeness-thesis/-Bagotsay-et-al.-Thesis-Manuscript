@@ -1,198 +1,212 @@
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-%LOAD PACKAGES HERE
-\usepackage[justification=centering]{caption}
+% LOAD PACKAGES HERE
+\usepackage{caption}    % For caption customization
 \usepackage{colortbl}
 \usepackage{textcomp}
 
 % natbib is configured through the natbibapa option below.
-\usepackage{amssymb,amsmath,mathrsfs,latexsym,color,wasysym,graphicx,placeins,adjustbox}
+\usepackage{amssymb,amsmath,mathrsfs,latexsym,color,wasysym,graphicx,adjustbox}
+\usepackage[section]{placeins} % Prevents any float from crossing \section boundaries
 \usepackage{newtxtext,newtxmath}
 \usepackage{pdflscape}
 \usepackage{multirow}
-%\usepackage{graphtex}
-%\usepackage{dcolumn}
-%\usepackage{longtable}
-%\usepackage{hhline}
-%\usepackage{graphtex}
 \usepackage[none]{hyphenat}
 \sloppy
 \usepackage{enumitem}
 \usepackage[natbibapa]{apacite}
-\usepackage{caption}    % For caption customization
 \usepackage{titletoc}
-\usepackage{placeins}
 \usepackage[ruled, linesnumbered, longend]{algorithm2e}
 \usepackage[titles]{tocloft}
 \usepackage{xcolor,xpatch}
 \usepackage[hidelinks,hypertexnames=false]{hyperref}
-\usepackage{latexsym}
 \usepackage{amsfonts}
-%Shortcut Environments
-\usepackage{tocloft}
 \usepackage{setspace}
 \usepackage[T1]{fontenc}
+
 % Keep the chapter baseline stable across font changes and table breaks.
 \newenvironment{thesisprose}{\setstretch{2}}{\par}
 \AddToHook{env/longtable/begin}{\setstretch{1}}
+
 \usepackage{booktabs} % for better looking tables
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{tabularx}
-\usepackage{booktabs}
-\captionsetup[table]{justification=centering}
 \setlist[itemize]{listparindent=\parindent}
 
 \usepackage{datetime}
 \newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
 
-%\renewcommand*\sectionmark[1]{\markboth{#1}{}}
-%\renewcommand*\subsectionmark[1]{\markright{#1}{}}
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-%NEW COMMANDS
+% EXACT IN-PLACE FLOAT POSITIONING ([H] OVERRIDE FOR ALL FIGURES & TABLES)
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-%MINIMIZE HYPHENATION
-%\tolerance=1
-%\emergencystretch=\maxdimen
-%\hyphenpenalty=10000
-%\hbadness=10000
-%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-\setlength{\textfloatsep}{10pt}
-\setlength{\floatsep}{10pt}
-\setlength{\intextsep}{10pt}
-\renewcommand{\topfraction}{0.9}
-\renewcommand{\bottomfraction}{0.9}
-\renewcommand{\textfraction}{0.1}
-\renewcommand{\floatpagefraction}{0.9}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
 
-\setlength{\heavyrulewidth}{2pt} 
-\setlength{\lightrulewidth}{1pt} 
-\setlength{\cmidrulewidth}{1pt}
-
-%SHORTCUT COMMANDS
-\counterwithout{table}{chapter} % if using chapters
-\counterwithout{figure}{chapter}
-\counterwithout{equation}{chapter}
-%-------------------------------------------
-\setlength{\cftbeforechapskip}{0.5em} % Space before chapter entries
-\setlength{\cftbeforesecskip}{0.3em}  % Space before section entries
-\setlength{\cftbeforesubsecskip}{0.2em} % Space before subsection entries
-% Manually adjust Table of Contents title
-\renewcommand\contentsname{TABLE OF CONTENTS}
-\renewcommand\listtablename{LIST OF TABLES}
-\renewcommand\listfigurename{LIST OF FIGURES}
-\addtocontents{toc}{{\bfseries \hfill Page No.\bigskip\par}}
-
-\addtocontents{lot}{{\bfseries No.\hfill Table\hspace{3in} Page No.\bigskip\par}}
-\addtocontents{lof}{{\bfseries No.\hfill Figure\hspace{3in} Page No.\bigskip\par}}
-\addtocontents{exp}{{\bfseries No.\hfill \hfill Equation\hspace{3in} Page No.\bigskip\par}}
-\renewcommand\cftbeforechapskip{0.5em}
-\renewcommand\cftchapfont{\bfseries}
-\renewcommand\cftchappagefont{\mdseries}
-\renewcommand\cftchappresnum{Chapter~}
-\renewcommand\cftchapaftersnum{. }
-\newlength\tocindent
-\settowidth\tocindent{\cftchapfont\cftchappresnum9\cftchapaftersnum}
-\edef\cftchapnumwidth{\the\tocindent}
-\edef\cftsecindent{\the\tocindent}
-\advance\tocindent2.3em
-\edef\cftsubsecindent{\the\tocindent}
-\advance\tocindent3.2em
-\edef\cftsubsubsecindent{\the\tocindent}
-% Align columns in List of Tables and List of Figures
-\renewcommand{\cfttabnumwidth}{5em} % Width for Table Number
-\renewcommand{\cfttabindent}{3.2em} % Indentation for Table Titles
-\renewcommand{\cftfignumwidth}{5em} % Width for Figure Number
-\renewcommand{\cftfigindent}{3.2em} % Indentation for Figure Titles
-
-
-% Ensure alignment in List of Tables and List of Figures
-\setlength{\cftbeforelottitleskip}{1.5em} % Space before List of Tables title
-\setlength{\cftbeforeloftitleskip}{1.5em} % Space before List of Figures title
-% Custom configuration for the Table of Contents
-\renewcommand{\cftchapdotsep}{\cftdotsep} % Retain dots for chapters in Table of Contents
-\renewcommand{\cftsecdotsep}{\cftdotsep} % Retain dots for sections in Table of Contents
-
-% Custom configuration for the List of Tables
-\newcommand{\listoftablesnodots}{%
-	\renewcommand{\cftdotsep}{\cftnodots} % Disable dots in List of Tables
-	\listoftables
-	\renewcommand{\cftdotsep}{\cftdotsep} % Restore dots for other lists
-}
-
-% Custom configuration for the List of Figures
-\newcommand{\listoffiguresnodots}{%
-	\renewcommand{\cftdotsep}{\cftnodots} % Disable dots in List of Figures
-	\listoffigures
-	\renewcommand{\cftdotsep}{\cftdotsep} % Restore dots for other lists
-}
-\newcommand\tocmainmatter
-{\renewcommand\cftchappagefont{\color{white}}%
-}
-\xapptocmd\mainmatter{\addtocontents{toc}{\protect\tocmainmatter}}{}{}
-
-\newcommand{\listequationsname}{List of Equations}
-\newlistof{myequations}{exp}{\listequationsname}
-\newcommand{\myequation}[1]{%
-	\addcontentsline{exp}{myequations}{\protect\numberline{\theequation}#1}\par}
-\setlength{\cftmyequationsnumwidth}{4.2em} % Adjust the width of the number column
-\setlength{\cftmyequationsindent}{3.2em} % Adjust the indentation of the entries
-
-\newif\ifschaptertoc
-\makeatletter
-\renewcommand\@makeschapterhead[1]%
-{{\parindent \z@ \centering
-		\normalfont
-		\interlinepenalty\@M
-		\normalfont \bfseries  #1\par\nobreak
-		\vskip 20\p@
-	}%
-	\@mkboth{\MakeUppercase{#1}}{\MakeUppercase{#1}}%
-	\ifschaptertoc
-	\addcontentsline{toc}{chapter}{#1}%
-	\fi
-}
-\makeatother
-%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-%Shortcut Environments
-\usepackage[left=1.75in,top=1.8in,right=1.25in,bottom=1.25in]{geometry}
-%\renewcommand*\sectionmark[1]{\markboth{#1}{}}
-%\renewcommand*\subsectionmark[1]{\markright{#1}{}}
-\captionsetup[table]{position=above, justification=raggedright, singlelinecheck=false, labelformat=simple, labelsep=colon}
-
-\captionsetup[table]{
-	position=above,
-	justification=raggedright,
-	singlelinecheck=false,
-	labelsep=newline,      
-	labelfont=bf,          
-	textfont=it,           
-	labelformat=simple,
-    font={stretch=1.6}
-}
-
-\captionsetup[figure]{
-	position=above,
-	justification=raggedright,
-	singlelinecheck=false,
-	labelsep=newline,      
-	labelfont=bf,          
-	textfont=it,           
-	labelformat=simple,
-    font={stretch=1.6},
-}
-
-
-
-\usepackage{stackengine,graphicx}
-\newcommand\pesos{\stackengine{-.85ex}{P}{\scalebox{1.15}[1]{$\scriptstyle=$}}{O}{c}{F}{T}{S}}
-%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% PDF enclosures in the appendices and line wrapping for long reference URLs.
-\newcounter{uncaptionedgrid}
-\newif\ifeditablerecords
-\editablerecordsfalse
-\usepackage{pdfpages}
-\usepackage{xurl}
-\setcounter{secnumdepth}{4}
-\makeatletter
-\renewcommand\paragraph{\@startsection{paragraph}{4}{0pt}{2ex}{1ex}{\normalfont\bfseries}}
-\makeatother
+% Automatically force [H] on every \begin{figure} and \begin{table} across all
+		% chapters and appendices, even if [htbp], [t], [b], or [p] is written in the
+		% chapter .tex files (does not affect multi-page \begin{longtable}).
+			\makeatletter
+			\let\thesis@orig@figure\figure
+			\let\endthesis@orig@figure\endfigure
+			\renewenvironment{figure}[1][H]{%
+				\thesis@orig@figure[H]%
+			}{%
+				\endthesis@orig@figure%
+			}
+			
+			\let\thesis@orig@table\table
+			\let\endthesis@orig@table\endtable
+			\renewenvironment{table}[1][H]{%
+				\thesis@orig@table[H]%
+			}{%
+				\endthesis@orig@table%
+			}
+			\makeatother
+			
+			% Prevent awkward vertical paragraph stretching on pages preceding a tall
+			% in-place [H] figure or table that moves to the top of the next page.
+			\raggedbottom
+			
+			%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+			% NEW COMMANDS & SPACING
+			%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+			\setlength{\textfloatsep}{10pt}
+			\setlength{\floatsep}{10pt}
+			\setlength{\intextsep}{10pt}
+			\renewcommand{\topfraction}{0.9}
+			\renewcommand{\bottomfraction}{0.9}
+			\renewcommand{\textfraction}{0.1}
+			\renewcommand{\floatpagefraction}{0.9}
+			
+			\setlength{\heavyrulewidth}{2pt} 
+			\setlength{\lightrulewidth}{1pt} 
+			\setlength{\cmidrulewidth}{1pt}
+			
+			% SHORTCUT COMMANDS
+			\counterwithout{table}{chapter}
+			\counterwithout{figure}{chapter}
+			\counterwithout{equation}{chapter}
+			%-------------------------------------------
+			\setlength{\cftbeforechapskip}{0.5em}    % Space before chapter entries
+			\setlength{\cftbeforesecskip}{0.3em}     % Space before section entries
+			\setlength{\cftbeforesubsecskip}{0.2em}  % Space before subsection entries
+			
+			% Manually adjust Table of Contents title
+			\renewcommand\contentsname{TABLE OF CONTENTS}
+			\renewcommand\listtablename{LIST OF TABLES}
+			\renewcommand\listfigurename{LIST OF FIGURES}
+			\addtocontents{toc}{{\bfseries \hfill Page No.\bigskip\par}}
+			
+			\addtocontents{lot}{{\bfseries No.\hfill Table\hspace{3in} Page No.\bigskip\par}}
+			\addtocontents{lof}{{\bfseries No.\hfill Figure\hspace{3in} Page No.\bigskip\par}}
+			\addtocontents{exp}{{\bfseries No.\hfill \hfill Equation\hspace{3in} Page No.\bigskip\par}}
+			\renewcommand\cftbeforechapskip{0.5em}
+			\renewcommand\cftchapfont{\bfseries}
+			\renewcommand\cftchappagefont{\mdseries}
+			\renewcommand\cftchappresnum{Chapter~}
+			\renewcommand\cftchapaftersnum{. }
+			\newlength\tocindent
+			\settowidth\tocindent{\cftchapfont\cftchappresnum9\cftchapaftersnum}
+			\edef\cftchapnumwidth{\the\tocindent}
+			\edef\cftsecindent{\the\tocindent}
+			\advance\tocindent2.3em
+			\edef\cftsubsecindent{\the\tocindent}
+			\advance\tocindent3.2em
+			\edef\cftsubsubsecindent{\the\tocindent}
+			
+			% Align columns in List of Tables and List of Figures
+			\renewcommand{\cfttabnumwidth}{5em} % Width for Table Number
+			\renewcommand{\cfttabindent}{3.2em} % Indentation for Table Titles
+			\renewcommand{\cftfignumwidth}{5em} % Width for Figure Number
+			\renewcommand{\cftfigindent}{3.2em} % Indentation for Figure Titles
+			
+			% Ensure alignment in List of Tables and List of Figures
+			\setlength{\cftbeforelottitleskip}{1.5em} % Space before List of Tables title
+			\setlength{\cftbeforeloftitleskip}{1.5em} % Space before List of Figures title
+			
+			% Custom configuration for the Table of Contents
+			\renewcommand{\cftchapdotsep}{\cftdotsep} % Retain dots for chapters in Table of Contents
+			\renewcommand{\cftsecdotsep}{\cftdotsep}  % Retain dots for sections in Table of Contents
+			
+			% Custom configuration for the List of Tables
+			\newcommand{\listoftablesnodots}{%
+				\renewcommand{\cftdotsep}{\cftnodots} % Disable dots in List of Tables
+				\listoftables
+				\renewcommand{\cftdotsep}{\cftdotsep} % Restore dots for other lists
+			}
+			
+			% Custom configuration for the List of Figures
+			\newcommand{\listoffiguresnodots}{%
+				\renewcommand{\cftdotsep}{\cftnodots} % Disable dots in List of Figures
+				\listoffigures
+				\renewcommand{\cftdotsep}{\cftdotsep} % Restore dots for other lists
+			}
+			\newcommand\tocmainmatter
+			{\renewcommand\cftchappagefont{\color{white}}%
+			}
+			\xapptocmd\mainmatter{\addtocontents{toc}{\protect\tocmainmatter}}{}{}
+			
+			\newcommand{\listequationsname}{List of Equations}
+			\newlistof{myequations}{exp}{\listequationsname}
+			\newcommand{\myequation}[1]{%
+				\addcontentsline{exp}{myequations}{\protect\numberline{\theequation}#1}\par}
+			\setlength{\cftmyequationsnumwidth}{4.2em} % Adjust the width of the number column
+			\setlength{\cftmyequationsindent}{3.2em}  % Adjust the indentation of the entries
+			
+			\newif\ifschaptertoc
+			\makeatletter
+			\renewcommand\@makeschapterhead[1]%
+			{{\parindent \z@ \centering
+					\normalfont
+					\interlinepenalty\@M
+					\normalfont \bfseries  #1\par\nobreak
+					\vskip 20\p@
+				}%
+				\@mkboth{\MakeUppercase{#1}}{\MakeUppercase{#1}}%
+				\ifschaptertoc
+				\addcontentsline{toc}{chapter}{#1}%
+				\fi
+			}
+			\makeatother
+			
+			%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+			% GEOMETRY & CAPTION STYLING (BOTH TABLES AND FIGURES ABOVE)
+			%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+			\usepackage[left=1.75in,top=1.8in,right=1.25in,bottom=1.25in]{geometry}
+			
+			\captionsetup[table]{
+				position=above,
+				justification=raggedright,
+				singlelinecheck=false,
+				labelsep=newline,      
+				labelfont=bf,          
+				textfont=it,           
+				labelformat=simple,
+				font={stretch=1.6}
+			}
+			
+			\captionsetup[figure]{
+				position=above,
+				justification=raggedright,
+				singlelinecheck=false,
+				labelsep=newline,      
+				labelfont=bf,          
+				textfont=it,           
+				labelformat=simple,
+				font={stretch=1.6}
+			}
+			
+			\usepackage{stackengine}
+			\newcommand\pesos{\stackengine{-.85ex}{P}{\scalebox{1.15}[1]{$\scriptstyle=$}}{O}{c}{F}{T}{S}}
+			
+			%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+			% PDF enclosures in the appendices and line wrapping for long reference URLs.
+			\newcounter{uncaptionedgrid}
+			\newif\ifeditablerecords
+			\editablerecordsfalse
+			\usepackage{pdfpages}
+			\usepackage{xurl}
+			\setcounter{secnumdepth}{4}
+			\makeatletter
+			\renewcommand\paragraph{\@startsection{paragraph}{4}{0pt}{2ex}{1ex}{\normalfont\bfseries}}
+			\makeatother
