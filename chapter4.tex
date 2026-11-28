@@ -730,6 +730,32 @@ While the Kappa calculation evaluates the 43 definitive classifications, the 3 i
 
 Factoring in the 0 false positives and 1 false negative relative to the farmer's assessment, and the 3 inconclusive outputs, out of the 46 total assessments, the system yielded an initial Error Rate of 8.70\%. This figure is stricter than the observed agreement because it penalizes the system for abstaining as well as for disagreeing. Each of the 3 inconclusive results was followed by a re-test on the same fruit, so the system deferred the ambiguous cases instead of forcing a potentially incorrect output, which supports the reliability of the final classification.
 
+
+Table~\ref{tab:inconclusive-fruits} lists the three fruits that returned an Inconclusive verdict on the first attempt. In all three, the image model classified the rind as Unripe at moderate confidence (68\% to 73\%) while the acoustic model classified the fruit as Ripe, so the two sources of evidence conflicted and neither was strong enough to outweigh the other. Each retrial gave a definitive verdict that matched both the farmer's assessment and the destructive ground truth. The abstentions occurred on both ripe (F07 and F12) and unripe (F10) fruit, so there was no evident tendency toward one class, although three fruits are too few to establish this. Because a retrial is a new measurement, a favorable second result may also partly reflect improved positioning by the operator and not only the system's evidence.
+
+\FloatBarrier
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\arrayrulewidth}{1.5pt}
+\begin{longtable}{>{\centering\arraybackslash}p{\dimexpr 0.10\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.18\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.16\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.18\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.18\linewidth-2\tabcolsep\relax}>{\centering\arraybackslash}p{\dimexpr 0.20\linewidth-2\tabcolsep\relax}}
+\caption{Retrial Outcomes, Farmer Assessment, and Ground Truth of the Inconclusive Fruits}\label{tab:inconclusive-fruits}\\
+\hline
+{\bfseries Fruit} & {\bfseries Trial 1 Image} & {\bfseries Trial 1 Audio} & {\bfseries Retrial Verdict} & {\bfseries Farmer} & {\bfseries Ground Truth} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endfirsthead
+\hline
+{\bfseries Fruit} & {\bfseries Trial 1 Image} & {\bfseries Trial 1 Audio} & {\bfseries Retrial Verdict} & {\bfseries Farmer} & {\bfseries Ground Truth} \\
+\noalign{{\color[HTML]{000000}\hrule height 1pt}}
+\endhead
+F07 & Unripe (70\%) & Ripe & Ripe & Ripe & Ripe \\
+F10 & Unripe (73\%) & Ripe & Unripe & Unripe & Unripe \\
+F12 & Unripe (68\%) & Ripe & Ripe & Ripe & Ripe \\
+\hline
+\end{longtable}
+\endgroup
+
 Several limitations should be noted when interpreting these results. The Landis and Koch benchmarks are conventional guidelines and not statistical tests. With only 43 definitive classifications, the approximate 95\% confidence interval for kappa is about 0.80 to 1.00 (the calculated upper limit exceeds 1 and is capped), so the true value could lie at the lower edge of the almost perfect band or at the upper edge of the substantial band. The result should therefore be taken as strong evidence of agreement between the system and the farmer and not as a precise measure of it, and a larger sample in future testing would narrow this interval.
 
 Establishing almost perfect agreement with the farmer demonstrates the system's practical field utility. However, to determine the true biological accuracy of these predictions, the definitive outputs were then cross-referenced against the destructive ground truth (internal flesh inspection). The comparison between the system's outputs and the actual condition of the fruit is presented in Figure~\ref{fig:confusion-matrix-of-system-classification-agains-1225}.
